@@ -1,0 +1,392 @@
+.resturant-detail-page{
+  background: #fafafa;
+  .see-more{
+    margin-bottom: 0;
+  }
+  .inner-page-slider-wrap{
+    background: #fafafa;
+    padding: 75px 0 50px;
+    @include md {
+      padding: 75px 0 75px;
+    }
+  }
+  .btn-map{
+    margin-bottom: 25px;
+  }
+}
+.resturant-detail-menu-wrap{
+  overflow: hidden;
+  background: $secondary-color;
+}
+.resturant-detail-cta-wrap{ 
+  @include md {
+    float: right;
+  }
+  .btn{
+    display: inline-block;
+    padding: 15px 40px;
+    width: 50%;
+    float: right;
+    @include md {
+      padding: 25px 50px;
+      width: auto;
+      float: none;
+    }
+  }
+  .cta{
+    @include font-size(18px);
+    display: block;
+    width: 50%;
+    float: left;
+    padding: 14px 10px 14px;
+    width: auto;
+    display: flex;
+    align-items: center; 
+    i{
+      display: block;
+      float: left;
+      margin-right: 10px;
+      &:before{
+        color: $default-color;
+      }
+    }
+    @include md {
+      @include font-size(24px);
+      padding: 0 20px;
+      line-height: 71px; 
+    }
+  }
+}
+
+.rating-wrap{
+  display: none;
+  line-height: 1;
+  padding-top: 15px;
+  @include md {
+    display: block;
+    float: left;
+  }
+  .review-count{
+    @include font-size(13.6px);  
+    color: rgba(0, 0, 0, 0.6);      
+    letter-spacing: 1.6px;
+    margin-bottom: 5px;
+  }
+  .rating-units {
+    float: left;
+  }
+  .rating-unit{
+    width: 20px;
+    height: 20px;
+    display: inline-block; 
+    background: #eeeeee;
+    border-radius: 10px;
+    margin: 0 2px;
+    position: relative;
+    i{
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      @include font-size(10px);
+    }
+    &.is-full{
+      background: #c5ad6c;
+    }
+  }
+  .rating-number{
+    display: block;
+    float: left;
+    margin: 0 15px 0 10px;
+    letter-spacing: 2.2px;
+    opacity: 0.4;
+    @include font-size(18px);
+    font-family: 'Lato';
+  }
+}  
+
+.resturant-detail-menu {
+  background: #fafafa;
+  clear: both;
+  @include md {
+    float: left;
+    padding-left: 70px;
+    background: $secondary-color;
+    clear:none;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    @include md {
+      float: left;
+      line-height: 71px;
+    }
+
+    a {
+      @include font-size(13.6px);
+      display: block;
+      letter-spacing: 1.6px;
+      text-align: center;
+      padding: 20px 40px 20px 30px;
+      border-bottom: 1px solid #eeeeee;
+      position: relative;
+      font-family: $go-bold;
+      font-weight: 700;
+      @include md {
+        padding: 0 35px 0 20px;
+        text-align: left;
+        border-bottom: 0; 
+      }
+      i {
+        border: solid black;
+        border-width: 0 2px 2px 0;  
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 15px;
+        top: 28px;
+      }      
+    }
+  }
+}
+
+.resturant-timing-wrap{
+  background: linear-gradient(#fafafa, #ffffff 5%);
+  padding: 50px 0 0;
+  text-align: center;
+  p{
+    font-weight: 500;
+    font-family: $mi-regular;
+    line-height: 2;
+    letter-spacing: 1.4px;
+    margin-bottom: 55px;
+    padding: 0 25px;
+    @include md {
+      padding: 0;
+      margin-bottom: 75px;
+    }
+  }
+  h2.higlight span{
+    background: $secondary-color;
+  }
+  .resturant-timing{
+    max-width: 940px;
+    margin:20px auto 0;
+    background: $secondary-color;    
+    position: relative;
+    background: $secondary-color;
+    @include md {
+      z-index: 1;
+      overflow: hidden;
+    }
+    .tabs {
+      .tabs-header {
+        margin-bottom: 20px;
+      }
+      .tabs-content {
+        ul {
+          display: table;
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .timings{
+    width: 100%;    
+    position: relative;
+    display: flex;
+    align-items:center;
+    background-color: #fafafa;
+    padding: 25px 15px 25px 35px;
+    cursor: pointer;
+    &:nth-child(2){
+      background: #fff;
+    }
+    @include md {
+      width: 33.33%;
+      padding: 50px 20px;
+      display: inline-block;
+      background: none;
+    }
+    &:before{ 
+      content:"";
+      width: 1px;
+      height: 70px;
+      background: #eeeeee;
+      right: 0;
+      top: 50%;
+      margin-top: -35px;
+      position: absolute;
+    }
+    &:last-child{
+      &:before{
+        display: none;
+      }
+    }
+  }
+  .slot{
+    letter-spacing: 2.8px;
+    color: $default-color;
+    line-height: 1;
+    font-family: $go-semibold;
+    font-weight: 500; 
+    padding-right: 35px;
+    @include md {
+      padding-right: 0;
+    }   
+    
+  }
+  .time-wrap{
+    float: right;
+    border-left: 1px solid #eeeeee;
+    padding-left: 30px;
+    @include md {
+      float: none;
+      border-left: 0px;
+      padding-left: 0;
+    }
+  }
+  .time{
+    @include font-size(24px);
+    letter-spacing: 0.6px;
+    color: #000000;
+    font-weight: 700;    
+    font-family: $go-bold;
+    padding: 10px 0;
+    @include md {
+      padding: 25px 0;
+    }
+
+    color: $default-color;
+    font-weight: 700;
+    padding: 25px 0;
+  }
+  .lo{
+    opacity: 0.6;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1;
+    font-weight: 500;
+    font-family: $go-semibold;
+  }
+}
+
+.resturamt-food-wrap{
+  padding-top: 140px;
+  background: #fafafa;
+  margin-top: -70px;
+}
+
+.resturant-detail-slider{
+  .inner-page-slider-info{
+    padding-bottom: 25px; 
+    .slider-count{
+      float: none;
+      text-align: center;
+       line-height: initial;
+    }
+  }
+}
+
+.resturants-detail-list{
+  overflow: hidden; 
+  padding: 80px 0;
+  text-align: center; 
+  background: #fafafa;
+  @include md {
+    padding: 80px 0 50px;
+  }
+  h2 {
+    margin-bottom: 40px;    
+  }
+  ul{
+    margin:0;
+    padding: 0;
+  }
+  li{
+    float: left;
+    position: relative;
+    margin-bottom: 140px;
+    @include md {
+      margin-bottom: 72px;
+      width: 48%;
+    }    
+    &:nth-child(even){
+      float: right; 
+      
+    }
+    &:last-child{
+      margin-bottom: 70px;        
+    }
+  }
+  .resturant-list-info{
+    background: $secondary-color;
+    padding: 40px;      
+    opacity: 0.95;
+    color: $default-color;
+    text-align: center;
+    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    padding: 40px 25px  25px;
+    bottom: -90px;
+    left: 20px; 
+    right: 20px;
+    @include md { 
+      bottom: -25px;
+      width: 300px;
+      left: 30px;
+      right: auto;
+      text-align: left;
+    }
+    h2{
+      @include font-size(20px);
+      letter-spacing: 0.5px;
+      font-family: $go-bold;
+      margin:0 0 25px;
+      text-align: center;
+      font-weight: 700;
+      @include md {
+        @include font-size(20px);
+        margin:0 0 15px;
+      }
+    } 
+    .see-more {
+      text-align: center;
+      position: relative;
+      margin-top: 20px;
+      display: block;
+      cursor: pointer;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: $default-color;
+        top: 8px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: $default-color;
+        top: 10px;
+      }
+
+      span {
+        background: $secondary-color;
+        font-weight: 700;
+        color: #c5ad6c;
+        padding: 0 35px;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }     
+}

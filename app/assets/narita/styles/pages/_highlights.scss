@@ -1,0 +1,77 @@
+.highlights-list-wrap {
+    margin: 60px 0;
+    .container {
+        max-width: 888px;
+        .highlights-list {
+            h4 {
+                @include font-size(14px);
+                font-weight: bold;
+                line-height: 2.14;
+                letter-spacing: 1.4px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #000;
+                text-align: center;
+            }
+            .row {
+                padding: 40px 0;
+                border-bottom: 1px solid #eee;
+                margin: 0;
+                &:last-of-type {
+                    border-bottom: 0;
+                    margin-bottom: 30px;
+                }
+                .col.col-1-2 {
+                    &:first-of-type {
+                        @include sm {
+                            padding-left: 0;
+                        }
+                    }
+                    &:last-of-type {
+                        @include sm {
+                            padding-right: 0;
+                        }
+                    }
+                    .highlights-content {                   
+                        .highlight-helper {
+                            padding-top: 20px;
+                            @include sm {
+                                padding-top: 0;
+                            }
+                            .date {
+                                @include font-size(24px);
+                                font-weight: bold;
+                                line-height: 1.25;
+                                letter-spacing: 2.4px;
+                                display: block;
+                                float: left;
+                                .day-text {
+                                    @include font-size(14px);
+                                }
+                            }
+                            .show-more {
+                                float: right;
+                                i {
+                                    margin-left: 16px;
+                                }
+                            }
+                        }
+                        .highlight-text  {
+                            clear: both;
+                            padding-top: 10px;
+                            @include sm {
+                                padding-top: 30px;
+                            }
+                            p {
+                                font-family: $mi-regular;
+                                @include font-size(14px);
+                                font-weight: 500;
+                                line-height: 2;
+                                letter-spacing: 0.4px;
+                            }
+                        }
+                    }
+                }            
+            }
+        }        
+    }
+}

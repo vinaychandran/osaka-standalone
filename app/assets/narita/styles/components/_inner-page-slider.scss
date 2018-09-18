@@ -1,0 +1,96 @@
+.inner-page-slider-wrap {
+  text-align: center;
+  background: #fff;
+  padding: 55px 0 75px;
+  overflow: hidden;
+
+  h2 {
+    @include font-size(24px);
+    font-weight: 700;
+    margin: 0 0 50px;
+  }
+
+  .inner-page-slider {
+    .slick-prev {
+      left: -60px;
+    }
+
+    .slick-slide {
+      margin: 0 5px;
+      @include md {
+        margin: 0 25px;
+      }
+    }
+
+    .slick-next {
+      right: -60px;
+    }    
+  }
+
+  .slick-list {
+    overflow: initial;
+    max-width: 300px;
+    margin:0 auto;
+    @include md {
+      max-width: none; 
+    }
+  }
+
+  .slick-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 66px;
+    height: 66px;
+    display: none !important;
+    @include md {
+      display: block  !important;
+    }
+  }
+}
+
+.inner-page-slider-info {
+  padding: 25px 25px 60px;
+
+  .slider-count {    
+    font-family: 'Lato';
+    text-align: center;
+    @include md {
+      float: left;
+      line-height: 81px;
+      text-align: left;
+    }
+  }
+
+  .faq-link {    
+    display: block;
+    text-align: center;    
+    @include font-size(12px);
+    letter-spacing: 1.2px;
+    text-decoration: underline;
+    @include md {
+      float: right;
+      line-height: 81px;
+      text-align: left; 
+      margin-right: 80px;
+    }
+  }
+
+  .btn {
+    margin:10px 0;
+    i{
+      padding-left: 10px;
+    }
+    @include md {
+      float: right;
+    }
+  }
+}
+
+.resturant-detail-page{
+  h2.higlight{
+    margin-bottom: 35px;
+    @include md {
+      margin-bottom: 50px;
+    }
+  }
+}

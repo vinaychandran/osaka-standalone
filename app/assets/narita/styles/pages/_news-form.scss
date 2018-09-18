@@ -1,0 +1,367 @@
+.news-form-details {
+  background: $secondary-color;
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  @include md {
+    height: auto;
+    //overflow-y: hidden;
+  }
+
+  .col {
+    @include md {
+      padding: 0;
+    };
+  }
+}
+
+// .basicLightbox__placeholder {
+//   @include md {
+//     position: absolute;
+//     top: 100px;
+//   }
+// }
+
+.closeBtn {
+  //position: fixed;
+  right: 15px;
+  z-index: 99999;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  background: $default-color;
+  @include md {
+    right: 0;
+    width: 94px;
+    height: 94px;
+  };
+}
+
+.closeBtn:after,
+.closeBtn:before {
+  position: absolute;
+  left: 28px;
+  content: ' ';
+  top: 16px;
+  height: 20px;
+  width: 1px;
+  background-color: $secondary-color;
+  @include md {
+    left: 47px;
+    top: 26px;
+    height: 35px;
+  };
+}
+
+.closeBtn:before {
+  transform: rotate(45deg);
+}
+
+.closeBtn:after {
+  transform: rotate(-45deg);
+}
+
+#news-form {
+  #newsForm {
+    @extend %clearfix;
+    padding: 90px 28px 28px;
+    clear: both;
+    margin-bottom: 0;
+    @include md {
+      padding: 94px 78px 78px;
+    };
+  }
+  @include md {
+    width: 560px;
+    height: 100vh;
+  }
+
+  h5,
+  p {
+    font-family: $go-bold;
+    @include font-size(24px);
+    font-weight: bold;
+    line-height: 1.04;
+    letter-spacing: 0.6px;
+    text-align: center;
+    padding: 0 40px 20px;
+  }
+
+  p {
+    @include font-size(14px);
+    line-height: 1.43;
+    padding-bottom: 0;
+    font-family: $mi-regular;
+    font-weight: 500;
+  }
+
+  label {
+    font-family: $go-bold;
+    @include font-size(14px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1.1px;
+    text-align: left;
+    color: $default-color;;
+    padding: 20px 0 10px;
+    margin: 0;
+    float: left;
+    display: block;
+    @include md {
+      padding: 30px 0 10px;
+    };
+  }
+
+  .check-box-container {
+    padding: 0 15px;
+
+    .col {
+      padding: 0 20px 20px 0;
+      width: 30%;
+      @include md {
+        width: 20%;
+      };
+    }
+  }
+
+  .attachFile {
+    @extend %clearfix;
+    padding: 30px 0 10px;
+    text-align: left;
+    @include md {
+      text-align: right;
+    };
+
+    label {
+      float: none;
+    }
+
+    input[type=file] {
+      border: none;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .lastname {
+    padding-top: 40px;
+    @include md {
+      padding-top: 61px;
+    };
+  }
+
+  .event {
+    width: 100%;
+    @include md {
+      width: 75%;
+    };
+  }
+
+  .attendees {
+    width: 45%;
+    @include md {
+      width: 20%;
+    };
+  }
+
+  .duration,
+  .guestrooms {
+    width: 114px;
+    float: left;
+    margin-right: 30px;
+    @include md {
+      float: none;
+      margin-right: 0;
+    }
+  }
+
+  .guestrooms {}
+
+  .date-duration {
+    @include md {
+      display: flex;
+      justify-content: space-between;
+    };
+  }
+
+  .food-beverage {
+    label {
+      padding: 30px 0;
+    }
+  }
+
+  .check-box-container {
+    @extend %clearfix;
+  }
+
+  .textarea-custom {
+    height: 256px;
+  }
+
+  .right-space {
+    @include md {
+      padding-right: 30px;
+    }
+  }
+
+  .left-space {
+    @include md {
+      padding-left: 30px;
+    }
+  }
+
+  .meeting {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin-bottom: 30px;
+    @include md {
+      margin-top: 60px;
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $default-color;
+      top: 10px;
+    }
+
+    span {
+      background: $secondary-color;
+      font-weight: 500;
+      padding: 0 15px;
+      position: relative;
+      z-index: 1;
+      font-family: $go-semibold;
+    }
+  }
+
+  #venue-booking-tab .date-picker-venue-rpf {
+    float: left;
+    position: relative;
+    padding: 0;
+
+    .first-box,
+    .sec-box {
+      margin: 0;
+      float: left;
+    }
+
+    label {
+      float: none;
+      padding: 30px 44px 10px 12px;
+    }
+
+    .date-picker-tab1-container {
+      @extend %clearfix;
+      border: 0;
+      position: relative;
+      width: auto;
+
+      .values .to {
+        padding-top: 87px;
+        @include md {
+          padding-top: 50px;
+          margin: 35px 10px 0;
+        };
+      }
+    }
+
+    .endDateContainer,
+    .startDateContainer {
+      float: left;
+      width: auto;
+      @include mobile {}
+      @include md {
+        margin-right: 0;
+      };
+    }
+
+    .endDate,
+    .startDate {
+      font-family:$go-bold;
+      @include font-size(12px);
+      line-height: 2.5;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: $default-color;;
+      border: 2px solid #eeeeee;
+      border-radius: 4px;
+      height: 66px;
+      line-height: 66px;
+      padding-top: 15px;
+      width: 140px;
+      padding-left: 15px;
+      span.date_at,
+      span.date_to {
+        @extend .icon-calender;
+        &:before {
+          background-image: none;
+          height: auto;
+          @include md {
+            display: block;
+          }
+        }
+        @include md {
+          float: left;
+          padding: 0;
+
+          &:before {
+            background-image: url("../svg/sprite.svg");
+            margin-left: 5px;
+            width: 28px;
+            height: 20px;
+            margin: 5px 0;
+            float: left;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .calendar {
+      top: 130px;
+      width: 320px;
+
+      .calendarContainer {
+        table {
+          width: auto;
+        }
+      }
+      .bottomLayer{
+        line-height: 2;
+      }
+    }
+  }
+
+  .find-button {
+    text-align: center;
+    padding-bottom: 30px;
+
+    button {
+      padding: 25px 50px;
+      width: 100%;
+    }
+  }
+
+  .footer {
+    @include font-size(12px);
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0;
+    text-align: left;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+header
+  .header-left
+    .logo
+      a(href='/')
+        img(src='../assets/narita/images/logo.svg', alt='')
+  nav.top-menu.visible-desktop
+    ul
+      li
+        a(href='#') Rooms
+      li
+        a(href='#') Restaurants
+      li
+        a(href='#') Banquets
+      li
+        a(href='#') Access     
+  .header-right
+    .top-cta.visible-desktop
+      a.phone(href='#')
+        i.icon-phone
+        span +81-6-6577-1111
+      .choose-lang
+        .selected-lang Language 
+        ul
+          li
+            a.active(href='#')
+              span.icon-flag_jp
+                span.path1
+                span.path2
+                span.path3
+                span.path4
+              | 日本語
+          li
+            a(href='#')
+              span.icon-flag_en
+                span.path1
+                span.path2
+                span.path3 
+              | English
+          li
+            a(href='#')
+              span.icon-flag_ch
+                span.path1
+                span.path2
+              | 한국어
+          li
+            a(href='#')
+              span.icon-flag_kr
+                span.path1
+                span.path2
+                span.path3
+                span.path4 
+              | 簡体中文
+          li
+            a(href='#')
+              span.icon-flag_jp
+                span.path1
+                span.path2
+              | 簡体中文
+    //- .sign-in(data-show-id='login-form')
+    //-   .icon-login
+    //-   p.visible-desktop アカウント 
+    a.mobile-phone.visible-device(href='#') 
+      i.icon-phone
+    #hamburger.hamburger.visible-device
+      span
+      span
+      span
+    //- include ../components/login-form.pug
+nav#sideNav.side-navigation
+  //- ul.side-menu.visible-desktop
+  //-   li
+  //-     a(href='#') オファー
+  //-   li
+  //-     a(href='#') ギャラリー
+  //-   li
+  //-     a(href='#') ルーム
+  //-   li
+  //-     a(href='#') アクセス
+  //-   li
+  //-     a(href='#') レストラン
+  //-   li
+  //-     a(href='#') 会議・宴会
+  ul.side-menu.visible-device
+    li
+      a(href='#') オファー
+    li
+      a(href='#') ギャラリー
+    li
+      a(href='#') ルーム
+    li
+      a(href='#') アクセス
+    li
+      a(href='#') レストラン
+    li
+      a(href='#') 会議・宴会
+  .choose-lang.visible-device
+    .selected-lang Language
+    ul
+      li
+        a.active(href='#')
+          span.icon-flag_jp
+            span.path1
+            span.path2
+          | 日本語
+      li
+        a(href='#')
+          span.icon-flag_en
+            span.path1
+            span.path2
+            span.path3 
+          | English
+      li
+        a(href='#')
+          span.icon-flag_ch
+            span.path1
+            span.path2
+          | 한국어
+      li
+        a(href='#')
+          span.icon-flag_kr
+            span.path1
+            span.path2
+            span.path3
+            span.path4 
+          | 簡体中文
+      li
+        a(href='#')
+          span.icon-flag_jp
+            span.path1
+            span.path2
+          | 簡体中文
+//- include ../components/reset-form.pug

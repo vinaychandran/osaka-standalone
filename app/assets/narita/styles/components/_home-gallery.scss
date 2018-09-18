@@ -1,0 +1,179 @@
+.gallery {
+    margin-bottom: 75px;
+    @include md {
+        margin-bottom: 100px;
+    }
+}
+
+.instafeed {
+    margin: 0 20px;
+    @include md {
+        margin: 0;
+    }
+    a {
+        float: left;
+        overflow: hidden;
+        width: 33.333%;
+        height: 114px;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        display: block;
+        @include sm {
+            width: 25%;
+            height: 285px;
+        }
+        &:hover {
+            opacity: 1;
+            .insta-mask {
+                opacity: 1;
+            }
+        } 
+        .insta-bg {
+            width: 100%;
+            display: block;                   
+        }
+        .insta-mask {                  
+            opacity: 0;
+            background: rgba(0,0,0,0.7);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            position: absolute;
+            transition: .5s ease;
+            .insta-content {
+                @include center(both);
+                @include font-size(18px);
+                color: $secondary-color;
+                font-family:$go-semibold;                
+                font-weight: $medium;
+                width: 35%; 
+                .insta-likes {
+                    float: left;
+                }
+                .insta-likes {
+                    float: right;
+                }
+            }                
+        }    
+    }    
+}
+
+#more-link {
+    background-color: $footer-bg;
+    color: $secondary-color;
+    width: 66.6666%;
+    height: 114px; 
+    @include sm {
+        width: 25%;
+        height: 285px;
+    }
+    div {
+        @include center(both);
+        @include font-size(14px);
+        font-family: 'Lato';
+        line-height: 1.38; 
+        text-align: center;
+        width: 100%;
+        span{
+            display: block;
+        } 
+        @include sm {                
+            @include font-size(24px);
+        }
+    }
+    .mys-arrow-left{
+        top: 45%;
+        right: 10%;
+        @include sm { 
+            top: 120%;
+            right: 48%;       
+        }
+    }
+}
+
+.hotel-photos {
+    margin: 0 20px;
+    @include md {
+        margin: 0;
+
+    }
+    a {
+        float: left;
+        overflow: hidden;
+        width: 33.3333%;
+        height: 114px;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        @include sm {
+            width: 25%;
+            height: 285px;
+        }
+    }    
+}
+
+.gallery-nav{
+   .slick-slide{
+        text-align: center;
+        img{
+            margin: 0 auto;
+        }
+   } 
+   @include md {
+        .slick-prev{
+            left: 10px;
+        }
+        .slick-next {
+            right: 10px;
+        }
+   }
+}
+
+#tablink, #resturant-timing-tablink {
+    @include font-size(12px);
+    font-family: $go-bold;
+    font-weight: 700;
+    margin: 0 20px 20px 20px;
+    text-align: center;
+    display: block;
+    padding: 16px 20px;
+    border: 2px solid #000;
+    position: relative;
+    z-index: 99;
+    &.tablink, &.resturant-timing-tablink {
+        background: #eee;
+        border: none;
+        &:after {
+            transform: rotate(-180deg);
+        }
+    }
+    @include sm {
+      display: none;
+    }
+    &:after {
+        content: "";
+        transition: .5s;
+        @include center(vertical);
+        right: 25px;
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 6px solid #000;
+    }
+    &.opened {
+        &:after {
+            transform: rotate(-180deg);
+            top: 46%;
+        }
+    }
+}
+
+[data-id="popup-gallery"]{
+    .slick-next, .slick-prev{
+        top: 50%;  
+    }
+}

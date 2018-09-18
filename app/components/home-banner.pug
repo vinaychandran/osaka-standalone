@@ -1,0 +1,18 @@
+section.main-banner.home-banner
+	picture.banner-image
+		source(media='(min-width: 768px)', srcset='/assets/narita/images/homebanner.jpg')
+		img(src='/assets/narita/images/homebanner-mobile.jpg')
+	.banner-text
+		//- h1 空港と寺社を臨む
+		//- span RISE ABOVE THE BAY
+		img(src='/assets/narita/images/air.svg')
+	.photos-link
+		a.guestPhotos.scroll(href="#gallery-tabs")
+			i.icon-insta
+			span.hidden-xs Guest Photos
+		a.hotelPhotos.scroll(href="#gallery-tabs")
+			i.icon-hotelphoto
+			span.hidden-xs Hotel Photos
+	.calendar-link.visible-device
+		a(href="#") 空室検索
+			i.icon-calender

@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block append content
+	.single-room-wrap
+		.room-info-header
+			.room-price
+				span 宿泊料金
+				| ￥9,000			
+			a(href="#").book-room
+				| 予約する			  
+		include ../components/room-info.pug

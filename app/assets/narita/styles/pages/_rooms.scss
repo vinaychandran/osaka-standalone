@@ -1,0 +1,719 @@
+.about-rooms-wrap{
+  .about-rooms-info{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    text-align: center;
+    @include md {
+      padding: 90px 0;
+    }
+    h3{
+      font-family: 'Lato-B';
+      line-height: 1;
+      margin-bottom: 30px;
+      letter-spacing: 0.8px;
+    }
+    p{
+      @include font-size(14px);
+      font-family: $mi-regular;
+       line-height: 2;
+       margin: 0;
+    }
+  }
+}
+
+.rooms-list-wrap{
+  background-color: #fafafa;
+  padding: 60px 10px 0;
+  @include md {
+    padding: 80px 0 0;
+  }
+  h4{
+    text-align: center;
+    @include font-size(20px);
+    font-weight: 500;
+    font-family: $mi-regular;
+    margin-bottom: 30px;
+  }
+}
+ul.room-types{
+    @include sm {
+    display: table;
+    margin: 0 auto 40px;
+  }
+  li {
+    @include sm {
+      float: none;
+      display: table-cell;
+    }
+    a {
+      @include font-size(14px);
+      font-family: $go-bold;
+      line-height: 1.43;
+      letter-spacing: 1.4px;
+      font-weight: 700;
+      text-align: center;
+      color: #888888;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      @include sm {
+        margin: 0;
+      }
+      &.selected {
+        color: $default-color;;
+        &:after {
+          @include sm {
+            content: "";
+            width: 100%;
+            height: 2px;
+            display: block;
+            background-color: #232e48;
+            margin-top: 3px;
+          }
+        }
+        &:before {
+          @include sm {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            margin-left: -4px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid $default-color;;
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.rooms-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+  margin: 0;
+  > li{
+    width: 100%;
+    background:$default-bg;
+    margin-bottom: 110px;
+    display: none;
+    transition: all 1s ease;
+    opacity: 0;
+    animation: all 0.3s;
+    position: relative;
+    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+    .room-short-info{
+      padding: 27px 20px 20px;
+      width: 100%;
+      float: left;      
+      @include sm {
+        padding: 27px 50px 20px;
+      }
+    }
+    &.show{
+      display: block;
+      animation: bounceList 0.3s;
+      opacity: 1;
+    }
+    @include sm {
+      width: 48%;
+    }
+  }
+  h6{
+    @include font-size(16px);
+    font-family: $go-bold;
+    text-align: center;
+    margin-bottom: 15px;
+    @include sm {
+      float: left;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+  .price{
+    @include font-size(24px);
+    font-family: 'Lato-B';
+    text-align: center;
+    font-weight: 700;
+    @include sm {
+      float: right;
+      text-align: right;
+    }
+  }
+  .room-facilities{
+    clear: both;
+    margin-top: 25px;
+    border-top: 1px solid #f1f3ee;
+    width: 100%;
+    padding: 0 0 50px;
+    float: left;
+    position: relative;
+    @include sm {
+      padding-top: 25px;
+    }
+    ul{
+
+      @include sm {
+        width: 50%;
+        float: left;
+        padding-right:20px;
+        border-right: 1px solid #f1f3ee;
+        &:nth-child(2) {
+          border-right: 0px;
+          padding-left: 20px;
+        }
+      }
+    }
+    li{
+      @include font-size(14px);
+      font-family: $go-semibold;
+      width: 100%;
+      padding: 15px 0;
+      border-bottom: 1px solid #f1f3ee;
+      @include sm {
+        border-bottom: 0;
+        padding: 6px 0;
+      }
+      span{
+        float: right;
+        font-weight: 700;
+        font-family: $go-bold;
+      }
+    }
+  }
+}
+.room-more{
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
+  .mys-arrow-left{
+    @include center(vertical);
+    right: 30px;
+  }
+}
+
+@keyframes bounceList {
+  0% {
+     transform: scale(0.7);
+  }
+  25% {
+     transform: scale(0.8);
+  }
+  50% {
+     transform: scale(0.9);
+  }
+  100% {
+     transform: scale(1);
+  }
+}
+
+
+.breadcrumb{
+  padding: 20px 0;
+  @include font-size(12px);
+  color: $primary-color;
+  font-family: $go-semibold;
+  @include sm {
+    padding: 30px 0;
+  }
+  span{
+    width: 4px;
+    height: 4px;
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+    margin: 0 15px;
+    border-color: $default-color;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    display: inline-block;
+  }
+}
+
+.roomPopup{
+  background:#fafafa;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  &:after{
+    display: none;
+  }
+}
+
+
+@keyframes roomPop {
+  0%   {
+    top: -5%;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+// #room-full-info{
+//   padding-top: 55px;
+//   @include sm {
+//     padding-top: 94px;
+//   }
+// }
+
+.room-info-header{
+  position: sticky;
+  transform: translate3d(0,0,0);
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $secondary-color;;
+  z-index: 99;
+  height: 55px;
+  .room-price{
+    color: $primary-color;
+    @include font-size(18px);
+    padding-left: 15px;
+    font-family: 'Lato-B';
+    float: left;
+    line-height: 50px;
+    font-weight: 700;
+    span{
+      @include font-size(14px);
+      padding-right: 20px;
+      font-family: $go-semibold;
+      font-weight: 500;
+      display: none;
+      @include sm {
+        display: inline-block;
+      }
+    }
+    @include sm {
+      line-height: 85px;
+      @include font-size(32px);
+      height: 94px;
+    }
+  }
+  .close-room{
+    color: $secondary-color;;
+    background:$primary-bg;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    position: static;
+    // right: 0;
+    // top: 0;
+    float: right;
+    @include font-size(24px);
+     font-family: 'Lato-L';
+     text-align: center;
+     cursor: pointer;
+    @include sm {
+      width: 94px;
+      height: 94px;
+      line-height: 94px;
+    }
+  }
+  .book-room{
+    float: right;
+    background-color: #c5ad6c;
+    color: $secondary-color;
+    @include font-size(14px);
+    font-family: $go-semibold;
+    padding: 21px 25px 20px;
+    line-height: 1;
+    font-weight: 500;
+    @include sm {
+      padding: 39px 80px;
+      @include font-size(16px);
+    }
+  }
+  @include sm {
+    height: 94px;
+  }
+}
+
+.room-info-container{
+  max-width: 920px;
+  margin: 50px auto;
+  text-align: center;
+  @include sm {
+    margin: 80px auto;
+  }
+  h2{
+    @include font-size(18px);
+    font-family: $mi-regular;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 10px;
+    @include sm {
+      @include font-size(24px);
+      margin-bottom: 15px;
+    }
+  }
+  .room-quick-info{
+    @include font-size(12px);
+    font-family: $mi-regular;
+    opacity: 0.5;
+    padding-bottom: 40px;
+    @include sm {
+      @include font-size(14px);
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.room-info-slider-container{
+  position: relative;
+  .slider-count{
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    @include font-size(12px);
+    font-family: $go-semibold;
+    color: $secondary-color;
+    display: none;
+    @include sm {
+      display: block;
+    }
+  }
+  .slick-next, .slick-prev{
+    display: none !important;
+    @include sm {
+      display: block !important;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .slick-next{
+    right: -28px;
+  }
+  .slick-prev{
+    left: -28px;
+  }
+}
+
+.room-info-slider{
+  //padding:0 25px;
+  .slick-list{
+    padding:0 25px;
+    @include sm {
+      padding: 0;
+    }
+  }
+  .slick-slide{
+    margin: 0 5px;
+    @include sm {
+      margin: 0;
+    }
+  }
+}
+
+.room-info-slider-thumb{
+  display: none;
+  padding: 10px 0;
+  @include md {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+  }
+  img{
+    width: calc(100% * (1/6) - 4px);
+    margin-bottom: 4px;
+    cursor: pointer;
+    &.active{
+      opacity: 0.5;
+    }
+  }
+}
+
+.room-overview{
+  background: $secondary-color;
+  padding: 40px 20px;
+  text-align: left;
+  margin: 20px 15px;
+  @include sm {
+    margin: 0 0 30px;
+    padding: 75px 55px;
+  }
+  h5{
+    @include font-size(16px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 3.2px;
+    border-bottom: 1px solid $default-color;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+}
+
+.room-highlight-wrap{
+  padding: 30px 0 0;
+
+  @include md {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 35px 50px 40px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .checkin-checkout{
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    @include md {
+      max-width: 210px;
+      padding-bottom: 0;
+      border-bottom: 0px;
+    }
+    .time{
+      @include font-size(14px);
+      font-family: $go-semibold;
+      margin-bottom: 15px;
+      font-weight: 500;
+      span{
+        float: right;
+        @include font-size(15px);
+        font-weight: 700;
+        font-family: go-bold;
+      }
+    }
+    .note{
+      font-family: $go-semibold;
+      @include font-size(10px);
+      margin-top: 10px;
+      letter-spacing: 0.6px;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+  }
+  .room-tags{
+    padding: 25px 0 35px;
+    @include md {
+      max-width: 210px;
+      padding: 0;
+      border-bottom: 0px;
+    }
+    ul{
+      margin: 0;
+    }
+    li{
+      display: inline-block;
+      border: 1px solid $default-color;
+      padding: 5px 15px;
+      margin-right: 10px;
+      @include font-size(12px);
+      letter-spacing: 2.4px;
+      margin-bottom: 10px;
+      font-family: $go-semibold;
+      font-weight: 500;
+    }
+  }
+  .room-downloads{
+    padding: 0 0 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    @include md {
+      max-width: 210px;
+      border-bottom: 0;
+      padding: 0;
+    }
+    ul{
+      margin: 0;
+    }
+    li{
+      font-family: $go-semibold;
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: flex;
+      span{
+        @include font-size(12px);
+        margin-left: 8px;
+        letter-spacing: 2.4px;
+        border-bottom: 1px solid $default-color;
+      }
+    }
+    i{
+      @include font-size(18px);
+    }
+    .icon-download{
+      &:before{
+        color: $default-color;
+      }
+    }
+  }
+}
+
+.room-amenities{
+  ul{
+    margin: 0;
+    display: flex;
+    flex-wrap:  wrap;
+    align-items:center;
+    @include md {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+    li{
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      width: 50%;
+      padding: 15px 5px;
+      display: flex;
+      align-items: center;
+      @include md {
+        border-bottom: 0;
+        width: 25%;
+      }
+      span{
+        padding-left: 15px;
+        @include font-size(12px);
+        font-family: $go-bold;
+        font-weight: 700;
+      }
+      i{
+        @include font-size(29px);
+      }
+    }
+  }
+}
+
+.room-features{
+  background:$secondary-color;
+  padding: 50px 20px 20px;
+  margin: 0 15px;
+  @include md {
+    padding: 100px 0 25px;
+    margin: 0;
+  }
+  h3{
+    @include font-size(16px);
+    font-weight: 500;
+    font-family: $mi-regular;
+    letter-spacing: 1.5px;
+    margin-bottom: 35px;
+    @include md {
+      @include font-size(20px);
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+    }
+  }
+  .content{
+    letter-spacing: 1.4px;
+    max-width: 645px;
+    margin:0 auto 60px;
+    line-height: 1.8;
+    font-family: $mi-regular;
+    @include font-size(14px);
+    @include md {
+      margin:0 auto 75px;
+      line-height: 2;
+    }
+  }
+  .separator{
+    width: 150px;
+    margin:0 auto 60px;
+    height: 1px;
+    background:#1b1b1b;
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
+  h4{
+    @include font-size(14px);
+    margin-bottom: 25px;
+    font-family: $go-bold;
+    font-weight: 700;
+  }
+  .strech{
+    margin: 0 -35px 40px;
+    @include md {
+      margin: 0 -40px 40px;
+    }
+  }
+  .three-images{
+    max-width: 725px;
+    margin: 0 -20px 40px;
+    overflow: hidden;
+    @include md {
+      margin: 0 auto 40px;
+    }
+    img{
+      float: left;
+      display: block;
+      &:nth-child(1) {
+        width: 55%;
+        @include md {
+          width: auto;
+        }
+      }
+      &:nth-child(2) {
+        float: right;
+        margin-top: 40px;
+        width: 40%;
+        @include md {
+          width: auto;
+          margin-top: 80px;
+        }
+      }
+      &:nth-child(3) {
+        float: left;
+        margin-top: 25px;
+        margin-left: 30px;
+        width: 45%;
+        @include md {
+          width: auto;
+          margin-top: 50px;
+          margin-left: 80px;
+        }
+      }
+    }
+  }
+}
+
+.single-room-wrap{
+  background: #fafafa;
+  .room-info-header{
+    position: fixed;
+    top: 56px; 
+    height: 63px;
+    box-shadow: 3.5px 3.5px 6px 0 rgba(0, 0, 0, 0.1);
+    @include md {
+      top: 80px; 
+      height: 65px;
+    }
+    .room-price{
+      height: 50px;
+      line-height: 60px;
+    }
+    .book-room{
+      padding: 25px 80px 24px;
+    }
+  }
+
+  .room-info-container{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 150px;
+    padding-bottom: 80px;
+    @include md {
+      padding-top: 180px;
+    }
+  }
+}
+
+.ribbon{
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  font-family: $go-bold;
+  font-weight: 700;
+  color: #fff;
+  padding: 15px 30px;
+  &.red{
+    background: #a61f1f;
+  }
+  &.blue{
+    background: #232e48;
+  }
+}

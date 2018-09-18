@@ -1,0 +1,201 @@
+extends ../layouts/default
+
+block append content
+	.resturant-main-page
+		section.main-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant-banner.jpg')
+				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg')
+			.banner-text
+				h1 レストラン
+		section.about-resturants-info
+			h3 大空の飛行機を眺め、豊潤な食事を
+			p 翔び立つ飛行機、空港のまばゆい夜景 - 刻々と変化する雄大な長めが寄り添い、3つの飲食店と1つのバーで食事を味わう豊潤な一時を。
+		section.resturants-list
+			ul
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant1.jpg')
+						img(src='/assets/narita/images/resturant/resturant1-mobile.jpg')
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						a.see-more(href="#")
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant2.jpg')
+						img(src='/assets/narita/images/resturant/resturant2-mobile.jpg')
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						a.see-more(href="#")
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant3.jpg')
+						img(src='/assets/narita/images/resturant/resturant3-mobile.jpg')
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						a.see-more(href="#")
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant4.jpg')
+						img(src='/assets/narita/images/resturant/resturant4-mobile.jpg')
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						a.see-more(href="#")
+							span もっと見る
+		section.resturant-page-booking
+			h2.higlight
+				i
+				span レストランを予約する
+				i
+			.booking-widget
+				#booking-tab2.tabs-content
+					.number-of-people
+						section
+							.form-group
+								label.form-label(for='') ご利用人数
+								.dropdown-custom
+									.input-custom
+										button 大阪(伊丹
+										.popup-menu
+											.popup-content-input
+												ul.cities
+													li
+														span(target='Hokkaido', names='Hokkaido') 1名
+													li
+														span(target='Okinawa', names='Okinawa') 2名
+													li
+														span(target='Tochigi', names='Tochigi') 3名
+													li
+														span(target='Tokyo', names='Tokyo') 4名
+					.date-picker-tab2-single
+						label チェックイン
+						.date-picker-tab2-single-container
+							.values
+								.startDateContainer
+									.startDate
+										.value.date_at
+											span.date_at
+											input#date_at.date_at(type='hidden')
+							.time-selection
+								section
+									.form-group
+										.dropdown-custom
+											.input-custom
+												button 00:00
+												.popup-menu
+													.popup-content-input
+														ul.cities
+															li
+																span(target='Hokkaido', names='Hokkaido') 19:30
+															li
+																span(target='Okinawa', names='Okinawa') 20:00
+															li
+																span(target='Tochigi', names='Tochigi') 20:30
+															li
+																span(target='Tokyo', names='Tokyo') 21:00
+						//.calendar-backdrop
+						.calendar
+							.button.button-prev
+							.button.button-next
+							.calendarContainer
+					.shop
+						section
+							.form-group
+								label.form-label(for='') お店
+								.dropdown-custom
+									.input-custom
+										button 大阪(伊丹・関西・神戸
+										.popup-menu
+											.popup-content-input
+												ul.cities
+													li
+														span(target='Hokkaido', names='Hokkaido') レストラン「ガーデニア」
+													li
+														span(target='Okinawa', names='Okinawa') チェックイン
+													li
+														span(target='Tochigi', names='Tochigi') チェックアウト
+													li
+														span(target='Tokyo', names='Tokyo') 大人2名
+					.find-button
+						label 最低価格保証
+						button(name='submit', type='submit', value='空室を検索'  data-show-id='show-restaurant') 空室を検索
+					#show-restaurant(data-basicLightbox data-id="show-restaurant" class=" row restaurant-detail")
+						.errors
+							form(id='bookingForm' name="bookingForm")
+								label First Name
+								.input-showtext
+									input.form-control(id='fname' name= "fname" type='text', placeholder='プロモコード)' required)
+								label Last Name
+								.input-showtext
+									input.form-control(id='lname' type='text', placeholder='プロモコード)' name='lname' required)
+								label Mobile
+								.input-showtext
+									input.form-control(id='mobile' type='number', placeholder='プロモコード)' name='mobile' required)
+								label Deatils
+								.input-showtext
+									input.form-control(id='details' type='text', placeholder='プロモコード)' name='details' required)
+								.find-button
+									button(name='button', type='button', value='空室を検索' class='bookingForm') 空室を検索

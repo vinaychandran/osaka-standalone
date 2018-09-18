@@ -1,0 +1,33 @@
+//Color
+$default-color: #000;
+$primary-color: #333;
+$secondary-color: #fff;
+$default-bg: #fff;
+$primary-bg:#000;
+$secondary-bg:#c5ad6c;
+$footer-bg: #232e48;
+
+//Font
+$default-font: 'OpenSans';
+$primary-font:'YuGo';
+$secondary-font: 'YuMin';
+$font-size: 14px;
+$line-height: $font-size * 1.5;
+
+// Font-faceregular
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+// Breakpoint
+$lg-width: 1200px;
+$md-width: 1024px;
+$sm-width: 768px;
+$xs-width: 481px;
+$xxs-width: 360px;
+
+//container width
+$container-width: 1140px;
+$container-width-large: 1320px;

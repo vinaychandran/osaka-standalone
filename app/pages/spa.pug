@@ -1,0 +1,86 @@
+extends ../layouts/default
+
+block append content
+  section.main-banner
+    picture.banner-image
+      source(media='(min-width: 768px)', srcset='/assets/narita/images/spa-header.jpg')
+      img(src='/assets/narita/images/spa-header-mobile.jpg')
+    .banner-text
+      h1 プール
+  .about-rooms-wrap
+    .about-rooms-info
+      h3 SIMPLE, BLISSFUL MOMENTS
+      p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、
+      p 夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォの
+      p すきとおった風、夏でも底に冷たさをもつ青いそら
+
+  section.spa-content
+    picture.banner-image
+      source(media='(min-width: 768px)', srcset='/assets/narita/images/spa3.jpg')
+      img(src='/assets/narita/images/spa3.jpg')
+    .read-statement
+      h3  リード文リード文リード文
+      h3.last-header  リード文リード文
+      p tもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそ
+      ul
+        li  お問い合わせ（完全予約制）
+        li  0551-36-5200（9:00〜19:00）
+        li  予約受付時間
+        li  8:30〜20:30
+
+  section.spa.promo-content
+    .container
+      h3 併用施設
+      ul.row
+        li.col.col-1-2
+          source(media='(min-width: 356px)', srcset='/assets/narita/images/spa1.jpg')
+          img(src='/assets/narita/images/spa1.jpg')
+          .header 施設01
+          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+          .see-more(href="#" data-show-rooms="pool-full-info")
+            span もっと見る
+          #pool-full-info(data-basicLightbox data-id="pool-full-info" class="room-detail")
+            .room-info-header
+              .content-right
+                .cta
+                  i.icon-phone
+                  | 000-0000-0000
+                .close-room
+                  i.icon-close
+                a(href='#').book-room
+                  | 予約する                
+              .phone-number.header
+                | Mama treatment
+
+            include ../components/spa-info.pug
+        li.col.col-1-2
+          source(media='(min-width: 356px)', srcset='/assets/narita/images/spa2.jpg')
+          img(src='/assets/narita/images/spa2.jpg')
+          .header 施設01
+          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+          .see-more
+            span もっと見る
+        li.col.col-1-2
+          source(media='(min-width: 356px)', srcset='/assets/narita/images/spa1.jpg')
+          img(src='/assets/narita/images/spa1.jpg')
+          .header 施設01
+          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+          .see-more
+            span もっと見る
+
+        li.col.col-1-2
+          source(media='(min-width: 356px)', srcset='/assets/narita/images/spa2.jpg')
+          img(src='/assets/narita/images/spa2.jpg')
+          .header 施設01
+          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+          .see-more
+            span もっと見る
+
+  section.contact
+    picture.banner-image
+      source(media='(min-width: 768px)', srcset='/assets/narita/images/pool1.jpg')
+      img(src='/assets/narita/images/pool1.jpg')
+    .banner-text
+      span お問合せ
+      h1 000-0000-0000
+  include ../components/breadcrumb.pug

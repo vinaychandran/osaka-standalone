@@ -1,0 +1,125 @@
+extends ../layouts/default
+
+block append content
+	.news-detail-banner-wrap
+		.news-detail-banner#news-banner
+			picture
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/news-detail/banner-desktop.jpg')
+				img(src='/assets/narita/images/homebanner-mobile.jpg')
+	#experience-content-padder
+	.news-detail-content#news-content
+		.news-detail-about
+			.event-type
+				i.icon-calender
+				| イベント
+			h1 初夏の1dayクラフトレッスン
+			.date 2018年5月4日（金）〜2018年6月1日（金）
+		.news-content
+			h2 甲州＆信州のワインと出会える 体験型ワインリゾート
+			p 甲州（山梨県）、信州（長野県）を始めとした、様々な地域ワイン文化が体験できるワインリゾート「星野リゾート　リゾナーレ八ヶ岳」。日本有数のワイン産地である両県の県境に位置し、エリアの特性を生かしたワイン体験が愉しめます。
+			img(src='/assets/narita/images/news-detail/1.jpg')
+		.news-content
+			h2 甲州＆信州のワインと出会える 体験型ワインリゾート
+			h6 鈴木 恵理（ポーセリンペインター）
+			p 甲州（山梨県）、信州（長野県）を始めとした、様々な地域ワイン文化が体験できるワインリゾート「星野リゾート　リゾナーレ八ヶ岳」。日本有数のワイン産地である両県の県境に位置し、エリアの特性を生かしたワイン体験が愉しめます。
+			img(src='/assets/narita/images/news-detail/2.jpg')
+			.btns-wrap
+				.btn.open-details 
+					span.open.active + 
+					span.close -
+					| 詳細を開く
+				.btn.course-application(data-show-id='news-form').hidden-xs 講座お申し込み
+			.news-content-details-wrap
+				.news-content-details
+					.table-row
+						.table-item 開催時間
+						.table-item ［午前コース］
+							br
+							| 10：30～12：30（受付 10：00～）
+							br
+							| ［午後コース］
+							br
+							| 13：30～15：30（受付 13：00～） 
+					.table-row
+						.table-item 開催時間
+						.table-item ￥11,080（材料費、税金含む）
+					.table-row
+						.table-item 開催時間
+						.table-item エコール ド ロイヤル
+							br
+							| （ウエストウイング2階）
+					.table-row
+						.table-item 開催時間
+						.table-item ［午前コース］
+							br
+							| 10：30～12：30（受付 10：00～）
+							br
+							| ［午後コース］
+							br
+							| 13：30～15：30（受付 13：00～）	
+				.callout-wrap
+					h5 お申込み・お問い合わせ
+					.btn 講座お申し込み
+					.callout-content エコール ド ロイヤル事務局
+					.ph （06）6441-2938
+					.callout-content 受付時間 9：30～17：00 
+						br
+						| 日祝休み
+			.btn.course-application(data-show-id='news-form').visible-xs 講座お申し込み 
+		.news-content
+			img(src='/assets/narita/images/news-detail/1.jpg')
+			h2 甲州＆信州のワインと出会える 体験型ワインリゾート
+			h6 鈴木 恵理（ポーセリンペインター）
+			p 甲州（山梨県）、信州（長野県）を始めとした、様々な地域ワイン文化が体験できるワインリゾート「星野リゾート　リゾナーレ八ヶ岳」。日本有数のワイン産地である両県の県境に位置し、エリアの特性を生かしたワイン体験が愉しめます。
+			.news-content-highlight
+				div
+					p 内容
+					p
+						| ワイン体験 01.
+						br
+						| 季節を感じるワインステイ
+						br
+						br
+						| ワイン体験 02.
+						br
+						| ワインを食を愉しむレストラン
+						br
+						br
+						| ワイン体験 03.  
+						br
+						| 始めてでも安心の豊富なワイン体験
+						br
+						br
+						| ワイン体験 04.
+						br
+						| 日本有数のワインの宝庫 甲州・信州
+						br
+						| ＊"ワイナリー散歩" 体験ご案内
+						br
+						br
+						| ワイン体験 05.
+						br
+						| 2泊3日の充実ワインステイ（PDF）
+				div
+					p 内容
+					p 
+						| お問い合わせ
+						br
+						| TEL.0551-36-5200（9:00～19:00）					
+				.btn(data-show-id='news-form') 01. 季節を感じるワインステイ
+				.btn 02. ワインを食を愉しむレストラン
+				.btn 03. 始めてでも安心の豊富なワイン体験
+		.news-related-wrap
+			h3 関連トピック
+			ul
+				li
+					img(src='/assets/narita/images/news-detail/3.jpg')
+					h4 アンブレラステージ
+					.see-more 
+						span もっと見る
+				li
+					img(src='/assets/narita/images/news-detail/3.jpg')
+					h4 アンブレラステージ
+					.see-more 
+						span もっと見る
+		include ../components/news-form.pug

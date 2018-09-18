@@ -1,0 +1,393 @@
+.about-rooms-wrap {
+  .about-rooms-info {
+    padding: 40px 31px;
+    @include md {
+      padding: 60px 30px;
+    };
+  }
+}
+
+.banner-image {
+  img {
+    width: 100%;
+  }
+}
+
+.pool-info {
+  .container {
+    padding: 0;
+    @include md {
+      padding: 0 0 0 63px;
+    };
+
+    .content-left {
+      max-width: 374px;
+      float: left;
+      padding: 39px 42px 36px;
+      @include md {
+        padding: 140px 0 0;
+      };
+
+      h3 {
+        font-family:$go-bold;
+        @include font-size(20px);
+        font-weight: bold;
+        line-height: 1.67;
+        text-align: left;
+        color: $default-color;;
+        padding: 0 20px;
+        @include md {
+          padding: 0;
+          @include font-size(24px);
+          letter-spacing: 0.6px;
+        };
+      }
+
+      p {
+        @include font-size(14px);
+        font-weight: 500;
+        line-height: 2;
+        letter-spacing: 1.4px;
+        text-align: left;
+        color: $primary-color;
+        margin-top: 30px;
+        font-family: $mi-regular;
+        @include md {
+          margin-top: 40px;
+        };
+      }
+    }
+
+    .content-image-right {
+      float: right;
+      @include md {
+        position: relative;
+        top: -80px;
+      };
+
+      img {
+        float: right;
+        width: 40%;
+        @include md {
+          width: auto;
+        };
+      }
+    }
+  }
+}
+
+.pool-image {
+  padding-bottom: 36px;
+  width: 80%;
+  position: relative;
+  top: -30px;
+  @include md {
+    padding-bottom: 66px;
+    width: 100%;
+    top: 0;
+  };
+
+  .container {
+    padding: 0;
+  }
+}
+
+.promo-content {
+  background-color: #fafafa;
+
+  .container {
+    h3 {
+      text-align: center;
+      padding: 62px 0 40px;
+      font-family: $go-semibold;
+      @include font-size(24px);
+      font-weight: 500;
+      color: $default-color;
+      line-height: 1.25;
+    }
+
+    ul {
+      @include md {
+        margin-bottom: 100px;
+      };
+
+      li {
+        padding-bottom: 40px;
+        @include md {
+          padding-bottom: 0;
+        };
+
+        img{
+          width: 100%;
+          @include md {
+            width: auto;
+          }
+        }
+
+        .header {
+          font-family: $go-semibold;
+          @include font-size(14px);
+          font-weight: 500;
+          line-height: 4.07;
+          letter-spacing: 1.7px;
+          text-align: center;
+          color: #333333;
+          text-align: center;
+        }
+
+        .content {
+          font-family: $mi-regular;
+          @include font-size(14px);
+          font-weight: 500;
+          line-height: 2;
+          letter-spacing: 1.4px;
+          text-align: justify;
+          color: #333333;
+          padding: 0 20px 24px 20px;
+          margin: 0 auto;
+        }
+
+        .see-more {
+          margin: 0 18px;
+          width: 90%;
+          padding-bottom: 20px;
+          span {
+            background-color: #fafafa;
+          }
+        }
+      }
+    }
+
+    .pool-info {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+
+      .content-wrapper {
+        flex-basis: 100%;
+        max-width: 374px;
+        margin: 120px 0 150px 251px;
+
+        h3 {
+          font-family: $go-bold;
+          font-size: 24px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.67;
+          letter-spacing: 0.6px;
+          text-align: left;
+          color: $default-color;
+        }
+
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 2;
+          letter-spacing: 1.4px;
+          text-align: left;
+          color: #333333;
+          margin-top: 50px;
+        }
+      }
+
+      .content-image {
+        position: absolute;
+        top: -100px;
+        right: 150px;
+      }
+
+      .pool-image {
+        margin-bottom: 60px;
+      }
+    }
+
+  }
+}
+
+.terms {
+  @include md {
+    margin-top: 75px;
+  };
+
+  .container {
+    padding: 0;
+
+    .bottom,
+    .top {
+      margin: 40px 38px;
+      @include md {
+        border-top: solid 1px #eeeeee;
+        padding: 55px 0 0;
+      };
+
+      .col {
+        padding: 0;
+        @include md {
+          padding: 0 15px;
+        };
+      }
+
+      h3,
+      p {
+        line-height: 3;
+        font-family: $go-bold;
+        @include font-size(14px);
+        font-weight: bold;
+        line-height: 1.93;
+        letter-spacing: 1.7px;
+        text-align: left;
+        color: #333333;
+      }
+
+      p {
+        font-weight: 500;
+      }
+
+      ul {
+        li {
+          font-family: $go-semibold;
+          @include font-size(14px);
+          font-weight: 500;
+          line-height: 1.93;
+          letter-spacing: 1.7px;
+          text-align: left;
+          color: #333333;
+        }
+      }
+    }
+
+    .bottom {
+      border-top: solid 1px #eeeeee;
+      padding-top: 40px;
+      @include md {
+        padding-bottom: 30px;
+      }
+    }
+
+    .top {
+      @include md {
+        border-top: solid 1px #eeeeee;
+      };
+    }
+  }
+}
+
+.contact {
+  position: relative;
+
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: $secondary-color;
+    width: 100%;
+    text-align: center;
+    font-family: $go-bold;
+    font-weight:700 ;
+  }
+}
+
+
+#pool-full-info {
+  //overflow-x: hidden;
+
+  .content-right{
+    @include md {
+      float: right;
+    }
+  }
+
+  .book-room{
+    margin-right: 55px;
+    @include md {
+      margin-right: 0;
+    }
+  }
+
+  .header {
+    background: #fafafa;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 40px 0;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    font-family: $go-bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    @include md {
+      background: $secondary-color;
+      font-size: 32px;
+      text-align: left;
+      color: #333333;
+      padding: 24px 34px;
+      width: auto;
+      text-transform: capitalize;
+    };
+
+  }
+
+  .cancel {
+    //float: right;
+
+    float: left;
+    background-color: #eeeeee;
+    color: $secondary-color;
+    font-size: 14px;
+
+    font-family: $go-bold;
+    padding: 20px 17px;
+
+    line-height: 1;
+    font-size: 16px;
+    font-weight: bold;
+
+    letter-spacing: 1.6px;
+    text-align: center;
+    color: #010101;
+    width: 60%;
+    @include md{
+      width: auto;
+      margin-right: 94px;
+      padding: 39px 80px;
+    };
+  }
+
+
+  .pool-header {
+    font-family: 'Lato-B';
+    font-size: 32px;
+    font-weight: bold;
+
+
+    line-height: 0.97;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+    margin: 34px 0 0 34px;
+  }
+
+  a.text {
+    float: right;
+    background-color: #c5ad6c;
+    color: $secondary-color;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-family: $go-bold;
+    padding: 39px 80px;
+    line-height: 1;
+    background-color: #eeeeee;
+    font-size: 16px;
+    font-weight: bold;
+    /* line-height: 2.06; */
+    letter-spacing: 1.6px;
+    text-align: left;
+    color: #010101;
+  }
+}

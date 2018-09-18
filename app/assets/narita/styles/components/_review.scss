@@ -1,0 +1,178 @@
+.home-review{
+    margin-bottom: 150px;
+    @include md {
+         margin-bottom: 140px;
+    }
+}
+.review-wrap{
+    background: url('../images/review-bg.jpg') no-repeat;
+    background-size: cover;  
+    padding: 35px 20px 70px;
+    color: $secondary-color;
+    margin: 0 15px; 
+    @include md {
+        padding: 55px 0 80px;
+        margin: 0;
+    } 
+    h5{
+        @include font-size(16px);
+        font-family:$go-bold;
+        font-weight: 700;
+        margin-bottom: 15px;  
+        text-align: center;   
+        @include md {
+            @include font-size(18px);
+            margin-bottom: 20px;
+        }      
+    }
+    .hotel-info{
+        clear: both;
+        max-width: 680px;
+        margin: 0 auto;
+        padding-top: 20px; 
+        line-height: 1.86; 
+        @include font-size(14px);
+        font-family: $mi-regular;
+        line-height: 2;
+        letter-spacing: 1.4px;
+        @include md {
+            padding-top: 35px;
+        }
+    }
+    .btn-review{
+        @include center(horizontal);
+        bottom: -30px; 
+        width: 280px;
+
+        @include md {
+            width: 320px;
+            bottom: -40px; 
+        }
+        .mys-arrow-left{
+            @include center(vertical);
+            right: 34px;
+        }        
+    }
+}
+
+.review-score{
+    max-width: 780px;
+    margin: 0 auto;    
+    .review-score-wrap{
+        width: 100%;
+        float: left;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 5px 0 5px;
+        position: relative; 
+    }
+    .totel-score{        
+        margin: 0 auto;
+        padding: 20px 0;
+        text-align: center; 
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        p{
+            @include font-size(10px); 
+            font-family: 'Lato'; 
+            margin-bottom: 0;
+            letter-spacing: 1px;
+        }        
+        i{
+            @include font-size(49px); 
+            font-family: 'Lato-L';
+            font-weight: 300;
+            display: block;
+            line-height: 1;
+            letter-spacing: 5.4px;
+        }
+        @include md {
+            margin-left: 75px;
+            margin-top: 25px;
+            float: left;
+            border-bottom: 0px;
+            padding: 0;
+            i{
+                @include font-size(72px);  
+            }
+        }
+    }
+    .thumbs-up{
+        position: absolute;
+        width: 67px;
+        height: 67px;
+        border-radius:50%;
+        background: #a61f1f; 
+        right: 0;
+        top: -15px; 
+        @include md {
+            left: -30px;
+            top: -15px;
+            right: auto;
+            width: 90px;
+            height: 90px;
+        }
+        span{
+            @include center(both); 
+            text-align: center;
+            @include font-size(10px);
+            text-transform: uppercase;
+            line-height: 1.2;
+            font-family: 'Lato';
+              letter-spacing: 1.9px;
+
+            @include md {
+                @include font-size(12px);
+                line-height: 1.4;
+            }
+        }
+        .icon-like{
+            @include font-size(25px);
+        }
+    }
+    .review-each-wrap{        
+        @include md {
+            width: 70%;
+            float: right;
+        }
+        .review-each{
+            width: 50%;
+            float: left;
+            padding: 20px 20px 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            &:nth-child(1n+5){
+                border-bottom: 0px; 
+            }
+            @include md {
+                width: 33.33%;
+                padding: 15px 50px 15px 0;
+                &:nth-child(1n+4){
+                    border-bottom: 0px;
+                }
+            }
+        }
+
+        p{
+            @include font-size(10px);  
+            margin-bottom: 0;
+            opacity: 0.6;
+            font-family: 'Lato';
+            letter-spacing: 1px;
+        }      
+        span{
+            @include font-size(14px);
+            font-family: $go-bold;
+            letter-spacing: 1.4px;
+            font-weight: 700;
+        }  
+        i{
+            @include font-size(32px);  
+            font-weight: 300;
+            display: block; 
+            line-height: 1; 
+            float: right;
+            margin-top: -12px;
+            font-family: 'Lato-L';
+            letter-spacing: 2.4px;
+        }
+    }    
+}

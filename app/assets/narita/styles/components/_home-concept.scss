@@ -1,0 +1,120 @@
+.concept{
+  padding-bottom: 50px;
+  @include md {
+    padding-bottom: 40px;
+  }
+  @extend %clearfix;
+  .section-title h2{
+    margin-bottom: 35px;
+  }
+  .info{
+    @include font-size(14px);
+    max-width: 600px;
+    margin:0 auto 50px;    
+    line-height: 2;
+    padding: 0 25px;
+    font-family: $mi-regular;
+    letter-spacing: 1.4px;
+    @include md {
+      padding: 0;
+      margin:0 auto 50px;
+    }
+  }
+  .large-container{
+    padding: 0;
+    @include md {
+      padding: 0 20px;
+    }
+  }
+}
+
+.concept-box{
+  clear: both;
+  margin-bottom: 50px;  
+  position: relative;
+  float: left;   
+  margin-right: 20px; 
+  @include md {
+    margin-bottom: 60px;
+    margin-right: 0;
+    width: 100%; 
+  }
+  .concept-info  {
+    position: absolute;
+    bottom: -85px;
+    left: 50%;
+    margin-left: -140px;
+    width: 280px;
+    box-shadow: 14px 14px 90px 0 rgba(0, 0, 0, 0.2);
+    padding: 34px 32px;
+    background: $default-bg;
+    @include md {
+      padding: 60px 35px;    
+      width: 360px;
+      left: 65%;
+      bottom: 54px;
+    }
+    @include lg {
+      left: 72%;
+    }
+    h3{
+      margin-bottom: 10px;
+      font-family: 'Lato-B';
+      letter-spacing: 2.4px;
+      @include md {
+        margin-bottom: 12px;
+      }
+    }
+    p{
+      margin-bottom: 0;
+      font-family: $mi-regular;
+      letter-spacing: 2.8px;
+      @include md {
+        margin-bottom: 25px;
+      }
+    }
+    .btn{      
+      padding: 21px;
+      position: absolute;
+      width: 0;
+      right: 0;
+      bottom: 0;
+      @include md {
+        width: auto;
+        max-width: 220px;
+        position: relative;
+      }
+      .mys-arrow-left{
+        right: 13px;
+        @include center(vertical); 
+        @include md {
+          right: 20px;
+        }
+      }
+      span{
+        display: none;
+        @include md {
+          display: block;
+        }
+      }
+    }
+  }
+  &.right{
+    margin-right: 0;
+    margin-left: 20px;
+    @include md {
+      margin-left: 0;
+    }
+    img{
+      float: right;
+    }
+    .concept-info  {
+      @include md {
+        left: 25%; 
+      }
+      @include lg {
+        left: 20%; 
+      }
+    }
+  }
+}

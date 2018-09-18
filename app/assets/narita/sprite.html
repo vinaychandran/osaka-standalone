@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>Icon kit preview | gulp-svg-sprites</title>
+    <link href="styles/base/_sprite.scss" rel="stylesheet" type="text/css" media="all"/>
+    <style type="text/css">@CHARSET "UTF-8";
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        color: #666;
+        background: #fafafa;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 1.4
+    }
+
+    header {
+        display: block;
+        padding: 3em 3em 2em 3em;
+        background-color: #fff
+    }
+
+    header p {
+        margin: 0 0 0 0;
+    }
+
+    nav {
+        font-size: .7em;
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0
+    }
+
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 2em;
+        color: #0f7595;
+        white-space: nowrap
+    }
+
+    nav a:hover {
+        text-decoration: underline
+    }
+
+    nav a.current {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #666
+    }
+
+    section {
+        border-top: 1px solid #eee;
+        padding: 2em 3em 0 3em
+    }
+
+    ul {
+        margin: 0;
+        padding: 0
+    }
+
+    .icon-boxes li {
+        display: inline-block;
+        background-color: #fff;
+        position: relative;
+        margin: 0 2em 2em 0;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        padding: 1em 1em 1em 1em;
+        cursor: default
+    }
+
+    .icon-box {
+        margin: 0;
+        width: 144px;
+        height: 144px;
+        position: relative;
+        background: #ccc url(data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=) top left repeat;
+        border: 1px solid #ccc;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center
+    }
+    .icon-box.inverted {
+        background: black;
+    }
+
+    .icon {
+        display: inline;
+        display: inline-block
+    }
+
+    .snippet-popover {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 16px;
+        z-index: 1;
+        transition: all .3s;
+    }
+    .snippet-popover.active {
+        display: block;
+        opacity: 1;
+    }
+
+    pre {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 5px 0;
+        font-size: 1em;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    footer {
+        display: block;
+        margin: 0;
+        padding: 0 3em 3em 3em
+    }
+
+    footer p {
+        margin: 0;
+        font-size: .7em
+    }
+
+    footer a {
+        color: #0f7595;
+        margin-left: 0
+    }
+    </style>
+</head>
+<body>
+<header>
+    <h1 id="logo">Gulp SVG Sprites</h1>
+    <h4>Files Generated:</h4>
+    <ol>
+        <li><a href="styles/base/_sprite.scss">styles/base/_sprite.scss</a></li>
+        <li><a href="svg/sprite.svg">svg/sprite.svg</a></li>
+    </ol>
+    <h4>Usage:</h4>
+    <ol>
+        <li>
+            Include the <a href="styles/base/_sprite.scss">CSS file</a> into your project.
+        </li>
+        <li>
+            Paste one of the snippets anywhere into your website.
+        </li>
+    </ol>
+</header>
+<section>
+    <nav><button onclick="toggleMode()">Toggle PNG/SVG</button> (showing <span id="mode-view">SVG</span>)<br><br><input type="range" onchange="setSize(this.value)" min="2" max="14"></nav>
+    <ul class="icon-boxes">
+
+
+
+      
+
+        <li title="sprite-account_pc">
+            <div class="icon-box" id="icon-box-sprite-account_pc">
+                <div class="icon sprite-account_pc"></div>
+            </div>
+            <h2>sprite-account_pc</h2>
+            <button onclick="showPopover('snippet-sprite-account_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-account_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-account_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-account_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-account_sp">
+            <div class="icon-box" id="icon-box-sprite-account_sp">
+                <div class="icon sprite-account_sp"></div>
+            </div>
+            <h2>sprite-account_sp</h2>
+            <button onclick="showPopover('snippet-sprite-account_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-account_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-account_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-account_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-arw_black_pc">
+            <div class="icon-box" id="icon-box-sprite-arw_black_pc">
+                <div class="icon sprite-arw_black_pc"></div>
+            </div>
+            <h2>sprite-arw_black_pc</h2>
+            <button onclick="showPopover('snippet-sprite-arw_black_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-arw_black_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-arw_black_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-arw_black_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-arw_white_pc">
+            <div class="icon-box" id="icon-box-sprite-arw_white_pc">
+                <div class="icon sprite-arw_white_pc"></div>
+            </div>
+            <h2>sprite-arw_white_pc</h2>
+            <button onclick="showPopover('snippet-sprite-arw_white_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-arw_white_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-arw_white_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-arw_white_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-calendar-interface-symbol-tool">
+            <div class="icon-box" id="icon-box-sprite-calendar-interface-symbol-tool">
+                <div class="icon sprite-calendar-interface-symbol-tool"></div>
+            </div>
+            <h2>sprite-calendar-interface-symbol-tool</h2>
+            <button onclick="showPopover('snippet-sprite-calendar-interface-symbol-tool')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-calendar-interface-symbol-tool')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-calendar-interface-symbol-tool">
+                <pre><code>&lt;span class=&quot;icon sprite-calendar-interface-symbol-tool&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-calender_pc">
+            <div class="icon-box" id="icon-box-sprite-calender_pc">
+                <div class="icon sprite-calender_pc"></div>
+            </div>
+            <h2>sprite-calender_pc</h2>
+            <button onclick="showPopover('snippet-sprite-calender_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-calender_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-calender_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-calender_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-checked_pc">
+            <div class="icon-box" id="icon-box-sprite-checked_pc">
+                <div class="icon sprite-checked_pc"></div>
+            </div>
+            <h2>sprite-checked_pc</h2>
+            <button onclick="showPopover('snippet-sprite-checked_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-checked_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-checked_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-checked_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-checked_sp">
+            <div class="icon-box" id="icon-box-sprite-checked_sp">
+                <div class="icon sprite-checked_sp"></div>
+            </div>
+            <h2>sprite-checked_sp</h2>
+            <button onclick="showPopover('snippet-sprite-checked_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-checked_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-checked_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-checked_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-close_black_sp">
+            <div class="icon-box" id="icon-box-sprite-close_black_sp">
+                <div class="icon sprite-close_black_sp"></div>
+            </div>
+            <h2>sprite-close_black_sp</h2>
+            <button onclick="showPopover('snippet-sprite-close_black_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-close_black_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-close_black_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-close_black_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-close_white_sp">
+            <div class="icon-box" id="icon-box-sprite-close_white_sp">
+                <div class="icon sprite-close_white_sp"></div>
+            </div>
+            <h2>sprite-close_white_sp</h2>
+            <button onclick="showPopover('snippet-sprite-close_white_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-close_white_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-close_white_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-close_white_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-cn-flag">
+            <div class="icon-box" id="icon-box-sprite-cn-flag">
+                <div class="icon sprite-cn-flag"></div>
+            </div>
+            <h2>sprite-cn-flag</h2>
+            <button onclick="showPopover('snippet-sprite-cn-flag')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-cn-flag')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-cn-flag">
+                <pre><code>&lt;span class=&quot;icon sprite-cn-flag&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-download">
+            <div class="icon-box" id="icon-box-sprite-download">
+                <div class="icon sprite-download"></div>
+            </div>
+            <h2>sprite-download</h2>
+            <button onclick="showPopover('snippet-sprite-download')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-download')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-download">
+                <pre><code>&lt;span class=&quot;icon sprite-download&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-en-flag">
+            <div class="icon-box" id="icon-box-sprite-en-flag">
+                <div class="icon sprite-en-flag"></div>
+            </div>
+            <h2>sprite-en-flag</h2>
+            <button onclick="showPopover('snippet-sprite-en-flag')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-en-flag')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-en-flag">
+                <pre><code>&lt;span class=&quot;icon sprite-en-flag&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-fb_pc">
+            <div class="icon-box" id="icon-box-sprite-fb_pc">
+                <div class="icon sprite-fb_pc"></div>
+            </div>
+            <h2>sprite-fb_pc</h2>
+            <button onclick="showPopover('snippet-sprite-fb_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-fb_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-fb_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-fb_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-fb_sp">
+            <div class="icon-box" id="icon-box-sprite-fb_sp">
+                <div class="icon sprite-fb_sp"></div>
+            </div>
+            <h2>sprite-fb_sp</h2>
+            <button onclick="showPopover('snippet-sprite-fb_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-fb_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-fb_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-fb_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-flag_ch">
+            <div class="icon-box" id="icon-box-sprite-flag_ch">
+                <div class="icon sprite-flag_ch"></div>
+            </div>
+            <h2>sprite-flag_ch</h2>
+            <button onclick="showPopover('snippet-sprite-flag_ch')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-flag_ch')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-flag_ch">
+                <pre><code>&lt;span class=&quot;icon sprite-flag_ch&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-flag_en">
+            <div class="icon-box" id="icon-box-sprite-flag_en">
+                <div class="icon sprite-flag_en"></div>
+            </div>
+            <h2>sprite-flag_en</h2>
+            <button onclick="showPopover('snippet-sprite-flag_en')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-flag_en')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-flag_en">
+                <pre><code>&lt;span class=&quot;icon sprite-flag_en&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-flag_jp">
+            <div class="icon-box" id="icon-box-sprite-flag_jp">
+                <div class="icon sprite-flag_jp"></div>
+            </div>
+            <h2>sprite-flag_jp</h2>
+            <button onclick="showPopover('snippet-sprite-flag_jp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-flag_jp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-flag_jp">
+                <pre><code>&lt;span class=&quot;icon sprite-flag_jp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-flag_kr">
+            <div class="icon-box" id="icon-box-sprite-flag_kr">
+                <div class="icon sprite-flag_kr"></div>
+            </div>
+            <h2>sprite-flag_kr</h2>
+            <button onclick="showPopover('snippet-sprite-flag_kr')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-flag_kr')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-flag_kr">
+                <pre><code>&lt;span class=&quot;icon sprite-flag_kr&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-forma-1">
+            <div class="icon-box" id="icon-box-sprite-forma-1">
+                <div class="icon sprite-forma-1"></div>
+            </div>
+            <h2>sprite-forma-1</h2>
+            <button onclick="showPopover('snippet-sprite-forma-1')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-forma-1')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-forma-1">
+                <pre><code>&lt;span class=&quot;icon sprite-forma-1&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-freewifi">
+            <div class="icon-box" id="icon-box-sprite-freewifi">
+                <div class="icon sprite-freewifi"></div>
+            </div>
+            <h2>sprite-freewifi</h2>
+            <button onclick="showPopover('snippet-sprite-freewifi')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-freewifi')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-freewifi">
+                <pre><code>&lt;span class=&quot;icon sprite-freewifi&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-hotel_photo_sp">
+            <div class="icon-box" id="icon-box-sprite-hotel_photo_sp">
+                <div class="icon sprite-hotel_photo_sp"></div>
+            </div>
+            <h2>sprite-hotel_photo_sp</h2>
+            <button onclick="showPopover('snippet-sprite-hotel_photo_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-hotel_photo_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-hotel_photo_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-hotel_photo_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-hotelphoto_pc">
+            <div class="icon-box" id="icon-box-sprite-hotelphoto_pc">
+                <div class="icon sprite-hotelphoto_pc"></div>
+            </div>
+            <h2>sprite-hotelphoto_pc</h2>
+            <button onclick="showPopover('snippet-sprite-hotelphoto_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-hotelphoto_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-hotelphoto_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-hotelphoto_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-info_sp">
+            <div class="icon-box" id="icon-box-sprite-info_sp">
+                <div class="icon sprite-info_sp"></div>
+            </div>
+            <h2>sprite-info_sp</h2>
+            <button onclick="showPopover('snippet-sprite-info_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-info_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-info_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-info_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-infomation_pc">
+            <div class="icon-box" id="icon-box-sprite-infomation_pc">
+                <div class="icon sprite-infomation_pc"></div>
+            </div>
+            <h2>sprite-infomation_pc</h2>
+            <button onclick="showPopover('snippet-sprite-infomation_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-infomation_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-infomation_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-infomation_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-insta_pc">
+            <div class="icon-box" id="icon-box-sprite-insta_pc">
+                <div class="icon sprite-insta_pc"></div>
+            </div>
+            <h2>sprite-insta_pc</h2>
+            <button onclick="showPopover('snippet-sprite-insta_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-insta_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-insta_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-insta_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-insta_sp">
+            <div class="icon-box" id="icon-box-sprite-insta_sp">
+                <div class="icon sprite-insta_sp"></div>
+            </div>
+            <h2>sprite-insta_sp</h2>
+            <button onclick="showPopover('snippet-sprite-insta_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-insta_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-insta_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-insta_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-jp-flag">
+            <div class="icon-box" id="icon-box-sprite-jp-flag">
+                <div class="icon sprite-jp-flag"></div>
+            </div>
+            <h2>sprite-jp-flag</h2>
+            <button onclick="showPopover('snippet-sprite-jp-flag')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-jp-flag')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-jp-flag">
+                <pre><code>&lt;span class=&quot;icon sprite-jp-flag&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-kr-flag">
+            <div class="icon-box" id="icon-box-sprite-kr-flag">
+                <div class="icon sprite-kr-flag"></div>
+            </div>
+            <h2>sprite-kr-flag</h2>
+            <button onclick="showPopover('snippet-sprite-kr-flag')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-kr-flag')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-kr-flag">
+                <pre><code>&lt;span class=&quot;icon sprite-kr-flag&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-like_pc">
+            <div class="icon-box" id="icon-box-sprite-like_pc">
+                <div class="icon sprite-like_pc"></div>
+            </div>
+            <h2>sprite-like_pc</h2>
+            <button onclick="showPopover('snippet-sprite-like_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-like_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-like_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-like_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-like_sp">
+            <div class="icon-box" id="icon-box-sprite-like_sp">
+                <div class="icon sprite-like_sp"></div>
+            </div>
+            <h2>sprite-like_sp</h2>
+            <button onclick="showPopover('snippet-sprite-like_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-like_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-like_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-like_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-login">
+            <div class="icon-box" id="icon-box-sprite-login">
+                <div class="icon sprite-login"></div>
+            </div>
+            <h2>sprite-login</h2>
+            <button onclick="showPopover('snippet-sprite-login')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-login')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-login">
+                <pre><code>&lt;span class=&quot;icon sprite-login&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-logo_pc">
+            <div class="icon-box" id="icon-box-sprite-logo_pc">
+                <div class="icon sprite-logo_pc"></div>
+            </div>
+            <h2>sprite-logo_pc</h2>
+            <button onclick="showPopover('snippet-sprite-logo_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-logo_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-logo_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-logo_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-map_pin_pc">
+            <div class="icon-box" id="icon-box-sprite-map_pin_pc">
+                <div class="icon sprite-map_pin_pc"></div>
+            </div>
+            <h2>sprite-map_pin_pc</h2>
+            <button onclick="showPopover('snippet-sprite-map_pin_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-map_pin_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-map_pin_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-map_pin_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-map_pin_sp">
+            <div class="icon-box" id="icon-box-sprite-map_pin_sp">
+                <div class="icon sprite-map_pin_sp"></div>
+            </div>
+            <h2>sprite-map_pin_sp</h2>
+            <button onclick="showPopover('snippet-sprite-map_pin_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-map_pin_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-map_pin_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-map_pin_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-menu_sp">
+            <div class="icon-box" id="icon-box-sprite-menu_sp">
+                <div class="icon sprite-menu_sp"></div>
+            </div>
+            <h2>sprite-menu_sp</h2>
+            <button onclick="showPopover('snippet-sprite-menu_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-menu_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-menu_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-menu_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-multiple-users-silhouette">
+            <div class="icon-box" id="icon-box-sprite-multiple-users-silhouette">
+                <div class="icon sprite-multiple-users-silhouette"></div>
+            </div>
+            <h2>sprite-multiple-users-silhouette</h2>
+            <button onclick="showPopover('snippet-sprite-multiple-users-silhouette')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-multiple-users-silhouette')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-multiple-users-silhouette">
+                <pre><code>&lt;span class=&quot;icon sprite-multiple-users-silhouette&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-next">
+            <div class="icon-box" id="icon-box-sprite-next">
+                <div class="icon sprite-next"></div>
+            </div>
+            <h2>sprite-next</h2>
+            <button onclick="showPopover('snippet-sprite-next')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-next')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-next">
+                <pre><code>&lt;span class=&quot;icon sprite-next&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-people_pc">
+            <div class="icon-box" id="icon-box-sprite-people_pc">
+                <div class="icon sprite-people_pc"></div>
+            </div>
+            <h2>sprite-people_pc</h2>
+            <button onclick="showPopover('snippet-sprite-people_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-people_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-people_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-people_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-people_sp">
+            <div class="icon-box" id="icon-box-sprite-people_sp">
+                <div class="icon sprite-people_sp"></div>
+            </div>
+            <h2>sprite-people_sp</h2>
+            <button onclick="showPopover('snippet-sprite-people_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-people_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-people_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-people_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-phone">
+            <div class="icon-box" id="icon-box-sprite-phone">
+                <div class="icon sprite-phone"></div>
+            </div>
+            <h2>sprite-phone</h2>
+            <button onclick="showPopover('snippet-sprite-phone')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-phone')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-phone">
+                <pre><code>&lt;span class=&quot;icon sprite-phone&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-phone-mobile">
+            <div class="icon-box" id="icon-box-sprite-phone-mobile">
+                <div class="icon sprite-phone-mobile"></div>
+            </div>
+            <h2>sprite-phone-mobile</h2>
+            <button onclick="showPopover('snippet-sprite-phone-mobile')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-phone-mobile')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-phone-mobile">
+                <pre><code>&lt;span class=&quot;icon sprite-phone-mobile&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-prev">
+            <div class="icon-box" id="icon-box-sprite-prev">
+                <div class="icon sprite-prev"></div>
+            </div>
+            <h2>sprite-prev</h2>
+            <button onclick="showPopover('snippet-sprite-prev')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-prev')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-prev">
+                <pre><code>&lt;span class=&quot;icon sprite-prev&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-star">
+            <div class="icon-box" id="icon-box-sprite-star">
+                <div class="icon sprite-star"></div>
+            </div>
+            <h2>sprite-star</h2>
+            <button onclick="showPopover('snippet-sprite-star')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-star')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-star">
+                <pre><code>&lt;span class=&quot;icon sprite-star&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-tel_pc">
+            <div class="icon-box" id="icon-box-sprite-tel_pc">
+                <div class="icon sprite-tel_pc"></div>
+            </div>
+            <h2>sprite-tel_pc</h2>
+            <button onclick="showPopover('snippet-sprite-tel_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-tel_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-tel_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-tel_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-tel_sp">
+            <div class="icon-box" id="icon-box-sprite-tel_sp">
+                <div class="icon sprite-tel_sp"></div>
+            </div>
+            <h2>sprite-tel_sp</h2>
+            <button onclick="showPopover('snippet-sprite-tel_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-tel_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-tel_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-tel_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-top-logo">
+            <div class="icon-box" id="icon-box-sprite-top-logo">
+                <div class="icon sprite-top-logo"></div>
+            </div>
+            <h2>sprite-top-logo</h2>
+            <button onclick="showPopover('snippet-sprite-top-logo')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-top-logo')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-top-logo">
+                <pre><code>&lt;span class=&quot;icon sprite-top-logo&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-tw-flag">
+            <div class="icon-box" id="icon-box-sprite-tw-flag">
+                <div class="icon sprite-tw-flag"></div>
+            </div>
+            <h2>sprite-tw-flag</h2>
+            <button onclick="showPopover('snippet-sprite-tw-flag')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-tw-flag')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-tw-flag">
+                <pre><code>&lt;span class=&quot;icon sprite-tw-flag&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-tw_pc">
+            <div class="icon-box" id="icon-box-sprite-tw_pc">
+                <div class="icon sprite-tw_pc"></div>
+            </div>
+            <h2>sprite-tw_pc</h2>
+            <button onclick="showPopover('snippet-sprite-tw_pc')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-tw_pc')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-tw_pc">
+                <pre><code>&lt;span class=&quot;icon sprite-tw_pc&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+        <li title="sprite-tw_sp">
+            <div class="icon-box" id="icon-box-sprite-tw_sp">
+                <div class="icon sprite-tw_sp"></div>
+            </div>
+            <h2>sprite-tw_sp</h2>
+            <button onclick="showPopover('snippet-sprite-tw_sp')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-sprite-tw_sp')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-sprite-tw_sp">
+                <pre><code>&lt;span class=&quot;icon sprite-tw_sp&quot;&gt;&lt;/span&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+
+
+      
+
+    </ul>
+</section>
+<footer>
+    <p>Generated by <a href="https://github.com/shakyshane/gulp-svg-sprites">Gulp Svg Sprites</a> - Preview page courtesy of <a href="http://iconizr.com" target="_blank">iconizr</a>.</p>
+</footer>
+
+<script type="text/javascript">
+
+    var openSnippet;
+    var modeView = document.getElementById("mode-view");
+    var icons = document.querySelectorAll(".icon");
+
+    function setSize (fontSize) {
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].style.fontSize = fontSize + 'px';
+        }
+    }
+
+    function showPopover(id) {
+        openSnippet = document.getElementById(id);
+        openSnippet.classList.add("active");
+    }
+    function hidePopover() {
+
+        openSnippet.classList.remove("active");
+    }
+    function invertBackground(id) {
+        var elem = document.getElementById(id);
+        elem.classList.toggle("inverted");
+    }
+    function toggleMode() {
+        document.body.classList.toggle("no-svg") ?
+            modeView.innerHTML = "PNG" :
+            modeView.innerHTML = "SVG";
+    }
+</script>
+</body>
+</html>

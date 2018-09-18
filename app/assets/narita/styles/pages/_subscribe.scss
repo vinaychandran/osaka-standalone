@@ -1,0 +1,109 @@
+.subscribe {
+  background-color: #fafafa;
+  padding: 45px 0 30px;
+  text-align: center;
+
+  h2 {
+    line-height: 1;
+    padding: 25px 0 10px;
+    @include font-size(16px);
+    font-weight: 500;
+    color: $default-color;
+    position: relative;
+    display: inline-block;
+    @include md {
+      margin-bottom: 30px;
+      @include font-size(24px);
+    }
+
+    span {
+      background: #fafafa;
+      z-index: 1;
+    }
+  }
+
+  .booking-widget {
+    max-width: 880px;
+    border: 20px solid #f5f5f5;
+    position: static;
+    height: auto;
+    padding-bottom: 0;
+    text-align: left;
+    @include md {
+      border: 0;
+      margin: 0 auto;
+    }
+
+    .tabs-content {
+      height: auto;
+      padding: 20px;
+      background-color: $secondary-color;
+      @include md {
+        padding: 35px 55px;
+        //background-color: $secondary-color;
+      }
+
+      label {
+        clear: both;
+        text-align: center;
+        padding: 15px 0;
+
+        &:first-child {
+          padding-top: 0 0 30px 0;
+        }
+
+        &:last-child {
+          padding: 0;
+          @include md {
+            padding: 30px 0 0;
+          };
+        }
+      }
+    }
+
+    #booking-tab2 {
+      .thankyou {
+        height: 66px;
+        margin: 0;
+        display: none;
+      }
+
+      .shop .form-group {
+        @include md {
+          width: 275px;
+        }
+
+        .input-showtext button {
+          width: 100%;
+        }
+      }
+
+      .name .form-group {
+        width: 100%;
+        @include md {
+          width: 210px;
+        }
+      }
+
+      .email .form-group {
+        width: 100%;
+        @include md {
+          width: 300px;
+        }
+        margin-right: 20px;
+      }
+
+      .find-button {
+        button {
+          height: auto;
+          padding: 22px 0;
+          width: 100%;
+          @include md {
+            width: 204px;
+          }
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

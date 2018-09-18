@@ -1,0 +1,60 @@
+#user-form.row(data-basiclightbox='data-formLightbox', data-id='login-form')
+      #loginForm.tabs
+        ul.tabs-header#userForm
+          li
+            a#userLogin.tabs-title(href='#loginForm2' onclick="FE.global.openModalTab('loginForm2')") お部屋
+          li
+            a#userSignup.tabs-title(href='#loginForm1' onclick="FE.global.openModalTab('loginForm1')") レストラン
+        #loginForm2.tabs-content
+          #facebook-login
+          #google-login
+          #yahoo-login
+          #border-content
+            p.border-text または
+          form#login(name='login-form')
+            section.email
+              .input-showtext
+                input#l-email.form-control(name='l-email', type='text', placeholder='または', required='required')
+            section.password
+              .input-showtext
+                input#password.form-control(name='password', type='text', placeholder='パスワード', required='required')
+            p.forgot-pwd
+              a#resetUser(data-show-id='reset-pwd-form' onclick='FE.global.resetForm()') パスワードをお忘れですか
+              #reset-pwd-form.row(data-basiclightbox='data-formLightbox', data-id='reset-pwd-form')
+                #reset-pwd
+                  p.header パスワード再設定
+                  p.header-text アカウントの登録メールアドレスをご入力ください。
+                  p.header-text パスワードリセット用のリンクをメールいたします。
+                  form#reset-user-pwd(name='reset-pwd-form')
+                    section.mail
+                      .input-showtext
+                        input#mail.form-control(name='mail', type='text', placeholder='メールアドレス', required='required')
+                    .back-button
+                      a.back(onclick='FE.global.closeForm()') ログイン画面に戻る
+                    .reset-button
+                      button.send-email(name='button', type='button', value='保存する') 保存する
+            .submit-button
+              button.submitLogin(name='button', type='button', value='空室を検索') 登録する
+        #loginForm1.tabs-content
+          #facebook-login
+          #google-login
+          #yahoo-login
+          #border-content
+            p.border-text または
+          form#signup(name='signup-form')
+            section.email
+              .input-showtext
+                input#s-email.form-control(name='email', type='text', placeholder='または', required='required')
+            section.fname
+              .input-showtext
+                input#s-fname.form-control(name='fname', type='text', placeholder='姓', required='required')
+            section.lname
+              .input-showtext
+                input#s-lname.form-control(name='lname', type='text', placeholder='名', required='required')
+            section.password
+              .input-showtext
+                input#s-password.form-control(name='password', type='text', placeholder='パスワード', required='required')
+            p.form-text 「登録」をクリックすることで、
+            p.form-text サービス利用規約と個人情報保護ポリシーに同意したことになります。
+            .submit-button
+              button.submitSignup(name='button', type='button', value='空室を検索') 登録する

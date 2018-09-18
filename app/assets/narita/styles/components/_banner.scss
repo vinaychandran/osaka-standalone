@@ -1,0 +1,147 @@
+
+
+.main-banner {
+    position: relative;    
+    padding-top: 56px;
+    @include lg {
+        padding-top: 80px;
+    }
+    .banner-image{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .banner-text { 
+        @include center(vertical);
+        text-align: center;
+        color: $secondary-color;
+        width: 100%;
+        text-align: center;
+        h1 {
+            font-family: $mi-regular; 
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: 3.8px;
+            text-align: center;
+            margin: 0 0 15px;
+            @include font-size(24px); 
+            text-shadow: 0 0 8.5px rgba(0, 0, 0, 0.8);  
+            @include md {
+                margin: 0 0 20px;
+                @include font-size(32px);
+            }
+        }
+        span {
+            @include font-size(10px);
+            display: block;
+            font-family: 'Lato-B';
+            line-height: 1.5;
+            letter-spacing: 5.3px;
+            @include md {
+                @include font-size(14px);
+            }
+        }
+    }
+    .divider{
+        background:$default-bg;
+        width: 2px;
+        height: 65px;
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+        @include md {
+            height: 70px;
+            bottom: 0;
+        }
+    }
+    .photos-link {
+        position: absolute;
+        top: 54px;
+        right: 0;
+        @include md {
+            @include center(vertical);
+        }
+        a {
+            @include font-size(10px);
+            background: $default-bg;
+            font-family: 'Lato-B';
+            line-height: 1;
+            letter-spacing: 0.1px;            
+            padding: 8px;            
+            text-align: center;
+            float: left;
+            margin-left: 1px;
+            @include md {
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                float: none;
+                margin-bottom: 1px;
+                text-transform: uppercase;
+                text-align: left;
+            }
+        }
+        i{
+            @include font-size(19px);
+        }
+        span{
+            margin-left: 5px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+    .photos-link-mobile {
+        position: absolute;
+        top: 54px;
+        right: 0;
+        a {
+            @include font-size(10px);
+            background: $default-bg;
+            padding: 8px;
+            display: inline-block;
+        }
+    }
+    .calendar-link {
+        @include center(horizontal);
+        width: 80%;
+        text-align: center;
+        bottom: 14px;
+        a {
+            @include font-size(12px);
+            font-family: $go-semibold;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: 4.6px;
+            display: block;
+            background: #fff;
+            padding: 18px 0;
+            border: 1px solid #000;
+            i {
+                float: right;
+                margin-top: -4px;
+                margin-right: 8px;
+                @include font-size(21px);
+            }
+        }
+    }
+}
+
+.home-banner{
+    @include md {
+        box-shadow: -3px 53px 81px rgba(0,0,0,0.2);
+    }
+    .banner-text {
+        h1{
+            @include font-size(32px);
+           // text-shadow: none;  
+        }        
+        @include center(vertical);
+        padding-top: 20px; 
+        @include sm {
+            max-width: 100%;
+        }
+    }
+    img{
+        margin: 0 auto;
+    }
+}

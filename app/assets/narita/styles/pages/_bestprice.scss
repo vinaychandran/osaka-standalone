@@ -1,0 +1,254 @@
+.best-price-main-page {
+    @extend %clearfix;
+    .bestprice-banner-wrap {
+        padding-top: 95px;
+        margin-top: 0;
+        @include md {
+            margin-top: 40px;
+        }
+        h3 {
+            @include font-size(24px);
+            font-weight: 500;
+            line-height: 30px;
+            text-align: center;
+            margin: 20px 0 40px 0;
+            font-family: $go-semibold;
+            @include md {
+                margin: 30px 0 40px 0;
+            }
+        }
+        .bestprice-banner {            
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 35px 20px 15px 20px;
+            color: $secondary-color;;
+            background-position: top;
+            @include md {
+                padding: 95px 0;
+            }
+            .container {
+                max-width: 800px;
+            }
+            h4 {
+                @include font-size(16px);
+                font-weight: bold;
+                line-height: 30px;
+                padding-bottom: 20px;
+                text-align: center;
+                font-family: $go-bold;
+            }
+            p {
+                @include font-size(14px);
+                font-weight: 500;
+                line-height: 30px;
+                text-align: left;
+                font-family: $go-semibold;
+            }
+        }
+    }
+    .accordion-wrap {
+        padding: 0 20px;
+        @include md {
+            padding: 0;
+        }
+        h3 {
+            @include font-size(16px);
+            font-weight: bold;
+            line-height: 30px;
+            padding: 40px 0 15px 0;
+            text-align: center;
+            font-family: $go-bold;
+        }
+        ul {
+            margin-bottom: 30px;
+            .accordion-item {
+                cursor: pointer;
+                .container {
+                    max-width: 800px;
+                    .accordion-title {
+                        @extend %clearfix;
+                        border-bottom: 1px solid #eee;
+                        padding: 20px 0;
+                        @include md {
+                            padding: 0;
+                        }
+                        .number {
+                            @include font-size(40px);
+                            font-weight: 300;
+                            font-family: 'Lato';
+                            text-align: center;
+                            display: block;
+                            padding-bottom: 25px;
+                            @include md {
+                                float: left;
+                                margin-right: 30px;
+                                line-height: 90px;
+                                padding: 0;
+                            }
+                        }
+                        .text {
+                            @include font-size(16px);
+                            font-weight: 500;
+                            text-align: center;
+                            display: block;
+                            padding-bottom: 15px;
+                            font-family: $go-semibold;
+                            @include md {
+                                float: left;
+                                margin-right: 30px;
+                                line-height: 90px;
+                                padding: 0;
+                                @include font-size(20px);
+                            }
+                        }
+                        .right-text {
+                            @include font-size(14px);
+                            font-weight: bold;
+                            text-align: center;
+                            display: block;
+                            padding-bottom: 15px;
+                            position: relative;
+                            width: 26%;
+                            margin: 0 auto;
+                            font-family: $go-bold;
+                            @include md {
+                                float: right;
+                                margin-right: 30px;
+                                line-height: 90px;
+                                padding: 0;
+                                width: auto;
+                                padding-right: 15px;
+                            }
+                            i {
+                                transform: rotate(45deg);
+                                transition: 0.4s;
+                                position: absolute;
+                                right: -14px;
+                                border: solid black;
+                                border-width: 0 2px 2px 0;
+                                display: inline-block;
+                                padding: 3px;
+                                top: 15%;
+                                @include md {
+                                    top: 43%;
+                                    right: -6px;
+                                }
+                            }
+                            &.box {
+                                color: $secondary-color;;
+                                background: $primary-bg;
+                                line-height: 25px;
+                                display: block;
+                                padding: 14px 20px;
+                                margin: 0 auto 0;
+                                width: 60%;
+                                @include md {
+                                    width: auto;
+                                    margin-top: 18px;
+                                }
+                            }
+                        }
+                    }
+                    .accordion-content {
+                        padding: 25px 0 0 0;
+                        @include md {
+                            padding: 25px 70px 0 70px;
+                        }
+                        h4 {
+                            @include font-size(14px);
+                            font-weight: bold;
+                            line-height: 23px;
+                            font-family: $go-bold;
+                        }
+                        p {
+                            @include font-size(14px);
+                            font-weight: 500;
+                            line-height: 23px;
+                            padding: 18px 0 30px 0;
+                            margin: 0;
+                            font-family: $go-semibold;
+                            &.sub-note {
+                                @include font-size(12px);
+                            }
+                        }
+                        h3 {
+                            @include font-size(20px);
+                            font-weight: 500;
+                            line-height: 23px;
+                            background-color: #fafafa;
+                            padding: 20px;
+                            text-align: left;
+                            font-family: $go-semibold;
+                        }
+                        .accordion-sub-content {
+                            padding: 30px 20px 0 20px;
+                            ul {
+                                padding: 18px 0 30px 0;
+                                &:first-of-type {
+                                    padding-bottom: 0;
+                                }
+                                li {
+                                    @include font-size(14px);
+                                    font-weight: 500;
+                                    line-height: 23px;
+                                    font-family: $go-semibold;
+                                }
+                            }
+                            img {
+                                width: 100%;
+                                margin-bottom: 30px;
+                                display: block;
+                                @include md {
+                                    width: 40%;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.is-active {
+                    i {
+                        transform: rotate(-132deg) !important;
+                    }
+                }
+                &:last-of-type {
+                    .accordion-title {
+                        border-bottom: 0;
+                        @include md {
+                            border-bottom: 1px solid #eee;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bestprice-page-booking {
+        background-color: #fafafa;
+        padding: 45px 0;
+        text-align: center;
+        h2 {
+            @include font-size(20px);
+            font-weight: bold;
+            font-family: $go-bold;
+        }
+        h3 {
+            @include font-size(14px);
+            font-weight: 500;
+            font-family: $go-semibold;
+        }
+        .booking-widget{
+            max-width: 1140px;
+            margin:40px auto 0;
+            position: static;
+            height: auto;
+            padding-bottom: 0;
+            text-align: left;
+            .tabs-content{
+              height: auto;
+              background-color: #fafafa;
+              @include md {
+                background-color: $secondary-color;
+              }
+            }
+        }
+    }
+}

@@ -1,0 +1,157 @@
+.page-gallery {
+    position: relative;
+    .gallery-images-list {
+        background: $default-bg;
+        box-shadow: -3px 5px 81px rgba(0, 0, 0, 0.2);
+        position: relative;
+        .menu-gradient {
+            height: 73px;
+            width: 100px;
+        }
+        .container {
+            padding: 16px 0;
+            overflow: scroll;            
+            @include md {
+                padding: 26px 0;
+                overflow: auto;
+            }            
+            .image-types {
+                margin: 0 auto;
+                display: block !important;
+                width: 750px;
+                position: static;
+                box-shadow: none;
+                @include md {
+                    width: auto;
+                    display: table !important;
+                }
+                li {
+                    display: inline-block;
+                    padding: 0 20px;
+                    a {
+                        padding: 0;
+                        border: none;
+                        &.selected {
+                            &:after {
+                                content: "";
+                                width: 100%;
+                                height: 2px;
+                                display: block;
+                                background-color: #232e48;
+                                margin-top: 3px;
+                            }
+                            &:before {
+                                content: '';
+                                width: 0; 
+                                height: 0; 
+                                position: absolute;
+                                bottom: -6px;
+                                left: 50%;
+                                margin-left: -4px;
+                                border-left: 6px solid transparent;
+                                border-right: 6px solid transparent;          
+                                border-top: 6px solid $default-color;;
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+    }
+    .gallery-images {
+        margin-top: 38px;
+        @include md {
+            margin-top: 68px;
+        }
+        .container {
+            .image-list {
+                li {
+                    width: 46.5%;
+                    margin: 0 5px 15px 5px;
+                    @include md {
+                        width: 31%;
+                        margin: 0 5px 35px 5px;
+                    }
+                    img {
+                        width: 100%;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .instafeed {
+        a {
+            .insta-bg {
+                margin: 10px;
+                width: 264px;
+                height: 264px;
+            }
+        }
+    }
+    
+    .user-gallery-images{
+        margin-top: 38px;
+        overflow: hidden;
+        @include md {
+            margin-top: 68px;
+        }                   
+        li {
+            width: 46.5%;
+            margin: 0 5px 15px 5px;
+            float: left;
+            @include md {
+                width: 31%;
+                margin: 0 5px 15px 5px;
+            }
+            a {
+                width: 100%;
+                display: block;
+                height: 190px; 
+                background-size: cover;
+                background-position: center center;
+                position: relative;
+                @include md {
+                    
+                }
+                &:hover {
+                    opacity: 1;
+                    .insta-mask {
+                        opacity: 1;
+                    }
+                } 
+                .insta-bg {
+                    width: 100%;
+                    display: block;                   
+                }
+                .insta-mask {                  
+                    opacity: 0;
+                    background: rgba(0,0,0,0.7);
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    position: absolute;
+                    transition: .5s ease;
+                    .insta-content {
+                        @include center(both);
+                        @include font-size(18px);
+                        color: $secondary-color;
+                        font-family:$go-semibold;                
+                        font-weight: $medium;
+                        width: 35%; 
+                        .insta-likes {
+                            float: left;
+                        }
+                        .insta-likes {
+                            float: right;
+                        }
+                    }                
+                }
+            }
+        }            
+       
+    }
+    #more-link {
+        display: none;
+    }
+}

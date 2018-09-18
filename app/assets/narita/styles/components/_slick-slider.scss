@@ -1,0 +1,104 @@
+.slick-slide {
+  position: relative;
+}
+
+.slick-next,
+.slick-prev {
+  @extend .icon-arw;
+  font-size: 0;
+  z-index: 1;
+  width: 45px;
+  height: 45px;
+  border: 1px solid black;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  @include center(vertical);
+  top: 30%;
+  @include desktop {
+    width: 56px;
+    height: 56px;
+    top: 40%;
+  }; 
+  &:before{
+    vertical-align:middle;    
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    font-size: 17px; 
+    @extend .use-iconmoon;
+    color: #333;
+    transform: translateY(-50%);
+  } 
+}
+
+.slick-prev {
+  left: 0;
+  @include desktop {
+    left: -70px;
+  };
+
+  &:before{ 
+    transform: translateY(-50%) rotate(180deg);
+  } 
+       
+}
+
+.slick-next {
+ right: 0;
+  @include desktop {
+   right: -70px;
+  };  
+}
+
+
+.slick-dots{
+  position: absolute;
+  bottom: -50px;
+  display: block;
+  width: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  li{
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    button {
+      display: block;
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      cursor: pointer;
+      color: transparent;
+      border: solid 1px #000000;
+      border-radius: 50%;
+      outline: 0; 
+      background: #fff;
+      margin: 0;
+      &:before {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          width: 6px;
+          height: 6px;
+          content: '•';
+          text-align: center;
+          background: #000;
+          border-radius: 50%;
+          opacity: 0;
+      }
+    }
+    &.slick-active{
+       button:before{
+          opacity: 1; 
+       }
+    }
+  }
+}

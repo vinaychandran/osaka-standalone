@@ -1,0 +1,1326 @@
+@charset "utf-8";
+.booking-widget {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    height: 100vh;
+    z-index: 99999;
+    width: 100%;
+    overflow-y: scroll;
+    @include md {
+        position: relative;
+        margin-top: -80px;
+        z-index: 9999;
+        height: auto;
+        background: none;
+        overflow-y: inherit;
+    }
+    &.sticky {
+        position: fixed;
+        top: 80px;
+        width: 100%;
+        z-index: 9;
+        bottom: auto;
+        padding-bottom: 0 !important;
+        box-shadow: 3.5px 3.5px 6px 0 rgba(0, 0, 0, 0.1);
+        background: #fff;
+        margin: 0;
+        @include tablet {
+            top: 56px;
+        }
+        .tabs-header {
+            display: none;
+        }
+        .tabs-content {
+            padding: 10px 60px;
+            @include tablet {
+                padding: 10px 5px;
+            }
+            label {
+                margin-bottom: 9px;
+                display: none!important;
+            }
+        }
+        +.home-slider {
+            padding-top: 150px;
+        }
+    }
+    .booking-title {
+        @extend %clearfix;
+        text-align: center;
+        font-family: $go-bold;
+        font-weight: 700;
+        margin: 0 -10px;
+        @include md {
+            display: none;
+        }
+        p {
+            @include font-size(14px);
+            margin: 0;
+            float: left;
+            width: 81%;
+            padding: 18px 0;
+            line-height: 1.25;
+            letter-spacing: 5.3px;
+            //border-right: 1px solid #eee;
+            @include tablet {
+                width: 90%;
+            }
+            ;
+        }
+        .close-booking {
+            @extend %clearfix;
+        }
+        a {
+            padding: 15px 22px;
+            display: table;
+            float: right;
+            border-left: 1px solid #eee;
+            cursor: pointer;
+        }
+    }
+    #booking-tabs {
+        @include mobile {
+            margin: 0 -10px;
+        }
+    }
+    .tabs-header {
+        @extend %clearfix;
+        display: block;
+        margin: 0;
+        @include mobile {
+            border-top: 1px solid #eee;
+            display: inline-block;
+            position: static;
+            box-shadow: none;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+        }
+        li {
+            background: #eeeeee;
+            padding: 0;
+            width: 33.3%;
+            float: left;
+            @include md {
+                width: 13.3%;
+            }
+            a {
+                height: 46px;
+                display: block;
+                text-align: center;
+                padding: 14px 0;
+                opacity: 0.4;
+                font-family: $go-bold;
+                @include font-size(14px);
+                letter-spacing: 1.1px;
+                color: $default-color;
+                margin: 0;
+                &.tabs-title-active {
+                    opacity: 1;
+                    background: $secondary-color;
+                }
+                &.tabs-title-active:before {
+                    border: 0;
+                }
+                &.tabs-title-active:after {
+                    background: none;
+                    display: inline;
+                }
+            }
+            &:last-child {
+                border-left: 1px solid #d3d3d3;
+            }
+            &:first-child {
+                border-right: 1px solid #d3d3d3;
+            }
+        }
+    }
+    .tabs-content {
+        @extend %clearfix;
+        background: $secondary-color;
+        padding: 40px 60px;
+        @include mobile {
+            padding: 20px;
+        }
+        @include tablet {
+            padding: 25px 5px;
+        }
+    }
+}
+
+#booking-tab1,
+#booking-tab2,
+#booking-tab3,
+#venue-booking-tab {
+    @extend %clearfix;
+    .promo-code {
+        float: left;
+        margin-bottom: 20px;
+        width: 100%;
+        @include md {
+            width: auto;
+            margin-right: 11px;
+            margin-bottom: 0;
+        }
+    }
+    label {
+        font-family: $mi-semibold;
+        @include font-size(14px);
+        font-weight: 500;
+        letter-spacing: 1.1px;
+        text-align: left;
+        color: $default-color;
+        padding: 5px 10px;
+    }
+    .form-group {
+        margin: 0;
+        width: 100%;
+        @include md {
+            width: 200px;
+        }
+        .input-custom {
+            position: relative;
+            input,
+            input::placeholder {
+                font-family: $go-bold;
+                background-size: 6px;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                border-radius: 4px;
+                margin: 0;
+                height: 66px;
+                border: 2px solid #eeeeee;
+                @include font-size(12px);
+                letter-spacing: 0.9px;
+                padding: 0 11px;
+                color: $default-color;
+                font-weight: 700;
+                &:focus {
+                    border: 2px solid #eeeeee;
+                }
+            }
+            input::placeholder {
+                border: 0;
+                padding-left: 0;
+            }
+        }
+    }
+    .date-picker-tab1,
+    .date-picker-tab2-single,
+    .date-picker-tab3,
+    .date-picker-venue-rpf {
+        float: none;
+        width: 100%;
+        position: relative;
+        // @include mobile {
+        //   float: none;
+        //   width: 100%;
+        // }
+        padding-bottom: 20px;
+        @include md {
+            float: left;
+            margin-right: 9px;
+            width: auto;
+            padding-bottom: 0;
+        }
+        label {
+            padding: 5px 10px;
+        }
+        .date-picker-tab1-container,
+        .date-picker-tab3-container {
+            border: 2px solid #eeeeee;
+            border-radius: 4px;
+            width: 100%;
+            position: relative;
+            @include md {
+                width: 360px;
+            }
+        }
+        .endDateContainer,
+        .startDateContainer {
+            float: left;
+            margin-right: 0px;
+            width: 166px;
+            @include mobile {
+                margin-right: 0;
+                width: 46%;
+            }
+        }
+        .endDate,
+        .startDate {
+            font-family: $go-bold;
+            @include font-size(12px);
+            line-height: 2.5;
+            letter-spacing: 0.9px;
+            text-align: left;
+            color: $default-color;
+            height: 62px;
+            line-height: 66px;
+            font-weight: 700;
+            //padding-top: 18px;
+            padding: 20px 0 20px 15px;
+            width: 100%;
+            @include md {
+                padding-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+                width: auto;
+            }
+            span.date_at,
+            span.date_to {
+                @extend %clearfix;
+                @extend .icon-calender;
+                &:before {
+                    display: none;
+                    @include md {
+                        display: block;
+                    }
+                    ;
+                    @include font-size(20px);
+                    @extend .use-iconmoon;
+                    // @include mobile {
+                    //  content:'';
+                    //  width: 18px;
+                    //  height: 18px;
+                    // }
+                }
+                @include md {
+                    float: left;
+                    padding: 15px 0 15px 10px;
+                    // background-image: url("../svg/sprite.svg");
+                    // background-repeat: no-repeat;
+                    // background-size: 42.6em 346.4em;
+                    // background-position: 0.4em -72.7em;
+                    //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
+                    // padding-left: 45px;
+                    // float: left;
+                    // @-moz-document url-prefix() {
+                    //   background-position: 0.4em -20.8em;
+                    //   background-size: 42.6em 282.4em;
+                    // }
+                    &:before {
+                        margin-left: 5px;
+                        width: 28px;
+                        margin: 2px 0;
+                        float: left;
+                        display: inline-block;
+                    }
+                }
+            }
+            .day,
+            .month,
+            .year {
+                @include md {
+                    display: inline;
+                }
+            }
+            .day {
+                @include font-size(45px);
+                margin: 6px 6px 0 0;
+                float: left;
+                // @include mobile {
+                //   font-size: 45px;
+                //   float: left;
+                //   margin: 6px 10px 0 0;
+                // }
+                @include md {
+                    @include font-size(12px);
+                    float: none;
+                    margin: 0;
+                }
+            }
+            .dayoftheweek {
+                @include font-size(12px);
+                opacity: 0.5;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        .daysFromTo .dayoftheweek {
+            display: none;
+        }
+        .daysFromTo {
+            font-family: $go-bold;
+            @include font-size(14px);
+            letter-spacing: normal;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.6);
+            font-weight: 700;
+        }
+        .values {
+            @extend %clearfix;
+            position: relative;
+            @include mobile {
+                clear: both;
+            }
+            .clear,
+            .to,
+            .value {
+                margin: 0 5px;
+                display: block;
+                line-height: 14px;
+                text-align: left;
+            }
+            .to {
+                float: left;
+                padding-top: 25px;
+                //margin-right: 11px;
+                vertical-align: middle;
+                color: #d3d3d3;
+            }
+            .value {
+                span {
+                    cursor: pointer;
+                }
+                &.active span {
+                    color: #3399cc;
+                }
+                input {
+                    opacity: 0;
+                }
+            }
+        }
+        .calendar {
+            display: none;
+            width: 700px;
+            height: 430px;
+            margin: 0;
+            background: $secondary-color;
+            text-align: center;
+            overflow: hidden;
+            top: 65px;
+            left: 0;
+            z-index: 99999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            box-sizing: border-box;
+            transition-duration: 0.5s;
+            position: absolute;
+            box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+            -webkit-tap-highlight-color: transparent;
+            //border-top: 2px solid #000;
+            // top: 50%;
+            // left: 50%;
+            // margin-top: -283px;
+            // margin-left: -350px;
+            @include mobile {
+                width: 320px;
+            }
+            &:after {
+                content: '';
+                top: -18px;
+                width: 0;
+                left: -170px;
+                @include mobile {
+                    left: 0;
+                }
+                position: relative;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 9px solid black;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                height: 5px;
+                border-bottom: 4px solid #000;
+                top: 7px;
+                left: 0;
+                width: 100%;
+            }
+        }
+        &.active .calendar {
+            display: block;
+        }
+        .calendar {
+            .clear {
+                width: 16px;
+                height: 16px;
+                margin: 0 auto;
+                cursor: pointer;
+            }
+            .button-next,
+            .button-prev {
+                position: absolute;
+                top: 30px;
+                z-index: 3;
+                width: 36px;
+                height: 29px;
+                cursor: pointer;
+                @extend .use-iconmoon;
+                color: #000;
+                font-weight: bold;
+                @include font-size(12px);
+            }
+            .button-prev {
+                @extend .icon-prev;
+                left: 30px;
+            }
+            .button-next {
+                @extend .icon-next;
+                right: 40px;
+            }
+            .close {
+                position: absolute;
+                top: 0;
+                width: 15px;
+                left: 50%;
+            }
+            .calendarContainer {
+                position: absolute;
+                top: 0;
+                left: -292px;
+                z-index: 2;
+                float: left;
+                text-align: left;
+                padding-top: 15px;
+                table {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 304px;
+                    @include mobile {
+                        width: 285px;
+                    }
+                    margin: 10px;
+                    padding: 0;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    text-align: center;
+                    caption {
+                        border-bottom: 2px solid $default-color;
+                        font-family: $go-bold;
+                        @include font-size(14px);
+                        line-height: 2.14;
+                        letter-spacing: 1.1px;
+                        text-align: center;
+                        color: $default-color;
+                        padding-bottom: 12px;
+                        font-weight: 700;
+                    }
+                    th {
+                        width: 37px;
+                        @include font-size(14px);
+                        line-height: 20px;
+                        box-sizing: border-box;
+                        padding: 0;
+                        font-family: $go-bold;
+                        text-align: center;
+                        color: $default-color;
+                        padding: 10px 0;
+                        border: none;
+                        font-weight: 700;
+                    }
+                    td {
+                        width: 40px;
+                        height: 40px;
+                        @include font-size(14px);
+                        line-height: 33px;
+                        box-sizing: border-box;
+                        padding: 0;
+                        text-align: center;
+                        border: none;
+                        border: 5px solid $secondary-color;
+                        font-family: 'Lato-B';
+                        span {
+                            display: block;
+                            border: 1px solid #eeeeee;
+                        }
+                        &.valid {
+                            cursor: pointer;
+                            &:hover {
+                                background: #cccccc;
+                            }
+                        }
+                        &.today {
+                            color: #666;
+                        }
+                        &.inactive {
+                            color: #ccc;
+                        }
+                        &.valid {
+                            &.hovered,
+                            &.intermediate,
+                            &.intermediate-hover {
+                                background: #eeeeee;
+                                color: $default-color;
+                            }
+                            &.hovered,
+                            &.intermediate-hover {
+                                color: $default-color;
+                            }
+                            &.end,
+                            &.start {
+                                background: $primary-bg;
+                                color: $secondary-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .bottomLayer {
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                display: block;
+                width: 100%;
+                .day,
+                .month,
+                .year {
+                    display: inline;
+                }
+                .days {
+                    opacity: 0.6;
+                    font-family: $go-bold;
+                    @include font-size(14px);
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: rgba(0, 0, 0, 0.6);
+                    font-weight: 700;
+                }
+                .nights {
+                    height: 13px;
+                    font-family: $go-bold;
+                    @include font-size(14px);
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: $default-color;
+                    margin: 0 0 10px;
+                    font-weight: 700;
+                }
+                .closePopup {
+                    opacity: 1;
+                    width: 320px;
+                    background-color: #c5ad6c;
+                    margin: 0 auto;
+                    padding: 25px 0;
+                    @include font-size(14px);
+                    letter-spacing: 2.8px;
+                    text-align: center;
+                    color: $secondary-color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .date-picker-tab2-single,
+    .date-picker-tab3 {
+        @include mobile {
+            clear: both;
+            //padding: 20px 0;
+        }
+    }
+    .people {
+        float: left;
+        width: 100%;
+        padding-bottom: 20px;
+        margin-right: 0;
+        position: relative;
+        @include md {
+            width: 200px;
+            padding: 0;
+            margin-right: 11px;
+        }
+        .people-list {
+            @extend .icon-people;
+            font-family: $go-bold;
+            background-size: 6px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 0;
+            width: 100%;
+            height: 66px;
+            border: 2px solid #eeeeee;
+            @include font-size(12px);
+            line-height: 2.5;
+            letter-spacing: 0.9px;
+            color: $default-color;
+            //padding: 15px 0;
+            font-weight: 700;
+            &:before {
+                @extend .use-iconmoon;
+                float: left;
+                margin: 18px 10px 22px 15px;
+                font-size: 27px;
+            }
+            @include md {
+                width: 200px;
+            }
+            p {
+                float: left;
+                margin: 0;
+                padding: 13px 0;
+                // background-image: url("../svg/sprite.svg");
+                // background-repeat: no-repeat;
+                // background-size: 32.5em 210em;
+                // background-position: 0.5em -139.4em;
+                //padding-left: 15px;
+                line-height: 1.4em;
+                // @-moz-document url-prefix() {
+                //   background-position: 0.5em -142.4em;
+                // }
+            }
+            span.container {
+                display: block;
+                padding: 0;
+            }
+            span.room {
+                display: block;
+                float: left;
+                opacity: 1;
+                font-family: $go-bold;
+                @include font-size(12px);
+                letter-spacing: 0.9px;
+                text-align: left;
+                color: rgba(0, 0, 0, 0.5);
+            }
+            span.roomText {
+                color: rgba(0, 0, 0, 0.5);
+                //display: inline-block;
+            }
+        }
+        label {
+            padding: 5px 10px;
+        }
+        .children label,
+        .grown-up label,
+        .room label {
+            padding: 25px 10px;
+            font-weight: 700;
+            font-family: $go-bold;
+            display: block !important;
+        }
+    }
+    .find-button {
+        float: none;
+        width: 100%;
+        clear: both;
+        padding: 0;
+        @include md {
+            float: left;
+            width: auto;
+            clear: none;
+        }
+        label {
+            padding: 5px 0;
+            clear: both;
+            text-align: center;
+            cursor: pointer;
+            .icon-info {
+                margin-right: 5px;
+            }
+            &.visible-device {
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
+        span {
+            text-decoration: underline;
+        }
+        button {
+            background: #c5ad6c;
+            color: #fefefe;
+            border: none;
+            height: 66px;
+            width: 100%;
+            margin: 0;
+            @include md {
+                padding: 0;
+                width: 182px;
+            }
+        }
+    }
+}
+
+#booking-tab2,
+#booking-tab3 {
+    .number-of-people,
+    .room-locations,
+    .shop,
+    .time-selection {
+        float: left;
+        margin: 0;
+        width: 100%;
+        padding-bottom: 20px;
+        @include md {
+            width: auto;
+            float: left;
+            margin-right: 11px;
+            padding-bottom: 0;
+        }
+        .form-group {
+            margin: 0;
+            width: 100%;
+            @include md {
+                width: 142px;
+            }
+            label {
+                font-family: $mi-regular;
+                @include font-size(14px);
+                font-weight: 500;
+                letter-spacing: 1.1px;
+                text-align: left;
+                color: $default-color;
+                padding: 5px 10px;
+            }
+            .input-custom {
+                position: relative;
+                @include md {
+                    padding: 0;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 20px;
+                    top: 45%;
+                    width: 0;
+                    cursor: pointer;
+                    height: 0;
+                    border-left: 3px solid transparent;
+                    border-right: 3px solid transparent;
+                    border-top: 5px solid $default-color;
+                    clear: both;
+                }
+                button,
+                input,
+                input::placeholder {
+                    font-family: $go-bold;
+                    background-size: 6px;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    margin: 0;
+                    height: 66px;
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    border: 2px solid #eeeeee;
+                    @include font-size(12px);
+                    letter-spacing: 0.9px;
+                    padding: 0 20px;
+                    color: $default-color;
+                    text-align: left;
+                    font-weight: 700;
+                    @include md {
+                        width: 140px;
+                    }
+                    &:focus {
+                        border: 2px solid #eeeeee;
+                    }
+                }
+                input::placeholder {
+                    border: 0;
+                    padding-left: 0;
+                }
+            }
+            .popup-menu {
+                display: none;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    max-height: 150px;
+                    overflow-y: auto;
+                    li {
+                        border-bottom: 1px solid #eeeeee;
+                        &:first-child {
+                            border-top: 1px solid #eeeeee;
+                        }
+                        span {
+                            cursor: pointer;
+                            display: block;
+                            @include font-size(12px);
+                            line-height: 1.4;
+                            padding: 8px 12px;
+                            color: $default-color;
+                            font-weight: 700;
+                            &.active,
+                            &:focus,
+                            &:hover {
+                                background-color: #eeeeee;
+                            }
+                        }
+                    }
+                }
+                .popup-content-input {
+                    overflow-y: auto;
+                    position: absolute;
+                    background: #fff;
+                    z-index: 999;
+                    width: 142px;
+                    //border-top: 3px solid #000;
+                    //margin-top: 10px;
+                    box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+                    padding-top: 13px;
+                    @include mobile {
+                        width: 100%;
+                    }
+                    &:after {
+                        content: '';
+                        top: 2px;
+                        width: 0;
+                        left: 48%;
+                        position: absolute;
+                        height: 0;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-bottom: 9px solid black;
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        height: 5px;
+                        border-bottom: 4px solid #000;
+                        top: 8px;
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .date-picker-tab2-single {
+        .date-picker-tab2-single-container {
+            @extend %clearfix;
+            border: 2px solid #eeeeee;
+            border-radius: 4px;
+            width: 100%;
+            position: relative;
+            @include md {
+                width: 308px;
+            }
+            .calendar {
+                height: 375px;
+            }
+            .values {
+                float: left;
+                .startDateContainer {
+                    width: 148px;
+                    .startDate {
+                        width: auto;
+                        height: 62px;
+                        // background: url("../icons/calendar-interface-symbol-tool.svg") 5% center no-repeat;
+                        // padding-left: 35px;
+                        // background-size: 20px;
+                        border: 0;
+                        @include mobile {
+                            background: none;
+                            padding-left: 15px;
+                        }
+                        @include md {
+                            width: 181px;
+                        }
+                        .value {
+                            //border-right: 2px solid #eeeeee;
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // .people {
+    //   margin-right: 20px;
+    // }
+    .shop {
+        //margin-right: 58px;
+        @include mobile {
+            margin-right: 0;
+        }
+        .form-group {
+            width: 100%;
+            @include md {
+                width: 290px;
+            }
+            .input-custom {
+                button {
+                    width: 100%;
+                    @include md {
+                        width: 290px;
+                    }
+                }
+                .popup-content-input {
+                    width: 100%;
+                    @include md {
+                        width: 290px;
+                    }
+                }
+            }
+        }
+    }
+    .time-selection {
+        margin: 0;
+        width: 50%;
+        //clear: both;
+        float: right;
+        padding-bottom: 0;
+        @include md {
+            clear: none;
+            //float: none;
+            width: 135px;
+        }
+        .popup-content-input {
+            margin-top: 2px;
+        }
+        .form-group {
+            width: auto;
+            .input-custom {
+                margin-bottom: 0;
+                button,
+                input,
+                input::placeholder {
+                    border: 0;
+                    border-left: 1px solid #eeeeee;
+                    font-family: Lato;
+                    font-size: 18px;
+                    letter-spacing: 1.4px;
+                    text-align: center;
+                    color: #000000;
+                    height: 42px;
+                    margin: 10px 0;
+                    padding-right: 30px;
+                    &:focus {
+                        border: 0;
+                        border-left: 1px solid #eeeeee;
+                    }
+                }
+            }
+        }
+        .popup-menu {
+            .popup-content-input {
+                //  width: 100px!important;
+                ul li {
+                    font-family: Lato;
+                }
+            }
+        }
+    }
+}
+
+#booking-tab1,
+#booking-tab3 {
+    .room-locations {
+        margin-right: 11px;
+        .form-group {
+            width: 100%;
+            @include md {
+                width: 200px;
+            }
+            .input-custom {
+                button {
+                    width: 100%;
+                    @include md {
+                        width: 200px;
+                    }
+                }
+                .popup-content-input {
+                    width: 100%;
+                    @include md {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .overlay {
+//   height: 100%;
+//   width: 100%;
+//   background-color: $default-color;
+//   opacity: 0.5;
+//   overflow-y: hidden;
+//   transition: 0.5s;
+// }
+.popup-wrap {
+    height: 100%;
+    width: 100%;
+    ///display: none;
+    position: relative;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.big-popup {
+    width: 100%;
+    box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+    @include md {
+        padding: 30px;
+        width: 510px;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include tablet {
+        right: 0;
+        left: auto;
+    }
+    // This lines is not working
+    // margin-left: -320px;
+    // margin-top: -275px;
+    padding: 40px 20px;
+    background-color: $secondary-color;
+    opacity: 1;
+    z-index: 1001;
+    transition: 0.5s;
+    &:after {
+        content: '';
+        top: 2px;
+        width: 0;
+        left: 15%;
+        @include tablet {
+            right: 15%;
+            left: auto;
+        }
+        position: absolute;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 9px solid black;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 4px solid #000;
+        top: 8px;
+        left: 0;
+        width: 100%;
+    }
+    .head-popup {
+        @extend %clearfix;
+        //padding-bottom: 32px;
+        .children,
+        .grown-up,
+        .room {
+            padding-bottom: 5px;
+            @include md {
+                padding-right: 40px;
+            }
+        }
+        .room {
+            @include md {
+                padding-right: 0;
+            }
+        }
+        section {
+            float: left;
+            .form-group {
+                margin: 0;
+                display: inline;
+                label {
+                    font-family: $mi-semibold;
+                    @include font-size(14px);
+                    font-weight: 500;
+                    font-style: normal;
+                    letter-spacing: 1.1px;
+                    text-align: left;
+                    color: $default-color;
+                    padding: 20px 44px 20px 12px;
+                    float: left;
+                    display: block;
+                }
+                .input-custom {
+                    position: relative;
+                    @extend %clearfix;
+                    float: left;
+                    width: 70px;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 25%;
+                        top: 45%;
+                        width: 0;
+                        cursor: pointer;
+                        height: 0;
+                        border-left: 3px solid transparent;
+                        border-right: 3px solid transparent;
+                        border-top: 5px solid $default-color;
+                        clear: both;
+                    }
+                    button,
+                    input,
+                    input::placeholder {
+                        font-family: $go-bold;
+                        background-size: 6px;
+                        background-repeat: no-repeat;
+                        cursor: pointer;
+                        border-radius: 4px;
+                        margin: 0;
+                        height: 66px;
+                        border: 2px solid #eeeeee;
+                        @include font-size(12px);
+                        letter-spacing: 0.9px;
+                        padding: 0 11px;
+                        color: $default-color;
+                        &:focus {
+                            border: 2px solid #eeeeee;
+                        }
+                    }
+                    button {
+                        width: 70px;
+                        background: none;
+                        text-align: left;
+                    }
+                    input::placeholder {
+                        border: 0;
+                        padding-left: 0;
+                    }
+                }
+                .popup-menu {
+                    display: none;
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        li {
+                            border-bottom: 1px solid #eeeeee;
+                            &:first-child {
+                                border-top: 1px solid #eeeeee;
+                            }
+                            span {
+                                cursor: pointer;
+                                display: block;
+                                @include font-size(12px);
+                                line-height: 1.4;
+                                padding: 8px 12px;
+                                color: $default-color;
+                                font-weight: 700;
+                                &.active,
+                                &:focus,
+                                &:hover {
+                                    background-color: #eeeeee;
+                                }
+                            }
+                        }
+                    }
+                    .popup-content-input {
+                        overflow-y: auto;
+                        position: absolute;
+                        background: #fff;
+                        z-index: 999;
+                        width: 90px;
+                        padding-top: 13px;
+                        // border-top: 3px solid #000;
+                        // margin-top: 10px;
+                        box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+                        &:after {
+                            content: '';
+                            top: 2px;
+                            width: 0;
+                            left: 48%;
+                            position: absolute;
+                            height: 0;
+                            border-left: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            border-bottom: 9px solid black;
+                        }
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            height: 5px;
+                            border-bottom: 3px solid #000;
+                            top: 8px;
+                            left: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .input-popup {
+        border: 2px solid #eeeeee;
+        padding: 25px 30px;
+        margin-bottom: 20px;
+        .title {
+            @include font-size(14px);
+            font-family: $go-bold;
+            line-height: 2.14;
+            letter-spacing: normal;
+            text-align: left;
+            color: $default-color;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        ul li {
+            @include font-size(12px);
+            list-style: disc;
+            font-weight: 700;
+        }
+    }
+    .btn-group {
+        button {
+            margin: 0;
+            border: none;
+            line-height: 1;
+        }
+        .clear {
+            width: 48%;
+            height: 70px;
+            cursor: pointer;
+            background-color: #eeeeee;
+            float: left;
+            color: #000;
+            @include md {
+                width: 190px;
+            }
+        }
+        .done {
+            width: 48%;
+            height: 70px;
+            float: right;
+            background-color: #c5ad6c;
+            @include md {
+                width: 190px;
+            }
+        }
+    }
+}
+
+.restaurant-detail {
+    background: #fff;
+    padding: 30px;
+}
+
+#show-restaurant {
+    width: 100vw;
+    @include md {
+        width: 480px;
+    }
+    button {
+        background: #c5ad6c;
+        color: #fefefe;
+        border: none;
+        height: 46px;
+        width: 100%;
+    }
+    input,
+    input::placeholder {
+        font-family: $go-bold;
+        background-size: 6px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 0;
+        height: 46px;
+        border: 2px solid #eeeeee;
+        @include font-size(12px);
+        letter-spacing: 0.9px;
+        padding: 0 11px;
+        color: $default-color;
+        margin-bottom: 15px;
+        &:focus {
+            border: 2px solid #eeeeee;
+        }
+    }
+    input::placeholder {
+        border: 0;
+        padding-left: 0;
+    }
+}
+
+#bookingForm {
+    margin-bottom: 0;
+}

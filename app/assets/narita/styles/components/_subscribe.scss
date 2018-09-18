@@ -1,0 +1,135 @@
+.subscribe {
+    @extend %clearfix;
+    background-color: #fafafa;
+    padding: 0;
+    text-align: center;
+
+    h2 {
+      margin: 0 10px;
+      line-height: 1;
+      padding: 45px 0;
+      @include font-size(16px);
+      font-weight: 500;
+      color: $default-color;
+      position: relative;
+      display: inline-block;
+      font-family: $go-semibold;
+      @include md {
+        padding: 47px 0 37px;
+        //margin-bottom: 30px;
+        @include font-size(24px);
+      }
+
+      span {
+        background: #fafafa;
+        //position: relative;
+        z-index: 1;
+      }
+    }
+
+    #subscribeForm {
+      background: $secondary-color;
+      padding: 20px;
+      @include md {
+        background: none;
+        padding: 0;
+        margin: 0;
+      };
+    }
+
+    .booking-widget {
+      max-width: 880px;
+      //border: 20px solid #f5f5f5;
+      position: static;
+      height: auto;
+      padding-bottom: 0;
+      text-align: left;
+      @include md {
+        border: 0;
+        margin: 0 auto;
+        background: $secondary-color;
+        margin-bottom: 41px;
+      }
+
+      .tabs-content {
+        height: auto;
+        padding: 0 20px;
+        background: none;
+        //background-color: $secondary-color;
+        @include md {
+          padding: 0 55px;
+        }
+
+        label {
+          clear: both;
+          text-align: center !important;
+          padding: 15px 0 !important;
+          font-family: $go-semibold !important;
+          font-weight: 500!important;
+
+          &:first-child {
+            padding: 10px 0 30px !important;
+            @include md {
+              padding: 20px 0 !important;
+            };
+          }
+
+          &:last-child {
+            @extend %clearfix;
+            padding: 30px 20px 0;
+            @include md {
+              padding: 45px 0 35px;
+            };
+          }
+        }
+      }
+
+      #booking-tab2 {
+        .thankyou {
+          padding: 0 0 45px;
+          margin: 0;
+          display: none;
+          @include md {
+            padding: 45px 0;
+          };
+        }
+
+        .shop .form-group {
+          @include md {
+            width: 275px;
+          }
+
+          .input-showtext button {
+            width: 100%;
+          }
+        }
+
+        .name .form-group {
+          width: 100%;
+          @include md {
+            width: 210px;
+          }
+        }
+
+        .email .form-group {
+          width: 100%;
+          @include md {
+            width: 300px;
+          }
+          margin-right: 20px;
+        }
+
+        .find-button {
+          button {
+            height: auto;
+            padding: 22px 0;
+            width: 100%;
+            @include md {
+              width: 204px;
+            }
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+}

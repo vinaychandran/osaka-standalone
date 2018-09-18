@@ -1,0 +1,11 @@
+#modal1.modal(role='dialog', aria-labelledby='modal-1', aria-describedby='basic-modal', tabindex='-1', style='display: none;')
+    .modal-dialog
+        .modal-content
+            .modal-header
+                h5.modal-title Title
+                button.modal-close(type='button', data-dismiss='modal', aria-label='Close')
+                    svg(width='16', height='16', viewbox='0 0 40 40')
+                        path.close-x(stroke-linecap='round', d='M 10,10 L 30,30 M 30,10 L 10,30', stroke='#000', fill='transparent', stroke-width='5')
+            .modal-body Description
+            .modal-footer
+                button(data-dismiss='modal', aria-label='Close') Close

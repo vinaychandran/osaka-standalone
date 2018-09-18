@@ -1,0 +1,309 @@
+.facilities-main-page {
+    .main-banner {
+        box-shadow: -3px 28px 81px rgba(0, 0, 0, 0.2);
+    }
+    .facilities-menu {
+        background: $default-bg;
+        padding: 25px 60px 25px 35px;
+        display: none;
+        margin: -29px auto 10px;
+        position: relative;
+        @include md {
+            display: table;
+        }
+        ul {
+            li {
+                float: left;
+                padding: 0 40px;
+                position: relative;
+                a {
+                    @include font-size(13.6px);
+                    letter-spacing: 1.6px;
+                    font-weight: bold;
+                    font-family: $go-bold;     
+                    i {
+                        border: solid black;
+                        border-width: 0 2px 2px 0;
+                        display: inline-block;
+                        padding: 3px;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        right: 23px;
+                        top: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .facilities-info {
+        background: $default-bg;
+        max-width: none;
+        .container {
+            max-width: 666px;
+            h3 {
+                @include font-size(20px);
+                line-height: 48px;
+                margin-bottom: 20px;
+            }
+        }        
+    }
+    .design-info {
+        background: $secondary-color;
+        padding-top: 10px;
+        @include md {
+            background: #fafafa;
+        }
+        img {
+            width: 100%;
+        }
+        .container {
+            .design-content {
+                background: $default-bg;
+                margin: -50px 0 0 0;
+                padding: 20px;
+                @include md {
+                    width: 50%;
+                    float: left;
+                    padding: 95px 70px;
+                    margin: -170px 0 0 0;
+                }
+                h2 {
+                    @include font-size(20px);
+                    font-weight: 500;
+                    line-height: 33px;
+                    color: #141414;
+                    margin: 0;
+                    padding-bottom: 20px;
+                    letter-spacing: 0.7px;
+                    text-align: left;
+                    font-family: 'Lato-B';
+                    @include md {
+                        @include font-size(24px);
+                        padding-bottom: 40px;
+                    }
+                }
+                p {
+                    @include font-size(14px);
+                    font-weight: 500;
+                    line-height: 28px;
+                    letter-spacing: 1.4px;
+                    font-family: $mi-regular;
+                }
+            }
+            .design-img {
+                width: 50%;
+                float: left;
+                margin-top: 136px;
+                background: $secondary-color;
+                padding-bottom: 120px;
+                display: none;
+                @include md {
+                    display: block;
+                }
+            }
+        }
+    }
+    .facilities-list-wrap {
+        background: #fafafa;
+        padding: 60px 10px 20px;
+        @include md {
+            padding: 0;
+        }
+        .container {
+            background: none;
+            padding-bottom: 20px;
+            .venue-list {
+                margin-bottom: 40px;
+                .facility-short-info {
+                    @include font-size(14px);
+                    line-height: 20px;
+                    padding-bottom: 40px;
+                    h6 {
+                        font-weight: bold;
+                    }
+                    p {
+                        font-weight: 500;
+                        margin: 0;
+                        padding-bottom: 20px;
+                    }
+                    .timings {
+                        border-top: 1px solid #f1f3ee;
+                        padding: 20px 0 10px 0;
+                        h3 {
+                            @include font-size(14px);
+                            line-height: 26px;
+                            font-weight: bold;
+                            padding-bottom: 10px;
+                        }
+                        span {
+                            display: block;
+                            @include font-size(14px);
+                            line-height: 20px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }            
+            .amusement-list {
+                display: none;
+                @include md {
+                    display: flex;
+                }
+                .amusement-info {
+                    text-align: center;
+                    position: relative;
+                    padding: 27px 50px 60px;
+                    h6 {
+                        @include font-size(20px);
+                        line-height: 20px;
+                        font-weight: bold;
+                        float: none;
+                        text-align: center;
+                        margin-bottom: 30px;
+                        font-family: $go-bold;
+                    }
+                    p {
+                        font-family: $mi-regular;
+                        @include font-size(14px);
+                        line-height: 28px;
+                        font-weight: 500;
+                        letter-spacing: 1.4px;
+                    }
+                    .room-more {
+                        width: 80%;
+                        bottom: -40px;
+                    }
+                }
+            }
+        }
+    }
+    .promo-content {
+        background: $default-bg;
+        h4 {
+            text-align: center;
+            @include font-size(24px);
+            font-weight: 500;
+            font-family: $go-semibold;
+            margin: 60px 0 40px 0;
+        }
+        ul {
+            margin-bottom: 0;
+            li {
+                margin-bottom: 20px;
+                padding-bottom: 0;
+                @include md {
+
+                }
+                img {
+                    width: 100%;
+                }
+                .content {
+                    padding-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+.facilities-detail-popup {
+    .room-info-header {
+        background: #fafafa;
+    }
+}
+
+.facilities-info-header {
+    max-width: 880px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+    p {
+        @include font-size(14px);
+        line-height: 28px;
+        letter-spacing: 1.4px;
+        font-weight: 500;
+        text-align: center;
+        font-family: $go-semibold;
+    }
+    h2 {
+        @include font-size(24px);
+        line-height: 20px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 2px solid $default-color;
+        padding-bottom: 30px;
+        font-family: $go-bold;
+        @include md {
+            @include font-size(36px);
+        }
+        + p{
+            font-family: $mi-regular;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.facilities-info-images {
+    .container {
+        overflow: scroll;
+        @include xs {
+            overflow: auto;
+        }
+        .row {
+            width: 200%;
+            @include xs {
+                width: auto;
+            }
+            .col {
+                margin-bottom: 20px;
+                width: 49%;
+                padding: 0 6px;
+                @include xs {
+                    width: 50%;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }    
+}
+
+.facilities-info-content {
+    max-width: 880px;
+    padding: 20px;
+    background: $default-bg;
+    margin: 0 20px;
+    @include md {
+        padding: 55px;
+        margin: 0 auto 60px;
+    }
+    p {
+        @include font-size(14px);
+        line-height: 28px;
+        letter-spacing: 1.4px;
+        font-weight: 500;
+        font-family: $mi-regular;
+    }
+    .facilities-buttons {
+        @extend %clearfix;
+        display: table;
+        margin: 20px auto 0;   
+        width: 100%;    
+        @include md {
+            margin: 60px auto 0; 
+            width: auto;
+        } 
+        .btn {
+            padding: 20px 80px;
+            margin: 0;
+            position: relative;
+            display: block;
+            margin-bottom: 20px;
+            @include md {
+                display: inline;
+                margin: 0 20px;
+            }
+            i {
+                right: 20px;
+                top: 45%;
+            }
+        }
+    }
+}

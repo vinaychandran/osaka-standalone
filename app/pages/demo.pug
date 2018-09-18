@@ -1,0 +1,66 @@
+extends ../layouts/default
+
+block append content
+
+    include ../components/modal-popup.pug
+    
+    .container
+    p.heading
+      #light
+        a#boxclose.boxclose
+        video#VisaChipCardVideo(width='600', controls='')
+      #fade
+
+      include ../components/booking-widget.pug
+
+      div.videoImgContainer
+        ul(onclick='FE.global.videoPlayer(event)')
+          li.slide1
+            a.imgRestorants(href='#' data-src='https://www.w3schools.com/html/mov_bbb.mp4') Restorants
+          li.slide2
+            a.thumbImg(href='#' data-src='https://www.w3schools.com/html/mov_bbb.mp4') Rooms
+          li.slide3
+            a.thumbImg(href='#' data-src='https://www.w3schools.com/html/mov_bbb.mp4') Banquets
+          li.slide4
+            a.thumbImg(href='#' data-src='https://www.w3schools.com/html/mov_bbb.mp4')  Onsea & Spa
+      br
+    
+    p.heading Popup
+      button(data-toggle='modal', data-target='modal1')  Modal
+      
+    p.heading lazyload (scroll to see)
+    .row
+      .col.col-1-2
+          img.lazy(src='http://placehold.it/1200x600&text=one', data-src="../assets/narita/images/slide1.jpg", alt='')
+      .col.col-1-2
+          img.lazy(src='http://placehold.it/1200x600&text=one', data-src="../assets/narita/images/slide2.jpg", alt='')
+      .col.col-1-2
+          img.lazy(src='http://placehold.it/1200x600&text=one', data-src="../assets/narita/images/slide3.jpg", alt='')
+      .col.col-1-2
+          img.lazy(src='http://placehold.it/1200x600&text=one', data-src="../assets/narita/images/slide4.jpg", alt='')
+
+    br
+    p.heading Tabs
+    ul#tabs
+      li
+        a(href='#about') About JavaScript tabs
+      li
+        a(href='#advantages') Advantages of tabs
+      li
+        a(href='#usage') Using tabs
+    #about.tabContent
+      h2 About JavaScript tabs
+      div
+        p
+          | JavaScript tabs partition your Web page content into tabbed sections. Only one section at a time is visible.
+        p
+          | The code is written in such a way that the page degrades gracefully in browsers that don&apos;t support JavaScript or CSS.
+    #advantages.tabContent
+      h2 Advantages of tabs
+      div
+        p JavaScript tabs are great if your Web page contains a large amount of content.
+        p They&apos;re also good for things like multi-step Web forms.
+    #usage.tabContent
+      h2 Using tabs
+      div
+        p Click a tab to view the tab&apos;s content. Using tabs couldn&apos;t be easier!

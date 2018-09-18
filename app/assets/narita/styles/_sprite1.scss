@@ -1,0 +1,123 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$flag-ch-name: 'flag_ch';
+$flag-ch-x: 31px;
+$flag-ch-y: 0px;
+$flag-ch-offset-x: -31px;
+$flag-ch-offset-y: 0px;
+$flag-ch-width: 30px;
+$flag-ch-height: 20px;
+$flag-ch-total-width: 61px;
+$flag-ch-total-height: 41px;
+$flag-ch-image: 'sprite.png';
+$flag-ch: (31px, 0px, -31px, 0px, 30px, 20px, 61px, 41px, 'sprite.png', 'flag_ch', );
+$flag-en-name: 'flag_en';
+$flag-en-x: 0px;
+$flag-en-y: 0px;
+$flag-en-offset-x: 0px;
+$flag-en-offset-y: 0px;
+$flag-en-width: 31px;
+$flag-en-height: 21px;
+$flag-en-total-width: 61px;
+$flag-en-total-height: 41px;
+$flag-en-image: 'sprite.png';
+$flag-en: (0px, 0px, 0px, 0px, 31px, 21px, 61px, 41px, 'sprite.png', 'flag_en', );
+$flag-jp-name: 'flag_jp';
+$flag-jp-x: 0px;
+$flag-jp-y: 21px;
+$flag-jp-offset-x: 0px;
+$flag-jp-offset-y: -21px;
+$flag-jp-width: 30px;
+$flag-jp-height: 20px;
+$flag-jp-total-width: 61px;
+$flag-jp-total-height: 41px;
+$flag-jp-image: 'sprite.png';
+$flag-jp: (0px, 21px, 0px, -21px, 30px, 20px, 61px, 41px, 'sprite.png', 'flag_jp', );
+$flag-kr-name: 'flag_kr';
+$flag-kr-x: 30px;
+$flag-kr-y: 21px;
+$flag-kr-offset-x: -30px;
+$flag-kr-offset-y: -21px;
+$flag-kr-width: 30px;
+$flag-kr-height: 20px;
+$flag-kr-total-width: 61px;
+$flag-kr-total-height: 41px;
+$flag-kr-image: 'sprite.png';
+$flag-kr: (30px, 21px, -30px, -21px, 30px, 20px, 61px, 41px, 'sprite.png', 'flag_kr', );
+$spritesheet-width: 61px;
+$spritesheet-height: 41px;
+$spritesheet-image: 'sprite.png';
+$spritesheet-sprites: ($flag-ch, $flag-en, $flag-jp, $flag-kr, );
+$spritesheet: (61px, 41px, 'sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -1,0 +1,531 @@
+extends ../layouts/default
+
+block append content
+	.access-page
+		section.main-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/access/banner.jpg')
+				img(src='/assets/narita/images/access/banner.jpg')
+			.banner-text
+				h1 アクセス
+		.about-venue-info-wrap
+			section.about-venue-info
+				h3 TOGETHER IN  STYLE
+				p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら		
+		section.location
+			.map-container
+				#gmap_canvas(data-lat='12.9316' data-lan='77.7946' data-src='../assets/narita/images/marker-icon.png')
+				.map-info-wrap
+					h3 HOW TO FIND US
+					ul
+						li JR「成田」駅および成田空港からシャトルバスに揺られて15分。
+						li 空港通り沿いに「ホテルマイステイズプレミア成田」は建ちます。
+						li 駅や空港からはタクシーもご利用いただけます。
+					.airpot-stop-info
+						h6 乗り場番号
+						ul
+							li JR 成田駅東口4番乗り場
+							li 成田空港第一ターミナル16番乗り場
+							li 成田空港第二ターミナル26番乗り場
+				.btn.btn-map GOOGLE MAPで見る
+					i.mys-arrow-left.white
+		section.shuttle-bus-wrap
+			h2 シャトルバス
+			.shuttle-bus-container
+				.shuttle-bus
+					.level.level1
+						h4 東京	
+						.box
+							.box-content
+								.round-btn 高速バス
+								p 新宿西口23番
+							.arrow
+								span 約1時間10分
+						.box
+							.box-content
+								.round-btn 電車
+								p 上野・日暮里駅
+							.arrow
+								span 約36分~1時間11分
+						.box
+							.box-content
+								.round-btn 電車
+								p 横浜駅
+							.arrow
+								span 約1時間48分
+						.box
+							.box-content
+								.round-btn 電車
+								p 東京駅
+							.arrow
+								span 約1時間21分
+						.box
+							.box-content
+								.round-btn 車
+								p 湾岸市川 I.C
+							.arrow.arrow2
+								span 約1時間9分　東関東自動車道潮来 I.C. 経由		
+					.level.level2
+						h4 成田
+						.box
+							.box-content
+								.round-btn 無料シャトルバス
+								p 成田空港
+							.arrow
+								span 約15-20分
+						.box.box1-3
+							.box-content
+								.round-btn 無料シャトルバス
+								p 成田駅
+							.arrow
+								span 成田駅東口から約15分
+					.level.level3
+						h4 目的地
+						.box.blue.box1-5
+							.box-content
+								p MSP成田
+			.shutlle-swipe.visible-xs SWIPE  
+				i.icon-arw
+		section.access-time-table-wrap
+			h2 時刻表
+			.access-time-table
+				h3 空港シャトルバスのご案内
+				.table
+					.table-row
+						.table-head 時刻
+						.table-head ホテル
+						.table-head 第1ターミナル1階16番発
+						.table-head 第2ターミナル1階26番発
+					.table-row
+						.table-column 
+							span 4
+						.table-column 
+							span ※30
+						.table-column 
+							span 
+						.table-column 
+							span 
+					.table-row
+						.table-column 
+							span 5
+						.table-column 							 
+							span ※00
+							span ※30
+						.table-column 
+							span 
+						.table-column 
+							span
+					.table-row
+						.table-column 
+							span 6
+						.table-column 
+							span 00
+							span 30
+						.table-column 							
+							span 
+						.table-column 
+							span 
+					.table-row
+						.table-column 
+							span 7
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 8
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 9
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 10
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 11
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 12
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 13
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 14
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 15
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 16
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 17
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 18
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 19
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 20
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 21
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 22
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 23
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+				ul.notes
+					li ※ 第3ターミナルにのみ参ります。
+					li ※ 第2ターミナルからホテルまで、約20分くらいかかります。
+					li ※ 第1ターミナルからホテルまで、約15分くらいかかります。
+			.access-time-table
+				h3 JR成田駅東口・イオンモール成田行きシャトルバスのご案内
+				.table
+					.table-row
+						.table-head 時刻
+						.table-head ホテル
+						.table-head 第1ターミナル1階16番発
+						.table-head 第2ターミナル1階26番発
+					.table-row
+						.table-column 
+							span 4
+						.table-column 
+							span ※30
+						.table-column 
+							span 
+						.table-column 
+							span 
+					.table-row
+						.table-column 
+							span 5
+						.table-column 							 
+							span ※00
+							span ※30
+						.table-column 
+							span 
+						.table-column 
+							span
+					.table-row
+						.table-column 
+							span 6
+						.table-column 
+							span 00
+							span 30
+						.table-column 							
+							span 
+						.table-column 
+							span 
+					.table-row
+						.table-column 
+							span 7
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 8
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 9
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 10
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 11
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 12
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 13
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 14
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 15
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 16
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 17
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 18
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 19
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 20
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 21
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 22
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+					.table-row
+						.table-column 
+							span 23
+						.table-column 
+							span 2 
+							span 2
+						.table-column 
+							span 3
+						.table-column 
+							span 4
+				ul.notes
+					li ※　JR成田駅からホテルまで、約15分くらいかかります。
+					li ※　イオンモールからホテルまで、約10分くらいかかります。
+			p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+		section.access-map
+			.container
+				h2 USJアクセス
+				img(src='/assets/narita/images/access/access-map.jpg')
+		section.parking-space
+			.container
+				h2 駐車設備
+				.parking-content 
+					p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+					img(src="/assets/narita/images/parking-space.jpg", alt="")
+
+		section.contact
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/pool1.jpg')
+				img(src='/assets/narita/images/pool1.jpg')
+			.banner-text
+				span お問合せ
+				h1 000-0000-0000
+		include ../components/breadcrumb.pug

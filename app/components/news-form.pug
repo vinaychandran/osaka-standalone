@@ -1,0 +1,84 @@
+#news-form(data-basicLightbox data-id="news-form" class=" row news-form-details")
+  .errors
+  a.closeBtn(href="#")
+  form(id='newsForm' name="newsForm")
+    h5 講座お申し込み
+    p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、
+    .row
+      .col.col-1-2
+        .firstname
+          label お名前
+          .input-custom
+            input.form-control(id='fname' name= "fname" type='text', placeholder='姓' required)
+      .col.col-1-2
+        .lastname.left-space
+          label
+          .input-custom
+            input.form-control(id='lname' type='text', placeholder='名' name='lname' required)
+    .row
+      .col.corporate
+        label 会社名
+        .input-custom
+          input.form-control(id='corporate' type='text', placeholder='' name='corporate' required)
+    .row
+      .col.col-1-2
+        .mailaddress
+          label メールアドレス
+          .input-custom
+            input.form-control(id='mailaddress' name= "mailaddress" type='text', placeholder='' required)
+      .col.col-1-2
+        .cellphone.left-space
+          label 携帯番号
+          .input-custom
+            input.form-control(id='cellphone' type='text', placeholder='' name='lname' required)
+    h5.meeting
+      span 詳細情報
+    .row
+      .col.date-duration
+        //.col.col-1-2
+        .attendees
+          label 姓
+          .input-custom
+            input.form-control(id='attendees' name= "attendees" type='text', placeholder='' required)
+        #venue-booking-tab
+            .date-picker-venue-rpf
+              .date-picker-tab1-container
+                .values
+                  .first-box
+                    label 開始日
+                    .startDateContainer
+                      .startDate
+                        .value.date_at
+                          span.date_at
+                          input#date_at.date_at(type='hidden')
+                  .to ~
+                  .sec-box
+                    label 終了日
+                    .endDateContainer
+                      .endDate
+                        .value.date_to
+                          span.date_to
+                          input#date_to.date_to(type='hidden')
+                //.calendar-backdrop
+                .calendar
+                  //img.clear(src='/assets/narita/images/clear.svg' )
+                  .button.button-prev
+                  .button.button-next
+                  .calendarContainer
+                  .bottomLayer
+                    span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+                    .nights 1 金曜日
+                    //.button.closePopup &#x5B8C;&#x4E86;
+    .row
+      .col
+        label 備考
+    .row
+      .col
+        .input-custom.details
+          textarea.form-control.textarea-custom(type='text',  placeholder='', cols='40', rows='8', name='mobile')
+    .row
+      .col
+        .find-button
+          button(name='button', type='button', value='' class='submitNewsForm') 送信する
+        p.footer 「保存する」をクリックすることで、
+        p.footer サービス利用規約と個人情報保護ポリシーに同意したことになります。

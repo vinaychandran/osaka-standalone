@@ -1,0 +1,86 @@
+.spa-content {
+  position: relative;
+
+  .read-statement {
+    @include md {
+      padding: 70px 70px 50px;
+    };
+    @include tablet{
+        padding: 30px;
+        top: 0;
+    };
+    padding: 35px;
+    max-width: 540px;
+    opacity: 0.95;
+    background-color: $secondary-color;
+    @include md {
+      position: absolute;
+    };
+    top: 80px;
+    right: 150px;
+
+    h3 {
+      font-family: $go-bold;
+      @include font-size(20px);
+      font-weight: bold;
+      line-height: 1.67;
+      letter-spacing: 0.6px;
+      @include md {
+        text-align: left;
+        @include font-size(24px);
+      };
+      text-align: center;
+      color: $default-color;
+
+      &.last-header {
+        margin-bottom: 50px;
+      }
+    }
+
+    p {
+      font-family: $mi-regular;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 2;
+      letter-spacing: 1.4px;
+      text-align: left;
+      color: #333333;
+      margin-bottom: 30px;
+    }
+
+    ul li {
+      font-family: $go-semibold;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 2;
+      letter-spacing: 1.4px;
+      text-align: left;
+      color: #333333;
+
+    }
+  }
+}
+
+.spa {
+  &.promo-content {
+    background: $secondary-color;
+    .container ul {
+          margin-bottom: 0;
+          @include md{
+            margin-bottom: 40px;
+          };
+      li .see-more span{
+      background: $secondary-color;
+    }}
+    h3 {
+      padding: 0 0 40px;
+      font-family: $go-semibold;
+      @include md {
+        padding: 62px 0 40px;
+      }
+    }
+    .container ul li .see-more{
+      padding-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,315 @@
+.news-detail-banner{    
+    @include desktop {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 100%; 
+      z-index: 1; 
+      width: -moz-calc(100% - 560px);
+      /* WebKit */
+      width: -webkit-calc(100% - 560px);
+      /* Opera */
+      width: -o-calc(100% - 560px);
+      /* Standard */
+      width: calc(100% - 560px); 
+    }
+}
+
+#experience-content-padder{
+
+}
+
+.news-detail-content{ 
+  text-align: center; 
+  padding: 40px 0;
+  @include md {
+    margin: 0 auto; 
+    padding: 40px 45px; 
+    width: 560px; 
+  } 
+  @include desktop {
+    padding: 200px 45px 100px; 
+    margin: 0 0 0 auto;
+  }
+  .news-detail-about{
+    padding-bottom: 75px;
+    @include md {
+      padding-bottom: 100px;
+    }
+  }
+  .event-type{
+    i{
+      display: inline-block;
+      margin-right: 15px;
+    }
+    line-height: 2.14;
+    letter-spacing: 1.1px;
+    font-weight: 500;
+    font-family: $go-semibold;
+  }
+  h1{
+    @include font-size(24px);
+    line-height: 1.25;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin: 20px 0;
+    font-family: $go-semibold;
+  } 
+  .date{
+    font-family: $go-semibold;
+    font-weight: 500;
+  }
+  .news-content{
+    padding-bottom: 40px;    
+  }
+  h2{
+    @include font-size(20px);
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    max-width: 300px;
+    margin: 0 auto 30px;
+    position: relative;
+    padding: 0 15px 30px;
+    font-weight: 500;
+    font-family: $go-semibold;
+    @include md {
+      margin: 0 auto 30px;
+      padding: 0 0 30px;
+    }
+    &:after{
+      content:"";
+      position: absolute;
+      bottom: 0;     
+      width: 60px;
+      height: 2px;
+      background: $default-color;
+      left: 50%;
+      margin-left: -30px;
+    }
+  } 
+  p{
+    @include font-size(14px);
+    line-height: 2.14;
+    letter-spacing: 1.1px;
+    text-align: left;
+    margin-bottom: 50px;
+    padding: 0 15px;
+    font-family: $mi-regular;
+    font-weight: 500;
+    @include md {
+      padding: 0;
+    }
+  }  
+  img{
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+  h6{
+    @include font-size(14px);
+    font-weight: 700;
+    text-align: left; 
+    padding: 0 15px;
+    @include md {
+      padding: 0;
+    }
+  }
+  .open-details{
+    padding: 20px 50px;    
+    background-color: #eeeeee;
+    color: $default-color;
+    letter-spacing: 1.4px;    
+    display: block;
+    margin:0 15px;
+    @include md {
+      width: 45%;
+      float: left;
+      margin:0;
+    }
+  }
+  .course-application{
+    padding: 20px 50px;    
+    letter-spacing: 1.4px;
+    margin: 20px 15px 0;
+    @include md {
+      width: 45%;
+       float: right;
+       margin:0;
+    }
+  }
+  .btns-wrap{
+    overflow: hidden;
+    @include md {
+      padding: 10px 0 0;
+    }
+    span{
+      display: none;
+      &.active{
+        display: inline-block;
+        margin-right: 8px;
+      }
+    }
+  }
+  .news-content-highlight{
+    background-color: #fafafa;
+    padding: 40px 15px;
+    color: $default-color;
+    @include md {
+      padding: 40px 45px;
+    }
+    div{
+      display: flex;
+      justify-content:space-between;
+    }
+    p{
+      text-align: left; 
+       line-height: 1.71; 
+       margin-bottom: 30px;
+       padding: 0;
+       font-family: $go-semibold;
+       font-weight: 500;
+    }
+    .btn{
+      width: 100%;
+      margin-top: 10px;
+      padding: 20px;
+    }
+  }
+}
+
+.news-related-wrap{
+  border-top: 2px solid $default-color;  
+  margin: 0 15px;
+  @include md {
+    margin: 0;
+  }
+  h3{
+    margin: 30px 0 40px;
+    @include font-size(14px);
+    letter-spacing: 1.1px;
+    font-family: $go-bold;
+    font-weight: 700;
+  }
+  h4{
+    @include font-size(20px);
+    font-weight: 500;
+    margin-top: 35px;
+    font-family:$go-semibold;
+    font-weight: 500;
+  }
+  .see-more{
+    max-width: 300px;
+    margin: 35px auto 60px; 
+    float: none;
+  }
+}
+
+.news-content-details-wrap{  
+  border: 10px solid #eeeeee;
+  position: relative;
+  margin: 20px 15px 0;
+  display: none;
+  @include md {
+    margin: 20px 0 0;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;    
+    border-bottom: 10px solid #eeeeee;
+    top: -20px;
+    left: 50%;
+    margin-left: -7px;    
+    @include md {
+      left: 100px;
+      margin-left: 0;
+    }
+  }
+  .news-content-details{
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 auto;    
+    .table-row{
+      width: 100%;
+      display: block;
+      @include md {
+        display: flex;
+        flex-flow: row nowrap;
+        border-bottom: 1px solid #eeeeee;  
+      }        
+    }
+    .table-item{
+      
+      text-overflow: ellipsis;
+      min-width: 0px;
+      white-space: nowrap;    
+      text-align: left;  
+      padding: 15px;
+      border-bottom: 1px solid #eeeeee;
+      font-family: $go-semibold;
+      font-weight: 500;
+      @include md {
+        padding: 25px 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        flex-grow: 1;
+        flex-basis: 0;
+        word-break: break-word;
+        overflow: hidden;
+        border-bottom: 0;
+        &:nth-of-type(odd) {
+          border-right: 1px solid #eeeeee;
+        }  
+        &:nth-of-type(even) {
+          flex-grow: 2;
+        }
+      }
+        
+    }
+  }
+  .callout-wrap{
+    border: 2px solid $default-color;
+    margin:20px 15px; 
+    padding: 30px 15px;
+    position: relative;
+    @include md {
+      padding: 45px 50px;
+    }
+    h5{
+      @include font-size(20px);
+      letter-spacing: 1.5px;
+      margin-bottom: 25px;
+    }
+    .btn{
+      display: block;
+      padding: 22px 10px;
+      margin-bottom: 30px;
+    }
+    .callout-content{
+      line-height: 1.71;
+      letter-spacing: 1.1px;
+    }
+    .ph{
+      @include font-size(24px);  
+      letter-spacing: 1.8px;    
+      margin: 15px 0;      
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      border: 1px solid $default-color;
+    }
+  }
+}
+

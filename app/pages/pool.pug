@@ -1,0 +1,150 @@
+extends ../layouts/default
+
+block append content
+  section.main-banner
+    picture.banner-image
+      source(media='(min-width: 768px)', srcset='/assets/narita/images/pool.jpg')
+      img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg')
+    .banner-text
+      h1 プール
+  .about-rooms-wrap
+    .about-rooms-info
+      h3 SIMPLE, BLISSFUL MOMENTS
+      p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、
+      p 夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォの
+      p すきとおった風、夏でも底に冷たさをもつ青いそら
+  section
+    picture.banner-image
+      source(media='(min-width: 768px)', srcset='/assets/narita/images/pool5.jpg')
+      img(src='/assets/narita/images/pool5.jpg')
+  section.pool-info
+    .container
+      .content-left
+        h3 リード文リード文リード文
+        h3 リード文リード文
+        p tもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそ
+      .content-image-right
+        source(media='(min-width: 768px)', srcset='/assets/narita/images/pool6.jpg')
+        img(src='/assets/narita/images/pool6.jpg')
+  .pool-image
+    .container
+      source(srcset='/assets/narita/images/pool8.jpg')
+      img(src='/assets/narita/images/pool8.jpg')
+
+  section.promo-content
+    .container
+      h3 併用施設
+      ul.row
+        li.col.col-1-3
+          source(media='(min-width: 768px)', srcset='/assets/narita/images/promo-1.jpg')
+          img(src='/assets/narita/images/promo-1.jpg')
+          .header 施設01
+          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+          .see-more(href="#" data-show-rooms="pool-full-info")
+            span もっと見る
+          #pool-full-info(data-basicLightbox data-id="pool-full-info" class="room-detail")
+            .room-info-header
+              .content-right
+                .cta
+                  i.icon-phone
+                  | 000-0000-0000
+                .close-room
+                  i.icon-close
+                a(href='#').book-room
+                  | 予約する                
+              .phone-number.header
+                | Mama treatment
+
+            include ../components/pool-info.pug
+        li.col.col-1-3
+          source(media='(min-width: 768px)', srcset='/assets/narita/images/promo-image.jpg')
+          img(src='/assets/narita/images/promo-image.jpg')
+          .header 施設01
+          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+          .see-more
+            span もっと見る
+        li.col.col-1-3
+          source(media='(min-width: 768px)', srcset='/assets/narita/images/promo-1.jpg')
+          img(src='/assets/narita/images/promo-1.jpg')
+          .header 施設01
+          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+          .see-more
+            span もっと見る
+
+  section
+    picture.banner-image
+      source(media='(min-width: 768px)', srcset='/assets/narita/images/pool2.jpg')
+      img(src='/assets/narita/images/pool2.jpg')
+
+
+  section.terms
+    .container
+      .row.top
+        .col.col-1-2
+          h3.bold 営業期間
+          ul
+            li 通年営業（季節により営業時間変更有り）
+            li 2018年1月〜2018年12月年間営業日カレンダー
+            li ＊2018年6月30日（土）まで一部エリア（ソラリウム・屋内ジェットバス）がご利用いただけません。ビッグウェーブプールなどその他の施設はご利用いただけます。
+          h3.bold 2018年の営業時間
+          ul
+            li ①月～金（3/1～3/23、4/2〜4/26、5/7〜7/13、9/3〜12/27）
+            li 10:00～19:00（18:00最終受付｜除外日：3/21、9/17、9/24、10/8、11/15〜16、11/23、12/24）
+            li ②土日祝（3/3〜4/22、5/12〜7/8、9/8〜12/31）
+            li 9:00～21:00（20:00最終受付｜追加対象日：3/21、3/26〜30、9/17、9/24、10/8、11/23、12/24、12/28〜31）
+            li ③4/27〜5/6、7/14〜9/2
+            li 8:00～21:00（20:00最終受付）
+            li ※10:00までは宿泊のお客様専用時間です。
+            li ※②③のみ メインプール遊泳 8:00〜19:10／メインプールSUP 19:10〜21:00（予約制）
+            li ※②③のみ メインプール遊泳 8:00〜19:10／メインプールSUP 19:10〜21:00（予約制）
+            li ※19:00のビッグウェーブ終了後、メインプールはSUP専用時間となり遊泳は出来ません。メインプール以外の施設(カフェ、ジェットバス、ボールプール等)はご利用いただけます。
+            li ※SUP はスタンドアップパドルの略称です。
+            li ※詳細は年間営業日カレンダーをご参照ください 。
+        .col.col-1-2
+          h3.bold ご利用料金
+          ul
+            li 宿泊のお客様（1日））
+            li 大人 1,500円、4歳～小学生 750円、3歳以下 無料（プール入場券付宿泊プランのお客様は滞在中無料利用可）
+            li 日帰りのお客様（1日）
+          h3.bold ●2018年6月30日まで
+          ul
+            li 大人 2,000円、4歳～小学生 1,000円、3歳以下 無料
+            li 【4/27〜5/6期間は特別料金です】
+            li 【17:00までのご入場】
+            li 大人 3,200円／4歳～小学生 1,600円／3歳以下 無料
+            li 【17:00以降のご入場】
+            li 8:00～21:00（20:00最終受付）
+            li 大人 2,000円／4歳～小学生 1,000円／3歳以下 無料
+            li ＊混雑時、安全管理のため、入場制限する場合がございます。
+
+          h3.bold ●2018年7月1日以降
+          ul
+            li 大人 2,000円、3歳～小学生 1,000円、2歳以下 無料
+            li 【7/14〜9/2期間は特別料金です】
+            li 【16:00までのご入場】
+            li 大人 2,000円／3歳～小学生 1,000円／2歳以下 無料
+            li 【16:00以降のご入場】
+            li ＊混雑時、安全管理のため、入場制限する場合がございます。
+            li 大人 2,000円／4歳～小学生 1,000円／3歳以下 無料
+            li フリーパス（年間会員） 大人 27,000円
+            li 地元優待　山梨県、長野県にお住いのお客様（1日）
+            li 優待料金：大人 1,000円／4歳〜小学生 500円／3歳以下 無料
+            li ※受付時にご住所の確認をさせて頂きますので、免許証や保健証などご住所の確認ができるものをご持参ください。
+            li ※4/27〜5/6、7/1〜9/30は優待除外日です。詳しくは営業日カレンダーをご確認ください。
+
+
+      .row.bottom
+        p ご利用料金には、タオル・ロッカー料金が含まれます。／ご来館の際にはホテル駐車場をご利用ください（駐車料：無料）施設内の飲食・レンタルグッズ代は別料金となります。／飲食物のお持込みはご遠慮ください。／刺青・タトゥーのあるお客様のご入場はお断りしております。／ビッグウェーブ開催時間：オープン1時間後〜クローズ1時間前まで毎時10分間
+        h3.bold お子様連れのお客様へ
+        p 小学生以下のお子様は、安全確保の為に18歳以上の保護者同伴でのご遊泳を必須とさせていただいております。特に、ビッグウェーブ開催時間中は保護者と一緒のご遊泳をお願い致します。また、保護者1名につき、お子様は最大3名までとさせていただいております。小学生以下のお子様のみでのご入場はお断り致します。
+        p 皆様で安全にお楽しみいただけますよう、ご理解ご協力の程、何卒宜しくお願い申し上げます。
+        p 水泳用オムツの販売もございます。（通常のオムツでの遊泳はご遠慮ください）
+
+  section.contact
+    picture.banner-image
+      source(media='(min-width: 768px)', srcset='/assets/narita/images/pool1.jpg')
+      img(src='/assets/narita/images/pool1.jpg')
+    .banner-text
+      span お問合せ
+      h1 000-0000-0000
+  include ../components/breadcrumb.pug

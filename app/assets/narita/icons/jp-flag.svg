@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>JP-flag</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MS-Pepper-Landing-Page-Desktop-EN" transform="translate(-1130.000000, -107.000000)">
+            <g id="Lang-Hover" transform="translate(1115.000000, 30.000000)">
+                <g id="Jp" transform="translate(15.000000, 66.000000)">
+                    <g id="JP-flag" transform="translate(0.000000, 11.000000)">
+                        <rect id="Rectangle-3" fill="#FFFFFF" x="0" y="0" width="16" height="10"></rect>
+                        <circle id="Oval-3" fill="#E53C53" cx="8" cy="5" r="3"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

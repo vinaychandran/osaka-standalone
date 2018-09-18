@@ -1,0 +1,38 @@
+extends ../layouts/default
+
+block append content
+    .page-gallery
+        section.main-banner
+            picture.banner-image
+                source(media='(min-width: 768px)', srcset='/assets/narita/images/gallery/gallery-banner.jpg')
+                img(src='/assets/narita/images/gallery/gallery-banner-mobile.jpg') 
+            .banner-text
+                h1  ギャラリー 
+        section.gallery-images-list
+            .menu-gradient
+            .container                
+                ul.room-types.image-types
+                    li
+                        a.selected(data-room-type="all") 一覧表示
+                    li
+                        a(data-room-type="all specialty") スペシャリティスイート
+                    li
+                        a(data-room-type="all family") 家族部屋
+                    li
+                        a(data-room-type="all women") 女性専用部屋
+                    li
+                        a(data-room-type="all nonsmoking") 禁煙室
+                    li
+                        a(data-room-type="all smoking") 喫煙室
+        section.gallery-images
+            .container
+                ul.rooms-list.image-list
+                    li.show(data-rooms="all nonsmoking")
+                        img.lazy(data-src='/assets/narita/images/gallery/page/1.jpg' data-show-id="popup-gallery" data-slide="0")
+                    li.show(data-rooms="all women")
+                        img.lazy(data-src='/assets/narita/images/gallery/page/2.jpg' data-show-id="popup-gallery" data-slide="1")
+                    li.show(data-rooms="all specialty")
+                        img.lazy(data-src='/assets/narita/images/gallery/page/3.jpg' data-show-id="popup-gallery" data-slide="2")
+        include ../components/breadcrumb.pug
+        .gallery-nav#gallery-nav(data-basicLightbox data-id="popup-gallery")
+            

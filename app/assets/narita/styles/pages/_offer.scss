@@ -1,0 +1,160 @@
+.offer-main-page {
+    padding-top: 54px;
+    @include sm {
+        padding-top: 80px;
+    }
+    .offer-list-wrap {
+        padding: 0 20px;
+        .container {
+            position: relative;
+            .offer-types {
+                width: 88%;
+                top: 93px;
+                margin-left: -44%;
+                @include sm {
+                    width: 43%; 
+                    top: auto;
+                    margin-left: auto;                   
+                }
+            }
+            h4 {
+                margin-bottom: 26px;
+                @include sm {
+                    margin-bottom: 50px;
+                }
+            }
+            .right-tag {
+                position: static;
+                text-align: center;
+                padding: 0 0 30px 0;
+                display: block;
+                @include md {
+                    position: absolute;
+                    right: 0;
+                    top: 80px;
+                    padding: 0;
+                }
+            }
+            .venue-list {
+                li {
+                    position: relative;
+                }
+            }
+            .offer-short-info {
+                h6 {
+                    @include font-size(16px);
+                    line-height: 1.75;
+                    letter-spacing: 1.6px;
+                    text-align: left;
+                    font-weight: bold;
+                    color: $primary-color;
+                }
+                p {
+                    @include font-size(12px);
+                    font-weight: 500;
+                    line-height: 1.67;
+                }
+            }
+        }
+    }
+}
+
+#offer-full-info {
+    overflow-x: hidden;
+    .offer-info-header {
+        .header {
+            font-family: Lato;
+            @include font-size(20px);
+            font-weight: bold;
+            line-height: 0.97;
+            letter-spacing: normal;
+            text-align: center;
+            margin: 0 auto;
+            color: #333333;
+            width: 100%;
+            padding: 30px 0;
+            margin: 0;
+            @include md {
+                @include font-size(32px);
+                text-align: left;
+                width: auto;
+                margin: 34px 0 0 34px;
+                padding: 0;
+            }
+        }
+        .rating-wrap {
+            float: left;
+            padding: 10px 0 0 20px;
+            display: block;
+            @include sm {
+                float: right;
+                padding: 25px 20px 0 0;
+            }
+            .rating-number {
+                span {
+                    font-family: Lato;
+                    @include font-size(14px);
+                    line-height: 2.17;
+                    letter-spacing: 2.2px;
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+    .offer-info-content {
+        .container {
+            @include md {
+                padding: 44px 55px;
+                background-color: #ffffff;
+                max-width: 920px;
+            }
+            h2 {
+                font-family: YuGo;
+                font-size: 16px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.25;
+                letter-spacing: 3.2px;
+                text-align: center;
+                color: #333333;
+                padding: 0 0 20px;
+                margin: 0 auto;
+                border-bottom: 2px solid #000;
+            }
+            ul {
+                padding: 30px 0 30px 30px;
+                li {
+                    @include font-size(16px);
+                    font-weight: 500;
+                    line-height: 2.38;
+                    letter-spacing: 1.6px;
+                    list-style-type: disc;
+                    padding-left: 14px;
+                }
+                &.offer-second-list {
+                    padding: 30px 0 30px 30px;
+                    border-top: 1px solid #eee;
+                    border-bottom: 1px solid #eee;
+                    li {
+                        @include font-size(12px);
+                        font-weight: 500;
+                        line-height: 2.17;
+                        letter-spacing: 1.2px;
+                        opacity: 0.6;
+                        list-style-type: disc;
+                        padding-left: 14px;
+                    }
+                }
+            }
+            p {
+                @include font-size(12px);
+                font-weight: 500;
+                line-height: 2.17;
+                letter-spacing: 1.2px;
+                opacity: 0.6; 
+                padding: 0 16px;
+            }
+        }
+    }
+}

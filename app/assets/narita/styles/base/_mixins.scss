@@ -1,0 +1,292 @@
+//Mixins 
+// Breakpoint
+
+@mixin lg {
+    @media screen and (min-width: #{$lg-width}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: #{$md-width}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: #{$sm-width}) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (min-width: #{$xs-width}) {
+        @content;
+    }
+}
+
+@mixin xxs {
+    @media screen and (max-width: #{$xxs-width}) { 
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: #{$md-width + 1px}) {
+        @content;
+    }
+}
+
+@mixin device {
+    @media screen and (max-width: #{$md-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$sm-width}) and (max-width: #{$md-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: #{$sm-width - 1px}) {
+        @content;
+    }
+} 
+ 
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+@mixin landscape {
+    @media screen and (orientation: landscape) {
+        @content;
+    } 
+}
+
+@mixin portrait {
+    @media screen and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin ie {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        @content;
+    }
+}
+//example
+// div{
+//     @include md;
+// }
+
+
+
+// Pseudo
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+// example
+// div::after {
+//     @include pseudo;
+//     top: -1rem; left: -1rem;
+//     width: 1rem; height: 1rem;
+// }
+
+
+
+// CSS triangles
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+// example
+// div {
+//      @include css-triangle(red, up, 10px);
+// }
+
+
+//Placeholders
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+//example
+// input,  
+// textarea {  
+//     @include input-placeholder {
+//         color: $grey;
+//     }
+// }
+
+
+//Font-size REM
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+//example
+// p {
+//   @include font-size(14px)
+// }
+
+
+//cleafix
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+// example
+// .container-with-floated-children {
+//   @extend %clearfix;
+// }
+
+
+// Center align Position 
+@mixin center($position) {
+  position: absolute;
+  
+  @if $position == 'vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+// Example
+// .foo {
+//   @include center(both);
+// }
+// .foo-parent {
+//   position: relative;
+// }
+
+
+//Animation mixin setup
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+@mixin animation($str) {
+  animation: #{$str};      
+}
+//Example
+// Define animation name, and properties
+// @include keyframes(fade-out) {
+//   0% { opacity: 1; }
+//   90% { opacity: 0; }
+// }
+// // Add animation to element
+// .foo {
+//   width: 100px;
+//   height: 100px;
+//   background: black;
+//   @include animation('fade-out 5s 3');
+// }
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) { 
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + '.eot');
+    src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+         url($file-name + '.woff') format('woff'),
+         url($file-name + '.ttf')  format('truetype'),
+         url($file-name + '.svg##{$font-name}')  format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+ }
+ //Example
+ // @include font-face('gotham', '/fonts/gotham');
+
+ @mixin button-bg($bg, $cl) {
+  background: $bg;
+  color:$cl;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.5s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  } 
+}
+
+@mixin fluid-ratio($large-size, $small-size) {
+    $width-large: nth($large-size, 1);
+    $width-small: nth($small-size, 1);
+    $height-large: nth($large-size, 2);
+    $height-small: nth($small-size, 2);
+    $slope: ($height-large - $height-small) / ($width-large - $width-small);
+    $height: $height-small - $width-small * $slope;
+  
+    padding-top: $slope * 100%;
+    height: $height;
+  
+    background-size: cover;
+    -moz-background-size: cover;  /* Firefox 3.6 */
+    background-position: center;  /* Internet Explorer 7/8 */
+  }

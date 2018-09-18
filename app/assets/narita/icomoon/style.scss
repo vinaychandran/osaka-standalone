@@ -1,0 +1,770 @@
+@import "variables";
+
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('#{$icomoon-font-path}/icomoon.ttf?xfxl4b') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?xfxl4b') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?xfxl4b#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-breakfast {
+  &:before {
+    content: $icon-breakfast; 
+  }
+}
+.icon-cottonswab {
+  &:before {
+    content: $icon-cottonswab; 
+  }
+}
+.icon-mini-fridge {
+  &:before {
+    content: $icon-mini-fridge; 
+  }
+}
+.icon-pay {
+  &:before {
+    content: $icon-pay; 
+  }
+}
+.icon-generation {
+  &:before {
+    content: $icon-generation; 
+  }
+}
+.icon-activity {
+  &:before {
+    content: $icon-activity; 
+  }
+}
+.icon-airconditioner {
+  &:before {
+    content: $icon-airconditioner; 
+  }
+}
+.icon-airpurifier {
+  &:before {
+    content: $icon-airpurifier; 
+  }
+}
+.icon-alarmclock {
+  &:before {
+    content: $icon-alarmclock; 
+  }
+}
+.icon-arw {
+  &:before {
+    content: $icon-arw; 
+  }
+}
+.icon-babycot {
+  &:before {
+    content: $icon-babycot; 
+  }
+}
+.icon-babysitterservice {
+  &:before {
+    content: $icon-babysitterservice; 
+  }
+}
+.icon-babysittingamenityset {
+  &:before {
+    content: $icon-babysittingamenityset; 
+  }
+}
+.icon-bathroomamenities {
+  &:before {
+    content: $icon-bathroomamenities; 
+  }
+}
+.icon-bathtowel {
+  &:before {
+    content: $icon-bathtowel; 
+  }
+}
+.icon-bedguard {
+  &:before {
+    content: $icon-bedguard; 
+  }
+}
+.icon-bicycles {
+  &:before {
+    content: $icon-bicycles; 
+  }
+}
+.icon-bodysoap {
+  &:before {
+    content: $icon-bodysoap; 
+  }
+}
+.icon-bodysponge {
+  &:before {
+    content: $icon-bodysponge; 
+  }
+}
+.icon-box {
+  &:before {
+    content: $icon-box;     
+    color: #fff;
+  }
+}
+.icon-calender {
+  &:before {
+    content: $icon-calender; 
+  }
+}
+.icon-cellphonecharger {
+  &:before {
+    content: $icon-cellphonecharger; 
+  }
+}
+.icon-checked {
+  &:before {
+    content: $icon-checked; 
+  }
+}
+.icon-cleaningservice {
+  &:before {
+    content: $icon-cleaningservice; 
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close; 
+  }
+}
+.icon-clothesiron {
+  &:before {
+    content: $icon-clothesiron; 
+  }
+}
+.icon-coffeemachine {
+  &:before {
+    content: $icon-coffeemachine; 
+  }
+}
+.icon-coffeeservice {
+  &:before {
+    content: $icon-coffeeservice; 
+  }
+}
+.icon-conditioner {
+  &:before {
+    content: $icon-conditioner; 
+  }
+}
+.icon-conveniencestore {
+  &:before {
+    content: $icon-conveniencestore; 
+  }
+}
+.icon-cookware {
+  &:before {
+    content: $icon-cookware; 
+  }
+}
+.icon-cookwareinkitchen {
+  &:before {
+    content: $icon-cookwareinkitchen; 
+  }
+}
+.icon-coupleorientedroom {
+  &:before {
+    content: $icon-coupleorientedroom; 
+  }
+}
+.icon-courierservice {
+  &:before {
+    content: $icon-courierservice; 
+  }
+}
+.icon-day-plan {
+  &:before {
+    content: $icon-day-plan; 
+  }
+}
+.icon-desk {
+  &:before {
+    content: $icon-desk; 
+  }
+}
+.icon-desklamp {
+  &:before {
+    content: $icon-desklamp; 
+  }
+}
+.icon-doublebed {
+  &:before {
+    content: $icon-doublebed; 
+  }
+}
+.icon-doublebed-small {
+  &:before {
+    content: $icon-doublebed-small; 
+  }
+}
+.icon-download {
+  &:before {
+    content: $icon-download;     
+    color: #fff;
+  }
+}
+.icon-DVDplayer {
+  &:before {
+    content: $icon-DVDplayer; 
+  }
+}
+.icon-electrickettle {
+  &:before {
+    content: $icon-electrickettle; 
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;     
+    color: #fff;
+  }
+}
+.icon-facetowel {
+  &:before {
+    content: $icon-facetowel; 
+  }
+}
+.icon-familyorientedroom {
+  &:before {
+    content: $icon-familyorientedroom; 
+  }
+}
+.icon-fax {
+  &:before {
+    content: $icon-fax; 
+  }
+}
+.icon-fb {
+  &:before {
+    content: $icon-fb; 
+  }
+}
+.icon-fitness {
+  &:before {
+    content: $icon-fitness; 
+  }
+}
+.icon-flag_ch .path1 {
+  &:before {
+    content: $icon-flag_ch-path1;  
+    color: rgb(209, 46, 26);
+  }
+}
+.icon-flag_ch .path2 {
+  &:before {
+    content: $icon-flag_ch-path2;  
+    margin-left: -1em;  
+    color: rgb(244, 214, 33);
+  }
+}
+.icon-flag_en .path1 {
+  &:before {
+    content: $icon-flag_en-path1;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-flag_en .path2 {
+  &:before {
+    content: $icon-flag_en-path2;  
+    margin-left: -1em;  
+    color: rgb(209, 0, 14);
+  }
+}
+.icon-flag_en .path3 {
+  &:before {
+    content: $icon-flag_en-path3;  
+    margin-left: -1em;  
+    color: rgb(18, 51, 95);
+  }
+}
+.icon-flag_en .path4 {
+  &:before {
+    content: $icon-flag_en-path4;  
+    margin-left: -1em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-flag_jp .path1 {
+  &:before {
+    content: $icon-flag_jp-path1;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-flag_jp .path2 {
+  &:before {
+    content: $icon-flag_jp-path2;  
+    margin-left: -1em;  
+    color: rgb(230, 0, 18);
+  }
+}
+.icon-flag_kr .path1 {
+  &:before {
+    content: $icon-flag_kr-path1;  
+    color: rgb(249, 249, 249);
+  }
+}
+.icon-flag_kr .path2 {
+  &:before {
+    content: $icon-flag_kr-path2;  
+    margin-left: -1em;  
+    color: rgb(186, 26, 48);
+  }
+}
+.icon-flag_kr .path3 {
+  &:before {
+    content: $icon-flag_kr-path3;  
+    margin-left: -1em;  
+    color: rgb(18, 54, 109);
+  }
+}
+.icon-flag_kr .path4 {
+  &:before {
+    content: $icon-flag_kr-path4;  
+    margin-left: -1em;  
+    color: rgb(4, 0, 0);
+  }
+}
+.icon-freeshuttlebus {
+  &:before {
+    content: $icon-freeshuttlebus; 
+  }
+}
+.icon-google .path1 {
+  &:before {
+    content: $icon-google-path1;  
+    color: rgb(62, 130, 241);
+  }
+}
+.icon-google .path2 {
+  &:before {
+    content: $icon-google-path2;  
+    margin-left: -1em;  
+    color: rgb(50, 167, 83);
+  }
+}
+.icon-google .path3 {
+  &:before {
+    content: $icon-google-path3;  
+    margin-left: -1em;  
+    color: rgb(249, 187, 0);
+  }
+}
+.icon-google .path4 {
+  &:before {
+    content: $icon-google-path4;  
+    margin-left: -1em;  
+    color: rgb(231, 65, 51);
+  }
+}
+.icon-grouporientedroom {
+  &:before {
+    content: $icon-grouporientedroom; 
+  }
+}
+.icon-gym {
+  &:before {
+    content: $icon-gym; 
+  }
+}
+.icon-hairbrush {
+  &:before {
+    content: $icon-hairbrush; 
+  }
+}
+.icon-haircomb {
+  &:before {
+    content: $icon-haircomb; 
+  }
+}
+.icon-hairdryer {
+  &:before {
+    content: $icon-hairdryer; 
+  }
+}
+.icon-handsoap {
+  &:before {
+    content: $icon-handsoap; 
+  }
+}
+.icon-hotelphoto {
+  &:before {
+    content: $icon-hotelphoto; 
+  }
+}
+.icon-hotspring {
+  &:before {
+    content: $icon-hotspring; 
+  }
+}
+.icon-humidifier {
+  &:before {
+    content: $icon-humidifier; 
+  }
+}
+.icon-icemachine {
+  &:before {
+    content: $icon-icemachine; 
+  }
+}
+.icon-IHcooker {
+  &:before {
+    content: $icon-IHcooker; 
+  }
+}
+.icon-info {
+  &:before {
+    content: $icon-info; 
+  }
+}
+.icon-in-roommassage {
+  &:before {
+    content: $icon-in-roommassage; 
+  }
+}
+.icon-insta {
+  &:before {
+    content: $icon-insta; 
+  }
+}
+.icon-japanesepublicbath {
+  &:before {
+    content: $icon-japanesepublicbath; 
+  }
+}
+.icon-ladiesamenitiesset {
+  &:before {
+    content: $icon-ladiesamenitiesset; 
+  }
+}
+.icon-lan {
+  &:before {
+    content: $icon-lan; 
+  }
+}
+.icon-laundary {
+  &:before {
+    content: $icon-laundary; 
+  }
+}
+.icon-library {
+  &:before {
+    content: $icon-library; 
+  }
+}
+.icon-like {
+  &:before {
+    content: $icon-like;     
+    color: #fff;
+  }
+}
+.icon-login {
+  &:before {
+    content: $icon-login;     
+    color: #fff;
+  }
+}
+.icon-map .path1 {
+  &:before {
+    content: $icon-map-path1;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-map .path2 {
+  &:before {
+    content: $icon-map-path2;  
+    margin-left: -1em;  
+    color: rgb(0, 0, 0);
+  }
+}
+.icon-map_pin .path1 {
+  &:before {
+    content: $icon-map_pin-path1;  
+    color: rgb(35, 46, 72);
+  }
+}
+.icon-map_pin .path2 {
+  &:before {
+    content: $icon-map_pin-path2;  
+    margin-left: -1em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-meetingroom {
+  &:before {
+    content: $icon-meetingroom; 
+  }
+}
+.icon-memoryfoampillow {
+  &:before {
+    content: $icon-memoryfoampillow; 
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu;     
+    color: #fff;
+  }
+}
+.icon-microwaveoven {
+  &:before {
+    content: $icon-microwaveoven; 
+  }
+}
+.icon-mini-fridge.svg {
+  &:before {
+    content: $icon-mini-fridge.svg; 
+  }
+}
+.icon-modularbathroom {
+  &:before {
+    content: $icon-modularbathroom; 
+  }
+}
+.icon-multiple-users-silhouette {
+  &:before {
+    content: $icon-multiple-users-silhouette; 
+  }
+}
+.icon-negativeionhairdryer {
+  &:before {
+    content: $icon-negativeionhairdryer; 
+  }
+}
+.icon-next {
+  &:before {
+    content: $icon-next; 
+  }
+}
+.icon-nightwear {
+  &:before {
+    content: $icon-nightwear; 
+  }
+}
+.icon-parkinglot {
+  &:before {
+    content: $icon-parkinglot; 
+  }
+}
+.icon-PCrental {
+  &:before {
+    content: $icon-PCrental; 
+  }
+}
+.icon-people {
+  &:before {
+    content: $icon-people; 
+  }
+}
+.icon-petorientedroom {
+  &:before {
+    content: $icon-petorientedroom; 
+  }
+}
+.icon-phone {
+  &:before {
+    content: $icon-phone;     
+    color: #fff;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-pocketwifi {
+  &:before {
+    content: $icon-pocketwifi; 
+  }
+}
+.icon-pool {
+  &:before {
+    content: $icon-pool; 
+  }
+}
+.icon-portablespeaker {
+  &:before {
+    content: $icon-portablespeaker; 
+  }
+}
+.icon-postalservice {
+  &:before {
+    content: $icon-postalservice; 
+  }
+}
+.icon-prev {
+  &:before {
+    content: $icon-prev; 
+  }
+}
+.icon-razor {
+  &:before {
+    content: $icon-razor; 
+  }
+}
+.icon-refreshroom {
+  &:before {
+    content: $icon-refreshroom; 
+  }
+}
+.icon-rinse {
+  &:before {
+    content: $icon-rinse; 
+  }
+}
+.icon-safetybox {
+  &:before {
+    content: $icon-safetybox; 
+  }
+}
+.icon-sauna {
+  &:before {
+    content: $icon-sauna; 
+  }
+}
+.icon-seniororientedroom {
+  &:before {
+    content: $icon-seniororientedroom; 
+  }
+}
+.icon-shampoo {
+  &:before {
+    content: $icon-shampoo; 
+  }
+}
+.icon-shavingcream {
+  &:before {
+    content: $icon-shavingcream; 
+  }
+}
+.icon-shower {
+  &:before {
+    content: $icon-shower; 
+  }
+}
+.icon-showercap {
+  &:before {
+    content: $icon-showercap; 
+  }
+}
+.icon-shuttlebus {
+  &:before {
+    content: $icon-shuttlebus; 
+  }
+}
+.icon-singlebed {
+  &:before {
+    content: $icon-singlebed; 
+  }
+}
+.icon-smellspray {
+  &:before {
+    content: $icon-smellspray; 
+  }
+}
+.icon-souveniorshop {
+  &:before {
+    content: $icon-souveniorshop; 
+  }
+}
+.icon-star {
+  &:before {
+    content: $icon-star;     
+    color: #fff;
+  }
+}
+.icon-tableware {
+  &:before {
+    content: $icon-tableware; 
+  }
+}
+.icon-tablewareinkitchen {
+  &:before {
+    content: $icon-tablewareinkitchen; 
+  }
+}
+.icon-telephone {
+  &:before {
+    content: $icon-telephone; 
+  }
+}
+.icon-toiletwithwashlet {
+  &:before {
+    content: $icon-toiletwithwashlet; 
+  }
+}
+.icon-toothbrushset {
+  &:before {
+    content: $icon-toothbrushset; 
+  }
+}
+.icon-trouserpress {
+  &:before {
+    content: $icon-trouserpress; 
+  }
+}
+.icon-tv {
+  &:before {
+    content: $icon-tv; 
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;     
+    color: #fff;
+  }
+}
+.icon-vendingmachine {
+  &:before {
+    content: $icon-vendingmachine; 
+  }
+}
+.icon-videoondemand {
+  &:before {
+    content: $icon-videoondemand; 
+  }
+}
+.icon-wheelchair {
+  &:before {
+    content: $icon-wheelchair; 
+  }
+}
+.icon-whiteboard {
+  &:before {
+    content: $icon-whiteboard; 
+  }
+}
+.icon-wifi {
+  &:before {
+    content: $icon-wifi; 
+  }
+}
+.icon-yahoo {
+  &:before {
+    content: $icon-yahoo; 
+  }
+}
+

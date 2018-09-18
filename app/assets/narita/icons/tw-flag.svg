@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Taiwan-Flag-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="14-Hotel-MyStays-Attractions-Desktop" transform="translate(-855.000000, -45.000000)">
+            <g id="Header" transform="translate(230.000000, 35.000000)">
+                <g id="Lang" transform="translate(625.000000, 6.000000)">
+                    <g id="Taiwan-Flag-icon">
+                        <g transform="translate(0.000000, 4.000000)">
+                            <polygon id="Fill-1" fill="#E54C3C" points="0 10 16 10 16 5.15421039e-14 0 5.15421039e-14"></polygon>
+                            <polygon id="Fill-2" fill="#3B96D2" points="0 5 6 5 6 0 0 0"></polygon>
+                            <g id="Group-7" transform="translate(1.674419, 1.245451)" fill="#ECEFF0">
+                                <path d="M1.33981382,2.46715682 C0.717484732,2.46715682 0.212657037,1.96251534 0.212657037,1.33981382 C0.212657037,0.717484732 0.717484732,0.213215681 1.33981382,0.213215681 C1.96214291,0.213215681 2.4669706,0.717484732 2.4669706,1.33981382 C2.4669706,1.96251534 1.96214291,2.46715682 1.33981382,2.46715682 M1.33981382,0 C2.08001673,0 2.68000007,0.599797124 2.68000007,1.33981382 C2.68000007,2.08020294 2.08001673,2.6803725 1.33981382,2.6803725 C0.59961091,2.6803725 0,2.08020294 0,1.33981382 C0,0.599797124 0.59961091,0 1.33981382,0 Z M2.25379216,1.33986968 C2.25379216,0.835041989 1.84467876,0.425928582 1.33985106,0.425928582 C0.835023367,0.425928582 0.425909961,0.835041989 0.425909961,1.33986968 C0.425909961,1.84469738 0.835023367,2.253997 1.33985106,2.253997 C1.84467876,2.253997 2.25379216,1.84469738 2.25379216,1.33986968 Z" id="Combined-Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

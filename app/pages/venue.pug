@@ -1,0 +1,353 @@
+extends ../layouts/default
+
+block append content
+	.venue-page
+		section.inner-page-mobile-menu
+			.menu-gradient
+			ul
+				li
+					a(href="#") 会場一覧
+						i.down
+				li
+					a(href="#") ギャラリー
+						i.down
+				li
+					a(href="#") ケータリングメニュー
+						i.down
+				li
+					a(href="#") 所在地
+						i.down
+		section.main-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/venue-banner.jpg')
+				img(src='/assets/narita/images/venue-banner-mobile.png')
+			.banner-text
+				h1 会議・宴会
+		//section.main-banner.venue-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/venue-banner.jpg')
+				img(src='/assets/narita/images/venue-banner.jpg')
+			.banner-text
+				h1 会議・宴会
+			//- .divider
+			//- .calendar-link.visible-device
+			//- 	a(href="#") 空室検索
+			//- 		i.icon.sprite-calendar-interface-symbol-tool
+		//- .visible-device
+		//- 	include ../components/booking-widget.pug
+		section.inner-menu-wrap
+			.inner-links-right
+				.inner-phone
+					i.icon-phone
+					| 000-0000-0000
+				.btn.pdf-download PDFをダウンロード
+					i.icon-download
+				.btn.rfp-form(data-show-id='rfp-form') お問い合わせ
+			.inner-menu.hidden-xs
+				ul
+					li
+						a(href="#") 会場一覧
+							i.down
+					li
+						a(href="#") ギャラリー
+							i.down
+					li
+						a(href="#") ケータリングメニュー
+							i.down
+					li
+						a(href="#") 所在地
+							i.down
+		include ../components/rpf-form.pug
+		.about-venue-info-wrap
+			section.about-venue-info 
+				h3 TOGETHER IN  STYLE
+				p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+		section.venue-party-plan-wrap
+			.venue-party-plan.big
+				.img-wrap
+					img.lazy(data-src='/assets/narita/images/venue-party/3.jpg')
+					i.icon-box
+				.venue-plan-content
+					h4 スプリングパーティープラン
+					p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られた
+				.latest-plan
+					| 最新宴会
+					br
+					| プラン
+
+			.venue-party-plan.small
+				.venue-party-plan-container
+					.img-wrap
+						img.lazy(data-src='/assets/narita/images/venue-party/1.jpg')
+						i.icon-box
+					h4 スプリングパーティープラン
+					p 2018年11月10日〜2018年12月10日まで
+			.venue-party-plan.small
+				.venue-party-plan-container
+					.img-wrap
+						img.lazy(data-src='/assets/narita/images/venue-party/1.jpg')
+						i.icon-box 
+					h4 スプリングパーティープラン
+					p 2018年11月10日〜2018年12月10日まで 
+		.btn.btn-party-plan 全てのプランを見る
+			i.icon-box 
+		section.venues-list-wrap
+			.container
+				h4 会場一覧
+				ul.venue-types.filterSection
+					li
+						//- a.selected(data-room-type="all") 一覧表示
+						input(type="checkbox" checked="true" id="below30" value="30")
+						label(for="below30")
+							span
+							| 30名以下
+					li
+						//- //a(data-room-type="small") 30名以下
+						input( type="checkbox" id="middle30" value="60")
+						label(for="middle30")
+							span
+							| 31名〜60名
+					li
+						//- //a( data-room-type="medium") 31名〜60名
+						input( type="checkbox" id="above60"  value="100")
+						label(for="above60")
+							span
+							| 61名〜100名
+					//- li
+					//- 	a( data-room-type="big") 61名〜100名
+				ul.venue-list.itemsToFilter
+					li.showItem(data-type="30")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#" data-show-rooms="room-full-info")
+								span もっと見る
+					li(data-type="60")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li.showItem(data-type="30")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li(data-type="100")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li.showItem(data-type="30")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li(data-type="60")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li(data-type="60")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li(data-type="100")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li.showItem(data-type="30")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+		section.inner-page-slider-wrap
+			h2 ギャラリー
+			include ../components/inner-page-slider.pug
+			.inner-page-slider-info.container
+				.slider-count
+					span.number 1
+					|  / 6
+				.btn PDFをダウンロード 
+					i.icon-download
+				a.faq-link(href="#") FAQ					
+			include ../components/inner-page-food-menu.pug
+		section.location
+			.section-title
+				h2 所在地
+			.map-container
+				#gmap_canvas(data-lat='12.9316' data-lan='77.7946' data-src='../assets/narita/images/marker-icon.png')
+				.map-info-wrap
+					h3 HOW TO FIND US
+					ul
+						li JR「成田」駅および成田空港からシャトルバスに揺られて15分。
+						li 空港通り沿いに「ホテルマイステイズプレミア成田」は建ちます。
+						li 駅や空港からはタクシーもご利用いただけます。
+					.contact-us-info
+						.phone
+							|ご予約の
+							br
+							|お問い合わせ
+							span 000-0000-0000
+						.phone
+							|ご予約の
+							br
+							|お問い合わせ
+							span 000-0000-0000
+				.btn.btn-map GOOGLE MAPで見る
+					i.mys-arrow-left.white
+		include ../components/breadcrumb.pug
+	#room-full-info(data-basicLightbox data-id="room-full-info" class="room-detail")
+		.room-info-header
+			.phone-number
+				i.icon-phone
+				| 000-0000-0000			
+			.close-room
+				span.icon-close
+			a(href="#").book-room
+				| お問い合わせ
+		include ../components/venue-info.pug

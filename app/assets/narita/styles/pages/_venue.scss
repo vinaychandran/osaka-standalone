@@ -1,0 +1,1030 @@
+.venue-page {
+  //background: #fcfcfc;
+  .inner-page-slider-info{
+    padding: 20px 45px 60px;
+    .btn{
+      margin:10px 0;
+      @include md {
+        margin:0;
+      }
+    }
+  }
+}
+
+.venue-banner {
+  h1 {
+    text-shadow: 0 0 8.5px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.inner-menu-wrap {
+  background: $secondary-color;
+  overflow: hidden;
+
+  .inner-menu {
+    background: #fafafa;
+    @include md {
+      float: left;
+      padding-left: 70px;
+      background: $secondary-color;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+
+    li {
+      @include md {
+        float: left;
+        line-height: 60px;
+      }
+
+      a {
+        @include font-size(13.6px);
+        display: block;
+        letter-spacing: 1.6px;
+        text-align: center;
+        padding: 20px 40px 20px 30px;
+        border-bottom: 1px solid #eeeeee;
+        position: relative;
+        font-family: $go-bold;
+        font-weight: 700;
+        @include md {
+          padding: 0 35px 0 20px;
+          text-align: left;
+          border-bottom: 0; 
+        }
+        i {
+            border: solid black;
+            border-width: 0 2px 2px 0;  
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            position: absolute;
+            right: 15px;
+            top: 22px;
+        }
+        
+      }
+    }
+  }
+
+  .inner-links-right {
+    @include md {
+      float: right;
+    }
+  }
+
+  .inner-phone {
+    display: block;
+    float: left;
+    @include font-size(18px);
+    width: 50%;
+    text-align: center;
+    padding-top: 14px;
+    i{
+      @include font-size(20px);
+      padding-right: 10px;
+      &:before{
+        color: $default-color;
+      }
+    }
+    @include md {
+       @include font-size(24px);
+      display: inline-block;
+      padding-right: 25px;
+      width: auto;
+      padding-top: 0;
+      line-height: 61px;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 40px;
+    width: 50%;
+    @include md {
+      padding: 20px 50px;
+      width: auto;
+    }
+  }
+
+  .pdf-download {
+    background: $default-color;
+    margin-right: -5px;
+    height: 61px;
+    display: none;
+    i{
+      padding-left: 10px;
+    }
+    @include md {
+      display: inline-block;
+    }
+  }
+}
+.about-venue-info-wrap{
+  background: linear-gradient(#fafafa, #ffffff);
+}
+
+
+.about-venue-info {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  text-align: center;
+  @include md {
+    padding: 80px 0 50px;
+  }
+
+  h3 {
+    font-family: 'Lato-B';
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: 0.8px;
+  }
+
+  p {
+    @include font-size(14px);
+    font-family: $mi-regular;
+    line-height: 2;
+    margin: 0;
+  }
+}
+
+.venue-party-plan-wrap {
+  //float: left;
+  margin: 0 20px;
+  @include md {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    max-width: 720px;
+    float: none;
+  }
+
+  .img-wrap{
+    position: relative;
+  }
+
+  .venue-party-plan {
+    position: relative;
+    @include md {
+      float: left;
+    };
+
+    &.big {
+      margin-bottom: 20px;
+    }
+
+    &.small {
+      margin-bottom: 33px;
+      //  float: none;
+      //display: flex;
+      .venue-party-plan-container {
+        // justify-content: center;
+        // @include md{
+        //   justify-content:unset;
+        // };
+      }
+
+      h4 {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }     
+      
+    }
+
+    .icon-box{
+      position: absolute;
+      right: 0;
+      bottom: 0; 
+      background: #c5ad6c;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      @include font-size(20px);
+      &:before{
+        margin-top: 10px;
+        display: block;
+      }
+    }
+
+    &:last-child {
+      @include md {
+        float: right;
+      };
+    }
+
+    h4 {
+      @include font-size(16px);
+      letter-spacing: 0.8px;
+      color: $secondary-color;
+      @include md {
+        color: $secondary-color;
+      }
+    }
+
+    img {
+      margin: 0 auto;
+      width: 100%;
+      @include md {
+        margin: 0;
+        width: auto;
+      }
+    }
+
+    p {
+      @include font-size(12px);
+      margin-top: 8px;
+      margin-bottom: 0;
+      text-align: left;
+      font-family: $go-semibold;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .venue-plan-content {
+    @include md {
+      position: absolute;
+      left: 50%;
+      top: 55px;
+      max-width: 260px;
+    }
+
+    h4 {
+      text-align: center;
+      margin-top: 20px;
+      color: $default-color;
+      @include md {
+        text-align: left;
+        margin-top: 0;
+        color: $secondary-color;
+      }
+    }
+
+    p {
+      letter-spacing: 0.7px;
+      @include font-size(14px);
+      font-family: $mi-regular;
+      line-height: 1.79;
+      margin-top: 20px;
+      @include md {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .latest-plan {
+    position: absolute;
+    right: 10px;
+    top: -37px;
+    width: 74px;
+    height: 74px;
+    background: #eeeeee;
+    border-radius: 50%;
+    @include font-size(11px);
+    text-align: center;
+    line-height: 1.45;
+    padding-top: 22px;
+
+    &:after {
+      content: "";
+      width: 68px;
+      height: 68px;
+      border: 1px solid $default-color;
+      border-radius: 50%;
+      position: absolute;
+      left: 3px;
+      top: 3px;
+    }
+  }
+}
+
+.btn-party-plan {
+  clear: both;
+  margin: 0 20px 60px;
+  position: relative;
+  @include md {
+    margin: 0 auto 80px;
+    max-width: 460px;
+  }
+  .icon-box{
+    position: absolute;
+    right: 10px;
+    @include font-size(20px);
+  }
+}
+
+.venues-list-wrap {
+  padding: 0 10px 20px;
+  clear: both;
+  background: #fafafa;
+  @include md {
+    padding: 0 0 0;
+  }
+
+  .container {
+    padding: 40px 0;
+    @include md {
+      padding: 80px 0;
+      
+    }
+  }
+
+  h4 {
+    text-align: center;
+    @include font-size(24px);
+    font-weight: 500;
+    font-family: $go-semibold;
+    margin-bottom: 30px;
+  }
+}
+
+ul.venue-types {
+  @extend %clearfix;
+  text-align: center;
+  margin-bottom: 30px;
+  @include md {
+    margin-bottom: 50px;
+  }
+
+  li {
+    float: left;       
+    margin: 0 15px 10px 0;
+    @include md {
+      float: none;
+      display: inline-block;
+      margin: 0 15px;
+    }
+    label{
+      font-family: $go-bold;
+      font-weight: 700;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"] + label span {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: -2px 10px 0 0;
+      vertical-align: middle;
+      background: #eee;
+      cursor: pointer;
+      position: relative;
+    }
+
+    input[type="checkbox"]:checked + label span {
+      @extend .icon-checked;
+
+      &:before {
+        @extend .use-iconmoon;
+        @include font-size(18px);
+        position: absolute;
+        left: 4px;
+        top: 4px;
+      }
+    }
+  }
+}
+
+ul.venue-list {
+  clear: both;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+
+  > li {
+    width: 100%;
+    background: $default-bg;
+    margin-bottom: 40px;
+    display: none;
+    animation: all 0.3s ease;
+    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+
+    &.show {
+      display: block;
+      animation: bounceList 0.3s;
+      opacity: 1;
+    }
+
+    &.showItem {
+      display: list-item;
+      animation: bounceList 0.3s;
+    }
+
+    &.hideItem {
+      display: none;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+    @include sm {
+      width: calc(100% / 3 - 23px);
+    }
+  }
+
+  .venue-short-info {
+    padding: 25px 25px 40px;
+
+    h6 {
+      @include font-size(14px);
+      line-height: 1.43;
+      font-weight: 500;
+      font-family: $go-semibold;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 10px;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
+    }
+
+    h5 {
+      @include font-size(20px);
+      line-height: 1;
+      font-family: $go-bold;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
+    }
+
+    .floor {
+      margin-bottom: 25px;
+      font-family: 'Lato';
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
+    }
+
+    ul {
+      margin: 0 -8px;
+      padding: 10px 8px;
+      border-top: 1px solid #f1f3ee;
+
+      li {
+        margin-bottom: 10px;
+        font-family: $go-semibold;
+        display: flex;
+        align-items: center;
+
+        span {
+          border: solid 1px $default-color;
+          min-width: 122px;
+          line-height: 1;
+          padding: 15px 5px;
+          display: inline-block;
+          text-align: center;
+          margin-right: 30px;
+        }
+
+        .size {
+          display: inline-block;
+        }
+      }
+    }
+
+    .see-more {
+      text-align: center;
+      position: relative;
+      margin-top: 20px;
+      display: block;
+      float: none;
+      margin-bottom: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: $default-color;
+        top: 8px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: $default-color;
+        top: 10px;
+      }
+
+      span {
+        background: $secondary-color;
+        font-weight: 700;
+        color: #c5ad6c;
+        padding: 0 35px;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.phone-number {
+  @include font-size(16px);
+  color: $primary-color;
+  padding-left: 10px;
+  font-family: $go-semibold;
+  float: left;
+  line-height: 55px;
+  font-weight: 500;
+  @include sm {
+    line-height: 92px;
+    @include font-size(24px);
+    height: 94px;
+  }
+
+  i {
+    @include font-size(18px);
+    margin-right: 10px;
+    &:before{
+      color: $default-color;
+    }
+  }
+}
+
+.venue-info {
+  margin-bottom: 0;
+
+  h2 {
+    font-family: $go-bold;
+    font-weight: 700;
+  }
+
+  .venue-quick {
+    font-family: $go-semibold;
+    padding-bottom: 8px; 
+  }
+
+  .venue-floor {
+    @include font-size(14px);
+    font-family: 'Lato';
+    line-height: 26px;
+    color: $primary-color;
+    padding-bottom: 25px;
+  }
+}
+
+.venue-slider-count {
+  @include font-size(14px);
+  font-weight: 500;
+  line-height: 26px;
+  color: $primary-color;
+  float: left;
+  padding: 6px 0;
+  margin-left: 28px;
+  @include sm {
+    margin-left: 0;
+  }
+}
+
+.venue-info-container {
+  margin-top: 0;
+}
+
+.venue-overview {
+  h5 {
+    border-bottom: 2px solid $default-color;
+    font-weight: bold;
+  }
+
+  .venue-facilities {
+    @extend %clearfix;
+    padding: 40px 0 30px;
+    border-bottom: 1px solid #eee;
+
+    ul {
+      @include sm {
+        width: 33.3%;
+        float: left;
+        padding-right: 80px;
+      }
+
+      li {
+        @include font-size(14px);
+        line-height: 26px;
+        padding-bottom: 8px;
+        font-family: $go-semibold;
+        font-weight: 500;
+        span {
+          float: right;
+          font-weight: 700;
+          font-family: $go-bold;
+        }
+      }
+    }
+
+    .btn-download {
+      background: $default-color;;
+      position: relative;
+
+      span {
+        text-align: left;
+        display: block;
+        width: 75%;
+      }
+
+      i {
+        @include center(vertical);
+        right: 30px;
+      }
+      @include sm {
+        float: left;
+        width: 33.3%;
+        padding: 30px;
+      }
+    }
+  }
+
+  .venue-layout {
+    padding: 40px 0;
+
+    #tablink {
+      margin: 20px 0;
+    }
+
+    h4 {
+      @include font-size(14px);
+      letter-spacing: 2.8px;
+      font-weight: 700;
+      font-family: $go-bold;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
+    }
+
+    .tabs {
+      padding: 30px 0 0;
+
+      .tabs-header {
+        margin: 0;
+        position: static;
+        box-shadow: none;
+        text-align: center;
+        @include sm {
+          margin: 0 0 30px;
+        }
+        li {
+          margin-bottom: 30px;
+          @include sm {
+            margin-bottom: 0;
+          }
+          &:first-of-type {
+            padding-left: 0;
+          }
+          .tabs-title {
+            border: 0;
+            padding: 0;
+          }
+        }
+      }
+
+      .tabs-content {
+        background: #fafafa;
+        padding: 30px 30px 50px;
+
+        img {
+          margin-bottom: 30px;
+        }
+
+        .max-text {
+          @include font-size(12px);
+          float: right;
+          font-family: $go-semibold;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .meeting-details,
+  .price-details {
+    @extend %clearfix;
+    margin-bottom: 30px;
+
+    .meeting-details-container,
+    .price-details-container {
+      .column-one,
+      .column-two {
+        @extend %clearfix;
+        display: block;
+        padding-bottom: 30px;
+        border-top: 1px solid #E1E1E1;
+        @include md {
+          padding-bottom: 0;
+          width: 62.5%;
+          display: inline-block;
+          border-bottom: 1px solid #E1E1E1;
+          float: left;
+        };
+
+        h6 {
+          text-align: center;
+          display: block;
+          border-bottom: 1px solid #E1E1E1;
+          background: #EFEFEF;
+          padding: 12px 15px;
+          @include font-size(14px);
+          font-weight: 700;
+          font-family: $go-bold;
+        }
+
+        div {
+          @extend %clearfix;
+          display: block;
+          @include md {
+            width: 20%;
+            display: inline-block;
+            float: left;
+            //width: 12.5%;
+          }
+
+          &:last-child {
+            span {
+              border-right: 0;
+            }
+          }
+
+          span {
+            @extend %clearfix;
+            padding: 13px 0;
+            min-width: 100px;
+            text-align: center;
+            border-bottom: 1px solid #E1E1E1;
+            width: 50%;
+            background: #fafafa;
+            @include md {
+              padding: 20px 0;
+              width: auto;
+              border-bottom: 0;
+              border-right: 1px solid #E1E1E1;
+            }
+
+            &:first-child {
+              float: left;
+              border-right: 1px solid #E1E1E1;
+              @include md {
+                clear: both;
+                float: none;
+                border-right: 0;
+                border-bottom: 1px solid #E1E1E1;
+                border-right: 1px solid #E1E1E1;
+                display: block;
+                border-left: 0;
+              }
+            }
+
+            &:last-child {
+              float: right;
+              @include md {
+                float: none;
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      .column-one {
+        div:last-child {
+          span:first-child {
+            @include md {
+              border-right: 0;
+            };
+          }
+        }
+      }
+
+      .column-two {
+        padding-bottom: 0;
+        @include md {
+          width: 37.5%;
+          border-left: 1px solid #E1E1E1;
+        }
+
+        div {
+          font-family: $go-semibold;
+          font-weight: 500;
+          @inlcude font-size(14px);
+          @include md {
+            width: 33%;
+          }
+
+          &:last-child {
+            span {
+              @include md {
+                border-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    // overflow: hidden;
+    // overflow-x: auto;
+    // @include sm {
+    //   overflow: visible;
+    // }
+    //
+    // table {
+    //   overflow-x: auto;
+    //   width: 100%;
+    //
+    //   thead {
+    //     background: #eee;
+    //
+    //     th {
+    //       text-align: center;
+    //       vertical-align: middle;
+    //       border-right: 1px solid #E1E1E1;
+    //
+    //       &:last-of-type {
+    //         border-right: none;
+    //       }
+    //     }
+    //   }
+    //
+    //   tbody {
+    //     background: #fafafa;
+    //
+    //     td {
+    //       text-align: center;
+    //       vertical-align: middle;
+    //       padding: 20px 10px;
+    //       min-width: 100px;
+    //       border-right: 1px solid #E1E1E1;
+    //
+    //       &:last-of-type {
+    //         border-right: none;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+
+  .price-details .price-details-container {
+    .column-one {
+      @include md {
+        width: 100%;
+      };
+    }
+  }
+  // .meeting-details,
+  // .price-details {
+  //   overflow: hidden;
+  //   overflow-x: auto;
+  //   @include sm {
+  //     overflow: visible;
+  //   }
+  //
+  //   table {
+  //     overflow-x: auto;
+  //     width: 100%;
+  //
+  //     thead {
+  //       background: #eee;
+  //
+  //       th {
+  //         text-align: center;
+  //         vertical-align: middle;
+  //         border-right: 1px solid #E1E1E1;
+  //
+  //         &:last-of-type {
+  //           border-right: none;
+  //         }
+  //       }
+  //     }
+  //
+  //     tbody {
+  //       background: #fafafa;
+  //
+  //       td {
+  //         text-align: center;
+  //         vertical-align: middle;
+  //         padding: 20px 10px;
+  //         min-width: 100px;
+  //         border-right: 1px solid #E1E1E1;
+  //
+  //         &:last-of-type {
+  //           border-right: none;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  .venue-links {
+    @extend %clearfix;
+
+    .links {
+      padding-bottom: 20px;
+      @include sm {
+        float: left;
+      }
+
+      a {
+        text-decoration: underline;
+        margin-right: 10px;
+        @include font-size(14px);
+        line-break: 24px;
+        letter-spacing: 0.4px;
+        font-family: $go-semibold;
+        font-weight: 500;
+            text-underline-position: under;
+      }
+    }
+
+    .note {
+      @include sm {
+        float: right;
+        font-family: $mi-regular;
+      }
+
+      p {
+        @include font-size(11px);
+        letter-spacing: 0.3px;
+        line-height: 15px;
+      }
+    }
+  }
+}
+
+.benefits-overview {
+  h4 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .benefits-details {
+    @extend %clearfix;
+    background: url('../images/benefits-img.png') no-repeat;
+    padding: 14px;
+    color: $secondary-color;;
+    background-size: cover;
+
+    .meeting-benefits,
+    .planner-benefits {
+      padding: 30px;
+      @include sm {
+        padding: 50px 30px 50px 50px;
+        width: 50%;
+        float: left;
+      }
+
+      h6 {
+        @include font-size(16px);
+        line-height: 26px;
+        letter-spacing: 1.6px;
+        margin-bottom: 30px;
+        text-align: left;
+        font-family:$go-bold;
+        @include sm {
+          text-align: center;
+        }
+      }
+
+      ul {
+        li {
+          text-shadow: 0 0 8.5px rgba(0, 0, 0, 0.3);
+          @include font-size(16px);
+          font-weight: 500;
+          line-height: 34px;
+          list-style-type: disc;
+          font-family: $go-semibold;
+        }
+      }
+    }
+
+    p {
+      clear: both;
+      margin: 0;
+      @include font-size(10px);
+    }
+  }
+}
+
+.venues-popup {
+  padding-top: 0;
+
+  .container {
+    h4 {
+      @include font-size(16px);
+      line-height: 20px;
+      letter-spacing: 3.2px;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,316 @@
+extends ../layouts/default
+
+block append content
+	.resturant-detail-page
+		section.inner-page-mobile-menu
+			.menu-gradient
+			ul
+				li
+					a(href="#" data-show-rooms="room-full-info") 会場一覧
+						i.down
+				li
+					a(href="#") ギャラリー
+						i.down
+				li
+					a(href="#") ケータリングメニュー
+						i.down
+				li
+					a(href="#") 所在地
+						i.down
+		section.main-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant-banner-detail.jpg')
+				img(src='/assets/narita/images/resturant/resturant-banner-detail-mobile.jpg')
+			.banner-text
+				h1  レストラン 「ガーデニア」
+		section.resturant-detail-menu-wrap
+			.resturant-detail-cta-wrap
+				.rating-wrap
+					.review-count レビュー
+					.rating-units
+						span.rating-unit.is-full
+							i.icon-star
+						span.rating-unit.is-full
+							i.icon-star
+						span.rating-unit.is-full
+							i.icon-star
+						span.rating-unit.is-full
+							i.icon-star
+						span.rating-unit
+					.rating-number 4.3
+				.cta
+					i.icon-phone
+					span 000-0000-0000
+				.btn 予約する
+			.resturant-detail-menu.hidden-xs
+				ul
+					li
+						a(href="#" data-show-rooms="room-full-info") 会場一覧
+								span
+									i.down
+					li
+						a(href="#") ギャラリー
+								span
+									i.down
+					li
+						a(href="#") ケータリングメニュー
+								span
+									i.down
+					li
+						a(href="#") 所在地
+								span
+									i.down
+		section.resturant-timing-wrap
+
+			p 
+				| 翔び立つ飛行機、空港のまばゆい夜景 - 刻々と変化する雄大な長めが寄り添い、 
+				br
+				| 3つの飲食店と1つのバーで食事を味わう豊潤な一時を。
+			h2.higlight 
+				i
+				span 営業時間
+				i
+			.resturant-timing
+				a#resturant-timing-tablink(href='') open
+				.tabs#resturant-timing-tabs
+					ul.tabs-header#resturant-timing-tabs-header
+						li
+							a.tabs-title(href='#') ホテル写真
+						li
+							a.tabs-title(href='#') ゲスト写真
+						li
+							a.tabs-title(href='#') ライブフィード
+						li
+							a.tabs-title(href='#') ブランドビデオ
+					.tabs-content
+						ul
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+					.tabs-content
+						ul
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00						
+					.tabs-content
+						ul
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+					.tabs-content
+						ul
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+							li.timings
+								.slot 朝食
+								.time-wrap
+									.time 7:00 ~ 9:30
+									.lo LO 9:00
+		section.resturamt-food-wrap
+			.inner-page-food-wrap
+				picture.banner-image
+					source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/chef.jpg')
+					img(src='/assets/narita/images/resturant/chef-mobile.jpg') 
+				.inner-page-food-info
+					.star
+						span
+					h4 ケータリングメニュー
+					.inner-page-food あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+					a.see-more(href="#")
+						span もっと見る 
+		section.inner-page-slider-wrap.resturant-detail-slider
+			h2.higlight
+				i
+				span 営業時間
+				i
+			a#tablink(href='') open
+			.tabs#gallery-tabs
+				ul.tabs-header#resturant-tabs-header
+					li
+						a.tabs-title(href='#') 一覧表示
+					li
+						a.tabs-title(href='#') 主菜
+					li
+						a.tabs-title(href='#') ドリンク
+					li
+						a.tabs-title(href='#') デコール
+				.tabs-content
+					.inner-page-slider.container
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/3.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/4.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/5.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/6.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/7.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/8.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/9.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/resturant/gardenia/10.jpg')
+					.inner-page-slider-info.container
+						.slider-count
+							span.number 1
+							|  / 9
+				.tabs-content
+					.inner-page-slider.container
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+					.inner-page-slider-info.container
+						.slider-count
+							span.number 1
+							|  / 6
+				.tabs-content
+					.inner-page-slider.container
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+					.inner-page-slider-info.container
+						.slider-count
+							span.number 1
+							|  / 6
+				.tabs-content
+					.inner-page-slider.container
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+					.inner-page-slider-info.container
+						.slider-count
+							span.number 1
+							|  / 6
+		section.location
+			.section-title
+				h2.higlight
+					i
+					span 営業時間
+					i
+			.map-container
+				#gmap_canvas(data-lat='12.9316' data-lan='77.7946' data-src='../assets/narita/images/marker-icon.png')
+				.map-info-wrap
+					h3 HOW TO FIND US
+					ul
+						li JR「成田」駅および成田空港からシャトルバスに揺られて15分。
+						li 空港通り沿いに「ホテルマイステイズプレミア成田」は建ちます。
+						li 駅や空港からはタクシーもご利用いただけます。
+					.contact-us-info
+						.phone
+							|ご予約の
+							br
+							|お問い合わせ
+							span 000-0000-0000
+						.phone
+							|ご予約の
+							br
+							|お問い合わせ
+							span 000-0000-0000
+				.btn.btn-map GOOGLE MAPで見る
+					i.mys-arrow-left.white
+		section.resturants-detail-list
+			.large-container
+				h2.higlight
+					i
+					span その他のレストラン
+					i
+				ul
+					li
+						img(src='/assets/narita/images/resturant/resturant-small1.jpg')
+						.resturant-list-info
+							h2 レストラン「ガーデニア」
+							a.see-more(href="#" )
+								span もっと見る
+					li
+						img(src='/assets/narita/images/resturant/resturant-small2.jpg')
+						.resturant-list-info
+							h2 レストラン「ガーデニア」
+							a.see-more
+								span もっと見る
+					li
+						img(src='/assets/narita/images/resturant/resturant-small3.jpg')
+						.resturant-list-info
+							h2 レストラン「ガーデニア」
+							a.see-more
+								span もっと見る
+					li
+						img(src='/assets/narita/images/resturant/resturant-small4.jpg')
+						.resturant-list-info
+							h2 レストラン「ガーデニア」
+							a.see-more
+								span もっと見る
+		include ../components/breadcrumb.pug
+	#room-full-info(data-basicLightbox data-id="room-full-info" class="room-detail resturant-detail-popup")
+		.room-info-header
+			span.visible-desktop レストラン「ガーデニア」	
+			.close-room
+				i.icon-close
+			a(href="#").book-room
+				| 予約する			
+			.phone-number
+				i.icon-phone
+				| 000-0000-0000
+		include ../components/resturant-info.pug
+	include ../components/gallery-mask.pug

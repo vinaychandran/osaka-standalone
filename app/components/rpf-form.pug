@@ -1,0 +1,182 @@
+#rfp-form(data-basicLightbox data-id="rfp-form" class=" row rfp-form-details")
+  .errors
+  form(id='rpfForm' name="rpfForm")
+    a.closeBtn(href="#")
+    h5 宴会＆会議に関するお問合せ
+    p 下記の項目にご記入いただき、改めてご連絡をさせていただきます。
+    .row
+      .col.col-1-2
+        .firstname
+          label 姓
+          .input-custom
+            input.form-control(id='fname' name= "fname" type='text', placeholder='' required)
+      .col.col-1-2
+        .lastname.left-space
+          label 名
+          .input-custom
+            input.form-control(id='lname' type='text', placeholder='' name='lname' required)
+    .row
+      .col.corporate
+        label 法人名・団体名
+        .input-custom
+          input.form-control(id='corporate' type='text', placeholder='' name='company' required)
+    .row
+      .col.mailaddress
+        label メールアドレス
+        .input-custom
+          input.form-control(id='mailaddress' type='text', placeholder='' name='company' required)
+    .row
+      .col.telephone
+        label ご連絡先のお電話番号
+        .input-custom
+          input.form-control(id='telephone' type='text', placeholder='' name='company' required)
+    h5.meeting イベント情報
+    .row
+      .col.col-2-3.event
+        label イベント名
+        .input-custom
+          input.form-control(id='meeting' type='text', placeholder='' name='meeting' required)
+      .col.col-1-3.attendees.left-space
+        label ご利用人数
+        .input-custom
+          input.form-control(id='attendees' type='number', placeholder='' name='mobile' required)
+    .row
+      .col.date-duration
+        //.col.col-1-2
+        #venue-booking-tab
+            .date-picker-venue-rpf
+              .date-picker-tab1-container
+                .values
+                  .first-box
+                    label 開始日
+                    .startDateContainer
+                      .startDate
+                        .value.date_at
+                          span.date_at
+                          input#date_at.date_at(type='hidden')
+                  .to ~
+                  .sec-box
+                    label 終了日
+                    .endDateContainer
+                      .endDate
+                        .value.date_to
+                          span.date_to
+                          input#date_to.date_to(type='hidden')
+                //.calendar-backdrop
+                .calendar
+                  //img.clear(src='/assets/narita/images/clear.svg' )
+                  .button.button-prev
+                  .button.button-next
+                  .calendarContainer
+                  .bottomLayer
+                    span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+                    .nights 1 金曜日
+                    //.button.closePopup &#x5B8C;&#x4E86;
+        .guestrooms
+          .form-group.dropdown-custom
+            label 客室数
+            .input-custom
+              button(name='button', type='button', value='空室を検索') Rooms
+              .popup-menu
+                .popup-content-input
+                  ul.cities
+                    li
+                      span(target='Hokkaido', names='Hokkaido') 1
+                    li
+                      span(target='Okinawa', names='Okinawa') 2
+                    li
+                      span(target='Tochigi', names='Tochigi') 3
+                    li
+                      span(target='Tokyo', names='Tokyo') 4
+        .duration
+          .form-group.dropdown-custom
+            label ご利用時間
+            .input-custom
+              button(name='button', type='button', value='空室を検索') Duration
+              .popup-menu
+                .popup-content-input
+                  ul.cities
+                    li
+                      span(target='Hokkaido', names='Hokkaido') All Day
+                    li
+                      span(target='Okinawa', names='Okinawa') Item name item
+    .row
+      .col.col.col-2-3.typeofevent
+        .form-group.dropdown-custom
+          label 目的
+          .input-custom
+            button(name='button', type='button', value='') 選択してください
+            .popup-menu
+              .popup-content-input
+                ul.cities
+                  li
+                    span(target='Hokkaido', names='Hokkaido') Party
+                  li
+                    span(target='Okinawa', names='Okinawa') Meeting
+                  li
+                    span(target='Tochigi', names='Tochigi') Conference
+                  li
+                    span(target='Tokyo', names='Tokyo') Others
+    .row
+      .col
+        .food-beverage
+          .form-checkbox
+            label.form-label パーティ料理、お弁当をお届けするケータリング。お飲物やサービスに至までお客様のご要望に応じてお手伝いさせていただきます。
+    .row.check-box-container
+      .col.col-1-5
+        .checkbox-custom
+          label.checkbox
+            input.form-control(type='checkbox' id='food' name="food" value="breakfast" required)
+            span
+              i.icon-checked
+            |	朝食
+      .col.col-1-5
+        .checkbox-custom
+          label.checkbox
+            input.form-control(type='checkbox' name="food" value="Lunch")
+            span
+              i.icon-checked
+            |	ランチ
+      .col.col-1-5
+        .checkbox-custom 　　　
+          label.checkbox
+            input.form-control(type='checkbox' name="food" value="Dinner")
+            span
+              i.icon-checked
+            |	夕食
+      .col.col-1-5
+        .checkbox-custom 　　　
+          label.checkbox
+            input.form-control(type='checkbox' name="food" value="Reception")
+            span
+              i.icon-checked
+            |	受付
+      .col.col-1-5
+        .checkbox-custom 　　　　
+          label.checkbox
+            input.form-control(type='checkbox' name="food" value="Others")
+            span
+              i.icon-checked
+            |	その他
+    .row
+      .col.col-1-2
+        label 会場の設備の要望をご記入ください。
+      .col.attachFile.col-1-2
+        label.custom-file-upload(for='file-upload')
+          i.fa.fa-paperclip
+          |  ファイルを添付する
+        input#file-upload(type='file')
+
+
+    .row
+      .col
+        .input-custom.details
+          textarea.form-control.textarea-custom(type='text',  placeholder='', cols='40', rows='8', name='mobile')
+    .row
+      .col
+        .find-button
+          button(name='button', type='button', value='' class='submitRfpForm') 送信する
+        p.footer 会議・宴会に関するお問い合わせ・資料請求 ご返答は速やかにおこなうよう心掛けておりますが、 内容や状況によりお時間がかかる場合もございます。 お急ぎの場合は、大変お手数ではございますがお電話にてご連絡ください。
+        p.footer
+          span 本お問合せフォームの送信後、当社の利用規約および
+          span 個人情報保護ポリシーに関する声明に同意したことになります。

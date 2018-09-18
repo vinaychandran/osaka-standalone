@@ -1,0 +1,357 @@
+extends ../layouts/default
+
+block append content
+  .bg
+    .container
+      .account-page
+          section
+              .container-inner.top-padding
+                h2.header アカウント設定
+              .tabs#profile-tabs
+                .container-inner
+                  ul.tabs-header.open-tabs#tabs-header
+                    li.tabs-title アカウント情報
+                    li.tabs-title プロモーションコード
+                .tabs-content
+                  .container-inner
+                    .social-media
+                      #facebook-login
+                        i.icon-facebook
+                        span Facebookでログイン
+                      #google-login
+                        i.icon-google
+                        span Googleでログイン
+                      #yahoo-login
+                        i.icon-yahoo
+                        span Yahoo Japanでログイン
+                    form#profile-form
+                      .row.first-row
+                        .col.col-1-3.profile
+                          label
+                        .col.col-2-3.info-label
+                          .col.col-1-2.padding-left
+                            label.label-left 個人情報
+                          .col.col-1-2
+                            label.label-right  *は必須項目です
+                      .row
+                        .col.col-1-3.profile
+                          label.profile-label プロフィール写真
+                          .user-image
+                            <img id="preview"/>
+                          .profile-image-upload.attachFile
+                            label.custom-file-upload(for='file-upload')
+                              p パソコンからファイルを
+                              p アップロード
+                            input#file-upload(type='file' accept="image/*" onchange="FE.global.loadFile(event)")
+                        .col.col-2-3
+                          .col.col-1-2.padding-left.padding-bottom
+                            .firstname
+                              label お名前
+                              .input-custom
+                                input.form-control(id='fname' name= "fname" type='text', placeholder='姓' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .lastname.left-space.label-space
+                              .input-custom
+                                input.form-control(id='lname' type='text', placeholder='名' name='lname' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .firstname
+                              label お名前（英語）
+                              .input-custom
+                                input.form-control(id='fname1' name= "fname1" type='text', placeholder='Last name' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .lastname.left-space.label-space
+                              .input-custom
+                                input.form-control(id='lname1' type='text', placeholder='First name' name='lname' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .form-group.dropdown-custom
+                              label 性別
+                              .input-custom
+                                button(name='button', type='button', value='') 選択する
+                                .popup-menu
+                                  .popup-content-input
+                                    ul.cities
+                                      li
+                                        span(target='Hokkaido', names='Hokkaido') Party
+                                      li
+                                        span(target='Okinawa', names='Okinawa') Meeting
+                                      li
+                                        span(target='Tochigi', names='Tochigi') Conference
+                                      li
+                                        span(target='Tokyo', names='Tokyo') Others
+                      .row.padding-bottom
+                        .col.col-1-2
+                          .firstname
+                            label メールアドレス
+                            .input-custom
+                              input.form-control(id='fname2' name= "fname2" type='text', placeholder='' required)
+                        .col.col-1-2.padding-left
+                          .firstname
+                            label 携帯番号
+                            .input-custom
+                              input.form-control(id='fname3' name= "fname3" type='text', placeholder='' required)
+                      .row.padding-bottom
+                        .col.col-1-3
+                          .form-group.dropdown-custom
+                            label 生年月日
+                            .input-custom
+                              button(name='button', type='button', value='') 年
+                              .popup-menu
+                                .popup-content-input
+                                  ul.cities
+                                    li
+                                      span(target='Hokkaido', names='Hokkaido') Party
+                                    li
+                                      span(target='Okinawa', names='Okinawa') Meeting
+                                    li
+                                      span(target='Tochigi', names='Tochigi') Conference
+                                    li
+                                      span(target='Tokyo', names='Tokyo') Others
+                        .col.col-1-3.padding-left
+                          .form-group.dropdown-custom.label-space
+                            .label-space
+                              .input-custom
+                                button(name='button', type='button', value='') 月
+                                .popup-menu
+                                  .popup-content-input
+                                    ul.cities
+                                      li
+                                        span(target='Hokkaido', names='Hokkaido') Party
+                                      li
+                                        span(target='Okinawa', names='Okinawa') Meeting
+                                      li
+                                        span(target='Tochigi', names='Tochigi') Conference
+                                      li
+                                        span(target='Tokyo', names='Tokyo') Others
+                        .col.col-1-3.padding-left
+                          .form-group.dropdown-custom
+                            .label-space
+                              .input-custom
+                                button(name='button', type='button', value='') 日
+                                .popup-menu
+                                  .popup-content-input
+                                    ul.cities
+                                      li
+                                        span(target='Hokkaido', names='Hokkaido') Party
+                                      li
+                                        span(target='Okinawa', names='Okinawa') Meeting
+                                      li
+                                        span(target='Tochigi', names='Tochigi') Conference
+                                      li
+                                        span(target='Tokyo', names='Tokyo') Others
+                      .row.padding-bottom
+                        .col.col-1-2.padding-right
+                          .form-group.dropdown-custom
+                            label 出身国
+                            .input-custom
+                              button(name='button', type='button', value='') 選択する
+                              .popup-menu
+                                .popup-content-input
+                                  ul.cities
+                                    li
+                                      span(target='Hokkaido', names='Hokkaido') Party
+                                    li
+                                      span(target='Okinawa', names='Okinawa') Meeting
+                                    li
+                                      span(target='Tochigi', names='Tochigi') Conference
+                                    li
+                                      span(target='Tokyo', names='Tokyo') Others
+                      .row.padding-bottom
+                        .col.col-1-3
+                          .firstname
+                            label 郵便番号
+                            .input-custom
+                              input.form-control(id='fname4' name= "fname4" type='text', placeholder='' required)
+                        .col.col-1-3.padding-left
+                          .firstname
+                            label 都道府県
+                            .input-custom
+                              input.form-control(id='fname5' name= "fname5" type='text', placeholder='' required)
+                        .col.col-1-3.padding-left
+                          .firstname
+                            label 市区町村
+                            .input-custom
+                              input.form-control(id='fname6' name= "fname6" type='text', placeholder='' required)
+                      .row.padding-bottom
+                        .col.col-1-1
+                          .firstname
+                            label 住所
+                            .input-custom
+                              input.form-control(id='fname7' name= "fname7" type='text', placeholder='' required)
+                      .row.padding-bottom
+                        .col.col-1-1
+                          button.submitProfile(type='button') 保存する
+                .tabs-content
+                  .container
+                    .container-inner
+                      ul.row.promo-coupon
+                        li.col.col-1-2.selected
+                          .label-container
+                            label  メンバー限定5%OFF
+                            span.icon-checked(onclick='FE.global.selectPromoCoupon()')
+                          input(type='radio',name='coupon',value='1')
+                          p あのイーハトーヴォのすきとおった風、夏でも底に。
+                          button(type='button')
+                            span.icon-checked.onselect
+                            span 選択しています
+                        li.col.col-1-2
+                          .label-container
+                            label  メンバー限定5%OFF
+                            span(onclick='FE.global.selectPromoCoupon()')
+                          input(type='radio',name='coupon',value='1')
+                          p あのイーハトーヴォのすきとおった風、夏でも底に。
+                          button(type='button')
+                            span.icon-checked.onselect
+                            span 選択しています
+                  .booking-widget
+                    h3  さっそく予約する
+                    #booking-tab1(onclick='FE.global.bookingWidgetClick()')
+                      .date-picker-tab1
+                          label チェックイン
+                          .date-picker-tab1-container
+                              .values
+                                  .startDateContainer
+                                      //label チェックイン
+                                      .startDate
+                                          .value.date_at
+                                              span.date_at
+                                              input#date_at.date_at(type='hidden')
+                                  .to ~
+                                  .endDateContainer
+                                      //label チェックアウト
+                                      .endDate
+                                          .value.date_to
+                                              span.date_to
+                                              input#date_to.date_to(type='hidden')
+                              //.calendar-backdrop
+                              .calendar
+                                  //img.clear(src='/assets/narita/images/clear.svg' )
+                                  .button.button-prev
+                                  .button.button-next
+                                  .calendarContainer
+                                  .bottomLayer
+                                      span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+                                      .nights 1 金曜日
+                                      //.button.closePopup &#x5B8C;&#x4E86;
+                      .people
+                        label ご利用人数
+                        .people-list
+                          p
+                            | 大人
+                            span.adults 0
+                            | 名, 子供
+                            span.child 0
+                            | 名
+                            span.container
+                              span.room 0
+                              span.roomText 部屋
+                        .popup-wrap.popup-create
+                              //.overlay
+                              .big-popup.people-list-popup
+                                .head-popup
+                                  section.grown-up
+                                    .form-group
+                                      label.form-label(for='') 大人
+                                      .dropdown-custom
+                                        .input-custom
+                                          button 0
+                                          .popup-menu
+                                            .popup-content-input
+                                              ul.cities
+                                                li
+                                                  span(target='Hokkaido', names='Hokkaido') 0人
+                                                li
+                                                  span(target='Okinawa', names='Okinawa') 1人
+                                                li
+                                                  span(target='Tochigi', names='Tochigi') 2人
+                                                li
+                                                  span(target='Tokyo', names='Tokyo') 3人
+                                  section.children
+                                    .form-group
+                                      label.form-label(for='') 子供
+                                      .dropdown-custom
+                                        .input-custom
+                                          button 0
+                                          .popup-menu
+                                            .popup-content-input
+                                              ul.cities
+                                                li
+                                                  span(target='Hokkaido', names='Hokkaido', value='0') 0人
+                                                li
+                                                  span(target='Okinawa', names='Okinawa', value='1') 1人
+                                                li
+                                                  span(target='Tochigi', names='Tochigi', value='2') 2人
+                                                li
+                                                  span(target='Tokyo', names='Tokyo', value='3') 3人
+                                  section.room
+                                    .form-group
+                                      label.form-label(for='') 部屋
+                                      .dropdown-custom
+                                        .input-custom
+                                          button 0
+                                          .popup-menu
+                                            .popup-content-input
+                                              ul.cities
+                                                li
+                                                  span(target='Hokkaido', names='Hokkaido') 0
+                                                li
+                                                  span(target='Okinawa', names='Okinawa') 1
+                                                li
+                                                  span(target='Tochigi', names='Tochigi') 2
+                                                li
+                                                  span(target='Tokyo', names='Tokyo') 3
+                                .input-popup
+                                    .title 小学生の添い寝について
+                                    ul
+                                      li 大人1名様に対し、添い寝のお子様1名までとします。
+                                      li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
+                                      li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
+                                .btn-group
+                                    button.clear クリア
+                                    button.done 完了
+                      .promo-code
+                          section
+                              .form-group
+                                  label.form-label(for='') プロモコード
+                                  .input-custom
+                                      input.form-control(type='text', placeholder='プロモコード)')
+                      .find-button
+                          label 最低価格保証
+                          button(name='submit', type='submit', value='空室を検索') 空室を検索
+
+
+                  section.popular-rooms
+                    .container
+                      h3 人気のお部屋
+                      .popular-rooms-container
+                        .popular-rooms-image
+                            source(media='(min-width: 768px)', srcset='/assets/narita/images/popular-rooms.jpg')
+                            img(src='/assets/narita/images/popular-rooms.jpg')
+                        .popular-rooms-right
+                          button.members(type='button') メンバー限定
+                          h3  スーペリアツインハイフロア
+                          p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォの
+                          button.more もっと見る
+                  section.promo-content
+                    ul.row
+                      li.col.col-1-3
+                        source(media='(min-width: 768px)', srcset='/assets/narita/images/promo-1.jpg')
+                        img(src='/assets/narita/images/promo-1.jpg')
+                        .header 施設01
+                        .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+                        .see-more
+                          span もっと見る
+                      li.col.col-1-3
+                        source(media='(min-width: 768px)', srcset='/assets/narita/images/promo-image.jpg')
+                        img(src='/assets/narita/images/promo-image.jpg')
+                        .header 施設01
+                        .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+                        .see-more
+                          span もっと見る
+                      li.col.col-1-3
+                        source(media='(min-width: 768px)', srcset='/assets/narita/images/promo-1.jpg')
+                        img(src='/assets/narita/images/promo-1.jpg')
+                        .header 施設01
+                        .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+                        .see-more
+                          span もっと見る
+  include ../components/breadcrumb.pug

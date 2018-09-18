@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.woff') format('woff'),
+    local('sans-serif');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-L';
+    src: url('../fonts/Lato-Light.woff') format('woff'),
+    local('sans-serif');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-I';
+    src: url('../fonts/Lato-Italic.woff') format('woff'),
+    local('sans-serif');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lato-B';
+    src: url('../fonts/Lato-Bold.woff') format('woff'),
+    local('sans-serif');
+    font-weight: 700;
+    font-style: normal;
+}
+
+$default-font: 'Lato';
+$mi-regular:'Yu Mincho Regular';
+$mi-semibold:'Yu Mincho Demibold';
+$go-regular: 'Yu Gothic Regular';
+$go-semibold: 'Yu Gothic Medium';
+$go-bold: 'Yu Gothic Medium';
+
+
+@font-face {
+    font-family: 'YuMin';
+    src: local('Yu Mincho'),
+    local('Yu Gothic'),
+    local('hiragino kaku gothic')
+    local('Sawarabi Mincho'),
+    local('ヒラギノ角ゴ Pro W3'),
+    local('メイリオ'),
+    local(メイリオ);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'YuGo';
+    src: local('Yu Gothic'),
+    local('Yu Mincho'),
+    local('ヒラギノ角ゴ Pro W3'),
+    local('メイリオ'),
+    local(メイリオ);
+    font-style: normal;
+}

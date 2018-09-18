@@ -1,0 +1,142 @@
+extends ../layouts/default
+
+block append content
+	.resturant-main-page
+		section.main-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant-banner.jpg')
+				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg') 
+			.banner-text
+				h1 
+					| レストラン 
+					br
+					| 「ガーデニア」
+		section.about-resturants-info
+			h3 大空の飛行機を眺め、豊潤な食事を
+			p 翔び立つ飛行機、空港のまばゆい夜景 - 刻々と変化する雄大な長めが寄り添い、3つの飲食店と1つのバーで食事を味わう豊潤な一時を。
+		include ../components/inner-page-food-menu.pug
+		section.inner-page-slider-wrap
+			h2 ギャラリー
+			include ../components/inner-page-slider.pug
+			.inner-page-slider-info.container
+				.slider-count
+					span.number 1
+					|  / 6	
+		section.location
+			.section-title
+				h2 所在地
+			.map-container
+				#gmap_canvas
+				.map-info-wrap
+					h3 HOW TO FIND US
+					ul
+						li JR「成田」駅および成田空港からシャトルバスに揺られて15分。
+						li 空港通り沿いに「ホテルマイステイズプレミア成田」は建ちます。
+						li 駅や空港からはタクシーもご利用いただけます。
+					.contact-us-info
+						.phone
+							|ご予約の 
+							br
+							|お問い合わせ
+							span 000-0000-0000
+						.phone
+							|ご予約の 
+							br
+							|お問い合わせ
+							span 000-0000-0000
+				.btn.btn-map GOOGLE MAPで見る 
+					i.mys-arrow-left.white
+		section.resturants-list
+			ul
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant1.jpg')
+						img(src='/assets/narita/images/resturant/resturant1-mobile.jpg') 
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more 
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant2.jpg')
+						img(src='/assets/narita/images/resturant/resturant2-mobile.jpg') 
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more 
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant3.jpg')
+						img(src='/assets/narita/images/resturant/resturant3-mobile.jpg') 
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more 
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant4.jpg')
+						img(src='/assets/narita/images/resturant/resturant4-mobile.jpg') 
+					.resturant-list-info
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間 
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more 
+							span もっと見る		

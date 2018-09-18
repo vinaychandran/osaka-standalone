@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block append content
+  include ../components/home-banner.pug
+  include ../components/booking-widget.pug
+  include ../components/home-slider.pug
+  .banner-middle
+    picture
+      source(media='(min-width: 768px)', data-srcset='/assets/narita/images/banner-middle.jpg')
+      img.lazy(data-src='/assets/narita/images/banner-middle-mobile.jpg')
+  include ../components/home-video-slider.pug
+  include ../components/home-review.pug
+  include ../components/home-concept.pug
+  include ../components/home-gallery.pug
+  include ../components/google-map.pug
+  include ../components/gallery-mask.pug

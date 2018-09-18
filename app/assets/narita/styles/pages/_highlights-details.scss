@@ -1,0 +1,123 @@
+.highlights-detail-page {
+    padding-top: 56px;
+    @include sm {
+        padding-top: 80px;
+    }
+    .hightlights-detail-content {
+        .container {
+            max-width: 880px;
+            padding: 0;
+            @include sm {
+                padding: 0 10px;
+            }
+            .highlights-banner {
+                margin: 0 0 40px 0;
+                @include sm {
+                    display: block;
+                    margin: 40px 0;
+                }
+            }
+            .highlight-title {
+                @include font-size(24px);
+                font-weight: 500;
+                line-height: 1.17;
+                letter-spacing: 0.6px;
+                text-align: center;
+                padding: 0 30px;
+                @include sm {
+                    padding: 0;
+                }
+            }
+            .highlight-date {
+                font-family: Lato;
+                @include font-size(16px);
+                font-weight: normal;
+                line-height: 1.75;
+                letter-spacing: 0.4px;
+                text-align: center;
+                display: block;
+                margin-top: 10px;
+            }
+            .row {
+                padding: 30px 0 0 0;
+                @include sm {
+                    padding: 30px 0;
+                }
+                .col.col-1-2 {
+                    padding: 0;
+                    @include sm {
+                        padding: 0 15px;
+                    }
+                }
+                .highlight-detail-text {
+                    padding: 0 30px;
+                    @include sm {
+                        padding: 0;
+                    }
+                    p {
+                        @include font-size(14px);
+                        font-family: $mi-regular;
+                        font-weight: 500;
+                        line-height: 2;
+                        letter-spacing: 0.4px;
+                    }
+                    ul {
+                        margin: 20px 0;
+                        display: table;
+                        li {
+                            @include font-size(14px);
+                            font-family: $mi-regular;
+                            font-weight: 500;
+                            line-height: 2;
+                            letter-spacing: 0.4px;
+                            border-bottom: 1px solid #000;
+                        }
+                    }
+                }  
+                .inquery-detail {
+                    background-color: #fafafa;
+                    padding: 50px;
+                    h3 {
+                        @include font-size(14px);
+                        font-weight: bold;
+                        letter-spacing: normal;
+                        text-align: center;
+                        padding-bottom: 30px;
+                    }
+                    .phone-text, .email, .anytime {
+                        @include font-size(14px);
+                        font-weight: 500;
+                        letter-spacing: normal;
+                        text-align: center;
+                        display: block;
+                        padding-bottom: 25px;
+                    } 
+                    .phone {
+                        @include font-size(24px);
+                        font-family: Lato;
+                        font-weight: bold;
+                        line-height: 1.25;
+                        letter-spacing: 1.4px;
+                        display: block;
+                        text-align: center;
+                        border-bottom: 1px solid #eee;
+                        padding-bottom: 25px;
+                        margin-bottom: 25px;
+                        i {
+                            margin-right: 10px;
+                            &:before {
+                                color: #000;
+                            }
+                        }
+                    }  
+                    .anytime {
+                        padding: 18px 0 0 0;
+                    }
+                    .btn {
+                        display: block;
+                    }
+                }             
+            }
+        }
+    }
+}

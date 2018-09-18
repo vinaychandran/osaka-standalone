@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="map_pin_pc.svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 40 58" style="enable-background:new 0 0 40 58;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#232E48;}
+	.st1{fill:#FFFFFF;}
+</style>
+<path class="st0" d="M20,0C9,0,0,9.3,0,22s18.7,36,20,36c1.9,0,20-23.3,20-36S31,0,20,0z"/>
+<path id="シェイプ_1404" class="st1" d="M20,33l-1.9-1.9l1.9-1.9l1.9,1.9L20,33 M21.9,23.4L20,25.3l-1.9-1.9l-3.8,3.8l1.9,1.9
+	l1.9-1.9l1.9,1.9l1.9-1.9l1.9,1.9l1.9-1.9L21.9,23.4 M20,24.4l-7.7-7.7L20,9l7.7,7.7L20,24.4 M26.2,26.8l-3.8-3.8l5.8-5.8L32,21
+	L26.2,26.8 M17.6,22.9l-3.8,3.8L8,21l3.8-3.8L17.6,22.9"/>
+</svg>

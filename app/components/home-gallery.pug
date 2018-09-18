@@ -1,0 +1,54 @@
+section.gallery
+	.container
+		.section-title
+			h2 LIVE GALLERY
+		a#tablink(href='') open
+		.tabs#gallery-tabs
+			ul.tabs-header#tabs-header
+				li
+					a.tabs-title(href='#') ホテル写真
+				li
+					a.tabs-title(href='#') ゲスト写真
+				li
+					a.tabs-title(href='#') ライブフィード
+				li
+					a.tabs-title(href='#') ブランドビデオ
+			.tabs-content
+				div.hotel-photos
+					a.lazy(data-src="/assets/narita/images/gallery/1.jpg" data-show-id="popup-gallery" data-slide="0")
+					a.lazy(data-src="/assets/narita/images/gallery/2.jpg" data-show-id="popup-gallery" data-slide="1")
+					a.lazy(data-src="/assets/narita/images/gallery/3.jpg" data-show-id="popup-gallery" data-slide="2")
+					a.lazy(data-src="/assets/narita/images/gallery/4.jpg" data-show-id="popup-gallery" data-slide="3")
+					a.lazy(data-src="/assets/narita/images/gallery/5.jpg" data-show-id="popup-gallery" data-slide="4")
+					a.lazy(data-src="/assets/narita/images/gallery/6.jpg" data-show-id="popup-gallery" data-slide="5")
+					a.lazy(data-src="/assets/narita/images/gallery/7.jpg" data-show-id="popup-gallery" data-slide="6")
+					a.lazy(id='more-link' href='gallery.html')
+						div 67 Hotel Photos
+							span VIEW GALLERY
+							i.mys-arrow-left.white
+			.tabs-content
+				div#instafeed.instafeed(data-limit='7' data-more='67 Hotel Photos' data-morespan='VIEW GALLERY')
+			.tabs-content
+				div
+					video(width="100%" height="auto" controls="")
+						source(src="/assets/narita/videos/ANIMATION_0710.mp4" type="video/mp4")
+						|   Your browser does not support the video tag.
+			.tabs-content
+				div Images
+				p Tab4
+					span VIEW GALLERY
+.gallery-nav(data-basicLightbox data-id="popup-gallery")
+		div
+			img(src='/assets/narita/images/gallery/1-big.jpg')
+		div
+			img(src='/assets/narita/images/gallery/standard-urban-big.jpg')
+		div
+			img(src='/assets/narita/images/gallery/japanese-suite-big.jpg')
+		div
+			img(src='/assets/narita/images/gallery/pool-big.jpg')
+		div
+			img(src='/assets/narita/images/gallery/laundry-big.jpg')
+		div
+			img(src='/assets/narita/images/gallery/6-big.jpg')
+		div
+			img(src='/assets/narita/images/gallery/other-big.jpg')
