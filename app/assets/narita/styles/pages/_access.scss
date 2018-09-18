@@ -104,8 +104,7 @@ $box-height:90;
         position: absolute;
         top: 50%;
         transform:translateY(-50%); 
-        width: 100%;     
-        letter-spacing: 3.2px;   
+        width: 100%; 
     }
     .box1-2{
           height: ( $box-height * 2 + 10) + px;    
@@ -129,7 +128,6 @@ $box-height:90;
         border-bottom: 1px solid #000;
         span{
             @include font-size(14px);
-            letter-spacing: 1.4px;
         }
         &.arrow2{
             width: 280%; 

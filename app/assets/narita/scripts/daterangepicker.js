@@ -155,7 +155,7 @@
         function createCalendar(year, month, direction, max_m = 3) {
 
 
-            if((opts.date_at != "") && (opts.date_to != "") )
+            if((opts.date_at != '') && (opts.date_to != '') )
             {
               container.find('span.daysFromTo').html(getDateLocale(new Date(opts.date_at), true)+ ' ~ ' + getDateLocale(new Date(opts.date_to), true));
 
@@ -558,7 +558,7 @@
                 var checkoutDate = new Date(opts.date_at);
                 var date_to_ = (opts.date_to) ? new Date(opts.date_to) : new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
                 container.find('span.date_to').html(getDateLocale(date_to_));
-                opts.date_to = date_to_.toISOString().split("T")[0];
+                opts.date_to = date_to_.toISOString().split('T')[0];
                 containerCalendar.find('td.start').next().addClass('end');
             }
 

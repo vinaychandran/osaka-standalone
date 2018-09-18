@@ -279,7 +279,7 @@ const FE = {
                         div.appendChild(arrow);
                         node.appendChild(div);
                         node.id = 'more-link';
-                        node.href = "https://www.instagram.com/explore/tags/hotelmystays/";
+                        node.href = 'https://www.instagram.com/explore/tags/hotelmystays/';
                         node.target = '_blank';
                         let feed = document.getElementById('instafeed');
                         feed.appendChild(node);
@@ -340,11 +340,11 @@ const FE = {
                         id: list.num
                     });
                     if (list.num) {
-                        marker.set("id", list.num);
-                        marker.set("label", list.num);
+                        marker.set('id', list.num);
+                        marker.set('label', list.num);
                     }
                     infoWindow.set('content', list.content);
-                    google.maps.event.addListener(map, "click", function(event) {
+                    google.maps.event.addListener(map, 'click', function(event) {
                         for (var i = 0; i < mapMarker.length; i++) {
                             infoWindow.close();
                         }
@@ -359,7 +359,7 @@ const FE = {
         },
         selectPromoCoupon: () => {
             let couponElem = event.currentTarget.parentElement.parentElement;
-            if (couponElem.className.indexOf("selected") >= 0) {
+            if (couponElem.className.indexOf('selected') >= 0) {
                 couponElem.classList.remove('selected');
                 event.currentTarget.classList.remove('icon-checked');
             } else {
@@ -710,7 +710,7 @@ const FE = {
             });
         },
         pauseVideo: () => {
-            var videos = document.getElementsByTagName("video"),
+            var videos = document.getElementsByTagName('video'),
                 fraction = 0.5;
 
             function checkScroll() {
