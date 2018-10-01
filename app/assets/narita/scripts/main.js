@@ -951,6 +951,18 @@ const FE = {
             });
         },
 
+        campaignpopup: function(event) {
+            window.setTimeout(function () {
+                $("#campaign-popup-wrap").addClass('show');
+                $(".campaign-overlay").addClass('show');
+            },1000);
+
+            $(".campaign-overlay, #campaign-popup-wrap .close").on('click', function() {
+                $("#campaign-popup-wrap").removeClass('show');
+                $(".campaign-overlay").removeClass('show');
+            });
+        },
+
         filterNews: (targetElement) => {
             function showFilterRoom(el) {
                 const type = el.getAttribute('data-news-type');
@@ -1033,6 +1045,7 @@ const FE = {
             FE.global.lazyLoad();
             FE.global.sliderImageFade('.home-banner-slider', 1, false, false);
             FE.global.pageScroll();
+            FE.global.campaignpopup();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize
