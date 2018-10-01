@@ -222,7 +222,7 @@ const FE = {
             }
         },
 
-        sliderImage: (slider, slideToShow, dots, arrows) => {
+        sliderImage: (slider, slideToShow, dots, arrows, playauto) => {
             $(slider).each(function() {
                 let imgIndex, sliderImageCount;
                 sliderImageCount = $(this).children().length;
@@ -231,7 +231,8 @@ const FE = {
                     slidesToScroll: 1,
                     dots: dots,
                     arrows: arrows,
-                    lazyLoad: 'progressive'
+                    lazyLoad: 'progressive'                   
+
                 });
                 imgIndex = $(this).find('.slider-content').index();
                 console.log(sliderImageCount);
@@ -250,6 +251,24 @@ const FE = {
                 $(this).addClass('active');
                 $(slider).slick('slickGoTo', indexThumbnail);
             });
+        },
+        sliderImageFade: (slider, slideToShow, dots, arrows) => {
+            $(slider).each(function() {
+                let imgIndex, sliderImageCount;
+                sliderImageCount = $(this).children().length;
+                $(this).slick({
+                    slidesToShow: slideToShow,
+                    slidesToScroll: 1,
+                    dots: dots,
+                    arrows: arrows,
+                    lazyLoad: 'progressive',
+                    autoplay:true,
+                    autoplaySpeed: 2000,
+                    pauseOnHover:false,
+                    fade:true
+
+                });                
+            });            
         },
         instaFeed: () => {
             if (document.getElementById('instafeed')) {
@@ -1004,8 +1023,7 @@ const FE = {
             FE.global.datePickerInit('.date-picker-tab1', false);
             FE.global.datePickerInit('.date-picker-tab2-single', true);
             FE.global.datePickerInit('.date-picker-tab3', false);
-            //FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', false);
-            FE.global.pageScroll();
+            //FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', false);            
             FE.global.sliderImage('.inner-page-slider', 1, false, true);
             FE.global.submitForm();
             FE.global.bindAccordion('click');
@@ -1013,6 +1031,8 @@ const FE = {
             FE.global.sliderImage('.single-room-wrap .room-info-slider', 1, false, true);
             FE.global.pauseVideo();
             FE.global.lazyLoad();
+            FE.global.sliderImageFade('.home-banner-slider', 1, false, false);
+            FE.global.pageScroll();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

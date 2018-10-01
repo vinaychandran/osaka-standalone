@@ -1,5 +1,8 @@
 .slick-slide {
   position: relative;
+  &:first-child{
+    display: block;
+  }
 }
 
 .slick-next,
@@ -101,4 +104,8 @@
        }
     }
   }
+}
+
+.home-banner-slider{
+  overflow: hidden;
 }

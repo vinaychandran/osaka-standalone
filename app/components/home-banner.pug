@@ -1,11 +1,34 @@
 section.main-banner.home-banner
-	picture.banner-image
-		source(media='(min-width: 768px)', srcset='/assets/narita/images/homebanner.jpg')
-		img(src='/assets/narita/images/homebanner-mobile.jpg')
+	.home-banner-slider
+		.slick-slide
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/1.jpg')
+				img(src='/assets/narita/images/banner-slider/sp/1.jpg')
+		.slick-slide
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/2.jpg')
+				img(src='/assets/narita/images/banner-slider/sp/2.jpg')
+		.slick-slide
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/3.jpg')
+				img(src='/assets/narita/images/banner-slider/sp/3.jpg')
+		.slick-slide
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/4.jpg')
+				img(src='/assets/narita/images/banner-slider/sp/4.jpg')
+		.slick-slide
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/5.jpg')
+				img(src='/assets/narita/images/banner-slider/sp/5.jpg')
+		.slick-slide
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/6.jpg')
+				img(src='/assets/narita/images/banner-slider/sp/6.jpg')
+		
 	.banner-text
-		//- h1 空港と寺社を臨む
+		h1 素敵な旅のそばに。
 		//- span RISE ABOVE THE BAY
-		img(src='/assets/narita/images/air.svg')
+		//- img(src='/assets/narita/images/air.svg')
 	.photos-link
 		a.guestPhotos.scroll(href="#gallery-tabs")
 			i.icon-insta
