@@ -271,6 +271,7 @@
             span.date_to {
                 @extend %clearfix;
                 @extend .icon-calender;
+                width: 100%;
                 &:before {
                     display: none;
                     @include md {
@@ -782,6 +783,31 @@
                     border-top: 5px solid $default-color;
                     clear: both;
                 }
+                input[type="text"]{
+                   font-family: $go-bold; 
+                    background-size: 6px;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    margin: 0;
+                    height: 66px;
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    border: 2px solid #eeeeee;
+                    @include font-size(12px);
+                    letter-spacing: 0.9px;
+                    padding: 0 20px;
+                    color: $default-color;
+                    text-align: left;
+                    font-weight: 700;
+                    @include md {
+                        width: 140px;
+                    }
+                    &:focus {
+                        border: 2px solid #eeeeee;
+                    }     
+                }
                 button,
                 input,
                 input::placeholder {
@@ -811,7 +837,7 @@
                 }
                 input::placeholder {
                     border: 0;
-                    padding-left: 0;
+                    padding-left: 0; 
                 }
             }
             .popup-menu {
@@ -966,6 +992,22 @@
             width: auto;
             .input-custom {
                 margin-bottom: 0;
+                input[type="text"]{
+                    border: 0;
+                    border-left: 1px solid #eeeeee;
+                    font-family: Lato;
+                    font-size: 18px;
+                    letter-spacing: 1.4px;
+                    text-align: center;
+                    color: #000000;
+                    height: 42px;
+                    margin: 10px 0;
+                    padding-right: 30px;
+                    &:focus {
+                        border: 0;
+                        border-left: 1px solid #eeeeee;
+                    }
+                }
                 button,
                 input,
                 input::placeholder {
@@ -978,7 +1020,7 @@
                     color: #000000;
                     height: 42px;
                     margin: 10px 0;
-                    padding-right: 30px;
+                    padding-right: 30px; 
                     &:focus {
                         border: 0;
                         border-left: 1px solid #eeeeee;
@@ -1139,6 +1181,23 @@
                         border-right: 3px solid transparent;
                         border-top: 5px solid $default-color;
                         clear: both;
+                    }
+                    input[type="text"] {
+                        font-family: $go-bold;
+                        background-size: 6px;
+                        background-repeat: no-repeat;
+                        cursor: pointer;
+                        border-radius: 4px;
+                        margin: 0;
+                        height: 66px;
+                        border: 2px solid #eeeeee;
+                        @include font-size(12px);
+                        letter-spacing: 0.9px;
+                        padding: 0 11px;
+                        color: $default-color;
+                        &:focus {
+                            border: 2px solid #eeeeee;
+                        }
                     }
                     button,
                     input,

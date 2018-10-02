@@ -545,15 +545,15 @@ const FE = {
             FE.global.lazyLoad();
         },
         resetUserDetails: () => {
-            let url = new URL(window.location.href);
-            let isReset = url.searchParams.get('reset');
-            let isEmail = url.searchParams.get('email');
-            if (isReset && !isEmail) {
-                document.getElementById('reset').click();
-            }
-            if (isEmail) {
-                document.getElementById('reset-mail').click();
-            }
+            // let url = new URL(window.location.href);
+            // let isReset = url.searchParams.get('reset');
+            // let isEmail = url.searchParams.get('email');
+            // if (isReset && !isEmail) {
+            //     document.getElementById('reset').click();
+            // }
+            // if (isEmail) {
+            //     document.getElementById('reset-mail').click();
+            // }
         },
         lightBoxRoom: () => {
             const getTargetHTML = function(elem) {

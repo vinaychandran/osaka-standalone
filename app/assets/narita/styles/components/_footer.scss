@@ -7,12 +7,11 @@
     top: 50%;
     transform: translate(-50%, -150%);
     z-index: 100001;
-    overflow: hidden;
     -webkit-animation-duration: 500ms;
     animation-duration: 500ms;
     .close {
       position: absolute;
-      top: 5px;
+      top:-30px;
       right: 5px;
       font-size: 24px !important;
       cursor: pointer;
