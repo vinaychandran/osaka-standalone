@@ -263,7 +263,7 @@ const FE = {
                     arrows: arrows,
                     lazyLoad: 'progressive',
                     autoplay:true,
-                    autoplaySpeed: 2000,
+                    autoplaySpeed: 5000,
                     pauseOnHover:false,
                     fade:true
 
