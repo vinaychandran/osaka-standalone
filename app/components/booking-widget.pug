@@ -1,5 +1,6 @@
 section.booking-widget.visible-desktop#booking-widget
   .container
+    #booking-widget-overlay
     div.booking-title.visible-mobile
       p 空室検索
       a.close-booking
@@ -12,35 +13,36 @@ section.booking-widget.visible-desktop#booking-widget
           a.tabs-title(href='#') Resturants
         li
           a.tabs-title(href='#') お部屋+航空券
-      #booking-tab1.tabs-content(onclick='FE.global.bookingWidgetClick()')
-        .date-picker-tab1
+      #booking-tab1.booking-widget-container.tabs-content()
+       .booking-widget-module.mystays-booking-widget
+        .booking-box.date-picker-tab1
           label Day of Use
-          .date-picker-tab1-container
-            .values 
+          .date-picker-tab1-container.date-picker
+            .values.range-container 
               .startDateContainer 
                 //label チェックイン
                 .startDate
                   .value.date_at
                     span.date_at
-                    input#date_at.date_at(type='hidden')
+                    input#date_at.date_at(type='hidden' value="")
               .to ~
               .endDateContainer
                 //label チェックアウト
                 .endDate
                   .value.date_to
                     span.date_to
-                    input#date_to.date_to(type='hidden')
+                    input#date_to.date_to(type='hidden' value="")
             //.calendar-backdrop
-            .calendar
-              //img.clear(src='/assets/narita/images/clear.svg' )
-              .button.button-prev
-              .button.button-next
-              .calendarContainer
-              .bottomLayer
-                span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
-                .nights 1 金曜日
-                //.button.closePopup &#x5B8C;&#x4E86;
-        .people
+            //- .calendar
+            //-   //img.clear(src='/assets/narita/images/clear.svg' )
+            //-   .button.button-prev
+            //-   .button.button-next
+            //-   .calendarContainer
+            //-   .bottomLayer
+            //-     span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+            //-     .nights 1 金曜日
+            //-     //.button.closePopup &#x5B8C;&#x4E86;
+        .booking-box.people
           label Number of Guests
           .people-list
             p
@@ -50,75 +52,49 @@ section.booking-widget.visible-desktop#booking-widget
               | child(ren)
               span.container
                 span.room 0
-                span.roomText room(s)
-          .popup-wrap.popup-create
-                //.overlay
-                .big-popup.people-list-popup
-                  .head-popup
-                    section.grown-up
-                      .form-group
-                        label.form-label(for='') 大人
-                        .input-custom
-                          button 0
-                          .popup-menu
-                            .popup-content-input
-                              ul.cities
-                                li
-                                  span(target='Hokkaido', names='Hokkaido') 0人
-                                li
-                                  span(target='Okinawa', names='Okinawa') 1人
-                                li
-                                  span(target='Tochigi', names='Tochigi') 2人
-                                li
-                                  span(target='Tokyo', names='Tokyo') 3人
-                    section.children
-                      .form-group
-                        label.form-label(for='') 子供
-                        .input-custom
-                          button 0
-                          .popup-menu
-                            .popup-content-input
-                              ul.cities
-                                li
-                                  span(target='Hokkaido', names='Hokkaido', value='0') 0人
-                                li
-                                  span(target='Okinawa', names='Okinawa', value='1') 1人
-                                li
-                                  span(target='Tochigi', names='Tochigi', value='2') 2人
-                                li
-                                  span(target='Tokyo', names='Tokyo', value='3') 3人
-                    section.room
-                      .form-group
-                        label.form-label(for='') 部屋
-                        .input-custom
-                          button 0
-                          .popup-menu
-                            .popup-content-input
-                              ul.cities
-                                li
-                                  span(target='Hokkaido', names='Hokkaido') 0
-                                li
-                                  span(target='Okinawa', names='Okinawa') 1
-                                li
-                                  span(target='Tochigi', names='Tochigi') 2
-                                li
-                                  span(target='Tokyo', names='Tokyo') 3
-                  .input-popup
-                      .title 小学生の添い寝について
-                      ul
+                span.roomText room(s)          
+          .booking-guestselect-wrap.hide
+            .booking-guestselect-heading
+                span.mbsc-ic-arrow-left5.mbsc-ic
+                span.guests-placeholder Occupancy
+                span.guest-placeholder.hide Occupant
+            .booking-guestselect
+                .left
+                    .guest-row
+                        p.room
+                            span.number(data-count="1") 1
+                            span.room Room
+                        i.minus.disabled
+                        i.plus
+                    .guest-row
+                        p.adult
+                            span.number(data-count="2") 2
+                            span.adult Adult
+                        i.minus
+                        i.plus
+                    .guest-row
+                        p.child
+                            span.number(data-count="0") 0
+                            span.child child
+                        i.minus.disabled
+                        i.plus
+                    .child-age-info.hide
+                        | Please include each child’s age so we can find you best room, bed configuration and deals.
+                    ul.chidren-ages-dropndown
+                .right
+                    h3 小学生の添い寝について
+                    ul
                         li 大人1名様に対し、添い寝のお子様1名までとします。
-                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
-                        li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
-                  .btn-group
-                      button.clear クリア
-                      button.done 完了
-        .promo-code
+                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,306円頂戴いたします。（6歳以下は無料）
+                .booking-guestselect-close 
+                    span OK
+        .booking-box.promo-code
           section
             .form-group
               label.form-label(for='') Promo Code
               .input-custom
                 input.form-control(type='text', placeholder='Promo Code')
-        .find-button
+        .booking-box.find-button
           label.visible-desktop
             i.icon-info
             span Best Price Guarantee
@@ -126,7 +102,8 @@ section.booking-widget.visible-desktop#booking-widget
           label.visible-device
             i.icon-info
             span 最低価格保証
-      #booking-tab2.tabs-content(onclick='FE.global.bookingWidgetClick()')
+        .calender-render-container
+      #booking-tab2.tabs-content()
         .number-of-people
           section
             .form-group
@@ -148,7 +125,7 @@ section.booking-widget.visible-desktop#booking-widget
         .date-picker-tab2-single
           label チェックイン
           .date-picker-tab2-single-container
-            .values
+            .values.range-container
               .startDateContainer
                 .startDate
                   .value.date_at
@@ -172,10 +149,10 @@ section.booking-widget.visible-desktop#booking-widget
                             li
                               span(target='Tokyo', names='Tokyo') 21:00
             //.calendar-backdrop
-            .calendar
-              .button.button-prev
-              .button.button-next
-              .calendarContainer
+            //- .calendar
+            //-   .button.button-prev
+            //-   .button.button-next
+            //-   .calendarContainer            
         .shop
           section
             .form-group
@@ -219,7 +196,8 @@ section.booking-widget.visible-desktop#booking-widget
               input.form-control(id='details' type='text', placeholder='プロモコード)' name='details' required)
             .find-button
               button(name='button', type='button', value='空室を検索' class='bookingForm') 空室を検索
-      #booking-tab3.tabs-content(onclick='FE.global.bookingWidgetClick()')
+        .calender-render-container
+      #booking-tab3.tabs-content()
         .room-locations
           section
             .form-group
@@ -241,7 +219,7 @@ section.booking-widget.visible-desktop#booking-widget
         .date-picker-tab3
           label チェックイン
           .date-picker-tab3-container
-            .values
+            .values.range-container
               .startDateContainer
                 //label チェックイン
                 .startDate
@@ -256,14 +234,14 @@ section.booking-widget.visible-desktop#booking-widget
                     span.date_to
                     input#date_to.date_to(type='hidden')
             //.calendar-backdrop
-            .calendar
-              //img.clear(src='/assets/narita/images/clear.svg' )
-              .button.button-prev
-              .button.button-next
-              .calendarContainer
-              .bottomLayer
-                span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
-                .nights 1 金曜日
+            //- .calendar
+            //-   //img.clear(src='/assets/narita/images/clear.svg' )
+            //-   .button.button-prev
+            //-   .button.button-next
+            //-   .calendarContainer
+            //-   .bottomLayer
+            //-     span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+            //-     .nights 1 金曜日
                 //.button.closePopup &#x5B8C;&#x4E86;
         .people
           label ご利用人数
@@ -349,3 +327,4 @@ section.booking-widget.visible-desktop#booking-widget
           label.visible-device
             i.icon-info
             span 最低価格保証
+        .calender-render-container

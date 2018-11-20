@@ -328,7 +328,7 @@ const FE = {
             var map;
             if (selectorMapElement) {
                 map = new google.maps.Map(document.getElementById('gmap_canvas'), {
-                    zoom: 13,
+                    zoom: 10,
                     center: new google.maps.LatLng(selectorMapElement.dataset.lat, selectorMapElement.dataset.lan),
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 });
@@ -1032,9 +1032,13 @@ const FE = {
             FE.global.itemShowHide();
             FE.global.filterRooms('room-types');
             FE.global.filter('venue-types');
-            FE.global.datePickerInit('.date-picker-tab1', false);
-            FE.global.datePickerInit('.date-picker-tab2-single', true);
-            FE.global.datePickerInit('.date-picker-tab3', false);
+
+            MystaysBookingWidget.Loaded('ja-JP', false, false, '#booking-tab1', true, false, false);
+            // FE.global.datePickerInit('.date-picker-tab1', false);
+            // FE.global.datePickerInit('.date-picker-tab2-single', true);
+            // FE.global.datePickerInit('.date-picker-tab3', false);
+
+
             //FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', false);            
             FE.global.sliderImage('.inner-page-slider', 1, false, true);
             FE.global.submitForm();
@@ -1050,9 +1054,9 @@ const FE = {
         resize: function resize() {
             //Functions inside loaded execute when window resize
             FE.global.lazyLoad();
-            FE.global.datePickerInit('.date-picker-tab1', false);
-            FE.global.datePickerInit('.date-picker-tab2-single', true);
-            FE.global.datePickerInit('.date-picker-tab3', false);
+            // FE.global.datePickerInit('.date-picker-tab1', false);
+            // FE.global.datePickerInit('.date-picker-tab2-single', true);
+            // FE.global.datePickerInit('.date-picker-tab3', false);
             let isMobile = $(window).width() <= mobileWidth;
             $('.home-slider-nav').slick('unslick');
             if (isMobile) {
