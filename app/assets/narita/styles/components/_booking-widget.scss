@@ -13,7 +13,7 @@
         z-index: 9999;
         height: auto;
         background: none;
-        overflow-y: inherit;
+        overflow-y: initial; 
     }
     &.sticky {
         position: fixed;
@@ -1696,9 +1696,9 @@
         animation-duration: 500ms;
         span{
             border-radius: 3px;
-            background-color: #ffd25d;
+            background-color: $cal-primaray-color;
             min-width: 162px;
-            color: #232e48;
+            color: $cal-color;
             font-family: 'Lato-Black';
             font-size: 16px;
             padding: 15px 25px;
