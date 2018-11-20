@@ -560,7 +560,7 @@ var MystaysBookingWidget = {
                 return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .mbsc-fr-arr';
             },
             CheckinCheckoutContainer: function () {
-                return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-checkin-checkout';
+                return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .date-picker';
             },
             DatePickerContainer: function () {
                 return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .date-picker';

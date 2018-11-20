@@ -6,7 +6,7 @@
     height: 100vh;
     z-index: 99999;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: scroll; 
     @include md {
         position: relative;
         margin-top: -80px;
@@ -1391,6 +1391,12 @@
 }
 
 
+.booking-widget-container{
+    &.mystays-bookingwidget-active{
+        z-index: 18; 
+    }
+}
+
 .booking-guestselect-wrap{
     background: #ffffff;
     @include device {
@@ -1697,13 +1703,13 @@
         span{
             border-radius: 3px;
             background-color: $cal-primaray-color;
-            min-width: 162px;
+            min-width: 162px; 
             color: $cal-color;
             font-family: 'Lato-Black';
             font-size: 16px;
             padding: 15px 25px;
             line-height: 1;
-            display: inline-block;
+            display: inline-block;   
             height: auto;
         }
         @include sm {
