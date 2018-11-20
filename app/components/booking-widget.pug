@@ -22,16 +22,16 @@ section.booking-widget.visible-desktop#booking-widget
               .startDateContainer 
                 //label チェックイン
                 .startDate
-                  .value.date_at
+                  .value.date_at.date_at_container
                     span.date_at
-                    input#date_at.date_at(type='hidden' value="")
+                    input#date_at.date_at.date_at_input(type='hidden' value="")
               .to ~
               .endDateContainer
                 //label チェックアウト
                 .endDate
-                  .value.date_to
+                  .value.date_to.date_at_container
                     span.date_to
-                    input#date_to.date_to(type='hidden' value="")
+                    input#date_to.date_to.date_to_input(type='hidden' value="")
             //.calendar-backdrop
             //- .calendar
             //-   //img.clear(src='/assets/narita/images/clear.svg' )
