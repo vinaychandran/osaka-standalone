@@ -1033,7 +1033,7 @@ const FE = {
             FE.global.filterRooms('room-types');
             FE.global.filter('venue-types');
 
-            MystaysBookingWidget.Loaded('ja-JP', false, false, '#booking-tab1', true, false, false);
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab1', false, false, false);
             // FE.global.datePickerInit('.date-picker-tab1', false);
             // FE.global.datePickerInit('.date-picker-tab2-single', true);
             // FE.global.datePickerInit('.date-picker-tab3', false);
