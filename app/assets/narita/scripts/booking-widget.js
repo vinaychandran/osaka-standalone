@@ -541,6 +541,13 @@ var MystaysBookingWidget = {
             EnglishMonthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
             EnglishMonthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             EnglishDayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+
+            JapaneseDayNamesLong: ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
+            EnglishDayNamesLong: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            ChineseDayNamesLong: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+            TaiwaneseDayNamesLong: ['星期日', '星期六', '星期一', '星期二', '星期三', '星期四', '星期五'],
+            KoreanDayNamesLong: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],          
+
             CalendarHeader: ['カレンダー', 'Calendar', '月历', '月曆', '캘린더', 'CalendarHeader'],
             NightsOfStayDesktop: ['({days} 泊)', '({days} Nights)', '({days} 晚)', '({days} 晚)', '({days} 박)', 'NightsOfStayDesktop'],
             NightsOfStayOneNightDesktop: ['(1 泊)', '(1 Night)', '(1 晚)', '(1 晚)', '(1 박)', 'NightsOfStayOneNightDesktop'],
@@ -603,14 +610,17 @@ var MystaysBookingWidget = {
                 return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .date_at_container';
             },
 
-
+            CheckinSpan: function () {
+                return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .date_at_container span';
+            },
            
-
             CheckoutButton: function () {
                 return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .date_to_container';
             },
-            
 
+            CheckoutSpan: function () {
+                return MystaysBookingWidget.Common.BookingWidgetContainer() + ' .date_to_container span';
+            },
 
             DefaultCalendarSelector: function () {
                 return ' .mbsc-range-btn-start';
@@ -627,6 +637,29 @@ var MystaysBookingWidget = {
         },
         //Contains methods that alter the HTML of the calendar
         CustomHTML: {
+
+            //Method to get the week day
+            GetDayWeekName: function (day) {
+                if (MystaysBookingWidget.Common.SelectedLanguage == 'ja') {
+                    return MystaysBookingWidget.BookingCalendar.Constants.JapaneseDayNamesLong[day];
+                }
+
+                if (MystaysBookingWidget.Common.SelectedLanguage == 'en') {
+                    return MystaysBookingWidget.BookingCalendar.Constants.EnglishDayNamesLong[day];
+                }
+
+                if (MystaysBookingWidget.Common.SelectedLanguage == 'tw') {
+                    return MystaysBookingWidget.BookingCalendar.Constants.TaiwaneseDayNamesLong[day];
+                }
+
+                if (MystaysBookingWidget.Common.SelectedLanguage == 'zh') {
+                    return MystaysBookingWidget.BookingCalendar.Constants.ChineseDayNamesLong[day];
+                }
+
+                if (MystaysBookingWidget.Common.SelectedLanguage == 'ko') {
+                    return MystaysBookingWidget.BookingCalendar.Constants.KoreanDayNamesLong[day];
+                }
+            },
             //Method to reposition the indicator icon based on user selection of start or end date
             RepositionSelectorIndicator: function RepositionSelectorIndicator(IsCheckin) {
                 var rangeBubbleContainer = document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.RangeBubbleContainer());
@@ -760,37 +793,41 @@ var MystaysBookingWidget = {
                 }
             },
 
-            //Method to get dates for stand alone website
-            getDateLocale: function getDateLocale(date, thiru) {
+            //Method to get dates for stand alone website check in and check out buttons
+            GetCheckInOutSection: function GetCheckInOutSection(dateString, thiru) {
+                var array = dateString.split('|');
+
+                var date = new Date(array[4])
+
+                var dayofweek = date.getDay();
+                var thisMonth = array[1];
+                var dayNameLong = MystaysBookingWidget.BookingCalendar.CustomHTML.GetDayWeekName(dayofweek);
+                var yearSuffix = MystaysBookingWidget.Helper.GetCustomText(MystaysBookingWidget.BookingCalendar.Constants.YearText);
+                var dateSuffix = MystaysBookingWidget.Helper.GetCustomText(MystaysBookingWidget.BookingCalendar.Constants.DateText);
+                var year = date.getFullYear(),
+                    month = date.getMonth() + 1,
+                    dayofmonth = date.getDate();
 
 
-                var day = date.getDay();
-                var thisMonth = opts.l.months[value.getMonth()];
-                var dayName = days[value.getDay()];
-                var yearSuffix = opts.l.yearSuffix;
-                var dateSuffix = opts.l.dateSuffix;
-                var year = value.getFullYear(),
-                    month = value.getMonth() + 1,
-                    day = value.getDate();
                 if (MystaysBookingWidget.Common.SelectedLanguage == 'en') {
                     var dateText;
                     if (MystaysBookingWidget.Helper.IsMobile()) {
                         if (thiru) {
-                            dateText = '<div class="year"> ' + year + '</div><div class="month"> ' + thisMonth + '</div><div class="day"> ' + day + '</day><div class="dayoftheweek">' + dayName + '</div>';
+                            dateText = '<div class="year"> ' + year + '</div><div class="month"> ' + thisMonth + '</div><div class="day"> ' + dayofmonth + '</day><div class="dayoftheweek">' + dayNameLong + '</div>';
 
-                        } else { dateText = '<div class="day"> ' + day + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayName + '</div>'; }
+                        } else { dateText = '<div class="day"> ' + dayofmonth + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayNameLong + '</div>'; }
                     } else {
-                        dateText = '<div class="year"> ' + year + '</div><div class="month"> ' + thisMonth + '</div><div class="day"> ' + day + '</day><div class="dayoftheweek">' + dayName + '</div>';
+                        dateText = '<div class="year"> ' + year + '</div><div class="month"> ' + thisMonth + '</div><div class="day"> ' + dayofmonth + '</day><div class="dayoftheweek">' + dayNameLong + '</div>';
                     }
                 } else {
                     var dateText;
                     if (MystaysBookingWidget.Helper.IsMobile()) {
                         if (thiru) {
-                            dateText = '<div class="year">' + year + yearSuffix + '</div><div class="month">' + thisMonth + '</div><div class="day">' + day + dateSuffix + '</day><div class="dayoftheweek">' + dayName + '</div>';
+                            dateText = '<div class="year">' + year + yearSuffix + '</div><div class="month">' + thisMonth + '</div><div class="day">' + dayofmonth + dateSuffix + '</day><div class="dayoftheweek">' + dayNameLong + '</div>';
 
-                        } else { dateText = '<div class="day"> ' + day + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayName + '</div>'; }
+                        } else { dateText = '<div class="day"> ' + dayofmonth + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayNameLong + '</div>'; }
                     } else {
-                        dateText = '<div class="year">' + year + yearSuffix + '</div><div class="month">' + thisMonth + '</div><div class="day">' + day + dateSuffix + '</day><div class="dayoftheweek">' + dayName + '</div>';
+                        dateText = '<div class="year">' + year + yearSuffix + '</div><div class="month">' + thisMonth + '</div><div class="day">' + dayofmonth + dateSuffix + '</day><div class="dayoftheweek">' + dayNameLong + '</div>';
                     }
                 }
                 return dateText;
@@ -799,18 +836,14 @@ var MystaysBookingWidget = {
             SetDateValues: function SetDateValues(mobiScrollInstance, IgnoreUpdates) {
 
                  startval = mobiScrollInstance.startVal;
-                 endval = mobiScrollInstance.endVal;
+                endval = mobiScrollInstance.endVal;
+
 
                  document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.CheckinContainer()).setAttribute('data-value', startval);
                  document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.CheckoutContainer()).setAttribute('data-value', endval);
-
-                
-
-                
-
                  if (startval !== "" && startval) {
 
-
+                     document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.CheckinSpan()).innerHTML = MystaysBookingWidget.BookingCalendar.CustomHTML.GetCheckInOutSection(mobiScrollInstance.startVal);
 
                      if (!IgnoreUpdates && !MystaysBookingWidget.Common.IsMeetingWeddingRoom) {
                          MystaysBookingWidget.Helper.SetCookie(MystaysBookingWidget.Common.Constants.CheckinDateCookie, MystaysBookingWidget.Helper.FormatDateToString(new Date(startval.split('|')[4])));
@@ -819,7 +852,9 @@ var MystaysBookingWidget = {
                  }
 
                  if (endval !== "" && endval) {
-                    
+
+                     document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.CheckoutSpan()).innerHTML = MystaysBookingWidget.BookingCalendar.CustomHTML.GetCheckInOutSection(mobiScrollInstance.endVal);
+
                      if (!IgnoreUpdates) {
                          MystaysBookingWidget.Helper.SetCookie(MystaysBookingWidget.Common.Constants.CheckoutDateCookie, MystaysBookingWidget.Helper.FormatDateToString(new Date(endval.split('|')[4])));
                      }
