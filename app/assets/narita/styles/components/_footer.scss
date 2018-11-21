@@ -19,8 +19,8 @@
   }
   &.show{
     display: block;
-     -webkit-animation-name: mbsc-anim-sh-in;            
-    animation-name: mbsc-anim-sh-in;
+     -webkit-animation-name: anim-sh-in;            
+    animation-name: anim-sh-in;
     transform: translate(-50%, -50%);
   }
 }
@@ -39,13 +39,13 @@
     }
 }
 
-@keyframes mbsc-anim-sh-in {
+@keyframes anim-sh-in {
   from {transform: translate(-50%, -150%); }
   to {transform: translate(-50%, -50%); } }
 
-@-webkit-keyframes mbsc-anim-sh-in {
-  from {transform: translate(-50%, -150%); }
-  to {transform: translate(-50%, -50%); } }
+@-webkit-keyframes anim-sh-in { 
+  from {transform: translate(-50%, -150%); }  
+  to {transform: translate(-50%, -50%); } }    
 
  
 footer {

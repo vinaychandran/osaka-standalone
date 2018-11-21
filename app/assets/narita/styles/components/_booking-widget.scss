@@ -642,7 +642,7 @@
             &:before {
                 @extend .use-iconmoon;
                 float: left;
-                margin: 18px 10px 22px 15px;
+                margin: 18px 10px 18px 15px; 
                 font-size: 27px;
             }
             @include md {
@@ -1408,16 +1408,16 @@
         margin: 0;
         width: 100%;
         z-index: 9;
-        -webkit-transform: scale(1);
+        //-webkit-transform: scale(1);   
         -webkit-animation-duration: 500ms;
-        transform: scale(1);
+        // transform: scale(1);
         animation-duration: 500ms;
         -webkit-animation-name: mbsc-anim-sh-out;           
             animation-name: mbsc-anim-sh-out;
-        transition: 0.5s all ease-in;
-        &.show{
+        transition: 0.5s all ease-in;               
+        &.show{ 
             -webkit-animation-name: mbsc-anim-sh-in;            
-            animation-name: mbsc-anim-sh-in;
+            animation-name: mbsc-anim-sh-in;  
             display: block;
         }
         &.hide{
@@ -1432,7 +1432,7 @@
         margin-left: -320px;   
         box-shadow: 0 15px 15px 0 rgba(35, 46, 72, 0.25);
         border-top: 5px solid #000000;  
-        top: 105%;
+        top: 110%;
         width: 640px;
         opacity: 1;  
         z-index: 9;
@@ -1702,7 +1702,7 @@
         animation-duration: 500ms;
         span{
             border-radius: 3px;
-            background-color: $cal-primaray-color;
+            background-color: #c5ad6c; 
             min-width: 162px; 
             color: $cal-color;
             font-family: 'Lato-Black';
@@ -1754,7 +1754,7 @@
 }
 
 .show{
-    display: block;
+    display: block;   
 }
 
 @keyframes mbsc-anim-p-in {

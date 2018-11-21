@@ -650,9 +650,9 @@ const FE = {
         },
         itemShowHide: () => {
 
-            $(document).on('click', '.people-list', function() {
-                $(this).next().show();
-            });
+            // $(document).on('click', '.people-list', function() {
+            //     // $(this).next().show();
+            // });
 
             $(document).on('click', '.calendar-link', function() {
                 setTimeout(() => {
