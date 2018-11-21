@@ -1,9 +1,3 @@
-$cal-color : #232e48;
-$cal-primaray-color:#d9cdac;  
-$cal-secondar-color:#7b7b85;
-$cal-primary-bg: #fff;
-$cal-secondary-bg: #f2f2f2; 
-
 #booking-tab1{
     .calender-render-container {
         background: $cal-primary-bg;
@@ -20,7 +14,7 @@ $cal-secondary-bg: #f2f2f2;
 
         .mbsc-fr-persp {
             @include device {
-                //background: $cal-primary-bg;
+                //background: $cal-primary-bg;  
             } 
         }
 
@@ -314,7 +308,7 @@ $cal-secondary-bg: #f2f2f2;
 
                 .mbsc-fr-btn {
                     border-radius: 3px;
-                    background-color: $cal-primaray-color;
+                    background-color: #c5ad6c;
                     min-width: 162px;
                     color: $cal-color;
                     font-family: $go-bold;
