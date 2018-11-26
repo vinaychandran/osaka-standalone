@@ -864,17 +864,15 @@ var MystaysBookingWidget = {
                      MystaysBookingWidget.Common.UpdateAllBookingWidgetsOnPage(new Date(startval.split('|')[4]), new Date(endval.split('|')[4]), MystaysBookingWidget.Common.CurrentEventTarget);
                  }
 
-                 //Update meeting rooms hidden fields
+                 
+                 //try {
+                 //    if (!IgnoreUpdates) {
+                 //        FE.global.updatePriceRealTime();
+                 //        MystaysBookingWidget.Common.UpdateRoomsRate();
+                 //    }
+                 //} catch (e) {
 
-                 MystaysBookingWidget.BookingCalendar.UpdateMeetingHiddenFields(mobiScrollInstance);
-                 try {
-                     if (!IgnoreUpdates) {
-                         FE.global.updatePriceRealTime();
-                         MystaysBookingWidget.Common.UpdateRoomsRate();
-                     }
-                 } catch (e) {
-
-                 }
+                 //}
 
             },
             //Method to render the text on the footer
@@ -1400,7 +1398,7 @@ var MystaysBookingWidget = {
 
                     inst.tap(checkInBtn, function (e) {
                         
-                            MystaysBookingWidget.Common.CurrentEventTarget = e.target;
+                        MystaysBookingWidget.Common.CurrentEventTarget = MystaysBookingWidget.Helper.ClosestElement(e.target, 'date_at_container');
                             MystaysBookingWidget.BookingCalendar.CheckInButtonHandler();
 
                             var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
@@ -1419,7 +1417,7 @@ var MystaysBookingWidget = {
 
                     inst.tap(checkOutBtn, function (e) {
                         
-                            MystaysBookingWidget.Common.CurrentEventTarget = e.target;
+                        MystaysBookingWidget.Common.CurrentEventTarget = MystaysBookingWidget.Helper.ClosestElement(e.target, 'date_to_container');
                             MystaysBookingWidget.BookingCalendar.CheckOutButtonHandler();
 
                             var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
