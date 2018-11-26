@@ -103,8 +103,9 @@ section.booking-widget.visible-desktop#booking-widget
             i.icon-info
             span 最低価格保証
         .calender-render-container
-      #booking-tab2.tabs-content()
-        .number-of-people
+      #booking-tab2.booking-widget-container.tabs-content()
+       .booking-widget-module.mystays-booking-widget 
+        .booking-box.number-of-people
           section
             .form-group
               label.form-label(for='') ご利用人数
@@ -122,15 +123,15 @@ section.booking-widget.visible-desktop#booking-widget
                           span(target='Tochigi', names='Tochigi') 3名
                         li
                           span(target='Tokyo', names='Tokyo') 4名
-        .date-picker-tab2-single
+        .booking-box.date-picker-tab2-single
           label チェックイン
-          .date-picker-tab2-single-container
+          .date-picker-tab2-single-container.date-picker
             .values.range-container
               .startDateContainer
                 .startDate
-                  .value.date_at
+                  .value.date_at.date_at_container
                     span.date_at
-                    input#date_at.date_at(type='hidden')
+                    input#date_at.date_at.date_at_input(type='hidden')
             .time-selection
               section
                 .form-group
@@ -153,7 +154,7 @@ section.booking-widget.visible-desktop#booking-widget
             //-   .button.button-prev
             //-   .button.button-next
             //-   .calendarContainer            
-        .shop
+        .booking-box.shop
           section
             .form-group
               label.form-label(for='') お店
@@ -171,7 +172,7 @@ section.booking-widget.visible-desktop#booking-widget
                           span(target='Tochigi', names='Tochigi') チェックアウト
                         li
                           span(target='Tokyo', names='Tokyo') 大人2名
-        .find-button
+        .booking-box.find-button
           label.visible-desktop
             i.icon-info
             span 最低価格保証
@@ -197,8 +198,9 @@ section.booking-widget.visible-desktop#booking-widget
             .find-button
               button(name='button', type='button', value='空室を検索' class='bookingForm') 空室を検索
         .calender-render-container
-      #booking-tab3.tabs-content()
-        .room-locations
+      #booking-tab3.booking-widget-container.tabs-content()
+       .booking-widget-module.mystays-booking-widget
+        .booking-box.room-locations
           section
             .form-group
               label.form-label(for='') 出発空港
@@ -216,23 +218,23 @@ section.booking-widget.visible-desktop#booking-widget
                           span(target='Tochigi', names='Tochigi') チェックアウト
                         li
                           span(target='Tokyo', names='Tokyo') 大人2名
-        .date-picker-tab3
+        .booking-box.date-picker-tab3
           label チェックイン
-          .date-picker-tab3-container
+          .date-picker-tab3-container.date-picker
             .values.range-container
               .startDateContainer
                 //label チェックイン
                 .startDate
-                  .value.date_at
+                  .value.date_at.date_at_container
                     span.date_at
-                    input#date_at.date_at(type='hidden')
+                    input#date_at.date_at.date_at_input(type='hidden')
               .to ~
               .endDateContainer
                 //label チェックアウト
                 .endDate
-                  .value.date_to
+                  .value.date_to.date_to_container
                     span.date_to
-                    input#date_to.date_to(type='hidden')
+                    input#date_to.date_to.date_to_input(type='hidden')
             //.calendar-backdrop
             //- .calendar
             //-   //img.clear(src='/assets/narita/images/clear.svg' )
@@ -243,7 +245,7 @@ section.booking-widget.visible-desktop#booking-widget
             //-     span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
             //-     .nights 1 金曜日
                 //.button.closePopup &#x5B8C;&#x4E86;
-        .people
+        .booking-box.people
           label ご利用人数
           .people-list
             p
@@ -255,71 +257,106 @@ section.booking-widget.visible-desktop#booking-widget
               span.container
                 span.room 0
                 span.roomText 部屋
-          .popup-wrap.popup-create
-                //.overlay
-                .big-popup.people-list-popup
-                  .head-popup
-                    section.grown-up
-                      .form-group
-                        label.form-label(for='') 大人
-                        .dropdown-custom
-                          .input-custom
-                            button 0
-                            .popup-menu
-                              .popup-content-input
-                                ul.cities
-                                  li
-                                    span(target='Hokkaido', names='Hokkaido') 0人
-                                  li
-                                    span(target='Okinawa', names='Okinawa') 1人
-                                  li
-                                    span(target='Tochigi', names='Tochigi') 2人
-                                  li
-                                    span(target='Tokyo', names='Tokyo') 3人
-                    section.children
-                      .form-group
-                        label.form-label(for='') 子供
-                        .dropdown-custom
-                          .input-custom
-                            button 0
-                            .popup-menu
-                              .popup-content-input
-                                ul.cities
-                                  li
-                                    span(target='Hokkaido', names='Hokkaido', value='0') 0人
-                                  li
-                                    span(target='Okinawa', names='Okinawa', value='1') 1人
-                                  li
-                                    span(target='Tochigi', names='Tochigi', value='2') 2人
-                                  li
-                                    span(target='Tokyo', names='Tokyo', value='3') 3人
-                    section.room
-                      .form-group
-                        label.form-label(for='') 部屋
-                        .dropdown-custom
-                          .input-custom
-                            button 0
-                            .popup-menu
-                              .popup-content-input
-                                ul.cities
-                                  li
-                                    span(target='Hokkaido', names='Hokkaido') 0
-                                  li
-                                    span(target='Okinawa', names='Okinawa') 1
-                                  li
-                                    span(target='Tochigi', names='Tochigi') 2
-                                  li
-                                    span(target='Tokyo', names='Tokyo') 3
-                  .input-popup
-                      .title 小学生の添い寝について
-                      ul
+          .booking-guestselect-wrap.hide
+            .booking-guestselect-heading
+                span.mbsc-ic-arrow-left5.mbsc-ic
+                span.guests-placeholder Occupancy
+                span.guest-placeholder.hide Occupant
+            .booking-guestselect
+                .left
+                    .guest-row
+                        p.room
+                            span.number(data-count="1") 1
+                            span.room Room
+                        i.minus.disabled
+                        i.plus
+                    .guest-row
+                        p.adult
+                            span.number(data-count="2") 2
+                            span.adult Adult
+                        i.minus
+                        i.plus
+                    .guest-row
+                        p.child
+                            span.number(data-count="0") 0
+                            span.child child
+                        i.minus.disabled
+                        i.plus
+                    .child-age-info.hide
+                        | Please include each child’s age so we can find you best room, bed configuration and deals.
+                    ul.chidren-ages-dropndown
+                .right
+                    h3 小学生の添い寝について
+                    ul
                         li 大人1名様に対し、添い寝のお子様1名までとします。
-                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
-                        li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
-                  .btn-group
-                      button.clear クリア
-                      button.done 完了
-        .find-button
+                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,306円頂戴いたします。（6歳以下は無料）
+                .booking-guestselect-close 
+                    span OK
+          //- .popup-wrap.popup-create
+          //-       //.overlay
+          //-       .big-popup.people-list-popup
+          //-         .head-popup
+          //-           section.grown-up
+          //-             .form-group
+          //-               label.form-label(for='') 大人
+          //-               .dropdown-custom
+          //-                 .input-custom
+          //-                   button 0
+          //-                   .popup-menu
+          //-                     .popup-content-input
+          //-                       ul.cities
+          //-                         li
+          //-                           span(target='Hokkaido', names='Hokkaido') 0人
+          //-                         li
+          //-                           span(target='Okinawa', names='Okinawa') 1人
+          //-                         li
+          //-                           span(target='Tochigi', names='Tochigi') 2人
+          //-                         li
+          //-                           span(target='Tokyo', names='Tokyo') 3人
+          //-           section.children
+          //-             .form-group
+          //-               label.form-label(for='') 子供
+          //-               .dropdown-custom
+          //-                 .input-custom
+          //-                   button 0
+          //-                   .popup-menu
+          //-                     .popup-content-input
+          //-                       ul.cities
+          //-                         li
+          //-                           span(target='Hokkaido', names='Hokkaido', value='0') 0人
+          //-                         li
+          //-                           span(target='Okinawa', names='Okinawa', value='1') 1人
+          //-                         li
+          //-                           span(target='Tochigi', names='Tochigi', value='2') 2人
+          //-                         li
+          //-                           span(target='Tokyo', names='Tokyo', value='3') 3人
+          //-           section.room
+          //-             .form-group
+          //-               label.form-label(for='') 部屋
+          //-               .dropdown-custom
+          //-                 .input-custom
+          //-                   button 0
+          //-                   .popup-menu
+          //-                     .popup-content-input
+          //-                       ul.cities
+          //-                         li
+          //-                           span(target='Hokkaido', names='Hokkaido') 0
+          //-                         li
+          //-                           span(target='Okinawa', names='Okinawa') 1
+          //-                         li
+          //-                           span(target='Tochigi', names='Tochigi') 2
+          //-                         li
+          //-                           span(target='Tokyo', names='Tokyo') 3
+          //-         .input-popup
+          //-             .title 小学生の添い寝について
+          //-             ul
+          //-               li 大人1名様に対し、添い寝のお子様1名までとします。
+          //-               li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
+          //-               li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
+          //-         .btn-group
+          //-             button.clear クリア
+          //-             button.done 完了
+        .booking-box.find-button
           label.visible-desktop
             i.icon-info
             span 最低価格保証

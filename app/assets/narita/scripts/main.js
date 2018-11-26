@@ -1034,7 +1034,8 @@ const FE = {
             FE.global.filter('venue-types');
 
             MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab1', false, false, false);
-            // FE.global.datePickerInit('.date-picker-tab1', false);
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab3', false, false, false);
+            // FE.global.datePickerInit('.date-picker-tab1', false); 
             // FE.global.datePickerInit('.date-picker-tab2-single', true);
             // FE.global.datePickerInit('.date-picker-tab3', false);
 
