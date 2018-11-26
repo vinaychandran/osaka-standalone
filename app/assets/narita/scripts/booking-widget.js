@@ -270,7 +270,7 @@ var MystaysBookingWidget = {
 
 
 
-                    var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promocode');
+                    var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
                     var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
 
                     //Allow to scroll on top only when it is a desktop or when it is a mobile and user has not selected promocode(Promocode scroll happens in the promocode function)
@@ -338,7 +338,7 @@ var MystaysBookingWidget = {
 
                     var container = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer());
                     //var bookingBoxes = document.querySelectorAll(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box');
-                    var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promocode');
+                    var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
                     var booknowbuttoncontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.find-button');
 
                     //Click secondary menu button and check availability button(mobile) and on 
@@ -1403,7 +1403,7 @@ var MystaysBookingWidget = {
                             MystaysBookingWidget.Common.CurrentEventTarget = e.target;
                             MystaysBookingWidget.BookingCalendar.CheckInButtonHandler();
 
-                            var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promocode');
+                            var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
                             var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
 
                             //Allow to scroll on top only when it is a desktop or when it is a mobile and user has not selected promocode(Promocode scroll happens in the promocode function)
@@ -2593,21 +2593,6 @@ var MystaysBookingWidget = {
         //Used to bind hotel data to input element
         UpdateSerachField: function UpdateSerachField(selectedHotelCity) {
             var inputElement = document.querySelector(MystaysBookingWidget.HotelSearch.Constants.SearchInputClass());
-            //inputElement.setAttribute('data-Type', selectedHotelCity.Type);
-            //inputElement.setAttribute('data-TargetCities', selectedHotelCity.Target);
-            //inputElement.setAttribute('data-Name', selectedHotelCity.Name);
-            //inputElement.setAttribute('data-Link', selectedHotelCity.Link);
-            //inputElement.setAttribute('data-HotelSearchNames', selectedHotelCity.HotelSearchNames);
-            //inputElement.setAttribute('data-UseTravelClick', selectedHotelCity.UseTravelClick);
-            //inputElement.setAttribute('data-TravelClickBookingID', selectedHotelCity.TravelClickBookingID);
-            //inputElement.setAttribute('data-RWIthCode', selectedHotelCity.RWIthCode);
-            //inputElement.setAttribute('data-HotelCity', selectedHotelCity.HotelCity);
-
-            //inputElement.setAttribute('data-IsBookable', selectedHotelCity.IsBookable);
-            //inputElement.setAttribute('data-HasMeetingRoom', selectedHotelCity.HasMeetingRoom);
-            //inputElement.setAttribute('data-StartDateForBooking', selectedHotelCity.StartDateForBooking);
-            //inputElement.setAttribute('data-GroupNames', selectedHotelCity.GroupNames);
-            //inputElement.setAttribute('data-FastBookingAreaName', selectedHotelCity.FastBookingAreaName);
             inputElement.setAttribute('data-HotelCity', JSON.stringify(selectedHotelCity));
             inputElement.value = selectedHotelCity.Name;
 
@@ -3049,9 +3034,9 @@ var MystaysBookingWidget = {
             BooknowButtonClick: function BooknowButtonClick() {
                 document.querySelector(MystaysBookingWidget.BookNowButton.Constants.BooknowButton()).addEventListener('click', function (e) {
                     MystaysBookingWidget.Common.CurrentEventTarget = e.target;
-                    if (MystaysBookingWidget.BookNowButton.ValidateBooknowForm()) {
-                        MystaysBookingWidget.BookNowButton.BookNow();
-                    }
+                    
+                    MystaysBookingWidget.BookNowButton.BookNow();
+                    
                 })
             },
 
@@ -3096,59 +3081,10 @@ var MystaysBookingWidget = {
             }
         },
 
-        //Validation to check if the form data is present
-        ValidateBooknowForm: function ValidateBooknowForm() {
-            var formOk = true;
-            var hotelSearchInput = document.querySelector(MystaysBookingWidget.HotelSearch.Constants.SearchInputClass());
-
-            var hotel = JSON.parse(hotelSearchInput.getAttribute('data-HotelCity'));
-
-            var selectedRangeObject = MystaysBookingWidget.Common.CurrentRangeObject()
-
-
-
-            if (hotel == null || hotelSearchInput.value === '') {
-                hotelSearchInput.parentNode.classList.add(MystaysBookingWidget.HotelSearch.Constants.HotelSearchError());
-                formOk = false;
-                return formOk;
-            }
-            if (selectedRangeObject == null) {
-                formOk = false;
-                return formOk;
-            }
-
-            //If hotel start date is greater than checkin date show error
-            if (hotel.StartDateForBooking.indexOf('0001-01-01') === -1 && hotel.StartDateForBooking != "null" && hotel.StartDateForBooking != "undefined" && (new Date(hotel.StartDateForBooking.substr(0, 10)) > new Date(selectedRangeObject.startVal.split('|')[4]))) {
-                var checkinButton = document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.CheckinButton());
-
-                checkinButton.classList.add(MystaysBookingWidget.HotelSearch.Constants.HotelSearchStartDateError());
-
-                var hotelstartDate = hotel.StartDateForBooking.substr(0, 10);
-                var checkinDate = selectedRangeObject.startVal.split('|')[4];
-                var errorMessage = MystaysBookingWidget.Helper.GetTranslation('StartDateError');
-
-                checkinButton.setAttribute("title", (errorMessage.replace('{0}', hotel.Name).replace('{1}', hotelstartDate)));
-
-                formOk = false;
-            } else {
-                var checkinButton = document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.CheckinButton());
-
-                checkinButton.classList.remove(MystaysBookingWidget.HotelSearch.Constants.HotelSearchStartDateError());
-
-                checkinButton.removeAttribute("title");
-
-            }
-
-            //Adding analytics call
-            if (typeof (mystays) != 'undefined' && mystays.analytics && mystays.analytics.addBookingRecord) {
-                mystays.analytics.addBookingRecord(hotel.ItemID, $.datepicker.formatDate('yy-mm-dd', selectedRangeObject._startDate), $.datepicker.formatDate('yy-mm-dd', selectedRangeObject._endDate));
-            }
-
-            return formOk;
-        },
+       
 
         GenerateBookingEngineURL: function GenerateBookingEngineURL() {
-            var inputElement = document.querySelector(MystaysBookingWidget.HotelSearch.Constants.SearchInputClass());
+            
 
             var adultElement = document.querySelector(MystaysBookingWidget.GuestsWidget.Constants.AdultElement()).children[0];
             var childrenElement = document.querySelector(MystaysBookingWidget.GuestsWidget.Constants.ChildElement()).children[0];
@@ -3157,11 +3093,13 @@ var MystaysBookingWidget = {
             var promoCodeValue = MystaysBookingWidget.Helper.GetCookie('promocode');
 
 
-            var hotelcity = JSON.parse(inputElement.getAttribute('data-HotelCity'));
-
+            var hotelcity = {};
+            
+            hotelcity.RWIthCode = document.getElementById('hidHotelId').value;
+            hotelcity.TravelClickBookingID = document.getElementById('hidHotelId').value;
 
             //RWith
-            if (MystaysBookingWidget.Common.SelectedLanguage === 'ja' && hotelcity.UseTravelClickInJapan != "true") {
+            if (MystaysBookingWidget.Common.SelectedLanguage === 'ja') {
                 var bookingengineurl = MystaysBookingWidget.BookNowButton.Constants.RWithURL;
 
                 bookingengineurl = bookingengineurl.replace('{rwithbookingid}', hotelcity.RWIthCode);
@@ -3180,7 +3118,7 @@ var MystaysBookingWidget = {
                 }
 
             } else {
-                if (hotelcity.Type === 'Hotel') {
+                
                     var bookingengineurl = MystaysBookingWidget.BookNowButton.Constants.TravelClickHotelURL;
 
                     bookingengineurl = bookingengineurl.replace('{travelclickbookingid}', hotelcity.TravelClickBookingID);
@@ -3190,15 +3128,7 @@ var MystaysBookingWidget = {
                     bookingengineurl = bookingengineurl.replace('{adults}', adultElement.getAttribute('data-count'));
                     bookingengineurl = bookingengineurl.replace('{children}', childrenElement.getAttribute('data-count'));
                     bookingengineurl = bookingengineurl.replace('{rooms}', roomsElement.getAttribute('data-count'));
-                } else if (hotelcity.Type === 'City') {
-                    var bookingengineurl = MystaysBookingWidget.BookNowButton.Constants.TravelClickAreaURL;
-                    bookingengineurl = bookingengineurl.replace('{areas}', hotelcity.TargetCities);
-                    bookingengineurl = bookingengineurl.replace('{checkindate}', MystaysBookingWidget.Common.CurrentRangeObject().startVal.split('|')[3]);
-                    bookingengineurl = bookingengineurl.replace('{checkoutdate}', MystaysBookingWidget.Common.CurrentRangeObject().endVal.split('|')[3]);
-                    bookingengineurl = bookingengineurl.replace('{adults}', adultElement.getAttribute('data-count'));
-                    bookingengineurl = bookingengineurl.replace('{children}', childrenElement.getAttribute('data-count'));
-                    bookingengineurl = bookingengineurl.replace('{rooms}', roomsElement.getAttribute('data-count'));
-                }
+                
 
 
                 //If chldren are present then append  age of child
@@ -3239,7 +3169,10 @@ var MystaysBookingWidget = {
             if (MystaysBookingWidget.Common.CurrentRangeObject()) {
                 MystaysBookingWidget.Common.CurrentRangeObject().hide();
             }
-            MystaysBookingWidget.Common.ExternalLogic();
+
+           
+            
+            
 
             //Firing with a slight delay to counter the mobiscrll animate out class issue
             window.setTimeout(function () {
