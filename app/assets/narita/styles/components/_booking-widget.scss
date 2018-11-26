@@ -1758,7 +1758,10 @@
 }
 
 .mbsc-fr-popup{
-    margin-top: -6px;  
+    @include sm {
+        margin-top: -6px; 
+        width: 654px !important;  
+    }    
 }
 
 @keyframes mbsc-anim-p-in {
