@@ -3021,7 +3021,7 @@ var MystaysBookingWidget = {
     BookNowButton: {
         Constants: {
             BooknowButton: function BooknowButton() {
-                return MystaysBookingWidget.Common.BookingWidgetContainer() + '.find-button button';
+                return MystaysBookingWidget.Common.BookingWidgetContainer() + '.find-button .btn-booknow';
             },
             PromoCodeField: function PromoCodeField() {
                 return MystaysBookingWidget.Common.BookingWidgetContainer() + '.promo-code input';
@@ -3061,12 +3061,14 @@ var MystaysBookingWidget = {
         CustomHTMLEvents: {
             //Event fired when user clicks the book now button
             BooknowButtonClick: function BooknowButtonClick() {
-                document.querySelector(MystaysBookingWidget.BookNowButton.Constants.BooknowButton()).addEventListener('click', function (e) {
-                    MystaysBookingWidget.Common.CurrentEventTarget = e.target;
-                    
-                    MystaysBookingWidget.BookNowButton.BookNow();
-                    
-                })
+                if (document.querySelector(MystaysBookingWidget.BookNowButton.Constants.BooknowButton())) {
+                    document.querySelector(MystaysBookingWidget.BookNowButton.Constants.BooknowButton()).addEventListener('click', function (e) {
+                        MystaysBookingWidget.Common.CurrentEventTarget = e.target;
+
+                        MystaysBookingWidget.BookNowButton.BookNow();
+
+                    })
+                }
             },
 
             //When user focus promocode
