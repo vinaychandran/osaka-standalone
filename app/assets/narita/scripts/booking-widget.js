@@ -1328,8 +1328,8 @@ var MystaysBookingWidget = {
                 dateFormat: 'dd|M|yy|mm/dd/yy|yy/m/d|D',
                 dateWheels: MystaysBookingWidget.Common.GetDateWheelFormat(),
                 controls: ['calendar'],
-                startInput: rangeContainer + '.date_at',
-                endInput: rangeContainer + '.date_to',
+                startInput: rangeContainer + ' .date_at_container',
+                endInput: rangeContainer + ' .date_to_container',
                 buttons: [
                     'set'
                 ],
@@ -1399,36 +1399,39 @@ var MystaysBookingWidget = {
                         checkOutBtn = document.querySelector(MystaysBookingWidget.BookingCalendar.Constants.CheckoutButton());
 
                     inst.tap(checkInBtn, function (e) {
-                        MystaysBookingWidget.Common.CurrentEventTarget = e.target;
-                        MystaysBookingWidget.BookingCalendar.CheckInButtonHandler();
+                        
+                            MystaysBookingWidget.Common.CurrentEventTarget = e.target;
+                            MystaysBookingWidget.BookingCalendar.CheckInButtonHandler();
 
-                        var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promocode');
-                        var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
+                            var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promocode');
+                            var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
 
-                        //Allow to scroll on top only when it is a desktop or when it is a mobile and user has not selected promocode(Promocode scroll happens in the promocode function)
-                        if (!MystaysBookingWidget.Helper.IsMobile() || ((!IsPromoCodeContainer) && MystaysBookingWidget.Helper.IsMobile())) {
-                            MystaysBookingWidget.Common.ScrollTop();
-                        }
+                            //Allow to scroll on top only when it is a desktop or when it is a mobile and user has not selected promocode(Promocode scroll happens in the promocode function)
+                            if (!MystaysBookingWidget.Helper.IsMobile() || ((!IsPromoCodeContainer) && MystaysBookingWidget.Helper.IsMobile())) {
+                                MystaysBookingWidget.Common.ScrollTop();
+                            }
 
-                        MystaysBookingWidget.Common.ShowOverlayLogic();
+                                MystaysBookingWidget.Common.ShowOverlayLogic();
+                        
 
 
                     });
 
                     inst.tap(checkOutBtn, function (e) {
-                        MystaysBookingWidget.Common.CurrentEventTarget = e.target;
-                        MystaysBookingWidget.BookingCalendar.CheckOutButtonHandler();
+                        
+                            MystaysBookingWidget.Common.CurrentEventTarget = e.target;
+                            MystaysBookingWidget.BookingCalendar.CheckOutButtonHandler();
 
-                        var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
-                        var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
+                            var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
+                            var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
 
-                        //Allow to scroll on top only when it is a desktop or when it is a mobile and user has not selected promocode(Promocode scroll happens in the promocode function)
-                        if (!MystaysBookingWidget.Helper.IsMobile() || ((!IsPromoCodeContainer) && MystaysBookingWidget.Helper.IsMobile())) {
-                            MystaysBookingWidget.Common.ScrollTop();
-                        }
+                            //Allow to scroll on top only when it is a desktop or when it is a mobile and user has not selected promocode(Promocode scroll happens in the promocode function)
+                            if (!MystaysBookingWidget.Helper.IsMobile() || ((!IsPromoCodeContainer) && MystaysBookingWidget.Helper.IsMobile())) {
+                                MystaysBookingWidget.Common.ScrollTop();
+                            }
 
-                        MystaysBookingWidget.Common.ShowOverlayLogic();
-
+                            MystaysBookingWidget.Common.ShowOverlayLogic();
+                        
 
                     });
                 },
