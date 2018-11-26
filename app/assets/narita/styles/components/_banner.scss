@@ -113,14 +113,16 @@
             line-height: 1.25;
             letter-spacing: 4.6px;
             display: block;
-            background: #fff;
+            background: #c5ad6c;
             padding: 18px 0;
-            border: 1px solid #000;
+            //border: 1px solid #000;
+            color: #fff; 
             i {
                 float: right;
                 margin-top: -4px;
                 margin-right: 8px;
                 @include font-size(21px);
+                color: #fff;  
             }
         }
     }
