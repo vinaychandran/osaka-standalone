@@ -1811,6 +1811,7 @@ var MystaysBookingWidget = {
         RoomsButtonAddorSet: function RoomsButtonAddorSet(event, newNumberOfRooms) {
 
             var nodeList = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.RoomElementAll());
+            var roomMainContent = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.MainGuestsButtonTitleRoomsAll());
 
 
             //Fired on click event
@@ -1822,6 +1823,7 @@ var MystaysBookingWidget = {
                 for (var i = 0; i < nodeList.length; i++) {
                     nodeList[i].children[0].innerHTML = newNumberOfRooms;
                     nodeList[i].children[0].setAttribute("data-count", (newNumberOfRooms));
+                    roomMainContent[i].innerHTML = newNumberOfRooms;
 
                     //Adding disabled class to not allow more button click
                     if (newNumberOfRooms == MystaysBookingWidget.GuestsWidget.Constants.MaximumRooms()) {
@@ -1855,8 +1857,14 @@ var MystaysBookingWidget = {
         //Remove room
         RoomsButtonRemove: function RoomsButtonRemove(event) {
             var nodeList = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.RoomElementAll());
+            var roomMainContent = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.MainGuestsButtonTitleRoomsAll());
+
             var removebuttons = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.ButtonRemove());
+
+            //Update main container
             var newNumberOfRooms = parseInt(nodeList[0].children[0].innerHTML) - 1;
+
+
             if (parseInt(nodeList[0].children[0].innerHTML) > 1 || (MystaysBookingWidget.Common.IsMeetingWeddingRoom && parseInt(nodeList[0].children[0].innerHTML) > 0)) {
 
                 for (var i = 0; i < nodeList.length; i++) {
@@ -1864,6 +1872,7 @@ var MystaysBookingWidget = {
 
                     nodeList[i].children[0].innerHTML = newNumberOfRooms;
                     nodeList[i].children[0].setAttribute("data-count", newNumberOfRooms);
+                    roomMainContent[i].innerHTML = newNumberOfRooms;
 
                     //Adding disabled class to not allow more button click
                     if ((parseInt(nodeList[i].children[0].innerHTML) == 1 && !MystaysBookingWidget.Common.IsMeetingWeddingRoom) || (MystaysBookingWidget.Common.IsMeetingWeddingRoom && parseInt(nodeList[i].children[0].innerHTML) == 0)) {
@@ -1890,6 +1899,10 @@ var MystaysBookingWidget = {
         //Add new adult(newNumberAdults and newTotalGuests are passed when the function is triggered from LoadGuestWidgetFromCookies) or ValidateAdults
         AdultButtonAddorSet: function AdultButtonAddorSet(event, newNumberAdults,  updateAdultsPerRoom) {
             var nodeList = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.AdultElementAll());
+
+            //Update main container
+            var adultMainContent = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.MainGuestsButtonTitleAdultsAll());
+
             var roomCount = document.querySelector(MystaysBookingWidget.GuestsWidget.Constants.RoomElement()).children[0].innerHTML;
             var disableAdults;
 
@@ -1910,6 +1923,9 @@ var MystaysBookingWidget = {
                 for (var i = 0; i < nodeList.length; i++) {
                     nodeList[i].children[0].innerHTML = newNumberAdults;
                     nodeList[i].children[0].setAttribute("data-count", newNumberAdults);
+
+                    //Update main container
+                    adultMainContent[i].innerHTML = newNumberAdults;
 
                     //Adding disabled class to not allow more button click
                     if (newNumberAdults == MystaysBookingWidget.GuestsWidget.Constants.MaximumAdults()) {
@@ -1937,12 +1953,19 @@ var MystaysBookingWidget = {
         //Remove adult
         AdultButtonRemove: function AdultButtonRemove(event) {
             var nodeList = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.AdultElementAll());
+            var adultMainContent = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.MainGuestsButtonTitleAdultsAll());
             var currentRoomCount = parseInt(document.querySelector(MystaysBookingWidget.GuestsWidget.Constants.RoomElement()).children[0].innerHTML);
 
             if (parseInt(nodeList[0].children[0].innerHTML) > currentRoomCount) {
                 for (var i = 0; i < nodeList.length; i++) {
-                    nodeList[i].children[0].innerHTML = parseInt(nodeList[i].children[0].innerHTML) - 1;
+                    var newcount = parseInt(nodeList[i].children[0].innerHTML) - 1;
+
+                    nodeList[i].children[0].innerHTML = newcount;
                     nodeList[i].children[0].setAttribute("data-count", (parseInt(nodeList[i].children[0].getAttribute("data-count")) - 1));
+
+                    //Update main container
+                    adultMainContent[i].innerHTML = newcount;
+
 
                     //Adding disabled class to not allow more button click
                     if (parseInt(nodeList[i].children[0].innerHTML) == 1 || parseInt(nodeList[i].children[0].innerHTML) == currentRoomCount) {
@@ -1963,6 +1986,7 @@ var MystaysBookingWidget = {
         //Add child
         ChildButtonAddorSet: function ChildButtonAddorSet(event, newNumberChildren) {
             var nodeList = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.ChildElementAll());
+            var childMainContent = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.MainGuestsButtonTitleChildrenAll());
 
             //Fired on click event
             if (newNumberChildren == null) {
@@ -1975,6 +1999,9 @@ var MystaysBookingWidget = {
                 for (var i = 0; i < nodeList.length; i++) {
                     nodeList[i].children[0].innerHTML = newNumberChildren;
                     nodeList[i].children[0].setAttribute("data-count", newNumberChildren);
+
+                    //Update main container
+                    childMainContent[i].innerHTML = newNumberChildren;
 
                     //Adding disabled class to not allow more button click
                     if (newNumberChildren == MystaysBookingWidget.GuestsWidget.Constants.MaximumChildren()) {
@@ -2011,12 +2038,16 @@ var MystaysBookingWidget = {
         //Remove child
         ChildButtonRemove: function ChildButtonRemove(event) {
             var nodeList = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.ChildElementAll());
-
+            var childMainContent = document.querySelectorAll(MystaysBookingWidget.GuestsWidget.Constants.MainGuestsButtonTitleChildrenAll());
 
             if (parseInt(nodeList[0].children[0].innerHTML) > 0) {
                 for (var i = 0; i < nodeList.length; i++) {
-                    nodeList[i].children[0].innerHTML = parseInt(nodeList[i].children[0].innerHTML) - 1;
+                    var newcount = parseInt(nodeList[i].children[0].innerHTML) - 1;
+                    nodeList[i].children[0].innerHTML = newcount;
                     nodeList[i].children[0].setAttribute("data-count", (parseInt(nodeList[i].children[0].getAttribute("data-count")) - 1));
+
+                    //Update main container
+                    childMainContent[i].innerHTML = newcount;
 
                     //Adding disabled class to not allow more button click
                     if (parseInt(nodeList[i].children[0].innerHTML) == 0) {
@@ -3074,9 +3105,9 @@ var MystaysBookingWidget = {
         //Method to load promocode from 
         LoadPromoCode: function LoadPromoCode() {
             var promocode = MystaysBookingWidget.Helper.GetCookie('promocode');
-
-            if (promocode) {
-                document.querySelector(MystaysBookingWidget.BookNowButton.Constants.PromoCodeField()).value = promocode;
+            var promocodeField = document.querySelector(MystaysBookingWidget.BookNowButton.Constants.PromoCodeField());
+            if (promocodeField && promocode) {
+                promocodeField.value = promocode;
                 MystaysBookingWidget.BookNowButton.FirePromocodeAPI(promocode);
             }
         },
