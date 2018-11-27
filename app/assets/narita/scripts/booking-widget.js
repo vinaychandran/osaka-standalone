@@ -131,19 +131,7 @@ var MystaysBookingWidget = {
             }
 
         },
-        //Logic written specific to mystays website when user selectsclick outside
-        ExternalLogic: function ExternalLogic() {
-            try {
-                if (MystaysBookingWidget.Common.Constants.HotelPageFirstWidget()) {
-                    $('.detail-secondary-menu').slideDown('500');
-                    $('.mys-be-inner-page').slideUp('500');
-                    $('.show-booking-widget-detail').removeClass('active');
-                    FE.pages.detail.mobileDetailAvailability();
-                }
-            } catch (e) {
-
-            }
-        },
+        
         //Function to update all the booking widgets with a start and end date
         UpdateAllBookingWidgetsOnPage: function UpdateAllBookingWidgetsOnPage(startDate, endDate, existingTarget) {
             //Only update if there is anor widget on the page
@@ -223,7 +211,10 @@ var MystaysBookingWidget = {
         },
         Loaded: function Loaded() {
             MystaysBookingWidget.Helper.LoadExtensions();
-            MystaysBookingWidget.Helper.ShowOverlayContainer();
+            if (!MystaysBookingWidget.Common.IsPopUpcalendar) {
+                MystaysBookingWidget.Helper.ShowOverlayContainer();
+            }
+            
             MystaysBookingWidget.Helper.ClickOutside();
 
         },
@@ -332,9 +323,8 @@ var MystaysBookingWidget = {
                         }
                         MystaysBookingWidget.GuestsWidget.ShowGuestSection(false);
                         MystaysBookingWidget.HotelSearch.ShowHotelList(false);
-                        if (!IsPromoCodeContainer && !IsBooknowContainer) {
+                        if (!IsPromoCodeContainer && !IsBooknowContainer && !MystaysBookingWidget.Common.IsPopUpcalendar) {
                             MystaysBookingWidget.Common.HideOverlayLogic();
-                            MystaysBookingWidget.Common.ExternalLogic();
                         }
                     }
 
@@ -1357,12 +1347,10 @@ var MystaysBookingWidget = {
                             var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
                             var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
 
-                          
 
-                                MystaysBookingWidget.Common.ShowOverlayLogic();
-                        
-
-
+                        if (!MystaysBookingWidget.Common.IsPopUpcalendar) {
+                            MystaysBookingWidget.Common.ShowOverlayLogic();
+                        }
                     });
 
                     inst.tap(checkOutBtn, function (e) {
@@ -1372,10 +1360,9 @@ var MystaysBookingWidget = {
 
                             var promocontainer = document.querySelector(MystaysBookingWidget.Common.BookingWidgetContainer() + ' .booking-box.promo-code');
                             var IsPromoCodeContainer = ((promocontainer === e.target) || MystaysBookingWidget.Helper.IsDescendant(promocontainer, e.target));
-
-                          
-
+                        if (!MystaysBookingWidget.Common.IsPopUpcalendar) {
                             MystaysBookingWidget.Common.ShowOverlayLogic();
+                        }
                         
 
                     });
