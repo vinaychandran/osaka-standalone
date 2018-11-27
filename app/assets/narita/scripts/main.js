@@ -516,7 +516,8 @@ const FE = {
                 elem.onclick = basicLightbox.create(html, {
                     afterShow: (instance) => {
                         //FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', false);
-                        MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '.basicLightbox--visible #rpfForm', false, false, false, false, false);
+                        //MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '.basicLightbox--visible #rpfForm', false, false, false, false, false);
+                        MystaysBookingWidget.LoadedCalendar($('#hidLanguage').val(), '.basicLightbox--visible #rpfForm',false,true)
                         //FE.global.datePickerInit('.date-picker-venue-rpf', false)
                         let SlideNumber = elem.getAttribute('data-slide')
                         FE.global.lazyLoad();

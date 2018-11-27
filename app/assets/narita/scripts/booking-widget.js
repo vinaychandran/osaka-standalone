@@ -3215,7 +3215,7 @@ var MystaysBookingWidget = {
             MystaysBookingWidget.Common.BookingWidgetContainerID = BookingWidgetContainer + ' ';
             MystaysBookingWidget.HotelSearch.Constants.FilterCities = FilterCities;
 
-            MystaysBookingWidget.Common.WidgetScrollToTop = WidgetScrollToTop;
+            
             MystaysBookingWidget.Common.RangeResponsive = null;
 
             if (IsSingleDate === true) {
@@ -3266,7 +3266,7 @@ var MystaysBookingWidget = {
 
     },
 
-
+    //Method to only load calendar
     LoadedCalendar: function LoadedCalendar(selectedLanguage, BookingWidgetContainer, IgnoreWidgetUpdates, IsPopUpcalendar) {
         if (document.querySelector(BookingWidgetContainer)) {
 
@@ -3287,7 +3287,8 @@ var MystaysBookingWidget = {
             //Adding additional space(' ') just for safety
             MystaysBookingWidget.Common.BookingWidgetContainerID = BookingWidgetContainer + ' ';
             
-            MystaysBookingWidget.Common.WidgetScrollToTop = WidgetScrollToTop;
+            
+            MystaysBookingWidget.Common.IsCalendarOnly = true;
             MystaysBookingWidget.Common.RangeResponsive = null;
             MystaysBookingWidget.Common.IsSingleDate = true;
             MystaysBookingWidget.Common.HideGuestSection = true;
@@ -3322,6 +3323,7 @@ var MystaysBookingWidget = {
                 MystaysBookingWidget.Common.IgnoreWidgetUpdates = false;
                 MystaysBookingWidget.Common.IsSingleDate = false;
             }
+            //TODO hide all widgets
         }
     }
 };
