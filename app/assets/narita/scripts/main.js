@@ -52,6 +52,13 @@ const FE = {
                 elem: element,
                 open: 0
             });
+            if (element === 'booking-tabs') {
+                let tabLink = document.getElementById(element);
+                if (tabLink) {
+                    tabLink.addEventListener('click', (element, i) => { MystaysBookingWidget.CheckOnlyCalendarTab(event, i) });
+                }
+            }
+
             if (document.getElementById('tablink') && isMobile) {
                 let tabLink = document.getElementById('tablink');
                 tabLink.addEventListener('click', FE.global.openTab);
@@ -1004,6 +1011,9 @@ const FE = {
 
         loaded: function loaded() {
             //Functions inside loaded execute when window loaded
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab1', false, false, false);
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab2', false, false, true, true);
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab3', false, false, false);
             if (isMobile) {
                 FE.global.sliderImage('.home-slider-nav', 1, true, false);
             } else {
@@ -1033,8 +1043,7 @@ const FE = {
             FE.global.filterRooms('room-types');
             FE.global.filter('venue-types');
 
-            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab1', false, false, false);
-            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab3', false, false, false);
+            
             // FE.global.datePickerInit('.date-picker-tab1', false); 
             // FE.global.datePickerInit('.date-picker-tab2-single', true);
             // FE.global.datePickerInit('.date-picker-tab3', false);
