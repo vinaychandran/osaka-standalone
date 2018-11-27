@@ -1011,9 +1011,9 @@ const FE = {
 
         loaded: function loaded() {
             //Functions inside loaded execute when window loaded
-            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab1', false, false, false);
-            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab2', false, false, true, true);
-            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab3', false, false, false);
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab1', false, false, false,false,false);
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab2', false, false, true, true, true);
+            MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab3', false, false, false, false, false);
             if (isMobile) {
                 FE.global.sliderImage('.home-slider-nav', 1, true, false);
             } else {
