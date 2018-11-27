@@ -1,6 +1,7 @@
 #rfp-form(data-basicLightbox data-id="rfp-form" class=" row rfp-form-details")
   .errors
-  form(id='rpfForm' name="rpfForm")
+  form(id='rpfForm' name="rpfForm").booking-widget-container
+   .booking-widget-module.mystays-booking-widget 
     a.closeBtn(href="#")
     h5 宴会＆会議に関するお問合せ
     p 下記の項目にご記入いただき、改めてご連絡をさせていただきます。
@@ -43,25 +44,25 @@
     .row
       .col.date-duration
         //.col.col-1-2
-        #venue-booking-tab
+        #venue-booking-tab.booking-box
             .date-picker-venue-rpf
-              .date-picker-tab1-container
-                .values
+              .date-picker-tab1-container.date-picker
+                .values.range-container 
                   .first-box
                     label 開始日
                     .startDateContainer
                       .startDate
-                        .value.date_at
+                        .value.date_at.date_at_container
                           span.date_at
-                          input#date_at.date_at(type='hidden')
+                          input#date_at.date_at.date_at_input(type='hidden')
                   .to ~
                   .sec-box
                     label 終了日
                     .endDateContainer
                       .endDate
-                        .value.date_to
+                        .value.date_to.date_to_container
                           span.date_to
-                          input#date_to.date_to(type='hidden')
+                          input#date_to.date_to.date_to_input(type='hidden')
                 //.calendar-backdrop
                 .calendar
                   //img.clear(src='/assets/narita/images/clear.svg' )
