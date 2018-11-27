@@ -532,6 +532,7 @@ const FE = {
                         let body = document.body;
                         body.dataset.form = elem.getAttribute('data-show-id');
                         $('body').addClass('modal-open');
+                        
                     },
                     afterClose: (instance) => {
                         $('.gallery-nav').slick('unslick');
