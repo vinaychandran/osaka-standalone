@@ -335,7 +335,7 @@ const FE = {
             var map;
             if (selectorMapElement) {
                 map = new google.maps.Map(document.getElementById('gmap_canvas'), {
-                    zoom: 10,
+                    zoom: 13,
                     center: new google.maps.LatLng(selectorMapElement.dataset.lat, selectorMapElement.dataset.lan),
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 });
