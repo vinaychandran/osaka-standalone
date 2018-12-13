@@ -408,6 +408,13 @@
     }   
 }
 
+#booking-tab2 .mbsc-mobiscroll.mbsc-range .mbsc-ltr .mbsc-cal-sel-start.mbsc-cal-sel-end:after{
+    @include sm {
+        border-top-right-radius: 2em;
+        border-bottom-right-radius: 2em;
+    }
+}
+
 
 .mbsc-fr-liq .mbsc-fr-popup{
     bottom: 0;
