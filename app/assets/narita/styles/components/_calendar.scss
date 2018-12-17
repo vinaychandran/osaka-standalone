@@ -1,13 +1,13 @@
-#booking-tab1,#booking-tab2,#booking-tab3,#rpfForm{
+#booking-tab1,#booking-tab2,#booking-tab3,#rpfForm,#news-form{
     .calender-render-container {
         background: $cal-primary-bg; 
-        color: $cal-color;
+        color: $cal-color;  
         z-index: 99;
         @include device {
-            position: fixed; 
+            position: fixed;  
             width: 100%;
             top: 0;
-            left: 0;
+            left: 0; 
             right: 0;
             left: 0;
         }
