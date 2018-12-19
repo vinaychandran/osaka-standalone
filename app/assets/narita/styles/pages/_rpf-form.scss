@@ -4,16 +4,17 @@
   overflow-y: scroll;
   position: relative;
   -webkit-overflow-scrolling: touch;
+  margin: 0; 
   @include md {
-    height: auto;
+    height: auto;  
     //overflow-y: hidden;
   }
 
   .col {
     @include md {
       padding: 0;
-    };
-  }
+    }
+  } 
 }
 // .basicLightbox__placeholder {
 //   @include md {
@@ -63,7 +64,7 @@
 #rfp-form {
   #rpfForm {
     @extend %clearfix;
-    padding: 90px 28px 28px;
+    padding: 90px 20px 28px;
     clear: both;
     margin-bottom: 0;
     @include md {
@@ -167,7 +168,7 @@
     }
   }
 
-  .guestrooms {}
+  
 
   .date-duration {
     @include md {
@@ -254,7 +255,7 @@
       height: 66px;
       line-height: 66px;
       padding-top: 15px;
-      width: 160px;
+      width: 150px;
       padding-left: 5px;
       font-weight: 700;
       @include mobile {
@@ -321,4 +322,9 @@
     padding: 0;
     text-align: left;
   }
+}
+
+
+#rpfForm .calender-render-container .mbsc-mobiscroll{
+  bottom: 10px; 
 }
