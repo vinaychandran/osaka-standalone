@@ -1039,6 +1039,25 @@
     }
 }
 
+#btn-restaurant-selected, #btn-restaurant-number-people, #btn-selected-air{
+    font-family: "Yu Gothic Bold", "游ゴシック Bold", "YuGothic", "ゴシック体", "Sawarabi Gothic", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    background-size: 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+    height: 66px;
+    background: none;
+    border: 2px solid #eeeeee;
+    font-size: 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0.9px;
+    padding: 0 20px;
+    color: #000;
+    text-align: left;
+    font-weight: 700;
+}
+
 #booking-tab1,
 #booking-tab3 {
     .room-locations {
