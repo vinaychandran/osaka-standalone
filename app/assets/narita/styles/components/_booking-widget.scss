@@ -183,7 +183,22 @@
             width: 200px;
         }
         .input-custom {
-            position: relative;
+            position: relative;            
+            input::placeholder {
+                font-family: $go-bold;
+                background-size: 6px;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                border-radius: 4px;
+                margin: 0;
+                height: 66px;
+                @include font-size(12px);
+                letter-spacing: 0.9px;
+                color: $default-color;
+                font-weight: 700;
+                border: 0;  
+                padding-left: 0;
+            }
             input{
                 font-family: $go-bold;
                 background-size: 6px;
@@ -201,21 +216,6 @@
                 &:focus {
                     border: 2px solid #eeeeee;
                 }
-            }
-            input::placeholder {
-                font-family: $go-bold;
-                background-size: 6px;
-                background-repeat: no-repeat;
-                cursor: pointer;
-                border-radius: 4px;
-                margin: 0;
-                height: 66px;
-                @include font-size(12px);
-                letter-spacing: 0.9px;
-                color: $default-color;
-                font-weight: 700;
-                border: 0;
-                padding-left: 0;
             }
         }
     }
