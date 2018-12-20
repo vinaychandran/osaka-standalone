@@ -272,7 +272,7 @@
             line-height: 66px;
             font-weight: 700;
             //padding-top: 18px;
-            padding: 20px 0 20px 15px;
+            padding: 20px 0 20px 10px;
             width: 100%;
             @include md {
                 padding-top: 0;
@@ -1474,7 +1474,7 @@
         bottom: 0;
         margin: 0;
         width: 100%;
-        z-index: 9;
+        z-index: 999999;
         //-webkit-transform: scale(1);   
         -webkit-animation-duration: 500ms;
         // transform: scale(1);
