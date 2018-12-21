@@ -948,7 +948,7 @@
             .values {
                 float: left;
                 .startDateContainer {
-                    width: 148px;
+                    width: 180px;
                     .startDate {
                         width: auto;
                         height: 62px;
@@ -1003,10 +1003,11 @@
     }
     .time-selection {
         margin: 0;
-        width: 50%;
+        width: 40%;
         //clear: both;
         float: right;
         padding-bottom: 0;
+        display: none; 
         @include md {
             clear: none;
             //float: none;
