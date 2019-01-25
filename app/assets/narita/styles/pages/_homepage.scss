@@ -195,3 +195,53 @@
 .error-border{
   border: 1px solid red !important;
 }
+
+.solaniwa-banner-wrap{
+  margin: 0 0 30px;
+  @include sm {
+    margin: 45px 0;
+  }
+  .large-container{
+    padding: 0;
+    @include sm {padding: 0 15px;}
+  }
+  
+  .solaniwa-banner-content{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    @include font-size(15px);
+    width: 100%;    
+    @include sm {
+      @include font-size(20px);
+    }
+  }
+  p{
+    margin-bottom: 5px;
+    @include sm {
+      margin-bottom: 10px;
+    }
+  }
+  .desc{
+    @include font-size(22px);
+    @include sm {
+      @include font-size(26px);
+    }
+  }
+  a{
+    margin-top: 10px;
+    display: inline-block;
+    color: #ffffff;
+    background:#c30d23;
+    max-width: 360px;
+    padding: 10px 50px; 
+
+    @include sm {
+      padding: 15px 90px;
+      margin-top: 20px; 
+    } 
+  }
+}
