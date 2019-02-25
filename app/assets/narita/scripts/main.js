@@ -259,10 +259,15 @@ const FE = {
                 $(slider).slick('slickGoTo', indexThumbnail);
             });
         },
-        sliderImageFade: (slider, slideToShow, dots, arrows) => {
+        sliderImageFade: (slider, slideToShow, dots, arrows, asnav) => {
             $(slider).each(function() {
-                let imgIndex, sliderImageCount;
-                sliderImageCount = $(this).children().length;
+                let slideCount = null;
+
+                $(this).on('init', function (event, slick) {
+                    slideCount = slick.slideCount;
+                    setSlideCount();
+                    setCurrentSlideNumber(slick.currentSlide);
+                });
                 $(this).slick({
                     slidesToShow: slideToShow,
                     slidesToScroll: 1,
@@ -273,9 +278,42 @@ const FE = {
                     autoplaySpeed: 5000,
                     pauseOnHover:false,
                     fade:true
+                    
+                });                  
 
-                });                
-            });            
+                // On before slide change match active thumbnail to current slide
+                $('.home-banner-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide, $slides, slideCount) {
+                    var mySlideNumber = nextSlide;
+                    //remove active class from all thumbnail slides
+                    $('.home-Thumbnail-slider .thumb-image').removeClass('active');
+                    $('.home-Thumbnail-slider .thumb-image').eq(mySlideNumber).addClass('active');
+                    setCurrentSlideNumber(nextSlide);
+                }); 
+
+                function setSlideCount() {
+                    if (slider == '.home-banner-slider') {
+                        let $el = document.querySelector('.mobile-slider-count .total');
+                        $el.textContent = slideCount;
+                    }
+                }
+
+                function setCurrentSlideNumber(currentSlide) {
+                    if (slider == '.home-banner-slider') {
+                        let $el = document.querySelector('.mobile-slider-count .current');
+                        $el.textContent = currentSlide + 1;
+                    }
+                } 
+
+                          
+            }); 
+
+            $(document).on('click', '.home-Thumbnail-slider .thumb-image', function(e) { 
+               e.preventDefault();
+               var slideno = $(this).data('slide');
+               $('.home-banner-slider').slick('slickGoTo', slideno - 1);
+            }); 
+
+
         },
         instaFeed: () => {
             if (document.getElementById('instafeed')) {
@@ -1064,7 +1102,8 @@ const FE = {
             FE.global.sliderImage('.single-room-wrap .room-info-slider', 1, false, true);
             FE.global.pauseVideo();
             FE.global.lazyLoad();
-            FE.global.sliderImageFade('.home-banner-slider', 1, false, false);
+            FE.global.sliderImageFade('.home-banner-slider', 1, false, true, '.home-Thumbnail-slider');
+            //FE.global.sliderImageFade('.home-Thumbnail-slider', 5, false, false, '.home-banner-slider');
             FE.global.pageScroll();
             FE.global.campaignpopup();
         },

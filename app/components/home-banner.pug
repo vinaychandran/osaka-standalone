@@ -1,52 +1,70 @@
 section.main-banner.home-banner
 	.home-banner-slider
 		.slick-slide
-			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/1.jpg')
-				img(src='/assets/narita/images/banner-slider/sp/1.jpg')
+			.banner-image(style="background-image:url(/assets/narita/images/banner-slider/pc/top-01.jpg)") 				
 			.banner-text
-				h1 素敵な旅のそばに。 
+				h1 素敵な旅のそばに。	
+			.container 
+				a.banner-button(href="#") 宿泊プランについて1	
+			.progress-bar
 		.slick-slide
-			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/2.jpg')
-				img(src='/assets/narita/images/banner-slider/sp/2.jpg')
+			.banner-image(style="background-image:url(/assets/narita/images/banner-slider/pc/top-02.jpg)")
 			.banner-text
 				h1 素敵な旅のそばに。
+			.container 
+				a.banner-button.right(href="#") 宿泊プランについて2
+			.progress-bar
 		.slick-slide
-			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/3.jpg')
-				img(src='/assets/narita/images/banner-slider/sp/3.jpg')
+			.banner-image(style="background-image:url(/assets/narita/images/banner-slider/pc/top-03.jpg)")
 			.banner-text
 				h1 素敵な旅のそばに。
+			.container 
+				a.banner-button(href="#") 宿泊プランについて3
+			.progress-bar
 		.slick-slide
-			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/4.jpg')
-				img(src='/assets/narita/images/banner-slider/sp/4.jpg')
+			.banner-image(style="background-image:url(/assets/narita/images/banner-slider/pc/top-04.jpg)")
 			.banner-text
 				h1 素敵な旅のそばに。
+			.container 
+				a.banner-button.right(href="#") 宿泊プランについて4	
+			.progress-bar
 		.slick-slide
-			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/5.jpg')
-				img(src='/assets/narita/images/banner-slider/sp/5.jpg')
+			.banner-image(style="background-image:url(/assets/narita/images/banner-slider/pc/top-05.jpg)")
 			.banner-text
 				h1 素敵な旅のそばに。
-		.slick-slide
-			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-slider/pc/6.jpg')
-				img(src='/assets/narita/images/banner-slider/sp/6.jpg')
-			.banner-text
-				h1 
-		
-	
+			.container 
+				a.banner-button.right(href="#") 宿泊プランについて5
+			.progress-bar
+	.home-Thumbnail-slider
+		.thumb-image.active(data-slide="1" style="background-image:url(/assets/narita/images/banner-slider/pc/top-01.jpg)")
+			.progress-bar
+			.title ホテルのおもてなし
+		.thumb-image(data-slide="2" style="background-image:url(/assets/narita/images/banner-slider/pc/top-02.jpg)")
+			.progress-bar
+			.title ホテルのおもてなし
+		.thumb-image(data-slide="3" style="background-image:url(/assets/narita/images/banner-slider/pc/top-03.jpg)")
+			.progress-bar
+			.title ホテルのおもてなし
+		.thumb-image(data-slide="4" style="background-image:url(/assets/narita/images/banner-slider/pc/top-04.jpg)")
+			.progress-bar
+			.title ホテルのおもてなし
+		.thumb-image(data-slide="5" style="background-image:url(/assets/narita/images/banner-slider/pc/top-05.jpg)")
+			.progress-bar
+			.title ホテルのおもてなし  
+	.mobile-slider-count
+		.count
+			span.current 1
+			|  / 
+			span.total  5
 		//- span RISE ABOVE THE BAY
 		//- img(src='/assets/narita/images/air.svg')
-	.photos-link
-		a.guestPhotos.scroll(href="#gallery-tabs")
-			i.icon-insta
-			span.hidden-xs Guest Photos
-		a.hotelPhotos.scroll(href="#gallery-tabs")
-			i.icon-hotelphoto
-			span.hidden-xs Hotel Photos
+	//- .photos-link
+	//- 	a.guestPhotos.scroll(href="#gallery-tabs")
+	//- 		i.icon-insta
+	//- 		span.hidden-xs Guest Photos
+	//- 	a.hotelPhotos.scroll(href="#gallery-tabs")
+	//- 		i.icon-hotelphoto
+	//- 		span.hidden-xs Hotel Photos
 	.calendar-link.visible-device
 		a(href="#") 空室検索
 			i.icon-calender
