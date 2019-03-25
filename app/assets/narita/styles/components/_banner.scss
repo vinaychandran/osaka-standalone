@@ -150,6 +150,7 @@
         height:  calc(100vh - 56px);      
         width: 100%;    
         background-size: cover;
+        background-position: center;
         @include sm {
             height:  calc(100vh - 150px);     
         }
@@ -162,7 +163,7 @@
         color: #fff;
         font-weight: 700;
         font-family: $go-bold;
-        padding: 15px 30px;
+        padding: 15px 15px;
         background-color: rgba(35,46,72,0.3);  
         border: 2px solid #ffffff;
         border-radius: 35px;

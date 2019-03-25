@@ -76,12 +76,10 @@
   }
 
   .inner-phone {
-    display: block;
-    float: left;
-    @include font-size(18px);
-    width: 50%;
+    display: block;    
+    @include font-size(18px);    
     text-align: center;
-    padding-top: 14px;
+    padding: 14px 0;
     i{
       @include font-size(20px);
       padding-right: 10px;
@@ -90,34 +88,42 @@
       }
     }
     @include md {
-       @include font-size(24px);
+      float: left;
+      width: 50%;
+      @include font-size(24px);
       display: inline-block;
       padding-right: 25px;
+      padding-bottom: 0;   
       width: auto;
       padding-top: 0;
       line-height: 61px;
     }
   }
 
-  .btn {
+  .btn{
     display: inline-block;
-    padding: 15px 40px;
-    width: 50%;
+    padding: 15px 15px;
+    width: 40%; 
+    float: right;
     @include md {
       padding: 20px 50px;
       width: auto;
+      float: none;
     }
   }
 
   .pdf-download {
     background: $default-color;
-    margin-right: -5px;
-    height: 61px;
-    display: none;
+    margin-right: -5px;    
+    display: block;
+    width: 60%;
+    float: left; 
     i{
       padding-left: 10px;
     }
     @include md {
+      width: auto;
+      height: 61px;  
       display: inline-block;
     }
   }
