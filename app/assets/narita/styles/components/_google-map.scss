@@ -24,8 +24,7 @@
   margin: -75px 15px 0;
   position: relative;
   @include md {
-    position: absolute;
-    bottom: 75px;
+    @include center(vertical);    
     left: 80px;
     margin: 0;
     padding: 50px 70px;
