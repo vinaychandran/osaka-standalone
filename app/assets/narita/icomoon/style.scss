@@ -1,18 +1,18 @@
 @import "variables";
 
 @font-face {
-  font-family: 'icomoon';
+  font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/icomoon.ttf?xfxl4b') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.woff?xfxl4b') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.svg?xfxl4b#icomoon') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?i2favk') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?i2favk') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?i2favk##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: '#{$icomoon-font-family}' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -25,6 +25,66 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-flag_tw .path1 {
+  &:before {
+    content: $icon-flag_tw-path1;  
+    color: rgb(229, 76, 60);
+  }
+}
+.icon-flag_tw .path2 {
+  &:before {
+    content: $icon-flag_tw-path2;  
+    margin-left: -0.984375em;  
+    color: rgb(59, 150, 210);
+  }
+}
+.icon-flag_tw .path3 {
+  &:before {
+    content: $icon-flag_tw-path3;  
+    margin-left: -0.984375em;  
+    color: rgb(236, 239, 240);
+  }
+}
+.icon-attr-bicycle {
+  &:before {
+    content: $icon-attr-bicycle; 
+  }
+}
+.icon-attr-bus {
+  &:before {
+    content: $icon-attr-bus; 
+  }
+}
+.icon-attr-monorail {
+  &:before {
+    content: $icon-attr-monorail; 
+  }
+}
+.icon-attr-ship {
+  &:before {
+    content: $icon-attr-ship; 
+  }
+}
+.icon-attr-taxi {
+  &:before {
+    content: $icon-attr-taxi; 
+  }
+}
+.icon-attr-train {
+  &:before {
+    content: $icon-attr-train; 
+  }
+}
+.icon-attr-walk {
+  &:before {
+    content: $icon-attr-walk; 
+  }
+}
+.icon-map1 {
+  &:before {
+    content: $icon-map1; 
+  }
+}
 .icon-breakfast {
   &:before {
     content: $icon-breakfast; 
@@ -534,9 +594,9 @@
     content: $icon-microwaveoven; 
   }
 }
-.icon-mini-fridge.svg {
+.icon-mini-fridgesvg {
   &:before {
-    content: $icon-mini-fridge.svg; 
+    content: $icon-mini-fridgesvg; 
   }
 }
 .icon-modularbathroom {

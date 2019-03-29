@@ -8,139 +8,285 @@ block append content
 				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg')
 			.banner-text
 				h1 レストラン
+			#attraction-map-button.attraction-map-button もっと見る
 		section.about-attractions-info
 			h3 大空の飛行機を眺め、豊潤な食事を
 			p 翔び立つ飛行機、空港のまばゆい夜景 - 刻々と変化する雄大な長めが寄り添い、3つの飲食店と1つのバーで食事を味わう豊潤な一時を。
+		section.location
+			h6
+				span 周辺の観光スポット 
+			.map-container
+				#gmap_canvas(data-lat='34.669545' data-lan='135.460969' data-src='../assets/narita/images/pin-hotel.png')
+				.close 
+					span close    
+					i.icon-close
+			#maphotel-content
+				.map-locator
+					.title osaka
+					p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+					a.more(href="#") More 
 		section.attractions-list
 			.container
 				ul
-					li(class='list1' data-lat='12.9816' data-long='77.7956' data-src = '../assets/narita/images/map.png' data-num = "1")
-						picture
-							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/attraction1.jpg')
-							img(src='/assets/narita/images/resturant/resturant1-mobile.jpg')
-						.resturant-list-info.attraction-list-info
-							.number 01
+					li(class='list1' id="attraction1" data-lat='34.637292' data-long='135.419885' data-src = '../assets/narita/images/pin.png' data-num = "01")
+						.number 
+							span 01
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
+							h2 京セラドーム大阪
+							p.info プロ野球の試合だけでなく、コンサートなどの娯楽イベントも開催されており、大阪市のスポーツと娯楽の中心地となっています。
+							a(href="#").more
+								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-attr-bicycle
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-attr-bus
+									i.icon-attr-monorail
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-attr-ship
+									p 
+										span 電車
+										| 約23分 230円〜
+							.map-locator
+								.title タイトルタイトル1111 
+								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+								a.more(href="#attraction1") More
+					li(class='list2' id="attraction2" data-lat='34.659485' data-long='135.444745' data-src = '../assets/narita/images/pin.png' data-num = "02")
+						.number 
+							span 02
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
 							h2 レストラン「ガーデニア」
-							p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
-							.business-hours
-								h6 営業時間
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-							.contact
-								h6 お問い合わせ
-								p 000-0000-0000
-							.see-more
+							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+							a(href="#").more
+								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-attr-taxi
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-attr-train
+									p 
+										span 電車
+										| 約23分 230円〜
+						a(href="#").more
+							span ホテルからの距離 3.4Km
+						.map-locator
+							.title タイトルタイトル
+							p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+							a.more(href="#attraction2") More
+					li(class='list3' data-lat='34.671897' data-long='135.498794' data-src = '../assets/narita/images/pin.png' data-num = "03")
+						.number 
+							span 03
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
+							h2 レストラン「ガーデニア」
+							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+							a(href="#").more
+								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-attr-walk
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+						a(href="#").more
+							span もっと見る
+						.map-locator
+							.title タイトルタイトル
+							p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+							a.more(href="#") More 
+					li(class='list4' data-lat='34.66874' data-long='135.501274' data-src = '../assets/narita/images/pin.png' data-num = "04")
+						.number 
+							span 04
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
+							h2 レストラン「ガーデニア」
+							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+							a(href="#").more
+								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+							a(href="#").more
+								span もっと見る	
+							.map-locator
+								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+								a.more(href="#") More
+					li(class='list1' data-lat='34.657292' data-long='135.419885' data-src = '../assets/narita/images/pin.png' data-num = "05")
+						.number 
+							span 05
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
+							h2 レストラン「ガーデニア」
+							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+							a(href="#").more
+								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+							a(href="#").more
 								span もっと見る
 							.map-locator
-								img(src='/assets/narita/images/dummy-slider1.jpg')
-								.title Kenrokuen Garden
-								p Ishikawa
-								button More
-
-					li(class='list2' data-lat='12.9616' data-long='77.7966' data-src = '../assets/narita/images/map.png' data-num = "2")
-						picture
-							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/attraction2.jpg')
-							img(src='/assets/narita/images/resturant/resturant2-mobile.jpg')
-						.resturant-list-info.attraction-list-info
-							.number 02
+								.title タイトルタイトル1111 
+								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+								a.more(href="#") More
+					li(class='list2' data-lat='34.639485' data-long='135.444745' data-src = '../assets/narita/images/pin.png' data-num = "06")
+						.number 
+							span 06
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
 							h2 レストラン「ガーデニア」
-							p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
-							.business-hours
-								h6 営業時間
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-							.contact
-								h6 お問い合わせ
-								p 000-0000-0000
-							.see-more
+							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+							a(href="#").more
+								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+							a(href="#").more
+								span ホテルからの距離 3.4Km
+							.map-locator
+								.title タイトルタイトル
+								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+								a.more(href="#") More
+					li(class='list3' data-lat='34.681897' data-long='135.498794' data-src = '../assets/narita/images/pin.png' data-num = "07")
+						.number 
+							span 07
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
+							h2 レストラン「ガーデニア」
+							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+							a(href="#").more
+								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+							a(href="#").more
 								span もっと見る
 							.map-locator
-								img(src='/assets/narita/images/dummy-slider1.jpg')
-								.title Kenrokuen Garden
-								p Ishikawa
-								button More
-
-					li(class='list3' data-lat='12.9116' data-long='77.7976' data-src = '../assets/narita/images/map.png' data-num = "3")
-						picture
-							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/1.jpg')
-							img(src='/assets/narita/images/resturant/resturant3-mobile.jpg')
-						.resturant-list-info.attraction-list-info
-							.number 03
+								.title タイトルタイトル
+								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
+								a.more(href="#") More
+					li(class='list4' data-lat='34.61874' data-long='135.501274' data-src = '../assets/narita/images/pin.png' data-num = "08")
+						.number 
+							span 08
+						img(src='/assets/narita/images/kyosera.jpg')
+						.attraction-list-info
 							h2 レストラン「ガーデニア」
-							p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
-							.business-hours
-								h6 営業時間
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-							.contact
-								h6 お問い合わせ
-								p 000-0000-0000
-							.see-more
+							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+							a(href="#").more
 								span もっと見る
+							.travel-time
+								.travel-time-title ホテルからの距離 
+									span 1.4Km
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									i.icon-phone
+									p 
+										span 電車 
+										| 約23分 230円〜
+								.travel-time-item
+									i.icon-phone
+									p 
+										span 電車
+										| 約23分 230円〜
+							a(href="#").more
+								span もっと見る	
 							.map-locator
-								img(src='/assets/narita/images/dummy-slider1.jpg')
-								.title Kenrokuen Garden
-								p Ishikawa
-								button More
-
-
-					li(class='list4' data-lat='12.9213' data-long='77.7946' data-src = '../assets/narita/images/map.png' data-num = "4")
-						picture
-							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/2.jpg')
-							img(src='/assets/narita/images/resturant/resturant4-mobile.jpg')
-						.resturant-list-info.attraction-list-info
-							.number 04
-							h2 レストラン「ガーデニア」
-							p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
-							.business-hours
-								h6 営業時間
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-								p
-									span 朝食
-									| 7:00 ~ 9:30
-							.contact
-								h6 お問い合わせ
-								p 000-0000-0000
-							.see-more
-								span もっと見る
-							.map-locator
-								img(src='/assets/narita/images/dummy-slider1.jpg')
-								.title Kenrokuen Garden
-								p Ishikawa
-								button More
-
-		section.location
-			h6
-				span 今すぐメールニュース登録で10%Off!
-			.map-container
-				#gmap_canvas(data-lat='12.9316' data-lan='77.7946' data-src='../assets/narita/images/marker-icon.png')
-				.btn.btn-map GOOGLE MAPで見る
-					i.mys-arrow-left.white
-		include ../components/subscribe.pug
+								.title タイトルタイトル
+								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F 11-1セルリアンタワー4F 
+								a.more(href="#") More
+		section.attractions-page-booking
+			h2 空室を検索 
+			.booking-widget
 		include ../components/breadcrumb.pug

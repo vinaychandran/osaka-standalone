@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('../fonts/icomoon.ttf?ctojor') format('truetype'),
-    url('../fonts/icomoon.woff?ctojor') format('woff'),
-    url('../fonts/icomoon.svg?ctojor#icomoon') format('svg');
+    url('../fonts/icomoon.ttf?i2favk') format('truetype'),
+    url('../fonts/icomoon.woff?i2favk') format('woff'),
+    url('../fonts/icomoon.svg?i2favk#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -38,19 +38,44 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-flag_tw .path1:before {
+.icon-attr-bicycle:before {
   content: "\e98c";
-  color: rgb(230, 33, 24);
+}
+.icon-attr-bus:before {
+  content: "\e98d";
+}
+.icon-attr-monorail:before {
+  content: "\e98e";
+}
+.icon-attr-ship:before {
+  content: "\e98f";
+}
+.icon-attr-taxi:before {
+  content: "\e990";
+}
+.icon-attr-train:before {
+  content: "\e991";
+}
+.icon-attr-walk:before {
+  content: "\e992";
+}
+.icon-map1:before {
+  content: "\e993";
+}
+
+.icon-flag_tw .path1:before {
+  content: "\e994";
+  color: rgb(229, 76, 60);
 }
 .icon-flag_tw .path2:before {
-  content: "\e98d";
-  margin-left: -1em;
-  color: rgb(29, 45, 108);
+  content: "\e995";
+  margin-left: -0.984375em;
+  color: rgb(59, 150, 210);
 }
 .icon-flag_tw .path3:before {
-  content: "\e98e";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
+  content: "\e996";
+  margin-left: -0.984375em;
+  color: rgb(236, 239, 240);
 }
 
 .icon-breakfast:before {

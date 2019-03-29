@@ -370,6 +370,8 @@ const FE = {
         googleMap: () => {
 
             let selectorMapElement = document.getElementById('gmap_canvas');
+            let selectormapButton = document.getElementById('attraction-map-button');
+            let MapCloseButton = document.querySelector('.map-container .close');            
             var map;
             if (selectorMapElement) {
                 map = new google.maps.Map(document.getElementById('gmap_canvas'), {
@@ -390,35 +392,64 @@ const FE = {
                             position: new google.maps.LatLng(inputs[i].dataset.lat, inputs[i].dataset.long),
                             icon: inputs[i].dataset.src,
                             num: inputs[i].dataset.num,
-                            content: mapContent[0].innerHTML
+                            content: mapContent[0].outerHTML
                         })
                     }
                 }
 
                 var infoWindow = new google.maps.InfoWindow;
+                var listcontent = [];
                 mapMarker.forEach(function(list) {
                     var marker = new google.maps.Marker({
                         position: list.position,
                         icon: list.icon,
                         map: map,
                         id: list.num
+                        //content: mapContent[0].innerHTML
                     });
                     if (list.num) {
                         marker.set('id', list.num);
                         marker.set('label', list.num);
                     }
-                    infoWindow.set('content', list.content);
+
+                    
+                    listcontent.push(list.content);   
+                    
                     google.maps.event.addListener(map, 'click', function(event) {
                         for (var i = 0; i < mapMarker.length; i++) {
                             infoWindow.close();
                         }
                     });
-                    if (list.num != undefined) {
-                        marker.addListener('click', function() {
+                    //if (list.num != undefined) {
+                    marker.addListener('click', function() {
+                        console.log(marker.id);
+                        if (marker.id != 0 && marker.id != undefined ){
+                            var litsid = parseInt(marker.id, 10);
+                            infoWindow.set('content', listcontent[litsid]); 
                             infoWindow.open(map, marker);
-                        });
-                    }
-                });
+                        }
+                        else{
+                            var maphotelcontent = document.getElementById('maphotel-content');
+                            infoWindow.set('content', maphotelcontent.innerHTML);
+                            infoWindow.open(map, marker);  
+                        }
+                    });                   //}
+
+
+                });  
+
+                if (selectormapButton) {             
+
+                    selectormapButton.addEventListener('click', function() {
+                        var d = document.getElementsByClassName("map-container");
+                        d[0].classList.add("mapPopup");
+                    });
+
+                    MapCloseButton.addEventListener('click', function() {
+                        var d = document.getElementsByClassName("map-container");
+                        d[0].classList.remove("mapPopup");
+                    });
+                }
             }
         },
         selectPromoCoupon: () => {
