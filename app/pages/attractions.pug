@@ -8,7 +8,9 @@ block append content
 				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg')
 			.banner-text
 				h1 レストラン
-			#attraction-map-button.attraction-map-button もっと見る
+			#attraction-map-button.attraction-map-button 
+				| もっと見る
+				i.icon-map1
 		section.about-attractions-info
 			h3 大空の飛行機を眺め、豊潤な食事を
 			p 翔び立つ飛行機、空港のまばゆい夜景 - 刻々と変化する雄大な長めが寄り添い、3つの飲食店と1つのバーで食事を味わう豊潤な一時を。
@@ -29,10 +31,12 @@ block append content
 			.container
 				ul
 					li(class='list1' id="attraction1" data-lat='34.637292' data-long='135.419885' data-src = '../assets/narita/images/pin.png' data-num = "01")
-						.number 
+						.number.hidden-xs 
 							span 01
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 01
 							h2 京セラドーム大阪
 							p.info プロ野球の試合だけでなく、コンサートなどの娯楽イベントも開催されており、大阪市のスポーツと娯楽の中心地となっています。
 							a(href="#").more
@@ -61,10 +65,12 @@ block append content
 								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
 								a.more(href="#attraction1") More
 					li(class='list2' id="attraction2" data-lat='34.659485' data-long='135.444745' data-src = '../assets/narita/images/pin.png' data-num = "02")
-						.number 
+						.number.hidden-xs 
 							span 02
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 02
 							h2 レストラン「ガーデニア」
 							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
 							a(href="#").more
@@ -82,17 +88,21 @@ block append content
 									p 
 										span 電車
 										| 約23分 230円〜
-						a(href="#").more
+							a(href="#").more.visible-xs 
+								span ホテルからの距離 3.4Km
+						a(href="#").more.hidden-xs 
 							span ホテルからの距離 3.4Km
 						.map-locator
 							.title タイトルタイトル
 							p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
 							a.more(href="#attraction2") More
 					li(class='list3' data-lat='34.671897' data-long='135.498794' data-src = '../assets/narita/images/pin.png' data-num = "03")
-						.number 
+						.number.hidden-xs 
 							span 03
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 03
 							h2 レストラン「ガーデニア」
 							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
 							a(href="#").more
@@ -115,17 +125,21 @@ block append content
 									p 
 										span 電車
 										| 約23分 230円〜
-						a(href="#").more
+							a(href="#").more.visible-xs 
+								span ホテルからの距離 3.4Km
+						a(href="#").more.hidden-xs 
 							span もっと見る
 						.map-locator
 							.title タイトルタイトル
 							p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
 							a.more(href="#") More 
 					li(class='list4' data-lat='34.66874' data-long='135.501274' data-src = '../assets/narita/images/pin.png' data-num = "04")
-						.number 
+						.number.hidden-xs 
 							span 04
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 04
 							h2 レストラン「ガーデニア」
 							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
 							a(href="#").more
@@ -148,16 +162,20 @@ block append content
 									p 
 										span 電車
 										| 約23分 230円〜
-							a(href="#").more
-								span もっと見る	
+							a(href="#").more.visible-xs 
+								span ホテルからの距離 3.4Km
+						a(href="#").more.hidden-xs 
+							span もっと見る	
 							.map-locator
 								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
 								a.more(href="#") More
 					li(class='list1' data-lat='34.657292' data-long='135.419885' data-src = '../assets/narita/images/pin.png' data-num = "05")
-						.number 
+						.number.hidden-xs 
 							span 05
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 05
 							h2 レストラン「ガーデニア」
 							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
 							a(href="#").more
@@ -187,10 +205,12 @@ block append content
 								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
 								a.more(href="#") More
 					li(class='list2' data-lat='34.639485' data-long='135.444745' data-src = '../assets/narita/images/pin.png' data-num = "06")
-						.number 
+						.number.hidden-xs 
 							span 06
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 06
 							h2 レストラン「ガーデニア」
 							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
 							a(href="#").more
@@ -220,10 +240,12 @@ block append content
 								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
 								a.more(href="#") More
 					li(class='list3' data-lat='34.681897' data-long='135.498794' data-src = '../assets/narita/images/pin.png' data-num = "07")
-						.number 
+						.number.hidden-xs 
 							span 07
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 07
 							h2 レストラン「ガーデニア」
 							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
 							a(href="#").more
@@ -253,10 +275,12 @@ block append content
 								p 161-0032 東京都新宿区西新宿1-11-1セルリアンタワー4F
 								a.more(href="#") More
 					li(class='list4' data-lat='34.61874' data-long='135.501274' data-src = '../assets/narita/images/pin.png' data-num = "08")
-						.number 
+						.number.hidden-xs 
 							span 08
 						img(src='/assets/narita/images/kyosera.jpg')
 						.attraction-list-info
+							.number.visible-xs 
+								span 08
 							h2 レストラン「ガーデニア」
 							p.info 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
 							a(href="#").more

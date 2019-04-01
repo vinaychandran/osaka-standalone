@@ -4,7 +4,7 @@
   }
 
   .attraction-map-button{
-    padding: 8px 45px 8px 20px;  
+    padding: 8px 20px;  
     display: inline-block;
     color: #fff;
     background-color: #4f82ff;
@@ -16,6 +16,9 @@
     left: 50%;
     transform: translateX(-50%);
     font-weight: bold;
+    .icon-map1{
+      margin-left: 10px;
+    }
     @include sm {
       display: none;
     }
@@ -183,28 +186,35 @@
 .attractions-list {
   overflow: hidden;
   background: #fafafa;
-  padding: 60px 0 0;
-  @include md {
+  .container{
+    padding:0;
+    @include sm {
+      padding: 0 10px;
+    }
+  }
+  @include sm {
     padding: 160px 0 0;
   }
   ul {
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:flex-start; 
-    align-items:strech;
+    padding: 0;    
+    @include sm {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content:flex-start; 
+      align-items:strech;
+    }
   }  
   li{
-    width: 100%; 
-    background: #fff;
-    margin-bottom: 60px;
-    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;     
+    margin-bottom: 60px;    
     position: relative;    
-    @include md {
+    @include sm {
+      background: #fff;
       width: 30%;
       margin-right: 5%;
       margin-bottom: 160px;
+      box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
     }
     .map-locator{
       display: none; 
@@ -318,19 +328,28 @@
       background: #00447d;  
       left: 0;    
       top: 0; 
-      @include md {
+      @include sm {
         top: 40px;
         height: 2px;
       }
     }
-    @include md {
+    @include sm {
       position: absolute;
       top: -101px;
       margin: 0;  
     }
   }
   .attraction-list-info{
-    padding: 40px 30px;
+    padding: 15px 20px;
+    position: relative;
+    background: #fff;
+    margin: -25px 15px 0;
+    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
+    @include sm {
+      padding: 40px 30px;
+      margin: 0;
+      box-shadow: none;
+    }
     p.info{
       min-height: 155px; 
       font-size: 16px;
@@ -338,14 +357,17 @@
       font-weight: 500;
       line-height: 1.75;
       letter-spacing: 1.6px;
-      margin: 0;  
+      margin: 0;   
     }
   }
   h2{
-    font-size: 24px;
+    font-size: 22px;
     margin:0 0 30px;
     text-align: center;
     font-family: $go-bold;
+    @include sm {
+      font-size: 24px;
+    }
   }
   .more{
     font-size: 16px;
