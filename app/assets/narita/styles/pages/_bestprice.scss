@@ -220,35 +220,37 @@
                 }
             }
         }
+    }    
+}
+
+
+.bestprice-page-booking {
+    background-color: #fafafa;
+    padding: 45px 0;
+    text-align: center;
+    h2 {
+        @include font-size(20px);
+        font-weight: bold;
+        font-family: $go-bold;
     }
-    .bestprice-page-booking {
-        background-color: #fafafa;
-        padding: 45px 0;
-        text-align: center;
-        h2 {
-            @include font-size(20px);
-            font-weight: bold;
-            font-family: $go-bold;
-        }
-        h3 {
-            @include font-size(14px);
-            font-weight: 500;
-            font-family: $go-semibold;
-        }
-        .booking-widget{
-            max-width: 1140px;
-            margin:40px auto 0;
-            position: static;
-            height: auto;
-            padding-bottom: 0;
-            text-align: left;
-            .tabs-content{
-              height: auto;
-              background-color: #fafafa;
-              @include md {
-                background-color: $secondary-color;
-              }
-            }
+    h3 {
+        @include font-size(14px);
+        font-weight: 500;
+        font-family: $go-semibold;
+    }
+    .booking-widget{
+        max-width: 1140px;
+        margin:40px auto 0;
+        position: static;
+        height: auto;
+        padding-bottom: 0;
+        text-align: left;
+        .tabs-content{
+          height: auto;
+          background-color: #fafafa;
+          @include md {
+            background-color: $secondary-color;
+          }
         }
     }
 }
