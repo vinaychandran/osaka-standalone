@@ -147,11 +147,8 @@
         opacity: 1 !important;
       }
     }
-    
-
-    
-
   }
+  .bestprice-page-booking { background:#fff;}
 }
 
 
@@ -187,7 +184,7 @@
   overflow: hidden;
   background: #fafafa;
   .container{
-    padding:0;
+    padding:0;  
     @include sm {
       padding: 0 10px;
     }
