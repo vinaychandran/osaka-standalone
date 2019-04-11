@@ -310,11 +310,13 @@
       width: 81px;
       height: 81px;
       display: inline-block;
-      line-height: 81px;
+      line-height: 77px;
       font-family: $mi-regular; 
       font-size: 47.5px;  
       z-index: 2;
-      position: relative;    
+      position: relative; 
+      font-weight:700;  
+      font-family: 'Lato-B'; 
     }
     &:after{
       content:"";
@@ -362,6 +364,7 @@
     margin:0 0 30px;
     text-align: center;
     font-family: $go-bold;
+    line-height: 1.3;
     @include sm {
       font-size: 24px;
     }
@@ -434,6 +437,8 @@
       margin-left: 7px;
       margin-bottom: 0;
       line-height: 1.38;
+      font-family: $go-semibold;
+      font-weight: 500;
       span{
         display: block;
         font-size: 12px;

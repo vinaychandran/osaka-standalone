@@ -371,7 +371,7 @@ const FE = {
 
             let selectorMapElement = document.getElementById('gmap_canvas');
             let selectormapButton = document.getElementById('attraction-map-button');
-            let MapCloseButton = document.querySelector('.map-container .close');            
+            let MapCloseButton = document.querySelector('.map-container .close');
             var map;
             if (selectorMapElement) {
                 map = new google.maps.Map(document.getElementById('gmap_canvas'), {
@@ -398,7 +398,7 @@ const FE = {
                 }
 
                 var infoWindow = new google.maps.InfoWindow;
-                var listcontent = [];
+                var listcontent = [];                 
                 mapMarker.forEach(function(list) {
                     var marker = new google.maps.Marker({
                         position: list.position,
@@ -426,20 +426,44 @@ const FE = {
                         if (marker.id != 0 && marker.id != undefined ){
                             var litsid = parseInt(marker.id, 10);
                             infoWindow.set('content', listcontent[litsid]); 
-                            infoWindow.open(map, marker);
+                            infoWindow.open(map, marker); 
+                            let MapButton = document.querySelector('.map-container .more');                           
                         }
                         else{
                             var maphotelcontent = document.getElementById('maphotel-content');
                             infoWindow.set('content', maphotelcontent.innerHTML);
-                            infoWindow.open(map, marker);  
+                            infoWindow.open(map, marker);
+                            let MapButton = document.querySelector('.map-container .more');
                         }
+                        setTimeout(function(){
+                            let MapButton = document.querySelector('.map-container .more');
+
+                            if (MapButton) {
+                                MapButton.addEventListener('click', function() {
+                                    if (this.hash !== "") {
+                                        // Prevent default anchor click behavior
+                                        event.preventDefault();
+
+                                        var d = document.getElementsByClassName("map-container");
+                                        d[0].classList.remove("mapPopup");
+                                        // Store hash
+                                        var hash = this.hash;
+                                        $('html, body').animate({
+                                            scrollTop: $(hash).offset().top
+                                        }, 800, function(){                       
+                                            // Add hash (#) to URL when done scrolling (default click behavior)
+                                            window.location.hash = hash;
+                                        });
+                                    } // End if
+                                });
+                            }
+                        }, 300);
                     });                   //}
 
 
                 });  
 
-                if (selectormapButton) {             
-
+                if (selectormapButton) {
                     selectormapButton.addEventListener('click', function() {
                         var d = document.getElementsByClassName("map-container");
                         d[0].classList.add("mapPopup");
@@ -450,6 +474,8 @@ const FE = {
                         d[0].classList.remove("mapPopup");
                     });
                 }
+
+                
             }
         },
         selectPromoCoupon: () => {
