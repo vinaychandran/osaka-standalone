@@ -875,6 +875,8 @@ const FE = {
         },
 
         filterRooms: (targetElement) => {
+            const classActive = 'active';
+            let selectedFilter = [];
             if (isMobile && (document.getElementById('room-types') !== null)) {
                 document.getElementById('room-types').style.display = 'none';
                 document.getElementById('gallery-mask').style.display = 'none';
@@ -911,8 +913,8 @@ const FE = {
                         e.className = e.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
                     }
                     let clasString = string.includes(type)
-                    console.log(type);
-                    console.log(clasString);
+                    console.log('type is:', type);
+                    console.log('classString is:', clasString);
                     if (string.includes(type)) {
                         if (e.classList) {
                             e.classList.add(className);
@@ -927,13 +929,88 @@ const FE = {
                     e.classList.remove(classNa);
                 })
                 el.classList.add(classNa);
-
-
                 fillGalleryNav();
+
+
+                
             };
+
+            function showFilterRooms(selectedList) {
+                // New Customize 
+                console.log('Filter list is:', selectedList);
+
+                //Process filter 
+                const type = 'double';
+                const className = 'show';
+                
+                document.querySelectorAll('[data-rooms]').forEach(function(e) {
+                    let string = e.getAttribute('data-rooms');
+                    if (e.classList) {
+                        e.classList.remove(className);
+                    } else {
+                        e.className = e.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+                    }
+                    let clasString = string.includes(type)
+                    console.log('type is:', type);
+                    console.log('classString is:', clasString);
+                    if (string.includes(type)) {
+                        if (e.classList) {
+                            e.classList.add(className);
+                        } else {
+                            e.className += ' ' + className;
+                        }
+                    }
+
+
+                });
+                
+               
+                
+            }
+
+            //===== Origin Code =====
+            // document.querySelectorAll('[data-room-type]').forEach(function(elem) {
+            //     elem.addEventListener('click', function() {
+            //         showFilterRoom(elem);
+            //     }, false);
+            // })
+
+            //==== New Customize ====
+            // Bed types
+            document.querySelectorAll('[data-bed-type]').forEach(function(elem) {
+                elem.addEventListener('click', function() {
+                    let selectedValue = elem.getAttribute('data-bed-type');
+                    if (elem.classList.contains(classActive)) {
+                        elem.classList.remove(classActive);
+                        selectedFilter = selectedFilter.filter(function(item) { 
+                            return item !== selectedValue;
+                        })
+                    } else {
+                        elem.classList.add(classActive);
+                        selectedFilter.push(selectedValue);
+                    }
+                    showFilterRooms(selectedFilter);
+                }, false);
+            })
+
+            // Room type
             document.querySelectorAll('[data-room-type]').forEach(function(elem) {
                 elem.addEventListener('click', function() {
-                    showFilterRoom(elem);
+                    let selectedValue = elem.getAttribute('data-room-type');
+                    if (elem.classList.contains(classActive)) {
+                        elem.classList.remove(classActive);
+                        console.log('Untick');
+                        selectedFilter = selectedFilter.filter(function(item) { 
+                            return item !== selectedValue;
+                        })
+                        console.log('Array:', selectedFilter);
+                    } else {
+                        elem.classList.add(classActive);
+                        console.log('Tick');
+                        selectedFilter.push(selectedValue);
+                        console.log('Array:', selectedFilter);
+                    }
+                    showFilterRooms(selectedFilter);
                 }, false);
             })
             fillGalleryNav();
@@ -1121,6 +1198,11 @@ const FE = {
             } else {
                 FE.global.sliderImage('.home-slider-nav', 3, false, true);
             }
+            if (isMobile) {
+                FE.global.sliderImage('.rooms-staying-plan-slider__nav', 1, true, false);
+            } else {
+                FE.global.sliderImage('.rooms-staying-plan-slider__nav', 3, false, true);
+            }
             FE.global.tabs('gallery-tabs');
             FE.global.tabs('booking-tabs');
             FE.global.tabs('layout-tabs');
@@ -1176,6 +1258,14 @@ const FE = {
                 FE.global.sliderImage('.home-slider-nav', 1, true, false);
             } else {
                 FE.global.sliderImage('.home-slider-nav', 3, false, true);
+            }
+
+            // Rooms slider
+            $('.rooms-staying-plan-slider__nav').slick('unslick');
+            if (isMobile) {
+                FE.global.sliderImage('.rooms-staying-plan-slider__nav', 1, true, false);
+            } else {
+                FE.global.sliderImage('.rooms-staying-plan-slider__nav', 3, false, true);
             }
         }
 

@@ -6,113 +6,150 @@ block append content
 		include ../components/booking-widget.pug
 	.about-rooms-wrap
 		.about-rooms-info
-			h3 ELEGANTLY REFINED AND SUMPTUOUSLY DESIGNED
-			p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+			h3 すべてのお客さまに特別な景色と、快適な空間を。
+			p スタンダード、スーペリア、デラックスから、46 階以上の高層階に位置するスカイフロア、
+				| 遊び心のあるコンセプトルームなどバリエーション豊かなタイプの客室をご用意しています。
+				| お子さま連れのご家族から母娘、友人同士、ビジネスまで、あらゆるニーズにお応えします。
+		.about-rooms__slider-wrapper
+			include ../components/rooms-staying-plan-slider.pug
 		.rooms-list-wrap
 			.container
-				h4 お部屋一覧
-				a#tablink(href='') 一覧表示
-				ul.room-types#room-types
-					li
-						a.selected(data-room-type="all") 一覧表示
-					li
-						a(data-room-type="single") スペシャリティスイート
-					li
-						a( data-room-type="double") 家族部屋
-					li
-						a( data-room-type="triple") 女性専用部屋
-					li
-						a( data-room-type="smoking") 禁煙室 
-					li
-						a( data-room-type="family") 喫煙室
-				ul.rooms-list
-					li.show(data-rooms="all smoking family")
-						a(data-show-rooms="room-full-info" href="#")
-							img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-						.room-short-info
-							.ribbon.blue 朝食無料クーポン付き
-							h6 スーペリアツインハイフロア
-							.price ￥9,000~
-							.room-facilities
-								ul
-									li ベッドタイプ 
-										span ツイン
-									li ベッド数
-										span 2
-									li ベッドサイズ
-										span 1200
-								ul
-									li 㝡大宿泊人数
-										span 2
-									li エキストラベッド
-										span 1
-								.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
-									i.mys-arrow-left.white
-					li.show(data-rooms="all single")
-						a(data-show-rooms="room-full-info" href="#")
-							img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-						.room-short-info
-							.ribbon.red 本日残り１部屋
-							h6 スーペリアツインハイフロア
-							.price ￥9,000~
-							.room-facilities
-								ul
-									li ベッドタイプ 
-										span ツイン
-									li ベッド数
-										span 2
-									li ベッドサイズ
-										span 1200
-								ul
-									li 㝡大宿泊人数
-										span 2
-									li エキストラベッド
-										span 1
-								.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
-									i.mys-arrow-left.white
-					li.show(data-rooms="all double")
-						a(data-show-rooms="room-full-info" href="#")
-							img.lazy(data-src='/assets/narita/images/room-big1.jpg' )
-						.room-short-info
-							h6 スーペリアツインハイフロア
-							.price ￥9,000~
-							.room-facilities
-								ul
-									li ベッドタイプ 
-										span ツイン
-									li ベッド数
-										span 2
-									li ベッドサイズ
-										span 1200
-								ul
-									li 㝡大宿泊人数
-										span 2
-									li エキストラベッド
-										span 1
-								.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
-									i.mys-arrow-left.white
-					li.show(data-rooms="all smoking triple")
-						a(data-show-rooms="room-full-info" href="#")
-							img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-						.room-short-info
-							h6 スーペリアツインハイフロア
-							.price ￥9,000~
-							.room-facilities
-								ul
-									li ベッドタイプ 
-										span ツイン
-									li ベッド数
-										span 2
-									li ベッドサイズ
-										span 1200
-								ul
-									li 㝡大宿泊人数
-										span 2
-									li エキストラベッド
-										span 1
-								.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
-									i.mys-arrow-left.white
-			
+				.rooms-list-wrap__filter
+					h4 お部屋一覧 サンプル
+					a#tablink(href='') 一覧表示
+					ul.room-types
+						h4.sub-title ベッドタイプ
+						li
+							a( data-bed-type="semi-double") セミダブル
+						li
+							a( data-bed-type="double") ダブル
+						li
+							a( data-bed-type="queen") クイーン
+					ul.room-types#room-types
+						h4.sub-title おすすめ
+						li
+							a( data-room-type="family") ファミリー
+						li
+							a( data-room-type="business") ビジネス
+						li
+							a( data-room-type="with-friend") 友達と旅行
+						li
+							a( data-room-type="one-person-trip") 一人旅
+						li
+							a( data-room-type="with-partner") パートナーと旅行
+						li
+							a( data-room-type="with-children") 子供と一緒に旅行
+						li
+							a( data-room-type="special-day") 特別な日に
+						li
+							a( data-room-type="with-parent") 両親と一緒に旅行
+						li
+							a( data-room-type="with-baby") 赤ちゃんと一緒
+						li
+							a( data-room-type="small-child") 小さい子供も楽しい
+						li
+							a( data-room-type="wheel-chair") 車椅子対応
+					//- ul.room-types#room-types
+					//- 	li
+					//- 		a.selected(data-room-type="all") 一覧表示
+					//- 	li
+					//- 		a(data-room-type="single") スペシャリティスイート
+					//- 	li
+					//- 		a( data-room-type="double") 家族部屋
+					//- 	li
+					//- 		a( data-room-type="triple") 女性専用部屋
+					//- 	li
+					//- 		a( data-room-type="smoking") 禁煙室 
+					//- 	li
+					//- 		a( data-room-type="family") 喫煙室
+				.rooms-list-wrap__content
+					ul.rooms-list
+						li.show(data-rooms="all family double")
+							a(data-show-rooms="room-full-info" href="#")
+								img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+							.room-short-info
+								.ribbon.blue 朝食無料クーポン付き
+								h6 スーペリアツインハイフロア Test family double
+								.price ￥9,000~
+								.room-facilities
+									ul
+										li ベッドタイプ 
+											span ツイン
+										li ベッド数
+											span 2
+										li ベッドサイズ
+											span 1200
+									ul
+										li 㝡大宿泊人数
+											span 2
+										li エキストラベッド
+											span 1
+									.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
+										i.mys-arrow-left.white
+						li.show(data-rooms="all family queen")
+							a(data-show-rooms="room-full-info" href="#")
+								img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+							.room-short-info
+								.ribbon.red 本日残り１部屋
+								h6 スーペリアツインハイフロア Test family queen
+								.price ￥9,000~
+								.room-facilities
+									ul
+										li ベッドタイプ 
+											span ツイン
+										li ベッド数
+											span 2
+										li ベッドサイズ
+											span 1200
+									ul
+										li 㝡大宿泊人数
+											span 2
+										li エキストラベッド
+											span 1
+									.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
+										i.mys-arrow-left.white
+						li.show(data-rooms="all business double")
+							a(data-show-rooms="room-full-info" href="#")
+								img.lazy(data-src='/assets/narita/images/room-big1.jpg' )
+							.room-short-info
+								h6 スーペリアツインハイフロア Test business double
+								.price ￥9,000~
+								.room-facilities
+									ul
+										li ベッドタイプ 
+											span ツイン
+										li ベッド数
+											span 2
+										li ベッドサイズ
+											span 1200
+									ul
+										li 㝡大宿泊人数
+											span 2
+										li エキストラベッド
+											span 1
+									.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
+										i.mys-arrow-left.white
+						li.show(data-rooms="all with-friend semi-double")
+							a(data-show-rooms="room-full-info" href="#")
+								img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+							.room-short-info
+								h6 スーペリアツインハイフロア Test semi-double
+								.price ￥9,000~
+								.room-facilities
+									ul
+										li ベッドタイプ 
+											span ツイン
+										li ベッド数
+											span 2
+										li ベッドサイズ
+											span 1200
+									ul
+										li 㝡大宿泊人数
+											span 2
+										li エキストラベッド
+											span 1
+									.btn.room-more.popup(data-show-rooms="room-full-info") もっと見る
+										i.mys-arrow-left.white
 		include ../components/breadcrumb.pug
 	#room-full-info(data-basicLightbox data-id="room-full-info" class="room-detail")
 		.room-info-header
