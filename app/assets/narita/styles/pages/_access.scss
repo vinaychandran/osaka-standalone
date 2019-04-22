@@ -50,16 +50,17 @@ $box-height:90;
 .shuttle-bus{
     min-width: 900px;
     margin: 0 auto ;
-    background: #fafafa;
-    padding: 40px 30px;
-    display: flex;
-    justify-content:space-between; 
+    //background: #fafafa;
+    padding: 0;
+    
     @include md {
         max-width: 1280px;
-        padding: 60px 90px;       
+        padding: 0;       
     }
-    .level{
-        width: 20%;
+    .levels{
+        width: 100%;
+        display: flex;
+        justify-content:space-between; 
     }
     h4{
         @include font-size(16px);
@@ -73,16 +74,38 @@ $box-height:90;
         margin-bottom: 28px; 
     }
     .box{
-        background: #fff;
+        background: #eeeeee;
         margin-bottom: 10px; 
         position: relative;
         height: $box-height + px; 
         font-family: $go-semibold;
         font-weight: 500;
+        padding: 10px 5px;
         @include font-size(16px);
+        width: 12%;
+        &.box-hidden{
+            visibility: hidden;  
+        }
+        &.box-attach{
+            &:after{
+                content: "";
+                position: absolute;
+                width: 100%;
+                background: #eeeeee;   
+                height: 10px;
+                bottom: -10px;  
+                left: 0;  
+            }
+            &.blue{
+                &:after{
+                    background: #232e48;
+                }
+            }
+            
+        }
         .round-btn{
             border-radius: 13px;
-            background-color: #eeeeee;
+            background-color: #fff; 
             display: inline;
             @include font-size(12px);
             padding: 5px 20px; 
@@ -104,7 +127,7 @@ $box-height:90;
         position: absolute;
         top: 50%;
         transform:translateY(-50%); 
-        width: 100%; 
+        width: calc(100% - 10px);   
     }
     .box1-2{
           height: ( $box-height * 2 + 10) + px;    
@@ -118,11 +141,14 @@ $box-height:90;
     .box1-5{
           height: ( $box-height * 5 + 40) + px;     
     }
+    .box1-6{
+          height: ( $box-height * 6 + 40) + px;     
+    }
     .arrow{
         position: absolute;
-        left: 110%;
+        left: 105%;
         top: 50%; 
-        width: 80%;
+        width: 75%;
         text-align: left;
         transform:translateY(-50%);
         border-bottom: 1px solid #000;
@@ -130,7 +156,10 @@ $box-height:90;
             @include font-size(14px);
         }
         &.arrow2{
-            width: 280%; 
+            width: 258%; 
+        }
+        &.arrow3{
+            width: 625%; 
         }
         &:after{
             content:"";
