@@ -51,11 +51,11 @@ $box-height:90;
     min-width: 900px;
     margin: 0 auto ;
     //background: #fafafa;
-    padding: 0;
+    padding: 20px;
     
     @include md {
         max-width: 1280px;
-        padding: 0;       
+        padding: 0;         
     }
     .levels{
         width: 100%;
@@ -159,6 +159,9 @@ $box-height:90;
             width: 258%; 
         }
         &.arrow3{
+            width: 440%; 
+        }
+        &.arrow4{
             width: 625%; 
         }
         &:after{
