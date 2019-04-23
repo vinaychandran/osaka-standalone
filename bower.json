@@ -6,7 +6,8 @@
     "jquery": "~2.1.1",
     "babel-polyfill": "^0.0.1",
     "slick-carousel": "^1.6.0",
-    "vanilla-lazyload": "^10.0.1"
+    "vanilla-lazyload": "^10.0.1",
+    "isotope-layout": "^3.0.6"
   },
   "devDependencies": {
     "slick-carousel": "1.5.9",

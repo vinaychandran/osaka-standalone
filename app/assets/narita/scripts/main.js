@@ -652,6 +652,7 @@ const FE = {
                 $('body').removeClass('modal-open');
             });
             FE.global.lazyLoad();
+
         },
         resetUserDetails: () => {
             // let url = new URL(window.location.href);
@@ -707,7 +708,14 @@ const FE = {
 
                 }, 410);
                 $('body').removeClass('modal-open');
-            });           
+            });
+
+            // Scroll to reservation block
+            $(document).on('click', '.book-room', function() {
+                console.log('clicked');
+                //$('.basicLightbox').animate({scrollTop: $('#reservationBlock').offset().top},'slow');
+                $('.basicLightbox').animate({ scrollTop: $('#reservationBlock').offset().top}, 500);  
+            });         
         },
         autocomplatePopup: () => {
             $(document).on('click', '.input-custom button', function() {
@@ -875,8 +883,14 @@ const FE = {
         },
 
         filterRooms: (targetElement) => {
+            // Init isoTope to list rooms
+            var iso = new Isotope( '.rooms-list', {
+                itemSelector: '.rooms-list__room-item',
+            });
             const classActive = 'active';
-            let selectedFilter = [];
+            let bedsFilter = [];
+            let roomsFilter = [];
+            
             if (isMobile && (document.getElementById('room-types') !== null)) {
                 document.getElementById('room-types').style.display = 'none';
                 document.getElementById('gallery-mask').style.display = 'none';
@@ -922,95 +936,99 @@ const FE = {
                             e.className += ' ' + className;
                         }
                     }
-
-
                 });
                 document.querySelectorAll('[data-room-type]').forEach(function(e) {
                     e.classList.remove(classNa);
                 })
                 el.classList.add(classNa);
                 fillGalleryNav();
-
-
-                
             };
 
-            function showFilterRooms(selectedList) {
-                // New Customize 
-                console.log('Filter list is:', selectedList);
+            function showFilterRooms(bedsFilter, roomsFilter) {
+                console.log('Beds filter is:', bedsFilter);
+                console.log('Rooms filter is:', roomsFilter);
 
-                //Process filter 
-                const type = 'double';
-                const className = 'show';
-                
-                document.querySelectorAll('[data-rooms]').forEach(function(e) {
-                    let string = e.getAttribute('data-rooms');
-                    if (e.classList) {
-                        e.classList.remove(className);
+                //Bed process
+                let filterValue = '';
+                let bedfilterValue = '';
+                let roomfilterValue = '';
+
+                if (bedsFilter.length >= 1 && roomsFilter.length == 0) {
+                    let tmpStr = bedsFilter.join(', .');
+                    console.log('temp', tmpStr);
+                    if (tmpStr !== '') {
+                        bedfilterValue = '.' + tmpStr;
+                        console.log(bedfilterValue);
                     } else {
-                        e.className = e.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+                        bedfilterValue = '*';
                     }
-                    let clasString = string.includes(type)
-                    console.log('type is:', type);
-                    console.log('classString is:', clasString);
-                    if (string.includes(type)) {
-                        if (e.classList) {
-                            e.classList.add(className);
-                        } else {
-                            e.className += ' ' + className;
-                        }
+                    filterValue = bedfilterValue;
+                } else if (roomsFilter.length >= 1 && bedsFilter.length == 0) {
+                    let tmpRoomStr = roomsFilter.join(', .');
+                    console.log('tempRoom', tmpRoomStr);
+                    if (tmpRoomStr !== '') {
+                        roomfilterValue = '.' + tmpRoomStr;
+                        console.log(roomfilterValue);
+                    } else {
+                        roomfilterValue = '*';
                     }
+                    filterValue = roomfilterValue;
+                } else if (bedsFilter.length == 0 && roomsFilter.length == 0) {
+                    console.log('Case default Full');
+                    filterValue = '*';
+                } else {
+                    console.log('Case AND 2 section');
+                    bedsFilter.forEach(function(bedItem) {
+                        roomsFilter.forEach(function(roomItem) {
+                            let andStr = ` .${bedItem}.${roomItem}`;
+                            // Concat to filterValue string
+                            filterValue = filterValue.concat(andStr + ',');
+                        })
+                    });
+                    // Clear first space in string
+                    filterValue = filterValue.trim();
 
-
-                });
-                
-               
-                
+                    // Clear the comma in the end of string
+                    filterValue = filterValue.replace(/.$/,'');
+                }
+                console.log('Final filter value: ', filterValue);
+                iso.arrange({ filter: filterValue });
             }
 
-            //===== Origin Code =====
-            // document.querySelectorAll('[data-room-type]').forEach(function(elem) {
-            //     elem.addEventListener('click', function() {
-            //         showFilterRoom(elem);
-            //     }, false);
-            // })
-
-            //==== New Customize ====
-            // Bed types
+            // Bed Type List click handle
             document.querySelectorAll('[data-bed-type]').forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     let selectedValue = elem.getAttribute('data-bed-type');
                     if (elem.classList.contains(classActive)) {
                         elem.classList.remove(classActive);
-                        selectedFilter = selectedFilter.filter(function(item) { 
+                        bedsFilter = bedsFilter.filter(function(item) { 
                             return item !== selectedValue;
                         })
+                        showFilterRooms(bedsFilter, roomsFilter);
                     } else {
                         elem.classList.add(classActive);
-                        selectedFilter.push(selectedValue);
+                        bedsFilter.push(selectedValue);
+                        showFilterRooms(bedsFilter,roomsFilter);
                     }
-                    showFilterRooms(selectedFilter);
                 }, false);
             })
 
-            // Room type
+            // Room type list click handle
             document.querySelectorAll('[data-room-type]').forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     let selectedValue = elem.getAttribute('data-room-type');
                     if (elem.classList.contains(classActive)) {
                         elem.classList.remove(classActive);
-                        console.log('Untick');
-                        selectedFilter = selectedFilter.filter(function(item) { 
+                        roomsFilter = roomsFilter.filter(function(item) { 
                             return item !== selectedValue;
                         })
-                        console.log('Array:', selectedFilter);
+                        showFilterRooms(bedsFilter,roomsFilter);
                     } else {
                         elem.classList.add(classActive);
-                        console.log('Tick');
-                        selectedFilter.push(selectedValue);
-                        console.log('Array:', selectedFilter);
+                        roomsFilter.push(selectedValue);
+                        showFilterRooms(bedsFilter,roomsFilter);
                     }
-                    showFilterRooms(selectedFilter);
+                    
                 }, false);
             })
             fillGalleryNav();

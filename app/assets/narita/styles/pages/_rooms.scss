@@ -150,6 +150,7 @@
   }
 
   &__content {
+    font-family: $mi-regular;
     margin-top: 60px;
   }
 }
@@ -191,33 +192,6 @@ ul.room-types{
       @include sm {
         margin: 0;
       }
-      // &.selected {
-      //   color: $default-color;;
-      //   &:after {
-      //     @include sm {
-      //       content: "";
-      //       width: 100%;
-      //       height: 2px;
-      //       display: block;
-      //       background-color: #232e48;
-      //       margin-top: 3px;
-      //     }
-      //   }
-      //   &:before {
-      //     @include sm {
-      //       content: '';
-      //       width: 0;
-      //       height: 0;
-      //       position: absolute;
-      //       bottom: -6px;
-      //       left: 50%;
-      //       margin-left: -4px;
-      //       border-left: 6px solid transparent;
-      //       border-right: 6px solid transparent;
-      //       border-top: 6px solid $default-color;;
-      //     }
-      //   }
-      // }
     }
   }
 }
@@ -233,7 +207,7 @@ ul.rooms-list{
     margin-bottom: 110px;
     display: none;
     transition: all 1s ease;
-    opacity: 0;
+    opacity: 1;
     animation: all 0.3s;
     position: relative;
     box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
@@ -254,74 +228,159 @@ ul.rooms-list{
       width: 48%;
     }
   }
-  h6{
-    @include font-size(16px);
-    font-family: $go-bold;
-    text-align: center;
-    margin-bottom: 15px;
-    @include sm {
-      float: left;
-      text-align: left;
-      margin-bottom: 0;
-    }
-  }
-  .price{
-    @include font-size(24px);
-    font-family: 'Lato-B';
-    text-align: center;
-    font-weight: 700;
-    @include sm {
-      float: right;
-      text-align: right;
-    }
-  }
-  .room-facilities{
-    clear: both;
-    margin-top: 25px;
-    border-top: 1px solid #f1f3ee;
-    width: 100%;
-    padding: 0 0 50px;
-    float: left;
-    position: relative;
-    @include sm {
-      padding-top: 25px;
-    }
-    ul{
+}
 
+ul.rooms-list__room-item__facilities__tag {
+  margin-top: 20px;
+  h4.sub-title {
+    padding-left: unset;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  li {
+    padding: 5px 10px;
+    @include sm {
+      float: none;
+      display: inline-block;
+    }
+  }
+}
+
+.rooms-list {
+  &:after {
+    content: '';
+    display: flex;
+    clear: both;
+  }
+
+  &__room-item {
+    position: relative;
+    float: left;
+    width: 45%;
+    height: auto;
+    margin: 0px 25px 110px 25px;
+    background:$default-bg;
+    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+    .room-short-info{
+      padding: 30px 20px 60px;
+      width: 100%;
+    } 
+
+    &__header {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      h6{
+        @include font-size(26px);
+        font-weight: 700;
+        // @include sm {
+        //   float: left;
+        //   text-align: left;
+        //   margin-bottom: 0;
+        // }
+      }
+      .price{
+        @include font-size(26px);
+        font-weight: 700;
+        // @include sm {
+        //   float: right;
+        //   text-align: right;
+        // }
+      }
+    }
+
+    &__size {
+      font-size: 16px;
+    }
+
+    &__content {
+      font-size: 20px;
+      line-height: normal;
+    }
+
+    &__facilities {
+      margin-top: 25px;
+      border-top: solid 2px #979797;
+    }
+
+    .room-facilities{
+      clear: both;
+      margin-top: 25px;
+      border-top: solid 2px #979797;
+      width: 100%;
+      padding: 0 0 50px;
+      float: left;
+      position: relative;
       @include sm {
-        width: 50%;
-        float: left;
-        padding-right:20px;
-        border-right: 1px solid #f1f3ee;
-        &:nth-child(2) {
-          border-right: 0px;
-          padding-left: 20px;
+        padding-top: 25px;
+      }
+      ul{
+  
+        @include sm {
+          width: 50%;
+          float: left;
+          padding-right:20px;
+          border-right: 1px solid #f1f3ee;
+          &:nth-child(2) {
+            border-right: 0px;
+            padding-left: 20px;
+          }
         }
       }
-    }
-    li{
-      @include font-size(14px);
-      font-family: $go-semibold;
-      width: 100%;
-      padding: 15px 0;
-      border-bottom: 1px solid #f1f3ee;
-      @include sm {
-        border-bottom: 0;
-        padding: 6px 0;
-      }
-      span{
-        float: right;
-        font-weight: 700;
-        font-family: $go-bold;
+      li{
+        @include font-size(14px);
+        font-family: $go-semibold;
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid #f1f3ee;
+        @include sm {
+          border-bottom: 0;
+          padding: 6px 0;
+        }
+        span{
+          float: right;
+          font-weight: 700;
+          font-family: $go-bold;
+        }
       }
     }
   }
 }
 
+.tag {
+  @include font-size(14px);
+  padding: 5px;
+  font-family: $go-bold;
+  line-height: 1.43;
+  text-align: center;
+  color: #fff;
+  display: block;
+  position: relative;
+  background-color: #8ec1df;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #8ec1df;
+    border-bottom: 15px solid transparent;
+  }
+  @include sm {
+    margin: 0;
+  }
+}
+
 .room-more{
   position: absolute;
-  bottom: -60px;
-  width: 100%;
+  bottom: -40px;
+  width: 70%;
+  left: 15%;
   .mys-arrow-left{
     @include center(vertical);
     right: 30px;
@@ -572,11 +631,22 @@ ul.rooms-list{
     font-weight: 500;
     line-height: 1.25;
     letter-spacing: 3.2px;
-    border-bottom: 1px solid $default-color;
+    border-bottom: solid 1px #979797;
     padding-bottom: 15px;
     text-align: center;
   }
+}
 
+.room-general-info {
+  font-family: $go-semibold;
+  &__title {
+    margin: 20px 0px;
+    @include font-size(24px);
+    
+  }
+  &__content {
+    @include font-size(18px);
+  }
 }
 
 .room-highlight-wrap{
@@ -586,28 +656,22 @@ ul.rooms-list{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    padding: 35px 50px 40px 0;
+    padding: 20px 0px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
   }
   .checkin-checkout{
     padding-bottom: 25px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     @include md {
-      max-width: 210px;
+      width: 100%;
       padding-bottom: 0;
       border-bottom: 0px;
     }
     .time{
-      @include font-size(14px);
+      @include font-size(18px);
       font-family: $go-semibold;
       margin-bottom: 15px;
       font-weight: 500;
-      span{
-        float: right;
-        @include font-size(15px);
-        font-weight: 700;
-        font-family: go-bold;
-      }
     }
     .note{
       font-family: $go-semibold;
@@ -618,6 +682,7 @@ ul.rooms-list{
       line-height: 1.7;
     }
   }
+
   .room-tags{
     padding: 25px 0 35px;
     @include md {
@@ -712,7 +777,7 @@ ul.rooms-list{
   padding: 50px 20px 20px;
   margin: 0 15px;
   @include md {
-    padding: 100px 0 25px;
+    padding: 0px 0 25px;
     margin: 0;
   }
   h3{
@@ -758,7 +823,7 @@ ul.rooms-list{
   .strech{
     margin: 0 -35px 40px;
     @include md {
-      margin: 0 -40px 40px;
+      margin: 0px 0px 40px;
     }
   }
   .three-images{
@@ -795,6 +860,49 @@ ul.rooms-list{
           width: auto;
           margin-top: 50px;
           margin-left: 80px;
+        }
+      }
+    }
+  }
+}
+
+.room-reservation {
+  margin: 60px 0px 0px;
+  font-family: $go-semibold;
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    margin: 0;
+    &__item {
+      margin: 25px 0px;
+      width: 31%;
+      background:$default-bg;
+      box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &__content {
+      padding: 30px 20px 30px;
+      &__header {
+        width: 100%;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h6, .price {
+          font-size: 20px !important;
+          font-weight: 600;
+        }
+      }
+      &__info {
+        text-align: left;
+        p {
+          font-size: 16px !important;
+        }
+      }
+      &__btn {
+        .btn {
+          padding: 15px 0px;
         }
       }
     }
