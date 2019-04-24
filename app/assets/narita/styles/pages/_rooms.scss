@@ -257,7 +257,6 @@ ul.rooms-list__room-item__facilities__tag {
     position: relative;
     float: left;
     width: 45%;
-    height: auto;
     margin: 0px 25px 110px 25px;
     background:$default-bg;
     box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
@@ -900,10 +899,13 @@ ul.rooms-list__room-item__facilities__tag {
           font-size: 16px !important;
         }
       }
-      &__btn {
-        .btn {
-          padding: 15px 0px;
-        }
+      .btn {
+        padding: 15px 0px;
+      }
+      .mys-arrow-left {
+        position: absolute;
+        bottom: 74px;
+        margin-left: 40px;
       }
     }
   }

@@ -886,6 +886,7 @@ const FE = {
             // Init isoTope to list rooms
             var iso = new Isotope( '.rooms-list', {
                 itemSelector: '.rooms-list__room-item',
+                layoutMode: 'fitRows',
             });
             const classActive = 'active';
             let bedsFilter = [];
@@ -945,39 +946,35 @@ const FE = {
             };
 
             function showFilterRooms(bedsFilter, roomsFilter) {
-                console.log('Beds filter is:', bedsFilter);
-                console.log('Rooms filter is:', roomsFilter);
-
-                //Bed process
                 let filterValue = '';
                 let bedfilterValue = '';
                 let roomfilterValue = '';
 
                 if (bedsFilter.length >= 1 && roomsFilter.length == 0) {
                     let tmpStr = bedsFilter.join(', .');
-                    console.log('temp', tmpStr);
+                    //console.log('temp', tmpStr);
                     if (tmpStr !== '') {
                         bedfilterValue = '.' + tmpStr;
-                        console.log(bedfilterValue);
+                        //console.log(bedfilterValue);
                     } else {
                         bedfilterValue = '*';
                     }
                     filterValue = bedfilterValue;
                 } else if (roomsFilter.length >= 1 && bedsFilter.length == 0) {
                     let tmpRoomStr = roomsFilter.join(', .');
-                    console.log('tempRoom', tmpRoomStr);
+                    //console.log('tempRoom', tmpRoomStr);
                     if (tmpRoomStr !== '') {
                         roomfilterValue = '.' + tmpRoomStr;
-                        console.log(roomfilterValue);
+                        //console.log(roomfilterValue);
                     } else {
                         roomfilterValue = '*';
                     }
                     filterValue = roomfilterValue;
                 } else if (bedsFilter.length == 0 && roomsFilter.length == 0) {
-                    console.log('Case default Full');
+                    //console.log('Case default Full');
                     filterValue = '*';
                 } else {
-                    console.log('Case AND 2 section');
+                    //console.log('Case AND 2 section');
                     bedsFilter.forEach(function(bedItem) {
                         roomsFilter.forEach(function(roomItem) {
                             let andStr = ` .${bedItem}.${roomItem}`;
@@ -1010,6 +1007,10 @@ const FE = {
                         bedsFilter.push(selectedValue);
                         showFilterRooms(bedsFilter,roomsFilter);
                     }
+                    setTimeout(() => {
+                        FE.global.equalHeightByRow('.rooms-list__room-item', true);
+                    }, 1000);
+                    
                 }, false);
             })
 
@@ -1028,7 +1029,9 @@ const FE = {
                         roomsFilter.push(selectedValue);
                         showFilterRooms(bedsFilter,roomsFilter);
                     }
-                    
+                    setTimeout(() => {
+                        FE.global.equalHeightByRow('.rooms-list__room-item', true);
+                    }, 1000);
                 }, false);
             })
             fillGalleryNav();
@@ -1202,6 +1205,47 @@ const FE = {
             })
         },
 
+        // Make item equal height
+        equalHeightByRow: function equalHeightByRow(obj, notRunMobile, difference) {
+            var widthTarget = 0;
+            if ($(obj).length) {
+                $(obj).height('auto');
+                widthTarget = notRunMobile === true ? 768 : 0;
+                if ($(window).width() >= widthTarget) {
+                    var currentTallest = 0,
+                        currentRowStart = 0,
+                        rowDivs = [],
+                        currentDiv = 0,
+                        $el = void 0,
+                        topPosition = 0;
+                    $(obj).each(function () {
+                        if ($(this).is(':visible') === true) {
+                            $el = $(this);
+                            topPosition = $el.offset().top;
+                            if (currentRowStart !== topPosition) {
+                                for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
+                                    rowDivs[currentDiv].innerHeight(currentTallest);
+                                }
+                                rowDivs = [];
+                                currentRowStart = topPosition;
+                                currentTallest = $el.innerHeight();
+                                rowDivs.push($el);
+                            } else {
+                                rowDivs.push($el);
+                                currentTallest = currentTallest < $el.innerHeight() ? $el.innerHeight() : currentTallest;
+                                if (difference != undefined && ($el.css('height').trim() === 'auto' || $el[0].style.height === 'auto')) {
+                                    currentTallest = currentTallest + difference;
+                                }
+                            }
+                            for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
+                                rowDivs[currentDiv].innerHeight(currentTallest);
+                            }
+                        }
+                    });
+                }
+            }
+        },
+
         init: () => {
             
         },
@@ -1263,6 +1307,7 @@ const FE = {
             //FE.global.sliderImageFade('.home-Thumbnail-slider', 5, false, false, '.home-banner-slider');
             FE.global.pageScroll();
             FE.global.campaignpopup();
+            FE.global.equalHeightByRow('.rooms-list__room-item', true);
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize
