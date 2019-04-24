@@ -884,10 +884,13 @@ const FE = {
 
         filterRooms: (targetElement) => {
             // Init isoTope to list rooms
-            var iso = new Isotope( '.rooms-list', {
-                itemSelector: '.rooms-list__room-item',
-                layoutMode: 'fitRows',
-            });
+            const roomList = document.querySelector('.rooms-list');
+            if (roomList) {
+                var iso = new Isotope( '.rooms-list', {
+                    itemSelector: '.rooms-list__room-item',
+                    layoutMode: 'fitRows',
+                });
+            }
             const classActive = 'active';
             let bedsFilter = [];
             let roomsFilter = [];
