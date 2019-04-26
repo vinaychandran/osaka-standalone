@@ -1,7 +1,7 @@
 .tabs {
   position: relative;
 }
-.tabs-header, .room-types {
+.tabs-header {
   display: none;
   background: #fff;
   position: absolute;
@@ -111,9 +111,4 @@
       }
     }
   }
-}
-.room-types {
-  top: 104px;
-  margin-left: -41.5%;
-  width: 83%;
 }

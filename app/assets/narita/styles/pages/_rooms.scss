@@ -1,3 +1,9 @@
+.container {
+  @include mobile {
+    padding: 0;
+  }
+}
+
 .about-rooms-wrap{
   .about-rooms-info{
     max-width: 700px;
@@ -130,6 +136,9 @@
   @include md {
     padding: 80px 0 0;
   }
+  @include mobile {
+    padding: 60px 0px 0px;
+  }
   h4{
     text-align: center;
     @include font-size(20px);
@@ -140,8 +149,21 @@
 
   h4.sub-title {
     text-align: left !important;
-    padding-left: 10px;
     margin-bottom: unset;
+    padding-top: 20px;
+  }
+  h6.swipe {
+    display: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #808080;
+    @include mobile {
+      display: block;
+      font-size: 13px;
+      position: absolute;
+      right: 0;
+      margin-right: 10px;
+    }
   }
 
   &__filter {
@@ -153,6 +175,13 @@
     font-family: $mi-regular;
     margin-top: 60px;
   }
+
+  &__sub-title {
+    padding-left: 90px;
+    @include mobile {
+      padding-left: 20px;
+    }
+  }
 }
 
 .active {
@@ -161,15 +190,18 @@
 }
 
 ul.room-types{
-    @include sm {
-    display: table;
-    margin: 0 auto 10px;
+  margin: 20px 80px;
+  @include mobile {
+    margin: 20px 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
   }
   li {
     padding: 8px 10px;
-    @include sm {
-      float: none;
-      display: inline-block;
+    display: inline-block;
+    @include mobile {
+      padding: 5px;
     }
     a {
       @include font-size(14px);
@@ -196,40 +228,6 @@ ul.room-types{
   }
 }
 
-ul.rooms-list{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content:space-between;
-  margin: 0;
-  > li{
-    width: 100%;
-    background:$default-bg;
-    margin-bottom: 110px;
-    display: none;
-    transition: all 1s ease;
-    opacity: 1;
-    animation: all 0.3s;
-    position: relative;
-    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
-    .room-short-info{
-      padding: 27px 20px 20px;
-      width: 100%;
-      float: left;      
-      @include sm {
-        padding: 27px 50px 20px;
-      }
-    }
-    &.show{
-      display: block;
-      animation: bounceList 0.3s;
-      opacity: 1;
-    }
-    @include sm {
-      width: 48%;
-    }
-  }
-}
-
 ul.rooms-list__room-item__facilities__tag {
   margin-top: 20px;
   h4.sub-title {
@@ -239,10 +237,7 @@ ul.rooms-list__room-item__facilities__tag {
   }
   li {
     padding: 5px 10px;
-    @include sm {
-      float: none;
-      display: inline-block;
-    }
+    display: inline-block;
   }
 }
 
@@ -260,9 +255,16 @@ ul.rooms-list__room-item__facilities__tag {
     margin: 0px 25px 110px 25px;
     background:$default-bg;
     box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+    @include mobile {
+      width: 100%;
+      margin: 0px 0px 100px 0px;
+    }
     .room-short-info{
       padding: 30px 20px 60px;
       width: 100%;
+      @include mobile {
+        padding: 30px 20px;
+      }
     } 
 
     &__header {
@@ -275,19 +277,16 @@ ul.rooms-list__room-item__facilities__tag {
       h6{
         @include font-size(26px);
         font-weight: 700;
-        // @include sm {
-        //   float: left;
-        //   text-align: left;
-        //   margin-bottom: 0;
-        // }
+        @include mobile {
+          @include font-size(21px);
+        }
       }
       .price{
         @include font-size(26px);
         font-weight: 700;
-        // @include sm {
-        //   float: right;
-        //   text-align: right;
-        // }
+        @include mobile {
+          @include font-size(21px);
+        }
       }
     }
 
@@ -878,6 +877,9 @@ ul.rooms-list__room-item__facilities__tag {
       width: 31%;
       background:$default-bg;
       box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+      @include mobile {
+        width: 100%;
+      }
     }
 
     &__content {
