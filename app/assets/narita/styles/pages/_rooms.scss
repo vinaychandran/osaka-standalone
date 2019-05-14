@@ -184,10 +184,7 @@
   }
 }
 
-.active {
-  background-color: #013961;
-  color:#ffffff !important;
-}
+
 
 ul.room-types{
   margin: 20px 80px;
@@ -219,6 +216,10 @@ ul.room-types{
       border: solid 1px #979797;
       &:hover {
         background-color: #8ec1df !important;
+      }
+      &.active {
+        background-color: #013961;
+        color:#ffffff;
       }
 
       @include sm {
