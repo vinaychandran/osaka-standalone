@@ -14,14 +14,14 @@
       padding: 90px 0;
     }
     h3{
-      font-family: 'Lato-B';
+      font-family: $go-bold;
       line-height: 1;
       margin-bottom: 30px;
       letter-spacing: 0.8px;
     }
     p{
       @include font-size(14px);
-      font-family: $mi-regular;
+      font-family: $go-bold;
        line-height: 2;
        margin: 0;
     }
@@ -143,23 +143,24 @@
     text-align: center;
     @include font-size(20px);
     font-weight: 700;
-    font-family: $mi-regular;
-    margin-bottom: 30px;
+    font-family: $go-bold;
   }
 
   h4.sub-title {
+    font-family: $go-bold;
     text-align: left !important;
     margin-bottom: unset;
-    padding-top: 20px;
+    padding-top: 40px;
   }
   h6.swipe {
     display: none;
-    font-size: 20px;
+    font-family: $go-bold;
+    @include font-size(20px);
     font-weight: 400;
     color: #808080;
     @include mobile {
       display: block;
-      font-size: 13px;
+      @include font-size(13px);
       position: absolute;
       right: 0;
       margin-right: 10px;
@@ -172,7 +173,7 @@
   }
 
   &__content {
-    font-family: $mi-regular;
+    font-family: $go-bold;
     margin-top: 60px;
   }
 
@@ -181,13 +182,16 @@
     @include mobile {
       padding-left: 20px;
     }
+    h4 {
+      font-weight: 400;
+    }
   }
 }
 
 
 
 ul.room-types{
-  margin: 20px 80px;
+  margin: 20px 80px 0px;
   @include mobile {
     margin: 20px 10px;
     overflow-x: scroll;
@@ -201,12 +205,12 @@ ul.room-types{
       padding: 5px;
     }
     a {
-      @include font-size(14px);
+      @include font-size(20px);
       padding: 10px;
-      font-family: $go-bold;
+      font-family: $mi-semibold;
       line-height: 1.43;
       letter-spacing: 1.4px;
-      font-weight: 700;
+      font-weight: 400;
       text-align: center;
       color: #000;
       display: block;
@@ -230,19 +234,17 @@ ul.room-types{
 }
 
 ul.rooms-list__room-item__facilities__tag {
-  margin-top: 20px;
-  h4.sub-title {
-    padding-left: unset;
-    font-size: 20px;
-    font-weight: 400;
-  }
+  margin-top: 10px;
+  margin-bottom: 0px;
   li {
-    padding: 5px 10px;
+    padding: 0px 15px 15px;
     display: inline-block;
   }
 }
 
 .rooms-list {
+  margin-top: 30px;
+  width: 100%;
   &:after {
     content: '';
     display: flex;
@@ -250,10 +252,8 @@ ul.rooms-list__room-item__facilities__tag {
   }
 
   &__room-item {
-    position: relative;
-    float: left;
     width: 45%;
-    margin: 0px 25px 110px 25px;
+    margin: 0 2.5% 10%; 
     background:$default-bg;
     box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
     @include mobile {
@@ -274,16 +274,18 @@ ul.rooms-list__room-item__facilities__tag {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       h6{
-        @include font-size(26px);
+        font-family: $go-bold;
+        @include font-size(20px);
         font-weight: 700;
         @include mobile {
           @include font-size(21px);
         }
       }
       .price{
-        @include font-size(26px);
+        font-family: $go-bold;
+        @include font-size(20px);
         font-weight: 700;
         @include mobile {
           @include font-size(21px);
@@ -292,17 +294,24 @@ ul.rooms-list__room-item__facilities__tag {
     }
 
     &__size {
-      font-size: 16px;
+      font-family: $go-bold;
+      @include font-size(14px);
+      margin-bottom: 30px;
     }
 
     &__content {
-      font-size: 20px;
+      width: 75%;
+      @include font-size(18px);
       line-height: normal;
+      margin-bottom: 40px;
     }
 
     &__facilities {
-      margin-top: 25px;
       border-top: solid 2px #979797;
+      h4 {
+        @include font-size(18px);
+        font-weight: 400;
+      }
     }
 
     .room-facilities{
@@ -350,8 +359,8 @@ ul.rooms-list__room-item__facilities__tag {
 }
 
 .tag {
-  @include font-size(14px);
-  padding: 5px;
+  @include font-size(16px);
+  padding: 5px 10px 5px 0px;
   font-family: $go-bold;
   line-height: 1.43;
   text-align: center;
@@ -366,9 +375,9 @@ ul.rooms-list__room-item__facilities__tag {
     left: -15px;
     width: 0;
     height: 0;
-    border-top: 15px solid transparent;
+    border-top: 16px solid transparent;
     border-right: 15px solid #8ec1df;
-    border-bottom: 15px solid transparent;
+    border-bottom: 16px solid transparent;
   }
   @include sm {
     margin: 0;
@@ -384,6 +393,11 @@ ul.rooms-list__room-item__facilities__tag {
     @include center(vertical);
     right: 30px;
   }
+}
+
+.btn {
+  @include font-size(20px);
+  font-weight: 400;
 }
 
 @keyframes bounceList {
@@ -531,23 +545,26 @@ ul.rooms-list__room-item__facilities__tag {
   }
   h2{
     @include font-size(18px);
-    font-family: $mi-regular;
+    font-family: $go-semibold;
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 10px;
     @include sm {
-      @include font-size(24px);
+      @include font-size(32px);
       margin-bottom: 15px;
     }
   }
   .room-quick-info{
     @include font-size(12px);
-    font-family: $mi-regular;
+    font-family: $go-semibold;
     opacity: 0.5;
     padding-bottom: 40px;
     @include sm {
       @include font-size(14px);
       padding-bottom: 50px;
+    }
+    &--top {
+      padding: 0px 0px 10px;
     }
   }
 }
@@ -600,7 +617,7 @@ ul.rooms-list__room-item__facilities__tag {
 
 .room-info-slider-thumb{
   display: none;
-  padding: 10px 0;
+  padding: 10px 0 0;
   @include md {
     display: flex;
     flex-wrap:wrap;
@@ -620,13 +637,13 @@ ul.rooms-list__room-item__facilities__tag {
   background: $secondary-color;
   padding: 40px 20px;
   text-align: left;
-  margin: 20px 15px;
-  @include sm {
-    margin: 0 0 30px;
-    padding: 75px 55px;
+  margin: 0;
+  @include mobile {
+    margin: 20px 0px 0px;
   }
   h5{
-    @include font-size(16px);
+    font-family: $go-semibold;
+    @include font-size(18px);
     font-weight: 500;
     line-height: 1.25;
     letter-spacing: 3.2px;
@@ -637,30 +654,84 @@ ul.rooms-list__room-item__facilities__tag {
 }
 
 .room-general-info {
-  font-family: $go-semibold;
+  margin-bottom: 20px;
+  @include mobile {
+    margin-bottom: 0;
+  }
   &__title {
-    margin: 20px 0px;
-    @include font-size(24px);
-    
+    margin: 30px 0px;
+    @include mobile {
+      margin: 20px 0px;
+    }
+    h4 {
+      font-family: $go-bold;
+      @include font-size(24px);
+    }
   }
   &__content {
+    margin-bottom: 10px;
     @include font-size(18px);
+    @include mobile {
+      @include font-size(16px);
+      line-height: 1.5;
+    }
+  }
+  h4.sub-title {
+    font-family: $go-semibold;
+    padding-top: 35px;
+    @include font-size(18px);
+    font-weight: 400;
+  }
+  &__facilities {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    li {
+      padding: 0px 15px 15px;
+      display: inline-block;
+      .tag {
+        font-family: $go-semibold;
+        @include font-size(20px);
+        &:before{
+          left: -18px;
+          border-top: 19px solid transparent;
+          border-right: 18px solid #8ec1df;
+          border-bottom: 19px solid transparent;
+          @include mobile {
+            left: -12px;
+            border-top: 12px solid transparent;
+            border-right: 12px solid #8ec1df;
+            border-bottom: 12px solid transparent;
+          }
+        }
+        @include mobile {
+          @include font-size(14px);
+          padding: 2px 10px 2px 0px;
+        }
+      }
+    }
   }
 }
 
 .room-highlight-wrap{
-  padding: 30px 0 0;
-
+  padding: 30px 0 30px;
+  @include mobile {
+    padding: 20px 0 10px;
+  }
   @include md {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    padding: 20px 0px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
   }
   .checkin-checkout{
     padding-bottom: 25px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    @include mobile {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding-top: 25px;
+      padding-bottom: 0;
+      border-bottom: unset;
+    }
     @include md {
       width: 100%;
       padding-bottom: 0;
@@ -671,14 +742,42 @@ ul.rooms-list__room-item__facilities__tag {
       font-family: $go-semibold;
       margin-bottom: 15px;
       font-weight: 500;
+      @include mobile {
+        @include font-size(14px);
+      }
+      &--in-and-out {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &__right {
+        padding-right: 100px;
+      }
     }
     .note{
       font-family: $go-semibold;
-      @include font-size(10px);
+      @include font-size(12px);
       margin-top: 10px;
       letter-spacing: 0.6px;
       font-weight: 500;
       line-height: 1.7;
+      @include mobile {
+        @include font-size(10px);
+      }
+    }
+
+    &--right {
+      margin-left: 100px;
+      @include mobile {
+        margin-left: 0;
+      }
+    }
+    &--left {
+      @include mobile {
+        padding-bottom: 25px;
+      }
     }
   }
 
@@ -745,48 +844,53 @@ ul.rooms-list__room-item__facilities__tag {
     flex-wrap:  wrap;
     align-items:center;
     @include md {
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+      border-top: 1px solid rgba(0,0,0,0.1);
       padding: 15px 0;
     }
     li{
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+      border-top: 1px solid rgba(0,0,0,0.1);
       width: 50%;
       padding: 15px 5px;
       display: flex;
       align-items: center;
       @include md {
-        border-bottom: 0;
+        border-top: 0;
         width: 25%;
       }
       span{
         padding-left: 15px;
         @include font-size(12px);
-        font-family: $go-bold;
-        font-weight: 700;
+        font-family: $go-semibold;
+        font-weight: 400;
       }
       i{
         @include font-size(29px);
       }
     }
   }
+  &__show-more {
+    text-align: center;
+    margin-top: 20px;
+    @include font-size(18px);
+  }
 }
 
 .room-features{
   background:$secondary-color;
-  padding: 50px 20px 20px;
-  margin: 0 15px;
+  padding: 0px 20px 20px;
+  margin: 0;
   @include md {
     padding: 0px 0 25px;
-    margin: 0;
+    margin: 60px 0px;
   }
   h3{
     @include font-size(16px);
     font-weight: 500;
-    font-family: $mi-regular;
+    font-family: $go-semibold;
     letter-spacing: 1.5px;
     margin-bottom: 35px;
     @include md {
-      @include font-size(20px);
+      @include font-size(28px);
       margin-bottom: 50px;
       letter-spacing: 2px;
     }
@@ -796,8 +900,8 @@ ul.rooms-list__room-item__facilities__tag {
     max-width: 645px;
     margin:0 auto 60px;
     line-height: 1.8;
-    font-family: $mi-regular;
-    @include font-size(14px);
+    font-family: $go-semibold;
+    @include font-size(16px);
     @include md {
       margin:0 auto 75px;
       line-height: 2;
@@ -820,7 +924,7 @@ ul.rooms-list__room-item__facilities__tag {
     font-weight: 700;
   }
   .strech{
-    margin: 0 -35px 40px;
+    margin: 0 -20px 40px;
     @include md {
       margin: 0px 0px 40px;
     }
@@ -868,38 +972,70 @@ ul.rooms-list__room-item__facilities__tag {
 .room-reservation {
   margin: 60px 0px 0px;
   font-family: $go-semibold;
+  @include mobile {
+    margin: 20px 0px 0px;
+  }
+  h3 {
+    @include font-size(16px);
+    font-weight: 500;
+    @include md {
+      @include font-size(28px);
+    } 
+  }
   &__list {
     display: flex;
     flex-flow: row wrap;
-    justify-content:space-between;
-    margin: 0;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    @include mobile {
+      margin-top: 20px;
+    }
     &__item {
-      margin: 25px 0px;
-      width: 31%;
+      margin: 0 1%;
+      width: 30%;
       background:$default-bg;
       box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
       @include mobile {
         width: 100%;
+        margin: 20px 15px;
       }
     }
 
+    &__header {
+      position: relative;
+      .price {
+        background-color: #232d48;
+        width: 35%;
+        padding: 10px 12px;
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        &--text {
+          @include font-size(16px);
+          color: #fff;
+        }
+      }
+    }
+    
+
     &__content {
-      padding: 30px 20px 30px;
+      padding: 20px;
       &__header {
         width: 100%;
         margin-bottom: 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        h6, .price {
-          font-size: 20px !important;
+        h6 {
+          @include font-size(20px);
           font-weight: 600;
         }
       }
       &__info {
         text-align: left;
         p {
-          font-size: 16px !important;
+          @include font-size(16px);
+          font-weight: 400;
         }
       }
       .btn {

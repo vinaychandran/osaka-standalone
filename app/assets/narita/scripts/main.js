@@ -692,6 +692,7 @@ const FE = {
                         $('body').addClass('modal-open');
                         let checkSlider = true;
                         FE.global.lazyLoad();
+                        FE.global.showRoomAmenities();
                     },
                     beforeClose: (instance) => {
                         $('.roomPopup .room-info-slider').slick('unslick');
@@ -715,7 +716,7 @@ const FE = {
                 console.log('clicked');
                 //$('.basicLightbox').animate({scrollTop: $('#reservationBlock').offset().top},'slow');
                 $('.basicLightbox').animate({ scrollTop: $('#reservationBlock').offset().top}, 500);  
-            });         
+            });    
         },
         autocomplatePopup: () => {
             $(document).on('click', '.input-custom button', function() {
@@ -1128,6 +1129,24 @@ const FE = {
                 element.className = filteredList.join(' ');
             }
         },
+
+        showRoomAmenities:() => {
+            const roomAmenities = document.getElementById('roomAmenities');
+            if (roomAmenities) {
+                let item = 0;
+                $('.item').hide();
+                $('.room-amenities__show-more').click(function (e) {
+                    e.preventDefault();
+                    var $container = $(e.currentTarget).closest('.accordion-container');
+                    if ($container.find('.item:eq('+item+')').is(':hidden')) {
+                        $container.find('.item:not(:lt('+item+'))').slideDown();
+                    } else {
+                        $container.find('.item:not(:lt('+item+'))').slideUp();
+                    }
+                });
+            }
+        },
+
 
         showCheckBoxAction: () => {
             $(document).on('click', '.form-checkbox .checkbox-style input', function() {

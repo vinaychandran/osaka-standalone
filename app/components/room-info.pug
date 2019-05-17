@@ -1,6 +1,7 @@
 .room-info-container
 	h2 スタンダードトリプル
-	.room-quick-info 65m² / 禁煙ルームのみ / 定員 4名
+	.room-quick-info.room-quick-info--top 15㎡ ~  / 禁煙ルーム / 定員 2名
+	.room-quick-info 無料Wi-Fiにてインターネット接続可能
 	.room-info-slider-container
 		.room-info-slider
 			div.slick-slide
@@ -49,16 +50,16 @@
 			.room-general-info__title
 				h4 スタンダードルーム
 			.room-general-info__content 全て46〜50階に位置しており、地上180mから大阪の街を一望いただけます。
-			ul.rooms-list__room-item__facilities__tag
-				h4.sub-title ベッドタイプ
+			h4.sub-title ベッドタイプ
+			ul.room-general-info__facilities
 				li
 					.tag セミダブル
 				li
 					.tag ダブル
 				li
 					.tag クイーン
-			ul.rooms-list__room-item__facilities__tag
-				h4.sub-title おすすめタイプ
+			h4.sub-title おすすめタイプ
+			ul.room-general-info__facilities
 				li
 					.tag セミダブル
 				li
@@ -74,69 +75,74 @@
 				li
 					.tag ダブル
 		.room-highlight-wrap
-			.checkin-checkout
-				.time チェックイン 
-					span 15:00
-				.time チェックアウト 
-					span 11:00
-				.note ※チェックアウトが遅れた場合1時間につき ¥2000の遅延金が発生致します。
-			.checkin-checkout
+			.checkin-checkout.checkin-checkout--left
+				.time.time--in-and-out 
+					span チェックイン 
+					span.time__right 15:00
+				.time.time--in-and-out 
+					span チェックアウト 
+					span.time__right 11:00
+				.note ※レイトチェックアウト：1時間につき¥2,000。
+			.checkin-checkout.checkin-checkout--right
 				.time 禁煙ルーム　あり 
 				.time 最大宿泊人数　2 
 				.time 広さ　15㎡〜 
-		.room-amenities
-			ul
-				li
-					i.icon-mini-fridge
-					span 無料Wi-fi
-				li
-					i.icon-breakfast
-					span シャワートイレ
-				li
-					i.icon-pay
-					span 携帯充電器
-				li
-					i.icon-cottonswab
-					span シャンプー
-			ul
-				li
-					i.icon-cleaningservice
-					span 無料Wi-fi
-				li
-					i.icon-coupleorientedroom
-					span シャワートイレ
-				li
-					i.icon-conditioner
-					span 携帯充電器
-				li
-					i.icon-cookware
-					span シャンプー
-			ul
-				li
-					i.icon-cleaningservice
-					span 無料Wi-fi
-				li
-					i.icon-coupleorientedroom
-					span シャワートイレ
-				li
-					i.icon-conditioner
-					span 携帯充電器
-				li
-					i.icon-cookware
-					span シャンプー
-			ul
-				li
-					i.icon-cleaningservice
-					span 無料Wi-fi
-				li
-					i.icon-coupleorientedroom
-					span シャワートイレ
-				li
-					i.icon-conditioner
-					span 携帯充電器
-				li
-					i.icon-cookware
-					span シャンプー				
+		.room-amenities#roomAmenities
+			.accordion-container
+				ul.title
+					li
+						i.icon-mini-fridge
+						span 無料Wi-fi
+					li
+						i.icon-breakfast
+						span シャワートイレ
+					li
+						i.icon-pay
+						span 携帯充電器
+					li
+						i.icon-cottonswab
+						span シャンプー
+				ul.item
+					li
+						i.icon-cleaningservice
+						span 無料Wi-fi
+					li
+						i.icon-coupleorientedroom
+						span シャワートイレ
+					li
+						i.icon-conditioner
+						span 携帯充電器
+					li
+						i.icon-cookware
+						span シャンプー
+				ul.item
+					li
+						i.icon-cleaningservice
+						span 無料Wi-fi
+					li
+						i.icon-coupleorientedroom
+						span シャワートイレ
+					li
+						i.icon-conditioner
+						span 携帯充電器
+					li
+						i.icon-cookware
+						span シャンプー
+				ul.item
+					li
+						i.icon-cleaningservice
+						span 無料Wi-fi
+					li
+						i.icon-coupleorientedroom
+						span シャワートイレ
+					li
+						i.icon-conditioner
+						span 携帯充電器
+					li
+						i.icon-cookware
+						span シャンプー				
+				.room-amenities__show-more
+					a(href='#') もっと見る
 	.room-features
 		.feature
 			.strech
@@ -148,47 +154,50 @@
 		h3 お部屋を選んで予約
 		.room-reservation__list
 			.room-reservation__list__item
-				a(href="#")
-					img.lazy(src='/assets/narita/images/room-big1.jpg')
+				.room-reservation__list__header
+					a(href="#")
+						img.lazy(src='/assets/narita/images/room-big1.jpg')
+					.price
+						.price--text ¥6,600~
 				.room-reservation__list__content
 					.room-reservation__list__content__header
 						h6 ツイン（禁煙）
-						.price ¥6,600~
 					.room-reservation__list__content__info 
 						p ベッドタイプ：ツイン
 						p ベッド数：2
 						p ベッドサイズ：1100
 						p 最大宿泊人数：2
 						p エキストラベッド：0
-					.btn(href="#") もっと見る
-						i.mys-arrow-left.white
+					.btn(href="#") 予約する
 			.room-reservation__list__item
-				a(href="#")
-					img.lazy(src='/assets/narita/images/room-big1.jpg')
+				.room-reservation__list__header
+					a(href="#")
+						img.lazy(src='/assets/narita/images/room-big1.jpg')
+					.price
+						.price--text ¥6,600~
 				.room-reservation__list__content
 					.room-reservation__list__content__header
 						h6 ツイン（禁煙）
-						.price ￥9,000~
 					.room-reservation__list__content__info 
 						p ベッドタイプ：ツイン
 						p ベッド数：2
 						p ベッドサイズ：1100
 						p 最大宿泊人数：2
 						p エキストラベッド：0
-					.btn(href="#") もっと見る
-						i.mys-arrow-left.white
+					.btn(href="#") 予約する
 			.room-reservation__list__item
-				a(href="#")
-					img.lazy(src='/assets/narita/images/room-big1.jpg')
+				.room-reservation__list__header
+					a(href="#")
+						img.lazy(src='/assets/narita/images/room-big1.jpg')
+					.price
+						.price--text ¥6,600~
 				.room-reservation__list__content
 					.room-reservation__list__content__header
 						h6 ツイン（禁煙）
-						.price ¥6,600~
 					.room-reservation__list__content__info 
 						p ベッドタイプ：ツイン
 						p ベッド数：2
 						p ベッドサイズ：1100
 						p 最大宿泊人数：2
 						p エキストラベッド：0
-					.btn(href="#") もっと見る
-						i.mys-arrow-left.white
+					.btn(href="#") 予約する
