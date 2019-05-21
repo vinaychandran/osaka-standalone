@@ -1026,6 +1026,7 @@ ul.rooms-list__room-item__facilities__tag {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        text-align: left;
         h6 {
           @include font-size(20px);
           font-weight: 600;

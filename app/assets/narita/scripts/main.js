@@ -693,6 +693,7 @@ const FE = {
                         let checkSlider = true;
                         FE.global.lazyLoad();
                         FE.global.showRoomAmenities();
+                        FE.global.equalHeightByRow('.room-reservation__list__content .room-reservation__list__content__header', true);
                     },
                     beforeClose: (instance) => {
                         $('.roomPopup .room-info-slider').slick('unslick');
