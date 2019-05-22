@@ -1134,15 +1134,16 @@ const FE = {
         showRoomAmenities:() => {
             const roomAmenities = document.getElementById('roomAmenities');
             if (roomAmenities) {
-                let item = 0;
-                $('.item').hide();
+                let item__collapse = 0;
+                $('.item__collapse').hide();
                 $('.room-amenities__show-more').click(function (e) {
+                    console.log('show more clicked');
                     e.preventDefault();
                     var $container = $(e.currentTarget).closest('.accordion-container');
-                    if ($container.find('.item:eq('+item+')').is(':hidden')) {
-                        $container.find('.item:not(:lt('+item+'))').slideDown();
+                    if ($container.find('.item__collapse:eq('+item__collapse+')').is(':hidden')) {
+                        $container.find('.item__collapse:not(:lt('+item__collapse+'))').slideDown();
                     } else {
-                        $container.find('.item:not(:lt('+item+'))').slideUp();
+                        $container.find('.item__collapse:not(:lt('+item__collapse+'))').slideUp();
                     }
                 });
             }
