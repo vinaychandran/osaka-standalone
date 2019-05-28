@@ -1142,8 +1142,10 @@ const FE = {
                     var $container = $(e.currentTarget).closest('.accordion-container');
                     if ($container.find('.item__collapse:eq('+item__collapse+')').is(':hidden')) {
                         $container.find('.item__collapse:not(:lt('+item__collapse+'))').slideDown();
+						$(this).find('i').addClass('gly-rotate-270').removeClass('gly-rotate-90');
                     } else {
                         $container.find('.item__collapse:not(:lt('+item__collapse+'))').slideUp();
+						$(this).find('i').removeClass('gly-rotate-270').addClass('gly-rotate-90');
                     }
                 });
             }
@@ -1332,6 +1334,7 @@ const FE = {
             FE.global.pageScroll();
             FE.global.campaignpopup();
             FE.global.equalHeightByRow('.rooms-list__room-item', true);
+			FE.global.showRoomAmenities();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize
