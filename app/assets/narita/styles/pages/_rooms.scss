@@ -219,7 +219,9 @@ ul.room-types{
       border-radius: 8px;
       border: solid 1px #979797;
       &:hover {
-        background-color: #8ec1df !important;
+        background-color: #013961 !important;
+        color:#ffffff;
+        opacity: 1;
       }
       &.active {
         background-color: #013961;
@@ -395,7 +397,9 @@ ul.rooms-list__room-item__facilities__tag {
   }
 }
 
-.btn {
+
+
+.single-room-wrap .btn, .rooms-list-wrap__content .btn{
   @include font-size(20px);
   font-weight: 400;
 }
