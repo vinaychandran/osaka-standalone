@@ -64,7 +64,7 @@
     position: relative;
     opacity: 0.8;
     @include md {
-      max-width: initial;  
+      max-width: none;  
       margin: 0;
       padding: 35px 60px;
       opacity: 1;
