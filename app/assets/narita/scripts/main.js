@@ -44,6 +44,67 @@ const FE = {
             }, 3000);
         },
 
+        validateEmail: function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        },
+        subscribeForm: function subscribeForm() {
+            if ($('#hidIsDisplaySubscribe').length > 0 && $('#hidIsDisplaySubscribe').val() === 'true') {
+                if (isMobile) {
+                    //setTimeout(function() {
+                            $('.subscribe-form-popup').addClass('show');
+                            $('.popup-overlay-wrapper').addClass('show');
+                        //},
+                        //6000);
+                } else {
+                    if ($('#city').length > 0) {
+                        setTimeout(function () {
+                            $('.subscribe-form-popup').addClass('show');
+                            $('.popup-overlay-wrapper').addClass('show');
+                        }, 1600);
+                    } else {
+                        $('.subscribe-form-popup').addClass('show');
+                        $('.popup-overlay-wrapper').addClass('show');
+                    }
+                }
+            } else {
+                //$('.subscribe-header').fadeIn(500);
+            }           
+
+            $('.subscribe-form .close').on('click', function () {
+                $('.subscribe-form-popup').removeClass('show');
+                $('.popup-overlay-wrapper').removeClass('show');
+               // $('.subscribe-header').fadeIn(500);
+            });
+
+            $('.popup-overlay-wrapper').on('click', function () {
+                $('.subscribe-form-popup').removeClass('show');
+                 $('.popup-overlay-wrapper').removeClass('show');
+                //$('.subscribe-header').fadeIn(500);
+            });
+
+            // $('.subscribe-header').on('click', function () {
+            //     $(this).hide();
+            //     $('.subscribe-form-popup').addClass('show');
+            //     $('.popup-overlay-wrapper').addClass('show');
+            // });
+
+            $(document).on('click', '#SubscribeFormCampaign .btn-subscribe', function(e) {
+                e.preventDefault();
+                if (FE.global.checkValidationRules('#SubscribeFormCampaign')) {
+                    if (!FE.global.validateEmail($('#SubscribeFormCampaign .email').val())) {
+                        $('#SubscribeFormCampaign .email').addClass('error-border');
+                    }
+                    else{
+                        $('#SubscribeFormCampaign .email').removeClass('error-border');
+                        $('#SubscribeFormCampaign .campaign-popup-image').hide();
+                        $('#SubscribeFormCampaign form').hide();
+                        $('#SubscribeFormCampaign .subscribe-thanks').show();
+                    }
+                }
+            });           
+        },
+
         navigatePage: (page) => {
             location.href = page;
         },
@@ -602,13 +663,23 @@ const FE = {
         lightBox: () => {
             const getTargetHTML = function(elem) {
                 const id = elem.getAttribute('data-show-id')
-                const target = document.querySelector(`[data-id="${ id }"]`)
+                const target = document.querySelector('[data-id="'+ id +'"]')
                 return target.outerHTML
             }
-            document.querySelectorAll('[data-show-id]').forEach(function(elem) {
-                const html = getTargetHTML(elem);
+
+
+            var lightBoxArray = document.querySelectorAll("[data-show-id]");
+
+            for ( var i = 0; i < lightBoxArray.length; i++ ) (function(i){ 
+              // lightBoxArray[elem].onclick = function() {
+              //     // do something
+              // }
+            
+            // document.querySelectorAll('[data-show-id]').forEach(function(elem) {
+                const html = getTargetHTML(lightBoxArray[i]);
                 // elem.onclick = basicLightbox.create(html).show;
-                elem.onclick = basicLightbox.create(html, {
+                //elem.onclick = basicLightbox.create(html, {
+                lightBoxArray[i].onclick = basicLightbox.create(html, {                
                     afterShow: (instance) => {
                         //FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', false);
                         const bookingWidgetId = document.querySelector('.basicLightbox--visible .booking-widget-container');
@@ -617,7 +688,7 @@ const FE = {
                         }
                         MystaysBookingWidget.LoadedCalendar($('#hidLanguage').val(), '#popupcontainer',false,true)
                         //FE.global.datePickerInit('.date-picker-venue-rpf', false)
-                        let SlideNumber = elem.getAttribute('data-slide')
+                        let SlideNumber = lightBoxArray[i].getAttribute('data-slide')
                         FE.global.lazyLoad();
                         FE.global.sliderImage('.gallery-nav', 1, false, true);
                         $('.gallery-nav').slick('slickGoTo', SlideNumber, true);
@@ -629,7 +700,7 @@ const FE = {
                     },
                     beforeShow: (instance) => {
                         let body = document.body;
-                        body.dataset.form = elem.getAttribute('data-show-id');
+                        body.dataset.form = lightBoxArray[i].getAttribute('data-show-id');
 
                         $('body').addClass('modal-open');
                         
@@ -641,7 +712,7 @@ const FE = {
                         $('body').removeClass('modal-open');
                     }
                 }).show
-            })
+            })(i);
             $(document).on('click', '.basicLightbox .closeBtn', function() {
                 $('.basicLightbox').removeClass('basicLightbox--visible')
                 setTimeout(() => {
@@ -668,7 +739,7 @@ const FE = {
         lightBoxRoom: () => {
             const getTargetHTML = function(elem) {
                 const id = elem.getAttribute('data-show-rooms')
-                const target = document.querySelector(`[data-id="${ id }"]`)
+                const target = querySelector('[data-id="'+ id +'"]')
                 return (target) ? target.outerHTML : '';
             }
             document.querySelectorAll('[data-show-rooms]').forEach(function(elem) {
@@ -1335,6 +1406,7 @@ const FE = {
             FE.global.campaignpopup();
             FE.global.equalHeightByRow('.rooms-list__room-item', true);
 			FE.global.showRoomAmenities();
+            FE.global.subscribeForm();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

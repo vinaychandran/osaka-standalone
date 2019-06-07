@@ -1,0 +1,332 @@
+.popup-overlay-wrapper{
+    position: relative;
+    overflow: hidden;
+    &.show{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0 auto;
+        height: 100%;
+        background-color: rgba(0, 17, 51, 0.9);
+        z-index: 99999;
+    }
+}    
+
+.subscribe-header {
+    background: #ffd25d;
+    text-align: center;
+    padding: 5px 0;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 30px;
+    z-index: 99;
+    a{
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+
+.subscribe-form {
+    padding: 20px;
+    margin: 18px 0 30px;
+    border-radius: 0;
+    @extend %clearfix;
+    @include sm {
+        padding: 20px;
+        margin: 18px 0;
+    }
+    @include md {
+        padding: 43px 83px;
+    }              
+    label{
+        display: none;
+        &.error{
+            display:none !important;
+        }
+    }            
+    
+
+    button.btn-subscribe{
+        
+        background-color: #222d4b;
+        color: #fff;            
+        @include sm {
+            width:20%;
+            float: right;
+            background: url(../images/newsletter-arrow-icon.svg) #222d4b no-repeat 118px 17px;
+        }
+    }
+    .input-wrap{
+        margin: 0 -2%;
+        @include sm {
+            width: 80%;
+            margin: 0;
+        }
+    }          
+    input {
+        padding: 10px;  
+        height: 50px;
+        line-height: 25px;
+        margin-bottom: 10px;
+        border: none;
+        width:100%;
+        float: left;
+        @include sm {
+            margin-bottom: 0;
+            width: 40%;
+        }
+        border-radius: 0;
+        &::-webkit-input-placeholder {                
+            color: #7b7b85;
+        }
+        &::-moz-placeholder {
+           
+            color: #7b7b85;
+        }
+        &:-moz-placeholder {
+            
+            color: #7b7b85;
+        }
+        &:-ms-input-placeholder {               
+            color: #7b7b85;
+        }
+        &.name {
+           // background-image: url(../images/subscribe-img.svg);
+            //background-position: 18px 14px;
+           // background-repeat: no-repeat;            
+            width: 46%;
+            margin: 0 2% 10px;
+            @include sm {
+                width: 25%;  
+                margin:0 10px 0 0;              
+            }
+        }
+        &.email {
+            //background-image: url(../images/subscribe-img.svg);
+            //background-position: 16px -31px;
+            //background-repeat: no-repeat; 
+            margin: 0 2% 10px;
+            width: 96%;
+            @include sm {
+                margin: 0 0 0 10px;
+                width: 40%; 
+            }                             
+        }
+        &:hover, &:focus{
+            border: none;
+            outline: 0;
+        }
+        &.error{
+            background-color: #fee;
+            border-color: #ee6552;
+        }
+    }
+    .subscribe-thanks{
+        display: none;
+    }
+}
+
+#SubscribeFormCampaign{
+    width: 320px;
+    position: fixed;
+    transition: all 1s;
+    max-height: 0;   
+    z-index: 100001;
+    //-webkit-animation-name: silde_to_bottom;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-delay: 0;
+    -webkit-animation-play-state: running;
+    -webkit-animation-fill-mode: forwards;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include sm {
+        width: 500px;
+    }
+    .subscribe-form{ 
+        margin: 0 !important;
+        padding: 0;   
+        background:#fff !important; 
+        color: #000;     
+        h3{
+            font-size: 24px;
+            margin:0 0 15px;
+            line-height: 28px;  
+        }
+        p{
+            margin: 0;
+            font-size: 12px;
+            padding-top: 8px;
+            clear: both;
+        }
+        form{
+            margin: 0;
+            padding: 10px 12px;
+        }
+        input{
+            height: 36px;
+            padding: 4px 6px;
+            border: 1px solid #ccc;
+            color: #000;
+            &[type="text"]{
+                @include sm {
+                    margin-right: 10px;
+                }
+            }
+            width: 46%;
+            @include sm {
+                width: 30%;
+            }
+            &.email{  
+                width: 96%; 
+                @include sm {
+                    margin-left: 0;
+                    width: 30%;
+                }
+            }
+        }
+        button{
+            height: 36px;
+            line-height: 36px; 
+            background: #FFD25D;  
+            color: #222d4b;
+            padding: 0px 12px;  
+            margin: 0; 
+        }
+
+    }
+
+    .campaign-popup-image{
+        img{
+            display: block;
+        }
+    }
+
+    &.subscribe-campaign{
+        top: -800px; 
+    }
+
+
+    .subscribe-thanks{
+        p{
+            font-size: 26px;
+            padding: 10px;
+            line-height: 1.3;
+            text-align: center;
+        }
+        
+    }
+
+    .close{
+        position: absolute;
+        top: -50px;
+        right: 4px;
+        font-size: 30px !important;
+        cursor:pointer;
+        z-index: 9;
+        color: #fff;
+        font-family: "Lato", "Tahoma", "Verdana", "Arial", "sans-serif";
+    }
+    
+}
+
+
+@-webkit-keyframes silde_to_top {
+    0% {
+        bottom: -500px;
+    }
+    100% {
+        bottom: 0;
+        max-height: 1000px;
+    }
+}
+
+@-webkit-keyframes silde_to_bottom {
+    0% {
+        bottom: -200px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+@keyframes silde_to_bottom {
+    0% {
+        bottom: -200px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+@-moz-keyframes silde_to_bottom {
+    0% {
+        bottom: -200px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+
+@-webkit-keyframes silde_to_center {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 50%;
+        max-height: 1000px;
+    }
+}
+
+@-moz-keyframes silde_to_center {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 50%;
+        max-height: 1000px; 
+    }
+}
+
+@keyframes silde_to_center {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 50%;
+        max-height: 1000px;
+    }
+}
+
+#SubscribeDefault.show{
+    -webkit-animation-name: silde_to_bottom;
+    -moz-animation-name: silde_to_bottom;
+    animation-name: silde_to_bottom;
+}
+
+#SubscribeCampaign.show{
+    -webkit-animation-name: silde_to_center;
+    -moz-animation-name: silde_to_center;
+    animation-name: silde_to_center;
+}
+
+#SubscribeFormCampaign.show{
+    -webkit-animation-name: silde_to_center;
+    -moz-animation-name: silde_to_center;
+    animation-name: silde_to_center;
+}
+
+
+
+#SubscribeCampaign .close-banner{
+display: block;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+}
+
+#SubscribeCampaign a img {display:block}
