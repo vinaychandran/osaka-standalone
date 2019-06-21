@@ -739,7 +739,7 @@ const FE = {
         lightBoxRoom: () => {
             const getTargetHTML = function(elem) {
                 const id = elem.getAttribute('data-show-rooms')
-                const target = querySelector('[data-id="'+ id +'"]')
+                const target = document.querySelector('[data-id="'+ id +'"]')
                 return (target) ? target.outerHTML : '';
             }
             document.querySelectorAll('[data-show-rooms]').forEach(function(elem) {
@@ -762,7 +762,14 @@ const FE = {
                         FE.global.openModalTab('resturant-tabs');
                         $('body').addClass('modal-open');
                         let checkSlider = true;
-                        FE.global.lazyLoad();
+                        const myLazyLoad = new LazyLoad({
+                            elements_selector: '.lazy',
+                            threshold: 0,
+                            callback_enter: function(element){
+                                $(element).addClass('loaded');
+                            }
+                        });
+                        myLazyLoad.loadAll();
                         FE.global.showRoomAmenities();
                         FE.global.equalHeightByRow('.room-reservation__list__content .room-reservation__list__content__header', true);
                     },
@@ -787,7 +794,8 @@ const FE = {
             $(document).on('click', '.book-room', function() {
                 console.log('clicked');
                 //$('.basicLightbox').animate({scrollTop: $('#reservationBlock').offset().top},'slow');
-                $('.basicLightbox').animate({ scrollTop: $('#reservationBlock').offset().top}, 500);  
+                let scrollHeight = $('.roomPopup .room-detail').height() - $('.roomPopup #reservationBlock').height() -100;
+                $('.basicLightbox').animate({ scrollTop: scrollHeight}, 500);  
             });    
         },
         autocomplatePopup: () => {
