@@ -4,18 +4,34 @@
     }
     .facilities-menu {
         background: $default-bg;
-        padding: 25px 60px 25px 35px;
-        display: none;
-        margin: -29px auto 10px;
+        padding: 10px 0;
+        display: block;
+        overflow: hidden;
+        margin: 0;
         position: relative;
-        @include md {
+        &:after{
+            content: "";
+            position: absolute;
+        }
+        @include sm {
+            padding: 25px 60px 25px 35px;
+            margin: -29px auto 10px;
             display: table;
         }
         ul {
+            white-space: nowrap;
+            overflow: auto;
+            width: 100%;
+            margin: 0;
             li {
-                float: left;
+                display: inline-block;
                 padding: 0 40px;
                 position: relative;
+                @include sm {
+                    display: block;
+                    float: left;
+                    padding: 0 25px;
+                }
                 a {
                     @include font-size(13.6px);
                     letter-spacing: 1.6px;
@@ -28,8 +44,11 @@
                         padding: 3px;
                         transform: rotate(45deg);
                         position: absolute;
-                        right: 23px;
+                        right: 10px;
                         top: 5px;
+                        @include sm {
+                            right: 23px;
+                        }
                     }
                 }
             }
@@ -38,12 +57,16 @@
     .facilities-info {
         background: $default-bg;
         max-width: none;
+        padding: 40px 20px;
         .container {
             max-width: 666px;
             h3 {
-                @include font-size(20px);
-                line-height: 48px;
+                @include font-size(18px);
+                line-height: 1.3;
                 margin-bottom: 20px;
+                @include sm {
+                    @include font-size(20px);
+                }
             }
         }        
     }
@@ -102,81 +125,7 @@
                 }
             }
         }
-    }
-    .facilities-list-wrap {
-        background: #fafafa;
-        padding: 60px 10px 20px;
-        @include md {
-            padding: 0;
-        }
-        .container {
-            background: none;
-            padding-bottom: 20px;
-            .venue-list {
-                margin-bottom: 40px;
-                .facility-short-info {
-                    @include font-size(14px);
-                    line-height: 20px;
-                    padding-bottom: 40px;
-                    h6 {
-                        font-weight: bold;
-                    }
-                    p {
-                        font-weight: 500;
-                        margin: 0;
-                        padding-bottom: 20px;
-                    }
-                    .timings {
-                        border-top: 1px solid #f1f3ee;
-                        padding: 20px 0 10px 0;
-                        h3 {
-                            @include font-size(14px);
-                            line-height: 26px;
-                            font-weight: bold;
-                            padding-bottom: 10px;
-                        }
-                        span {
-                            display: block;
-                            @include font-size(14px);
-                            line-height: 20px;
-                            font-weight: 500;
-                        }
-                    }
-                }
-            }            
-            .amusement-list {
-                display: none;
-                @include md {
-                    display: flex;
-                }
-                .amusement-info {
-                    text-align: center;
-                    position: relative;
-                    padding: 27px 50px 60px;
-                    h6 {
-                        @include font-size(20px);
-                        line-height: 20px;
-                        font-weight: bold;
-                        float: none;
-                        text-align: center;
-                        margin-bottom: 30px;
-                        font-family: $go-bold;
-                    }
-                    p {
-                        font-family: $mi-regular;
-                        @include font-size(14px);
-                        line-height: 28px;
-                        font-weight: 500;
-                        letter-spacing: 1.4px;
-                    }
-                    .room-more {
-                        width: 80%;
-                        bottom: -40px;
-                    }
-                }
-            }
-        }
-    }
+    }    
     .promo-content {
         background: $default-bg;
         h4 {
@@ -203,6 +152,187 @@
             }
         }
     }
+}
+
+.facilities-list-wrap {
+    background: #fafafa;
+    padding: 0 10px 20px;
+    @include md {
+        padding: 0;
+    }
+    .container {
+        background: none;
+        padding-bottom: 20px;
+    }
+    .venue-list {
+        margin-bottom: 40px;
+        > li{
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .facility-short-info {
+            @include font-size(14px);
+            line-height: 20px;
+            padding-bottom: 20px;
+            @include sm {
+                padding-bottom: 40px;
+            }
+            h6 {
+                font-weight: bold;
+                font-size: 20px;
+                color: #000;  
+            }            
+        }
+        .facility-box-info {
+            font-family: $mi-regular;
+            @include font-size(14px);
+            line-height: 28px;
+            font-weight: 500;
+            letter-spacing: 1.4px;
+            padding-bottom: 20px;
+            ul{
+                margin: 0;
+                border: 0;
+                list-style: inside;
+            }
+            li{
+                margin: 0;
+                display: list-item;
+                line-height: 1.5;
+            }
+        }
+        .timings {
+            border-top: 1px solid #f1f3ee;
+            padding: 20px 0 10px 0;
+            h3 {
+                @include font-size(14px);
+                line-height: 26px;
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+            span {
+                display: block;
+                @include font-size(14px);
+                line-height: 20px;
+                font-weight: 500;
+            }
+            ul{
+                margin: 0;
+                border: 0;
+                list-style: inside;
+            }
+            li{
+                margin: 0;
+                display: list-item;
+                line-height: 1.5;
+            }
+        } 
+        .see-more {
+            text-align: center;
+            position: absolute;
+            display: block;
+            float: none;
+            margin: 0;
+            width: auto;
+            left: 20px;
+            right: 20px;
+            bottom: 20px; 
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: $default-color;
+                top: 8px;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: $default-color;
+                top: 10px;
+            }
+            span {
+                background: $secondary-color;
+                font-weight: 700;
+                color: #c5ad6c;
+                padding: 0 35px;
+                position: relative;
+                z-index: 1;
+            }
+        } 
+
+    }  
+    .shop-list {
+        > li{            
+            margin-bottom: 30px;               
+            @include sm {
+                width: calc(100% / 2 - 30px);
+                margin-bottom: 60px; 
+                padding-bottom: 110px;
+            }
+        }
+
+        .read-more{            
+            padding: 30px 90px; 
+            display: block;
+            margin: 0 15px;
+            @include sm {
+                position: absolute;
+                right: 30px;
+                bottom: 30px; 
+                margin: 0;
+            }
+        }
+        .mys-arrow-left{
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);  
+        }
+    }          
+    .amusement-list {
+        display: none;
+        @include md {
+            display: flex;
+        }
+        .amusement-info {
+            text-align: center;
+            position: relative;
+            padding: 27px 50px 60px;
+            h6 {
+                @include font-size(20px);
+                line-height: 20px;
+                font-weight: bold;
+                float: none;
+                text-align: center;
+                margin-bottom: 30px;
+                font-family: $go-bold;
+            }
+            .facility-box-info {
+                font-family: $mi-regular;
+                @include font-size(14px);
+                line-height: 28px;
+                font-weight: 500;
+                letter-spacing: 1.4px;
+                ul{
+                    margin: 0;
+                    border: 0;
+                    list-style: inside;
+                }
+                li{
+                    margin: 0;
+                    display: list-item;
+                }
+            }
+            .room-more {
+                width: 80%;
+                bottom: -40px;
+            }
+        }
+    }    
 }
 
 .facilities-detail-popup {

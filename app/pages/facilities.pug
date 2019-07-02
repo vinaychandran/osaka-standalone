@@ -1,22 +1,7 @@
 extends ../layouts/default
 
 block append content
-    .facilities-main-page
-        section.inner-page-mobile-menu
-            .menu-gradient
-            ul
-                li
-                    a(href="#" data-show-rooms="facilities-full-info") フィットネス
-                        i.down 
-                li
-                    a(href="#") ショップリスト
-                        i.down 
-                li
-                    a(href="#") アミューズメント
-                        i.down 
-                li
-                    a(href="#") サービスについて
-                        i.down         	
+    .facilities-main-page            	
         section.main-banner
             picture.banner-image
                 source(media='(min-width: 768px)', srcset='/assets/narita/images/facilities/facilities-banner.jpg')
@@ -24,166 +9,219 @@ block append content
             .banner-text
                 h1 設備
         section.facilities-menu
+            .menu-gradient
             ul
                 li
                     a(href="#" data-show-rooms="facilities-full-info") フィットネス
                         i.down 
                 li
-                    a(href="#") ショップリスト
+                    a(href="#item1") ショップリスト
                         i.down 
                 li
-                    a(href="#") アミューズメント
+                    a(href="#item2") アミューズメント
                         i.down 
                 li
-                    a(href="#") サービスについて
+                    a(href="#item3") サービスについて
                         i.down         	
         section.about-resturants-info.facilities-info
             .container
                 h3 TOGETHER IN  STYLE
                 p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-        section.design-info
-            source(media='(min-width: 768px)', srcset='/assets/narita/images/facilities/1.jpg')
-            img(src='/assets/narita/images/facilities/1.jpg') 
-            .container
-                .design-content
-                    h2 ELEGANTLY REFINED AND SUMPTUOUSLY DESIGNED
-                    p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-                .design-img
-                    img.lazy(data-src='/assets/narita/images/facilities/2.png')
+        //- section.design-info
+        //-     source(media='(min-width: 768px)', srcset='/assets/narita/images/facilities/1.jpg')
+        //-     img(src='/assets/narita/images/facilities/1.jpg') 
+        //-     .container
+        //-         .design-content
+        //-             h2 ELEGANTLY REFINED AND SUMPTUOUSLY DESIGNED
+        //-             p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+        //-         .design-img
+        //-             img.lazy(data-src='/assets/narita/images/facilities/2.png')
         section.venues-list-wrap.facilities-list-wrap
             .container
-                h4 ショップリスト
+                h4#item1 ショップリスト
                 ul.venue-list
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
                                 span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る
                     li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
                         .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
                             .timings 
                                 h3 営業時間       
                                 span 9:00 a.m.-6:00 p.m.
-                                span 9:00 a.m.-6:30 p.m.（日曜祝日）           							
-                            a.see-more(href="#" data-show-rooms="facilities-full-info")
-                                span もっと見る
-                h4.visible-desktop アミューズメント
-                ul.rooms-list.amusement-list
-                    li.show
+                                span 9:00 a.m.-6:30 p.m.（日曜祝日）
+                        a.see-more(href="#" data-show-rooms="facilities-full-info")
+                            span もっと見る                
+                h4#item2 ショップリスト
+                ul.venue-list.shop-list
+                    li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-                        .room-short-info.amusement-info
+                        .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-                                .btn.room-more.popup(data-show-rooms="facilities-full-info") もっと見る
-                                    i.mys-arrow-left.white
-                    li.show
+                            .facility-box-info 多彩の素材を使用したホテルならではの美味しさと、旬感を愉しみながらカロリーバランスのとれた「食」を満喫していただけます。また、ご希望の内容やご予算に応じてもお作りいたします。 
+                            .timings 
+                                h3 営業時間       
+                                span 9:00 a.m.-6:00 p.m.
+                                span 9:00 a.m.-6:30 p.m.（日曜祝日）
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-                        .room-short-info.amusement-info
+                        .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-                                .btn.room-more.popup(data-show-rooms="facilities-full-info") もっと見る
-                                    i.mys-arrow-left.white
-                    li.show
+                            .facility-box-info
+                                ul
+                                    li test
+                                    li test1
+                                    li test2
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-                        .room-short-info.amusement-info
+                        .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-                                .btn.room-more.popup(data-show-rooms="facilities-full-info") もっと見る
-                                    i.mys-arrow-left.white
-                    li.show
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら       
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
                         img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-                        .room-short-info.amusement-info
+                        .venue-short-info.facility-short-info
                             h6 スーペリアツインハイフロア
-                            p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-                                .btn.room-more.popup(data-show-rooms="facilities-full-info") もっと見る
-                                    i.mys-arrow-left.white
-        section.promo-content
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら         
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.facility-short-info
+                            h6 スーペリアツインハイフロア
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら        
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.facility-short-info
+                            h6 スーペリアツインハイフロア
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら        
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.facility-short-info
+                            h6 スーペリアツインハイフロア
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら        
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.facility-short-info
+                            h6 スーペリアツインハイフロア
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら         
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.facility-short-info
+                            h6 スーペリアツインハイフロア
+                            .facility-box-info あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら         
+                        a.btn.read-more(href="#")  
+                            | もっと見る
+                            i.mys-arrow-left.white
+        section.promo-content#item3
             h4 サービスについて
             .container
                 ul.row
