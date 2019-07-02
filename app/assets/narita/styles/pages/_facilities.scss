@@ -25,12 +25,12 @@
             margin: 0;
             li {
                 display: inline-block;
-                padding: 0 40px;
+                padding: 0 25px;
                 position: relative;
                 @include sm {
                     display: block;
                     float: left;
-                    padding: 0 25px;
+                    padding: 0 40px;  
                 }
                 a {
                     @include font-size(13.6px);
@@ -47,7 +47,7 @@
                         right: 10px;
                         top: 5px;
                         @include sm {
-                            right: 23px;
+                            right: 23px;  
                         }
                     }
                 }
