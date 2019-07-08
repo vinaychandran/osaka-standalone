@@ -30,25 +30,41 @@
 section.about-venue-info
     h3 TOGETHER IN  STYLE
     p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-.room-info-container.venue-info-container
-    .room-overview.venue-overview
-        h5 会場概要
-        .venue-facilities
-            ul
-                li 立食時の人数目安
-                    span 〜1200人
-                li 着席時の人数目安
-                    span 〜600人
-            ul
-                li 階
-                    span B1F
-                li 面積
-                    span 432㎡
-                li 面天井高積
-                    span 4m
-            .btn.btn-download
-                span フロアマップのPDFを ダウンロード
-                i.icon-download
+.venue-facilities    
+    h5 会場概要
+    .search-result-table
+        table
+            thead
+                tr
+                    th Room Name
+                    th
+                        | M
+                        sup 2
+                    th Dimensions
+                    th Banqt
+                    th Rcptn
+                    th U-Shape
+                    th Theater
+                    th Classrm
+                    th Hollow sq
+                    th Conf
+            tbody
+                tr
+                    td Name 1
+                    td 200
+                    td 20x10
+                    td 75
+                    td 50
+                    td 200
+                    td 200
+                    td 200
+                    td -
+                    td 
+    .btn.btn-download
+        span フロアマップのPDFを ダウンロード
+        i.icon-download
+section.room-info-container.venue-info-container
+    .room-overview.venue-overview    
         .venue-layout
             h4 レイアウト図
             .tabs#layout-tabs
@@ -74,7 +90,6 @@ section.about-venue-info
                     img(src='/assets/narita/images/layout.jpg')
                 .tabs-content
                     img(src='/assets/narita/images/layout.jpg')
-
         .meeting-details
             .meeting-details-container
               .column-one
@@ -105,7 +120,6 @@ section.about-venue-info
                 div
                   span 着席
                   span 200
-
         .price-details
           .price-details-container
             .column-one
@@ -125,16 +139,49 @@ section.about-venue-info
               div
                 span 展示会 終日
                 span ￥780,000
-
         .venue-links
             .links
                 a(href="#") FAQ
                 a(href="#") アメニティー・サービスリスト
             .note
                 p ※料金表示は税別価格　※ご利用時間：8:00～22:00
+        .venue-options-wrap
+            h6 オプション
+            .venue-options
+                .title 各種貸出機材
+                ul
+                    li テレビ
+                    li VHSビデオデッキ
+                    li テキストテキスト
+                    li テキストテキスト
+                    li テキストテキスト
+                    li テキストテキスト
+            .venue-options
+                .title お食事
+                ul
+                    li テレビ
+                    li VHSビデオデッキ
+                    li テキストテキスト
+                    li テキストテキスト
+                    li テキストテキスト
+                    li テキストテキスト
+            .venue-options
+                .title その他
+                .desc テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテストテキストテキストテキストテキストテキスト
+section.cta-venue-wrap
+    .container
+        h2 ご利用に関するお問い合わせ
+        h4 お電話またはお問い合わせフォームにてお問い合わせください。
+        .cta-venue-btn-wrap
+            .cta-phone-wrap
+                a(href="#").phone
+                    i.icon-phone
+                    | 03-6866-4343
+                p [受付]月～金曜日（平日） 9:00～18:00 
+            a.btn.btn-primary(href="#") お問い合わせフォーム
 .room-info-container
     .room-overview.benefits-overview
-        h4 特典
+        h4 特典 
         .benefits-details
             .meeting-benefits
                 h6 ミーティング特典
@@ -219,3 +266,4 @@ section.venues-list-wrap.venues-popup
                                 | 着席時  〜600人
                     a.see-more(href="#" data-show-rooms="room-full-info")
                         span もっと見る
+        a(href="#").btn.btn-venue-list 全ての会場をみる  

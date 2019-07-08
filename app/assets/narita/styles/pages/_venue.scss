@@ -192,6 +192,12 @@
         // };
       }
 
+      + .small{
+        @include md {
+          float: right;  
+        }
+      }
+
       h4 {
         position: absolute;
         top: 40%;
@@ -217,11 +223,11 @@
       }
     }
 
-    &:last-child {
-      @include md {
-        float: right;
-      };
-    }
+    // &:last-child {
+    //   @include md {
+    //     float: right;
+    //   }
+    // }
 
     h4 {
       @include font-size(16px);
@@ -328,6 +334,7 @@
   padding: 0 10px 20px;
   clear: both;
   background: #fafafa;
+  overflow: hidden;
   @include md {
     padding: 0 0 0;
   }
@@ -409,10 +416,10 @@ ul.venue-list {
     width: 100%;
     background: $default-bg;
     margin-bottom: 40px;
-    display: none;
+    display: block; 
     animation: all 0.3s ease;
     box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
-
+    position: relative;
     &.show {
       display: block;
       animation: bounceList 0.3s;
@@ -437,7 +444,7 @@ ul.venue-list {
   }
 
   .venue-short-info {
-    padding: 25px 25px 40px;
+    padding: 25px 25px 50px;
 
     h6 {
       @include font-size(14px);
@@ -502,11 +509,14 @@ ul.venue-list {
 
     .see-more {
       text-align: center;
-      position: relative;
-      margin-top: 20px;
+      position: absolute;
+      margin: 0;
       display: block;
       float: none;
-      margin-bottom: 0;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      width: auto;
       &:before {
         content: "";
         position: absolute;
@@ -601,60 +611,42 @@ ul.venue-list {
   margin-top: 0;
 }
 
-.venue-overview {
+
+.venue-facilities {
+
+  @extend %clearfix;
+  padding: 40px 15px 30px;
+  text-align: center; 
+  max-width: 1200px;
+  margin: 0 auto;
+
   h5 {
-    border-bottom: 2px solid $default-color;
     font-weight: bold;
   }
 
-  .venue-facilities {
-    @extend %clearfix;
-    padding: 40px 0 30px;
-    border-bottom: 1px solid #eee;
-
-    ul {
-      @include sm {
-        width: 33.3%;
-        float: left;
-        padding-right: 80px;
-      }
-
-      li {
-        @include font-size(14px);
-        line-height: 26px;
-        padding-bottom: 8px;
-        font-family: $go-semibold;
-        font-weight: 500;
-        span {
-          float: right;
-          font-weight: 700;
-          font-family: $go-bold;
-        }
-      }
+  .btn-download {
+    background: $default-color;;
+    position: relative;
+    margin: 30px auto 20px;
+    display: block;
+    max-width: 300px;  
+    span {
+      text-align: left;
+      display: block;
+      width: 75%;
     }
 
-    .btn-download {
-      background: $default-color;;
-      position: relative;
-
-      span {
-        text-align: left;
-        display: block;
-        width: 75%;
-      }
-
-      i {
-        @include center(vertical);
-        right: 30px;
-      }
-      @include sm {
-        float: left;
-        width: 33.3%;
-        padding: 30px;
-      }
+    i {
+      @include center(vertical);
+      right: 30px;
+    } 
+    @include sm {      
+      padding: 30px;
     }
   }
+}
 
+.venue-overview {
   .venue-layout {
     padding: 40px 0;
 
@@ -997,6 +989,7 @@ ul.venue-list {
         margin-bottom: 30px;
         text-align: left;
         font-family:$go-bold;
+        font-weight: 700;
         @include sm {
           text-align: center;
         }
@@ -1033,4 +1026,220 @@ ul.venue-list {
       font-weight: bold;
     }
   }
+}
+
+
+.btn-venue-list{
+      margin: 20px auto;
+    display: block;
+    max-width: 300px;     
+}
+
+.search-result-table {
+    margin-right: -15px;   
+    margin-top: 50px;     
+    @include sm {
+        margin-right: 0;
+        overflow-x: auto;
+        clear: both;
+    }
+    table {
+        width: calc(100% - 2px); 
+        overflow-x: auto;
+        margin-bottom: 0;
+        display: block;
+        th {
+            font-weight: 600;
+        }
+        @include xs {
+            display: block;
+        }
+        @include sm {
+            display: table;
+            word-break: break-all;
+        }
+        thead {
+            background: #dddee0;
+            border: 1px solid #dddee0;
+        }
+        tbody {
+            tr {
+                background: #fff;
+                &:nth-child(2n+0) {
+                    background: #f2f2f2;
+                }
+                td {
+                    font-weight: 300;
+                    font-size: 13px;
+                    border: 1px solid #e4e4e4;
+                    &:first-child {
+                        padding-right: 0;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        th:first-child,
+        td:first-child {
+            padding-left: 15px;
+            min-width: 140px;
+            @include sm {
+                padding-left: 20px;
+            }
+        }
+        th:last-child,
+        td:last-child {
+            padding-right: 15px;
+            @include sm {
+                padding-left: 20px;
+            }
+        }
+        th,
+        td { 
+            padding: 12px 5px;
+            min-width: 85px;  
+            text-align: center;                    
+        }
+    }
+}
+
+.cta-venue-wrap{
+    margin: 60px 0; 
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 40px 20px; 
+    .container{
+      
+      
+    }
+    h2{
+        font-size: 22px;
+        font-family: Meiryo;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0 0 20px;
+        @include sm {
+            font-size: 30px;
+        }
+    }
+    h4{
+        font-family: Meiryo;
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0 0 40px;
+    }
+
+    .cta-phone-wrap{
+        background: #fff;
+        width: 100%;
+        margin: 10px 0; 
+        padding:15px 10px 10px;
+        height: 76px;
+        @include sm {
+            width: 440px;
+            margin: 0 10px;
+        }
+        p{
+            font-size: 12px; 
+            margin: 0; 
+        }
+    }
+
+    .phone{
+        font-size: 30px;
+        font-family: Meiryo;
+        font-weight: 700;
+
+        i{
+            padding-right: 7px;
+            font-family: Meiryo;
+            font-weight: 400;
+            position: relative;
+            display: inline-block;
+            top: 0px;
+            font-size: 25px;
+        }
+
+    }
+
+    .icon-phone:before{
+      color: #000;
+    }
+
+    .btn-primary{
+        width: 100%;
+        margin: 10px 0;
+        font-size: 22px;
+        font-family: Meiryo;
+        font-weight: 700;
+        height: 76px;
+        line-height: 76px;
+        padding: 0;
+        display: block;  
+        @include sm {
+            width: 440px;
+            margin: 0 10px;
+        }
+    }
+}
+
+.cta-venue-btn-wrap{  
+  @include sm {
+      display: flex;
+      justify-content:center;
+  }
+}
+
+.venue-options-wrap{
+  margin: 40px 0 20px;
+  background: #fafafa;
+  h6{
+      text-align: center;
+      display: block;
+      border-bottom: 1px solid #E1E1E1;
+      background: #EFEFEF;
+      padding: 12px 15px;
+      font-family:$go-bold;
+      font-weight: 700;
+      @include font-size(14px);
+  }
+  .venue-options{
+    padding: 30px;
+    + .venue-options{
+      border-top: 1px solid #E1E1E1;
+    }
+  }
+  .title{
+    font-family:$go-bold;
+    font-weight: 700;
+    @include font-size(14px);
+    margin: 0 0 15px;
+    position: relative;
+    padding-left: 30px;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background-color: #333333;
+    }
+  }
+  .desc{
+     @include font-size(14px);
+     font-family: $go-semibold;
+     font-weight: 500;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      border-radius: 3px;
+      background-color: #ffffff;
+      padding: 10px 20px;
+      display: inline-block;
+      margin: 0 10px 10px 0;
+    }
+  } 
+
 }

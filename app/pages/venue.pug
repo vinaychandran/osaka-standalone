@@ -2,27 +2,12 @@ extends ../layouts/default
 
 block append content
 	.venue-page
-		section.inner-page-mobile-menu
-			.menu-gradient
-			ul
-				li
-					a(href="#") 会場一覧
-						i.down
-				li
-					a(href="#") ギャラリー
-						i.down
-				li
-					a(href="#") ケータリングメニュー
-						i.down
-				li
-					a(href="#") 所在地
-						i.down
 		section.main-banner
 			picture.banner-image
 				source(media='(min-width: 768px)', srcset='/assets/narita/images/venue-banner.jpg')
 				img(src='/assets/narita/images/venue-banner-mobile.png')
 			.banner-text
-				h1 会議・宴会
+				h1 会議・宴会 
 		//section.main-banner.venue-banner
 			picture.banner-image
 				source(media='(min-width: 768px)', srcset='/assets/narita/images/venue-banner.jpg')
@@ -42,21 +27,7 @@ block append content
 					| 000-0000-0000
 				.btn.pdf-download PDFをダウンロード
 					i.icon-download
-				.btn.rfp-form(data-show-id='rfp-form') お問い合わせ
-			.inner-menu.hidden-xs
-				ul
-					li
-						a(href="#") 会場一覧
-							i.down
-					li
-						a(href="#") ギャラリー
-							i.down
-					li
-						a(href="#") ケータリングメニュー
-							i.down
-					li
-						a(href="#") 所在地
-							i.down
+				.btn.rfp-form(data-show-id='rfp-form') お問い合わせ			
 		include ../components/rpf-form.pug
 		.about-venue-info-wrap
 			section.about-venue-info 
@@ -94,38 +65,39 @@ block append content
 		section.venues-list-wrap
 			.container
 				h4 会場一覧
-				ul.venue-types.filterSection
-					li
-						//- a.selected(data-room-type="all") 一覧表示
-						input(type="checkbox" checked="true" id="below30" value="30")
-						label(for="below30")
-							span
-							| 30名以下
-					li
-						//- //a(data-room-type="small") 30名以下
-						input( type="checkbox" id="middle30" value="60")
-						label(for="middle30")
-							span
-							| 31名〜60名
-					li
-						//- //a( data-room-type="medium") 31名〜60名
-						input( type="checkbox" id="above60"  value="100")
-						label(for="above60")
-							span
-							| 61名〜100名
+				//- ul.venue-types.filterSection
+				//- 	li
+				//- 		//- a.selected(data-room-type="all") 一覧表示
+				//- 		input(type="checkbox" checked="true" id="below30" value="30")
+				//- 		label(for="below30")
+				//- 			span
+				//- 			| 30名以下
+				//- 	li
+				//- 		//- //a(data-room-type="small") 30名以下
+				//- 		input( type="checkbox" id="middle30" value="60")
+				//- 		label(for="middle30")
+				//- 			span
+				//- 			| 31名〜60名
+				//- 	li
+				//- 		//- //a( data-room-type="medium") 31名〜60名
+				//- 		input( type="checkbox" id="above60"  value="100")
+				//- 		label(for="above60")
+				//- 			span
+				//- 			| 61名〜100名
 					//- li
 					//- 	a( data-room-type="big") 61名〜100名
 				ul.venue-list.itemsToFilter
 					li.showItem(data-type="30")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -140,9 +112,7 @@ block append content
 					li(data-type="60")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
@@ -151,23 +121,21 @@ block append content
 									span 天井の高さ
 									.size 3m
 								li
-									span 面積
-									.size
-										| 立食時  〜1200人
-										br
-										| 着席時  〜600人
+									span 天井の高さ
+									.size 3m								
 							a.see-more(href="#")
 								span もっと見る
 					li.showItem(data-type="30")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -182,13 +150,14 @@ block append content
 					li(data-type="100")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -203,13 +172,14 @@ block append content
 					li.showItem(data-type="30")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -224,13 +194,14 @@ block append content
 					li(data-type="60")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -245,13 +216,14 @@ block append content
 					li(data-type="60")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -266,13 +238,14 @@ block append content
 					li(data-type="100")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -287,13 +260,14 @@ block append content
 					li.showItem(data-type="30")
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.venue-short-info
-							h6 オークルーム
 							h5 スーペリアツインハイフロア
-							.floor MAIN FLOOR 4F
 							ul
 								li
 									span 面積
 									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
 								li
 									span 天井の高さ
 									.size 3m
@@ -305,6 +279,111 @@ block append content
 										| 着席時  〜600人
 							a.see-more(href="#")
 								span もっと見る
+				.search-result-table
+						table
+							thead
+								tr
+									th Room Name
+									th
+										| M
+										sup 2
+									th Dimensions
+									th Banqt
+									th Rcptn
+									th U-Shape
+									th Theater
+									th Classrm
+									th Hollow sq
+									th Conf
+							tbody
+								tr
+									td Name 1
+									td 200
+									td 20x10
+									td 75
+									td 50
+									td 200
+									td 200
+									td 200
+									td -
+									td -
+								tr
+									td Name 2
+									td 40
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+								tr
+									td Name 3
+									td 230
+									td 20x10
+									td 75
+									td 50
+									td 200
+									td 200
+									td 200
+									td -
+									td -
+								tr
+									td Name 4
+									td 65
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+								tr
+									td Name 5
+									td 180
+									td 20x10
+									td 75
+									td 50
+									td 200
+									td 200
+									td 200
+									td -
+									td -
+								tr
+									td Name 6
+									td 100
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+								tr
+									td Name 7
+									td 80
+									td 20x10
+									td 75
+									td 50
+									td 200
+									td 200
+									td 200
+									td -
+									td -
+								tr
+									td Name 8
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
+									td -
 		section.inner-page-slider-wrap
 			h2 ギャラリー
 			include ../components/inner-page-slider.pug
@@ -340,6 +419,17 @@ block append content
 							span 000-0000-0000
 				.btn.btn-map GOOGLE MAPで見る
 					i.mys-arrow-left.white
+		section.cta-venue-wrap
+			.container
+				h2 ご利用に関するお問い合わせ
+				h4 お電話またはお問い合わせフォームにてお問い合わせください。
+				.cta-venue-btn-wrap
+					.cta-phone-wrap
+						a(href="#").phone
+							i.icon-phone
+							| 03-6866-4343
+						p [受付]月～金曜日（平日） 9:00～18:00 
+					a.btn.btn-primary(href="#") お問い合わせフォーム
 		include ../components/breadcrumb.pug
 	#room-full-info(data-basicLightbox data-id="room-full-info" class="room-detail")
 		.room-info-header
