@@ -4,6 +4,12 @@ block append content
   include ../components/home-banner.pug
   include ../components/booking-widget.pug
   include ../components/home-slider.pug
+  a(href="#").standalone-ad-wrap
+    .img-wrap
+      img.lazy(data-src='/assets/narita/images/universal-studio.png')
+    .desc ユニバーサル・スタジオ・ジャパンへもかんたんアクセス！
+    span
+      i.mys-arrow-left.white
   .banner-middle
     picture
       source(media='(min-width: 768px)', data-srcset='/assets/narita/images/banner-middle.jpg')

@@ -244,3 +244,60 @@
     } 
   }
 }
+
+
+.standalone-ad-wrap{
+  max-width: 342px; 
+  height: 94px;
+  margin: 0 auto 60px;  
+  background-color: #f3efe2;
+  display: flex;
+  align-items:center;
+  @include font-size(12px);
+  font-family: $go-bold;  
+  font-weight: 700;  
+  position: relative;
+  text-decoration: none;  
+  @include sm {
+    max-width: 456px; 
+    @include font-size(18px);
+    height: 110px;
+    margin: -20px auto 60px;
+  }
+  .img-wrap{
+    width: 94px;
+    position: relative;
+    flex-grow: 0;    
+    flex-shrink: 0;  
+    @include sm {
+      width: 110px;
+    }  
+    img{
+      float: right;
+      max-width: 80px;
+      @include sm {
+          max-width: 94px;
+      }
+    }
+  }
+  .desc{
+    padding:0 17px;
+    line-height: 1.4;
+    @include sm {
+      padding:0 10px; 
+    }
+  }
+  span{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #c5ad6d;
+  }
+  .mys-arrow-left {
+    position: absolute;
+    left: 50%;
+    top: 40%;  
+  }
+}

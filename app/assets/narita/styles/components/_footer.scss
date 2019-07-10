@@ -92,7 +92,7 @@ footer {
   }
   .social-media{
     order:2;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     text-align: center;
     @include sm {
       text-align: left;
@@ -199,7 +199,40 @@ footer {
   order: 6;
   color: $secondary-color;
   opacity: 0.4;
+  clear: both;
   @include font-size(10px); 
    font-family: 'Lato';
   letter-spacing: 1px;
+}
+
+.footer-usj-content{
+  .img-wrap{
+    overflow: hidden;
+    margin-bottom: 40px;
+    img {
+      float: left;
+      max-width: 25%;
+      + img{
+        float: right;
+        max-width: 71%;   
+      }
+    }
+  }
+  .short-desc{
+    font-size: 11px;
+    color: #fff;
+    font-weight: 700;
+    font-weight: $go-bold;
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .desc{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    font-weight: 700;
+    font-weight: $go-bold;
+    line-height: 1.45;
+    letter-spacing: 0.55px; 
+    margin-bottom: 40px;
+  }
 }
