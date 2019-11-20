@@ -16,10 +16,14 @@ block append content
 					li
 						a( data-news-type="media") メディア	
 			ul.news-list
-				li.show(data-news="all news")
+				li.show.archived(data-news="all news")
 					.image-wrap
 						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
 						.news-tag トピックス
+						.archive-news-title archived
+					.news-tags-list
+						span News tag 1 Japanese
+						span News tag 2 
 					.room-short-info
 						.date 2018/11/20
 						h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
@@ -88,13 +92,13 @@ block append content
 						h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
 						a.see-more(href="news-detail.html")
 							span もっと見る
-				li.show(data-news="all media")
-					.image-wrap
-						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
-						.news-tag トピックス
-					.room-short-info
-						.date 2018/11/20
-						h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
-						a.see-more(href="news-detail.html")
-							span もっと見る
+				//- li.show(data-news="all media")
+				//- 	.image-wrap
+				//- 		img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+				//- 		.news-tag トピックス
+				//- 	.room-short-info
+				//- 		.date 2018/11/20
+				//- 		h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+				//- 		a.see-more(href="news-detail.html")
+				//- 			span もっと見る   
 	include ../components/breadcrumb.pug

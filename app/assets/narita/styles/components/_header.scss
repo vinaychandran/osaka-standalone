@@ -4,8 +4,8 @@ header{
   background: $footer-bg;
   position: fixed;
   z-index: 99999;
-  @include lg {
-  	height: 80px;
+  @include md {
+  	height: 80px;  
   }  
   .header-left{
   	float: left;
@@ -26,12 +26,7 @@ header{
 }
 
 .top-menu{
-   @include md {
-     display: none!important;
-   }
-   @include lg {
-		display: block !important;
-   }
+   
 	@include center(horizontal);
 	padding: 32px 20px 0;
 	ul{
@@ -121,14 +116,7 @@ header{
 	position: relative;
 	margin: 20px 15px;
 	cursor: pointer;
-	float: left;
-	display: block !important;
-	@include tablet {
-	   display: block !important;
-	}
-	@include md {		
-		display: block !important;
-	}
+	float: left;		
 	@include lg {
 		margin: 30px 35px;
 		display: none !important;

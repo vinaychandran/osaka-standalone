@@ -147,6 +147,20 @@
           font-weight: 500;
           margin: 0;
         }
+        .external-link{
+          position: relative;
+          display: block;
+          border: solid 1px #000000;
+          padding: 8px 30px;
+          color: #000000;
+          font-size: 12px;
+          margin-top: 10px;
+          img{
+            position: absolute;
+            right: 5px;
+            top: 5px;  
+          }
+        }
       }
     }
   }
@@ -478,5 +492,22 @@
         }
       }
     }
+  }
+}
+
+
+.btn-wedding{
+  max-width: 400px;
+  margin: 0 10px 50px;
+  display: block;
+  position: relative;
+  @include sm {
+    margin: 0 auto 50px;
+  }
+  .mys-arrow-left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 34px;  
   }
 }

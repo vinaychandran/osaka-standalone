@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block append content
+    .page-notfound
+        .page-notfound-container
+            i.icon-notfound
+            h2 Page Not Found.   
+            .error-message お探しのページは一時的にアクセスが出来ない状況にあるか、<br>移動もしくは削除された可能性があります。
+        include ../components/booking-widget.pug
+        include ../components/home-video-slider.pug
+            

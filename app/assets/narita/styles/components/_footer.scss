@@ -209,10 +209,13 @@ footer {
   .img-wrap{
     overflow: hidden;
     margin-bottom: 40px;
-    img {
+    a {
       float: left;
       max-width: 25%;
-      + img{
+      display: block; 
+      margin: 0;
+      + a{
+        display: block;
         float: right;
         max-width: 71%;   
       }

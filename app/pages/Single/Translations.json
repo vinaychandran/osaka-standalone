@@ -1,0 +1,250 @@
+{
+	"MystaysLanguages":[
+		{
+			"LanguageCode":"en",
+			"StaticContent":[
+				
+				{
+					"Key":"CheckInLabel",
+					"Value":"Check In"
+				},
+				{
+					"Key":"CheckOutLabel",
+					"Value":"Check Out"
+				},
+				{
+					"Key":"GuestHeaderLabel",
+					"Value":"Guest No."
+				},
+				{
+					"Key":"MultiGuestLabel1",
+					"Value":"Guests"
+				},
+				{
+					"Key":"SingleGuestLabel1",
+					"Value":"Guest"
+				},
+				{
+					"Key":"MultiGuestLabel2",
+					"Value":"Guests"
+				},
+				{
+					"Key":"SingleGuestLabel2",
+					"Value":"Guest"
+				},
+				{
+					"Key":"RoomsLabel",
+					"Value":"Rooms"
+				},
+				{
+					"Key":"AdultsLabel",
+					"Value":"Adults"
+				},
+				{
+					"Key":"ChildrenLabel",
+					"Value":"Children"
+				},
+				{
+					"Key":"ChildAgeLabel",
+					"Value":"Ages"
+				},
+				{
+					"Key":"ChildrenHigherLabel",
+					"Value":""
+				},
+				{
+					"Key":"ChildrenLowerLabel",
+					"Value":""
+				},
+				{
+					"Key":"ChildrenInfantLabel",
+					"Value":""
+				},
+				{
+					"Key":"GuestConfirmLabel",
+					"Value":"Confirm here"
+				},
+				{
+					"Key":"PromoCodeHeaderLabel",
+					"Value":"Promo Code"
+				},
+				{
+					"Key":"BookNowButtonLabel",
+					"Value":"Book Now"
+				}
+				
+			],
+			"DynamicContent":[
+				{
+					"Key":"CalendarHeader",
+					"Value":"Calendar"
+				},
+				{
+					"Key":"CheckinLabel",
+					"Value":"Check In"
+				},
+				{
+					"Key":"CheckoutLabel",
+					"Value":"Check Out"
+				},
+				{
+					"Key":"NightsOfStayDesktop",
+					"Value":"({days} Nights)"
+				},
+				{
+					"Key":"NightsOfStayOneNightDesktop",
+					"Value":"(1 Night)"
+				},
+				{
+					"Key":"NightsOfStayMobile",
+					"Value":"Ok ({days} Nights)"
+				},
+				{
+					"Key":"NightsOfStayOneNightMobile",
+					"Value":"Ok (1 Night)"
+				},
+				{
+					"Key":"MaximumRooms",
+					"Value":"8"
+				},
+				{
+					"Key":"MaximumAdults",
+					"Value":"15"
+				},
+				{
+					"Key":"MaximumChildren",
+					"Value":"8"
+				},
+				{
+					"Key":"MaximumChildAge",
+					"Value":"12"
+				}
+				
+			]
+		},
+		{
+			"LanguageCode":"ja",
+			"StaticContent":[
+				
+				{
+					"Key":"CheckInLabel",
+					"Value":"チェックイン"
+				},
+				{
+					"Key":"CheckOutLabel",
+					"Value":"チェックアウト"
+				},
+				{
+					"Key":"GuestHeaderLabel",
+					"Value":"ご利用人数"
+				},
+				{
+					"Key":"MultiGuestLabel1",
+					"Value":"人"
+				},
+				{
+					"Key":"SingleGuestLabel1",
+					"Value":"人"
+				},
+				{
+					"Key":"MultiGuestLabel2",
+					"Value":"人"
+				},
+				{
+					"Key":"SingleGuestLabel2",
+					"Value":"人"
+				},
+				{
+					"Key":"RoomsLabel",
+					"Value":"部屋"
+				},
+				{
+					"Key":"AdultsLabel",
+					"Value":"大人"
+				},
+				{
+					"Key":"ChildrenLabel",
+					"Value":"Children"
+				},
+				{
+					"Key":"ChildAgeLabel",
+					"Value":"Ages"
+				},
+				{
+					"Key":"ChildrenHigherLabel",
+					"Value":"小学校高学年"
+				},
+				{
+					"Key":"ChildrenLowerLabel",
+					"Value":"小学校低学年"
+				},
+				{
+					"Key":"ChildrenInfantLabel",
+					"Value":"幼児"
+				},
+				{
+					"Key":"GuestConfirmLabel",
+					"Value":"確認はこちら"
+				},
+				{
+					"Key":"PromoCodeHeaderLabel",
+					"Value":"プロモコード"
+				},
+				{
+					"Key":"BookNowButtonLabel",
+					"Value":"検索"
+				}
+				
+			],
+			"DynamicContent":[
+				{
+					"Key":"CalendarHeader",
+					"Value":"カレンダー"
+				},
+				{
+					"Key":"CheckinLabel",
+					"Value":"チェックイン"
+				},
+				{
+					"Key":"CheckoutLabel",
+					"Value":"チェックアウト"
+				},
+				{
+					"Key":"NightsOfStayDesktop",
+					"Value":"({days} 泊)"
+				},
+				{
+					"Key":"NightsOfStayOneNightDesktop",
+					"Value":"(1 泊)"
+				},
+				{
+					"Key":"NightsOfStayMobile",
+					"Value":"{days} 泊の予約へすすむ"
+				},
+				{
+					"Key":"NightsOfStayOneNightMobile",
+					"Value":"1 泊の予約へすすむ"
+				},
+				{
+					"Key":"MaximumRooms",
+					"Value":"8"
+				},
+				{
+					"Key":"MaximumAdults",
+					"Value":"15"
+				},
+				{
+					"Key":"MaximumChildren",
+					"Value":"5"
+				},
+				{
+					"Key":"MaximumChildAge",
+					"Value":"12"
+				}
+				
+			]
+		}
+	]
+
+
+}

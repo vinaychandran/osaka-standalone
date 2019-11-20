@@ -158,123 +158,123 @@ block append content
                                     li 料金為替は、対象の画面上で必ず「円」表示にした画面コピーをお送りください。
                                     li 必要事項が入力・添付されないまま申請いただいた場合は、無効となる場合がございます。
                                     li 当ページ記載内容は、予告なく変更される場合がございますので、予めご了承ください。
-        section.bestprice-page-booking
-            h2 お部屋を予約しませんか？
-            h3 最も安い「最低価格」で予約しませんか？
-            .booking-widget
-                #booking-tab1.tabs-content(onclick='FE.global.bookingWidgetClick()')
-                    .date-picker-tab1
-                        label チェックイン
-                        .date-picker-tab1-container
-                            .values
-                                .startDateContainer
-                                    //label チェックイン
-                                    .startDate
-                                        .value.date_at
-                                            span.date_at
-                                            input#date_at.date_at(type='hidden')
-                                .to ~
-                                .endDateContainer
-                                    //label チェックアウト
-                                    .endDate
-                                        .value.date_to
-                                            span.date_to
-                                            input#date_to.date_to(type='hidden')
-                            //.calendar-backdrop
-                            .calendar
-                                //img.clear(src='/assets/narita/images/clear.svg' )
-                                .button.button-prev
-                                .button.button-next
-                                .calendarContainer
-                                .bottomLayer
-                                    span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
-                                    .nights 1 金曜日
-                                    //.button.closePopup &#x5B8C;&#x4E86;
-                    .people
-                        label ご利用人数
-                        .people-list
-                          p
-                            | 大人
-                            span.adults 0
-                            | 名, 子供
-                            span.child 0
-                            | 名
-                            span.container
-                              span.room 0
-                              span.roomText 部屋
-                        .popup-wrap.popup-create
-                            //.overlay
-                            .big-popup.people-list-popup
-                                .head-popup
-                                    section.grown-up
-                                        .form-group
-                                            label.form-label(for='') 大人
-                                            .dropdown-custom
-                                              .input-custom
-                                                  button 0
-                                                  .popup-menu
-                                                      .popup-content-input
-                                                          ul.cities
-                                                              li
-                                                                span(target='Hokkaido', names='Hokkaido') 0人
-                                                              li
-                                                                span(target='Okinawa', names='Okinawa') 1人
-                                                              li
-                                                                span(target='Tochigi', names='Tochigi') 2人
-                                                              li
-                                                                span(target='Tokyo', names='Tokyo') 3人
-                                    section.children
-                                        .form-group
-                                            label.form-label(for='') 子供
-                                            .dropdown-custom
-                                              .input-custom
-                                                  button 0
-                                                  .popup-menu
-                                                      .popup-content-input
-                                                          ul.cities
-                                                              li
-                                                                span(target='Hokkaido', names='Hokkaido', value='0') 0人
-                                                              li
-                                                                span(target='Okinawa', names='Okinawa', value='1') 1人
-                                                              li
-                                                                span(target='Tochigi', names='Tochigi', value='2') 2人
-                                                              li
-                                                                span(target='Tokyo', names='Tokyo', value='3') 3人
-                                    section.room
-                                        .form-group
-                                            label.form-label(for='') 部屋
-                                            .dropdown-custom
-                                              .input-custom
-                                                  button 0
-                                                  .popup-menu
-                                                      .popup-content-input
-                                                          ul.cities
-                                                              li
-                                                                span(target='Hokkaido', names='Hokkaido') 0
-                                                              li
-                                                                span(target='Okinawa', names='Okinawa') 1
-                                                              li
-                                                                span(target='Tochigi', names='Tochigi') 2
-                                                              li
-                                                                span(target='Tokyo', names='Tokyo') 3
-                                .input-popup
-                                    .title 小学生の添い寝について
-                                    ul
-                                        li 大人1名様に対し、添い寝のお子様1名までとします。
-                                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
-                                        li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
-                                .btn-group
-                                    button.clear クリア
-                                    button.done 完了
-                    .promo-code
-                        section
-                            .form-group
-                                label.form-label(for='') プロモコード
-                                .input-custom
-                                    input.form-control(type='text', placeholder='プロモコード)')
-                    .find-button
-                        label 最低価格保証
-                        button(name='submit', type='submit', value='空室を検索') 空室を検索
+        //- section.bestprice-page-booking
+        //-     h2 お部屋を予約しませんか？
+        //-     h3 最も安い「最低価格」で予約しませんか？
+        //-     .booking-widget
+        //-         #booking-tab1.tabs-content(onclick='FE.global.bookingWidgetClick()')
+        //-             .date-picker-tab1
+        //-                 label チェックイン
+        //-                 .date-picker-tab1-container
+        //-                     .values
+        //-                         .startDateContainer
+        //-                             //label チェックイン
+        //-                             .startDate
+        //-                                 .value.date_at
+        //-                                     span.date_at
+        //-                                     input#date_at.date_at(type='hidden')
+        //-                         .to ~
+        //-                         .endDateContainer
+        //-                             //label チェックアウト
+        //-                             .endDate
+        //-                                 .value.date_to
+        //-                                     span.date_to
+        //-                                     input#date_to.date_to(type='hidden')
+        //-                     //.calendar-backdrop
+        //-                     .calendar
+        //-                         //img.clear(src='/assets/narita/images/clear.svg' )
+        //-                         .button.button-prev
+        //-                         .button.button-next
+        //-                         .calendarContainer
+        //-                         .bottomLayer
+        //-                             span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+        //-                             .nights 1 金曜日
+        //-                             //.button.closePopup &#x5B8C;&#x4E86;
+        //-             .people
+        //-                 label ご利用人数
+        //-                 .people-list
+        //-                   p
+        //-                     | 大人
+        //-                     span.adults 0
+        //-                     | 名, 子供
+        //-                     span.child 0
+        //-                     | 名
+        //-                     span.container
+        //-                       span.room 0
+        //-                       span.roomText 部屋
+        //-                 .popup-wrap.popup-create
+        //-                     //.overlay
+        //-                     .big-popup.people-list-popup
+        //-                         .head-popup
+        //-                             section.grown-up
+        //-                                 .form-group
+        //-                                     label.form-label(for='') 大人
+        //-                                     .dropdown-custom
+        //-                                       .input-custom
+        //-                                           button 0
+        //-                                           .popup-menu
+        //-                                               .popup-content-input
+        //-                                                   ul.cities
+        //-                                                       li
+        //-                                                         span(target='Hokkaido', names='Hokkaido') 0人
+        //-                                                       li
+        //-                                                         span(target='Okinawa', names='Okinawa') 1人
+        //-                                                       li
+        //-                                                         span(target='Tochigi', names='Tochigi') 2人
+        //-                                                       li
+        //-                                                         span(target='Tokyo', names='Tokyo') 3人
+        //-                             section.children
+        //-                                 .form-group
+        //-                                     label.form-label(for='') 子供
+        //-                                     .dropdown-custom
+        //-                                       .input-custom
+        //-                                           button 0
+        //-                                           .popup-menu
+        //-                                               .popup-content-input
+        //-                                                   ul.cities
+        //-                                                       li
+        //-                                                         span(target='Hokkaido', names='Hokkaido', value='0') 0人
+        //-                                                       li
+        //-                                                         span(target='Okinawa', names='Okinawa', value='1') 1人
+        //-                                                       li
+        //-                                                         span(target='Tochigi', names='Tochigi', value='2') 2人
+        //-                                                       li
+        //-                                                         span(target='Tokyo', names='Tokyo', value='3') 3人
+        //-                             section.room
+        //-                                 .form-group
+        //-                                     label.form-label(for='') 部屋
+        //-                                     .dropdown-custom
+        //-                                       .input-custom
+        //-                                           button 0
+        //-                                           .popup-menu
+        //-                                               .popup-content-input
+        //-                                                   ul.cities
+        //-                                                       li
+        //-                                                         span(target='Hokkaido', names='Hokkaido') 0
+        //-                                                       li
+        //-                                                         span(target='Okinawa', names='Okinawa') 1
+        //-                                                       li
+        //-                                                         span(target='Tochigi', names='Tochigi') 2
+        //-                                                       li
+        //-                                                         span(target='Tokyo', names='Tokyo') 3
+        //-                         .input-popup
+        //-                             .title 小学生の添い寝について
+        //-                             ul
+        //-                                 li 大人1名様に対し、添い寝のお子様1名までとします。
+        //-                                 li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
+        //-                                 li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
+        //-                         .btn-group
+        //-                             button.clear クリア
+        //-                             button.done 完了
+        //-             .promo-code
+        //-                 section
+        //-                     .form-group
+        //-                         label.form-label(for='') プロモコード
+        //-                         .input-custom
+        //-                             input.form-control(type='text', placeholder='プロモコード)')
+        //-             .find-button
+        //-                 label 最低価格保証
+        //-                 button(name='submit', type='submit', value='空室を検索') 空室を検索
 
 
         include ../components/breadcrumb.pug

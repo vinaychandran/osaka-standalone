@@ -219,7 +219,7 @@
     &:nth-child(3n+3){
       margin-right: 0;   
     }    
-    &:nth-child(2) .number {
+    &:nth-child(10n+2) .number {
       span{
         background: #013961;
       }
@@ -227,7 +227,7 @@
         background: #013961;
       }
     }
-    &:nth-child(3) .number {
+    &:nth-child(10n+3) .number {
       span{
         background: #552b5d;
       }
@@ -235,7 +235,7 @@
         background: #552b5d;
       }
     }
-    &:nth-child(4) .number{
+    &:nth-child(10n+4) .number{
       span{
         background: #ec6826;
       }
@@ -243,7 +243,7 @@
         background: #ec6826;
       }
     }
-    &:nth-child(5) .number{ 
+    &:nth-child(10n+5) .number{ 
       span{
         background: #baad95;
       }
@@ -251,7 +251,7 @@
         background: #baad95;
       }
     }
-    &:nth-child(6) .number {
+    &:nth-child(10n+6) .number {
       span{
         background: #bbd9ec;
       }
@@ -259,7 +259,7 @@
         background: #bbd9ec;
       }
     }
-    &:nth-child(7) .number{ 
+    &:nth-child(10n+7) .number{ 
       span{
         background: #8ec1df;
       } 
@@ -267,7 +267,7 @@
         background: #8ec1df;
       }
     }
-    &:nth-child(8) .number {
+    &:nth-child(10n+8) .number {
       span{
         background:  #6bafa9;
       } 
@@ -275,7 +275,7 @@
         background: #6bafa9;
       }
     }
-    &:nth-child(9) .number {
+    &:nth-child(10n+9) .number {
       span{
         background:  #7cb427;
       } 
@@ -283,9 +283,9 @@
         background: #7cb427;
       }
     }
-    &:nth-child(10) .number{ 
+    &:nth-child(10n+10) .number{ 
       span{
-        background:  #1a489c;
+        background:  #1a489c;  
       } 
       &:after{
         background: #1a489c;

@@ -1259,8 +1259,10 @@ const FE = {
                     $item.removeClass('is-active');
                 }
                 return false;
+            });  
+            
+            $('.best-price-main-page .accordion-item:first-child .accordion-title').click();        
 
-            });
         },
 
         campaignpopup: function(event) {
@@ -1360,9 +1362,15 @@ const FE = {
             MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab1', false, false, false,false,false);
             MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab2', false, false, true, true, true);
             MystaysBookingWidget.Loaded($('#hidLanguage').val(), false, false, '#booking-tab3', false, false, false, false, false);
-            if (isMobile) {
+            var childCountHomeSlider, homeSlider;
+            homeSlider = document.querySelector('.home-slider-nav');
+            if(homeSlider){
+             childCountHomeSlider = homeSlider.children.length
+            }
+            console.log(childCountHomeSlider);
+            if (isMobile && childCountHomeSlider > 1) {
                 FE.global.sliderImage('.home-slider-nav', 1, true, false);
-            } else {
+            } else if(childCountHomeSlider > 2) {
                 FE.global.sliderImage('.home-slider-nav', 3, false, true);
             }
             if (isMobile) {

@@ -34,6 +34,9 @@ block append content
 						.contact
 							h6 お問い合わせ
 							p 000-0000-0000
+							a.external-link(href="#") 
+								img(src='/assets/narita/images/external-link.svg')
+								span オフィシャルサイト
 						a.see-more(href="#")
 							span もっと見る
 				li
@@ -105,6 +108,10 @@ block append content
 							p 000-0000-0000
 						a.see-more(href="#")
 							span もっと見る
+
+		a.btn.btn-wedding(href="@Model.Model.BottomLink.Anchor") 
+			| test  
+			i.mys-arrow-left.white
 		section.resturant-page-booking
 			h2.higlight
 				i

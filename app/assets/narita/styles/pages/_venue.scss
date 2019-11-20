@@ -409,9 +409,11 @@ ul.venue-list {
   clear: both;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  margin: 0;
-
+  justify-content: space-evenly;
+  margin: 0;  
+  @include md {
+    margin: 0 -20px;
+  }  
   > li {
     width: 100%;
     background: $default-bg;
@@ -631,9 +633,8 @@ ul.venue-list {
     display: block;
     max-width: 300px;  
     span {
-      text-align: left;
       display: block;
-      width: 75%;
+      padding:0 15px;
     }
 
     i {
@@ -1135,6 +1136,10 @@ ul.venue-list {
         margin: 10px 0; 
         padding:15px 10px 10px;
         height: 76px;
+        display: flex;  
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;      
         @include sm {
             width: 440px;
             margin: 0 10px;
@@ -1216,6 +1221,7 @@ ul.venue-list {
     margin: 0 0 15px;
     position: relative;
     padding-left: 30px;
+    line-height: 1.2;  
     &:before{
       content: "";
       position: absolute;
@@ -1242,4 +1248,38 @@ ul.venue-list {
     }
   } 
 
+}
+
+.venue-overview .price-details .price-details-container  .column-one .price-detail-table{
+  width: 100%;
+  display: flex;
+  background: #fafafa; 
+  div{
+    float: none;
+    border-right: 1px solid #E1E1E1;
+    &:last-child {
+      border-right: 0;    
+    }
+  }
+  div:first-child:nth-last-child(1) {
+    width: 100%;
+  }
+
+  /* two items */
+  div:first-child:nth-last-child(2),
+  div:first-child:nth-last-child(2) ~ div {
+    width: 50%;
+  }
+
+  /* three items */
+  div:first-child:nth-last-child(3),
+  div:first-child:nth-last-child(3) ~ div {
+    width: 33.3333%;
+  }
+
+  /* four items */
+  div:first-child:nth-last-child(4),
+  div:first-child:nth-last-child(4) ~ div {
+    width: 25%;
+  }
 }

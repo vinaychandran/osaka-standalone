@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('../fonts/icomoon.ttf?i2favk') format('truetype'),
-    url('../fonts/icomoon.woff?i2favk') format('woff'),
-    url('../fonts/icomoon.svg?i2favk#icomoon') format('svg');
+    url('../fonts/icomoon.ttf?cqjsko') format('truetype'),
+    url('../fonts/icomoon.woff?cqjsko') format('woff'),
+    url('../fonts/icomoon.svg?cqjsko#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -36,6 +36,18 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-notfound:before {
+  content: "\e997";
+}
+.icon-instagram:before {
+  content: "\e998";
+  color: #fff;
+}
+.icon-tripadvisor:before {
+  content: "\e999";
+  color: #fff;
 }
 
 .icon-attr-bicycle:before {

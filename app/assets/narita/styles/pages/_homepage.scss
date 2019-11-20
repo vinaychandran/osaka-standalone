@@ -21,10 +21,22 @@
   .home-slider-nav{
     max-width: 1040px;
     margin: 0 auto;
+    text-align: center;
+    > div, > a{
+      display: inline-block;
+      width: 317px;  
+      margin: 0 10px;  
+      vertical-align: top; 
+      @include md {
+        margin: 0 15px;  
+      } 
+    }  
   }
 
   .slick-list{
     padding: 0 40px;
+    width: auto !important;
+    display: block !important;
     @include md {
       padding: 0;
     }
@@ -38,7 +50,7 @@
     max-width: 290px;
     @include md {
       margin: 0 15px;
-      max-width: 320px;
+      max-width: 320px;  
     }
   }
 
