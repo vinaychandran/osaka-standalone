@@ -164,7 +164,9 @@
     margin: 0 auto;
     padding-bottom: 30px;
     max-width: 720px;
-    float: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
   }
 
   .img-wrap{
@@ -174,30 +176,17 @@
   .venue-party-plan {
     position: relative;
     @include md {
-      float: left;
-    };
+      //float: left;
+    }
 
     &.big {
       margin-bottom: 20px;
     }
 
     &.small {
-      margin-bottom: 33px;
+      margin-bottom: 20px;
       //  float: none;
       //display: flex;
-      .venue-party-plan-container {
-        // justify-content: center;
-        // @include md{
-        //   justify-content:unset;
-        // };
-      }
-
-      + .small{
-        @include md {
-          float: right;  
-        }
-      }
-
       h4 {
         position: absolute;
         top: 40%;

@@ -4,6 +4,7 @@ header{
   background: $footer-bg;
   position: fixed;
   z-index: 99999;
+  top: 0;
   @include md {
   	height: 80px;  
   }  

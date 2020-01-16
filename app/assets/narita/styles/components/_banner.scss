@@ -17,7 +17,7 @@
         text-align: center;
         color: $secondary-color;
         width: 100%;
-        text-align: center;
+        text-align: center;        
         h1 {
             font-family: $mi-regular; 
             font-weight: 500;
@@ -105,7 +105,7 @@
         @include center(horizontal);
         width: 80%;
         text-align: center;
-        bottom: 14px;
+        bottom: -25px;
         a {
             @include font-size(12px);
             font-family: $go-semibold;
@@ -138,16 +138,20 @@
     .banner-text {
         h1{
             @include font-size(32px);
+            padding: 0 20px;
            // text-shadow: none;  
-        }        
-        @include center(vertical);
-        padding-top: 20px; 
+        } 
+        top: 40%;  
+        @include md {
+            top: 50%;
+        }       
         @include sm {
             max-width: 100%;
+            padding-top: 20px; 
         }
     }
     .banner-image{
-        height:  calc(100vh - 56px);      
+        height:  calc(80vh - 56px);      
         width: 100%;    
         background-size: cover;
         background-position: center;
@@ -157,13 +161,13 @@
     } 
     a.banner-button{ 
        @include center(horizontal);      
-        bottom: 150px;  
+        bottom: 70px;  
         left: 50%;
         text-align: center;
         color: #fff;
         font-weight: 700;
         font-family: $go-bold;
-        padding: 15px 15px;
+        padding: 12px 15px;
         background-color: rgba(35,46,72,0.3);  
         border: 2px solid #ffffff;
         border-radius: 35px;
@@ -173,6 +177,7 @@
         @include md {            
             display: inline-block;           
             width: auto;
+            bottom: 150px;         
         }
         &:hover{
             background:#fff;
@@ -196,10 +201,10 @@
         right: 20px;
         bottom: 100px;
         color: #fff;  
-        display: block;
-         font-size: 16px;
-         font-weight: 700;
-         font-family: $go-bold;
+        display: none;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: $go-bold;
         @include md {
             display: none;  
         }
@@ -289,10 +294,11 @@
     .slick-prev{
         background: transparent;
         border: 0px;
-        bottom: 50px;
+        bottom: 2px;
         top: auto;
-        left: 28px;  
+        left: 28px;
         &:before{
+            font-weight: 700;
             color: #fff;
         }
         @include md {
@@ -300,20 +306,22 @@
             left: 25px;
             border: 1px;
             bottom: auto;
-            top: 50%;  
+            top: 50%;             
             &:before{
-                color: #333;  
+                color: #333;
+                font-weight: 400;   
             }
         }
     }
     .slick-next{
         background: transparent;
         border: 0px;
-        bottom: 50px;
+        bottom: 2px;
         top: auto;
         right:20px;    
         &:before{
             color: #fff;
+             font-weight: 700;
         }
         @include md {
             background: #fff;
@@ -323,6 +331,7 @@
             top: 50%;
             &:before{
                 color: #333;
+                font-weight: 400; 
             }
         }        
     }
@@ -337,7 +346,7 @@
         width: 0;
         height: 5px;
         position: absolute;
-        bottom: 90px; 
+        bottom: 45px; 
         display: block;
         left: 50%;
         margin-left: -50px;
