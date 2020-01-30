@@ -93,6 +93,8 @@
       margin-bottom: 35px;
       img{
         display: block;  
+        max-width: 100%;
+        margin: 0 auto;  
       }
     }
     .btn-primary{
@@ -176,6 +178,10 @@
         margin-bottom: 0;
         width: 24%;  
       }
+      img{
+        width: 100%;
+        height: auto;
+      }
     }
     p{
       font-size: 14px;
@@ -199,5 +205,106 @@
   }
   .cta-venue-wrap{
     margin-bottom: 20px;
+  }
+}
+
+.mice-main-banner-wrap{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  height: 1500px;    
+  margin-top: 100vh; 
+  @include sm {
+    height: 2500px;  
+  }
+}
+
+.mice-main-banner{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50px;   
+  bottom: -20px;  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #004564;
+  background-position: top center;
+  z-index: -1;   
+}
+
+.mice-osaka-content-conatiner{
+  background: #fff;
+}
+
+.mice-animate{
+  position: absolute;
+  top: 0;
+  &.mice-animate1{
+    top: 0;
+    right: 10%;  
+  }
+  &.mice-animate2{
+    top: 350px;       
+    left: 45%;
+    @include sm {
+      top: 350px;
+      left: 20%;
+    }
+  }
+  &.mice-animate3{
+    top: 400px;
+    left: 5px;
+    @include sm {
+      top: 400px;
+      left: 0;
+    }
+  }
+  &.mice-animate4{
+    top: 550px;    
+    right: 30%;
+    @include sm {
+      top: 600px;    
+      right: 25%;
+    }    
+  }
+  &.mice-animate5{
+    top: 800px;
+    right: 20px;
+    @include sm {
+      top: 900px;
+      right: 20px;
+    }
+  }
+  &.mice-animate6{
+    top: 800px;
+    left: 60%;
+    @include sm {
+      top: 900px;
+      left: 40%;
+    }
+  }
+  &.mice-animate7{
+    top: 1150px;
+    left: 10%;
+    @include sm {
+      top: 1450px;
+      left: 10%;
+    }
+  }
+  &.mice-animate8{
+    top: 1050px;  
+    right: 40%;
+    @include sm {
+      top: 1250px;  
+      right: 40%;
+    }    
+  }
+  &.mice-animate9{
+    top: 1250px;          
+    left: 35%; 
+    @include sm {
+      top: 1500px;          
+      left: 35%;  
+    }    
   }
 }

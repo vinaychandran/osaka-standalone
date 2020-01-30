@@ -22,6 +22,14 @@ const FE = {
             myLazyLoad.update();
         },
 
+        parallax: () => {
+            $(window).stellar({            
+              hideDistantElements: false,
+              horizontalScrolling: false,
+              verticalScrolling: true
+            });
+        },
+
         playVideo: (evt) => {
             const video = new videoPlayer();
             if (evt.target.attributes.getNamedItem('data-target')) {
@@ -1423,6 +1431,7 @@ const FE = {
             FE.global.equalHeightByRow('.rooms-list__room-item', true);
 			FE.global.showRoomAmenities();
             FE.global.subscribeForm();
+            FE.global.parallax();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

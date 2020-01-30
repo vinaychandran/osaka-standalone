@@ -2,93 +2,127 @@ extends ../layouts/default
 
 block append content
 	#mice-osaka
-		section.main-banner
-			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/venue-banner.jpg')
-				img(src='/assets/narita/images/venue-banner-mobile.png')
-			.banner-text
-				h1 MICE				
-		section.mice-into
-			.container
-				h2 文化も、食も、堪能する。極上のMICEを。
-				ul
-					li
-						img(src='/assets/narita/images/image2.png')
-						.mice-intro-content
-							h3 大切なひとときを上質に演出
-							.div
-								p 国際会議や周年記念日の式典にふさわしい会場をご用意。<br/>プロフェッショナルなスタッフがあらゆるシーンのご要望にお応えし、皆様に心から満足して頂ける時間をお創りいたします。
-					li
-						img(src='/assets/narita/images/image2.png')
-						.mice-intro-content
-							h3 至高の眺望と料理、最上の休息を
-							.div
-								p 食の街「大阪」が誇るダイニング、地上100m、都会の喧騒から離れる優雅なゲストルーム。<br/>体も心も癒す、源泉の湯も、ここでしか味わえない、特別な滞在を提供します。
-					li
-						img(src='/assets/narita/images/image2.png')
-						.mice-intro-content
-							h3 MICEをもっと特別に
-							.div
-								p 大阪の観光スポットはもちろん、京都や奈良、和歌山へも短時間でアクセス可能。<br/>伝統的な文化や本場ならではの食をはじめ、様々な発見に心踊らせる一日を過ごしていただけます。 
-		section.mice-steps-container
-			.container
-				h2 MICEプラン例
-				.mice-steps-info 会議や宴会の後は様々な観光スポットもお楽しみいただけます。
-				div.mice-steps
-					img(src='/assets/narita/images/mice-step.jpg')
-				div.mice-steps
-					img(src='/assets/narita/images/mice-step.jpg')
-				div.mice-steps
-					img(src='/assets/narita/images/mice-step.jpg')  
-				a.btn.btn-primary(href="#") リーフレットはこちら
-		section.mice-higlight-pages
-			.container
-				ul
-					li
-						img(src='/assets/narita/images/mice3.jpg')
-						.mice-higlight-content
-							h3 会議・宴会
-							.mice-higlight-text
-								p 文化も、食も、堪能する。極上のMICEを。
-								p 多彩なスペースと最新鋭の設備で、最高レベルの会議を開催。
-						a.see-more(href="#")
-							span もっと見る
-					li
-						img(src='/assets/narita/images/mice3.jpg')
-						.mice-higlight-content
-							h3 会議・宴会
-							.mice-higlight-text
-								p 関西国際空港より電車で約60分<br/>大阪国際空港より電車で約35分<br/>新大阪駅より電車で約25分<br/>					大阪駅より電車で約8分 
+		.mice-main-banner(style="background-image: url(https://dev.osaka-baytower.com/-/media/Osaka-Bay-Tower/MICE/mice-banner-mobile.jpg);")
+		section.mice-main-banner-wrap
+			.large-container#mice-scroll
+				.mice-animate.mice-animate1(data-stellar-ratio="2")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/large1.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPlarge1.png')
+				.mice-animate.mice-animate2(data-stellar-ratio="0.9")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/small1.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPsmall1.png')
+				.mice-animate.mice-animate3(data-stellar-ratio="2")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/large2.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPlarge2.png')
+				.mice-animate.mice-animate4(data-stellar-ratio="1")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/small2.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPsmall2.png')
+				.mice-animate.mice-animate5(data-stellar-ratio="2")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/large3.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPlarge3.png')
+				.mice-animate.mice-animate6(data-stellar-ratio="1.1")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/small3.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPsmall3.png')
+				.mice-animate.mice-animate7(data-stellar-ratio="2")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/large4.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPlarge4.png')
+				.mice-animate.mice-animate8(data-stellar-ratio="1")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/small4.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPsmall4.png')
+				.mice-animate.mice-animate9(data-stellar-ratio="1")
+					picture
+						source(media='(min-width: 768px)', data-srcset='/assets/narita/images/mice/pc/small5.png')
+						img.lazy(data-src='/assets/narita/images/mice/sp/SPsmall5.png')
+		.mice-osaka-content-conatiner
+			section.mice-into
+				.container
+					h2 文化も、食も、堪能する。極上のMICEを。  
+					ul
+						li
+							img(src='/assets/narita/images/image2.png')
+							.mice-intro-content
+								h3 大切なひとときを上質に演出
+								.div
+									p 国際会議や周年記念日の式典にふさわしい会場をご用意。<br/>プロフェッショナルなスタッフがあらゆるシーンのご要望にお応えし、皆様に心から満足して頂ける時間をお創りいたします。
+						li
+							img(src='/assets/narita/images/image2.png')
+							.mice-intro-content
+								h3 至高の眺望と料理、最上の休息を
+								.div
+									p 食の街「大阪」が誇るダイニング、地上100m、都会の喧騒から離れる優雅なゲストルーム。<br/>体も心も癒す、源泉の湯も、ここでしか味わえない、特別な滞在を提供します。
+						li
+							img(src='/assets/narita/images/image2.png')
+							.mice-intro-content
+								h3 MICEをもっと特別に
+								.div
+									p 大阪の観光スポットはもちろん、京都や奈良、和歌山へも短時間でアクセス可能。<br/>伝統的な文化や本場ならではの食をはじめ、様々な発見に心踊らせる一日を過ごしていただけます。 
+			section.mice-steps-container
+				.container
+					h2 MICEプラン例
+					.mice-steps-info 会議や宴会の後は様々な観光スポットもお楽しみいただけます。
+					div.mice-steps
+						img(src='/assets/narita/images/mice-step.jpg')
+					div.mice-steps
+						img(src='/assets/narita/images/mice-step.jpg')
+					div.mice-steps
+						img(src='/assets/narita/images/mice-step.jpg')  
+					a.btn.btn-primary(href="#") リーフレットはこちら
+			section.mice-higlight-pages
+				.container
+					ul
+						li
+							img(src='/assets/narita/images/mice3.jpg')
+							.mice-higlight-content
+								h3 会議・宴会
+								.mice-higlight-text
+									p 文化も、食も、堪能する。極上のMICEを。
+									p 多彩なスペースと最新鋭の設備で、最高レベルの会議を開催。
 							a.see-more(href="#")
 								span もっと見る
-		section.mice-other-pages
-			.container
-				ul
-					li
-						a(href="#")
-							img(src='/assets/narita/images/mice2.jpg')
-							p 空庭温泉
-					li
-						a(href="#")
-							img(src='/assets/narita/images/mice2.jpg')
-							p 空庭温泉
-					li
-						a(href="#")
-							img(src='/assets/narita/images/mice2.jpg')
-							p 空庭温泉
-					li
-						a(href="#")
-							img(src='/assets/narita/images/mice2.jpg')
-							p 空庭温泉
-		section.cta-venue-wrap
-			.container
-				h2 ご利用に関するお問い合わ
-				h4 お電話またはお問い合わせフォームにてお問い合わせください。
-				.cta-venue-btn-wrap
-					.cta-phone-wrap
-						a(href="#").phone
-							i.icon-phone
-							| 03-6866-4343
-						p [受付]月～金曜日（平日） 9:00～18:00 
-					a.btn.btn-primary(href="#") お問い合わせフォーム
-	include ../components/breadcrumb.pug
+						li
+							img(src='/assets/narita/images/mice3.jpg')
+							.mice-higlight-content
+								h3 会議・宴会
+								.mice-higlight-text
+									p 関西国際空港より電車で約60分<br/>大阪国際空港より電車で約35分<br/>新大阪駅より電車で約25分<br/>					大阪駅より電車で約8分 
+								a.see-more(href="#")
+									span もっと見る
+			section.mice-other-pages
+				.container
+					ul
+						li
+							a(href="#")
+								img(src='/assets/narita/images/mice2.jpg')
+								p 空庭温泉
+						li
+							a(href="#")
+								img(src='/assets/narita/images/mice2.jpg')
+								p 空庭温泉
+						li
+							a(href="#")
+								img(src='/assets/narita/images/mice2.jpg')
+								p 空庭温泉
+						li
+							a(href="#")
+								img(src='/assets/narita/images/mice2.jpg')
+								p 空庭温泉
+			section.cta-venue-wrap
+				.container
+					h2 ご利用に関するお問い合わ
+					h4 お電話またはお問い合わせフォームにてお問い合わせください。
+					.cta-venue-btn-wrap
+						.cta-phone-wrap
+							a(href="#").phone
+								i.icon-phone
+								| 03-6866-4343
+							p [受付]月～金曜日（平日） 9:00～18:00 
+						a.btn.btn-primary(href="#") お問い合わせフォーム
+			include ../components/breadcrumb.pug
