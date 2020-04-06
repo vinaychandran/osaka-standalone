@@ -10,16 +10,12 @@
   }
 
   h3 {
-    font-family: $go-semibold;
+    font-family: $go-bold;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 20px;
     line-height: 1.4;
-    letter-spacing: 4px;
-    @include font-size(20px);
-    @include md {
-      margin-bottom: 30px;
-    }
+    letter-spacing: 4px;   
   }
 
   p {

@@ -10,11 +10,15 @@ header{
   }  
   .header-left{
   	float: left;
+  	height: 100%;  
   	.logo{
-  		margin:8px 18px;
+  		margin:0 18px;
   		max-width: 170px; 
+  		display: flex;
+	    align-items: center;
+	    height: 100%;
   		@include lg {
-  			margin:17px 50px;
+  			margin:0 50px;
 			max-width: 236px;
   		}
   	}

@@ -22,13 +22,42 @@ const FE = {
             myLazyLoad.update();
         },
 
-        parallax: () => {
+        miceAnimation: () => {
+            let elements,windowHeight;
             $(window).stellar({            
               hideDistantElements: false,
               horizontalScrolling: false,
               verticalScrolling: true
-            });
+            });    
+
+            function init() {
+                elements = document.querySelectorAll('.mice-animate-box');
+                windowHeight = window.innerHeight;
+            }            
+            function checkPosition() {
+                for (var i = 0; i < elements.length; i++) {
+                  var element = elements[i];
+                  var positionFromTop = elements[i].getBoundingClientRect().top;
+                  console.log(positionFromTop);
+                  console.log(windowHeight);
+                  console.log(positionFromTop - windowHeight);
+                  if (positionFromTop - windowHeight <= 0) {
+                    element.classList.add('fade-in-element');
+                  }
+                  else{
+                    element.classList.remove('fade-in-element');
+                  }
+                }
+            }
+
+            window.addEventListener('scroll', checkPosition);
+            window.addEventListener('resize', init);
+
+            init();
+            checkPosition();
         },
+
+
 
         playVideo: (evt) => {
             const video = new videoPlayer();
@@ -1431,7 +1460,7 @@ const FE = {
             FE.global.equalHeightByRow('.rooms-list__room-item', true);
 			FE.global.showRoomAmenities();
             FE.global.subscribeForm();
-            FE.global.parallax();
+            FE.global.miceAnimation();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

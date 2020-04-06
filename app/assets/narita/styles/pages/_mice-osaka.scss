@@ -8,7 +8,7 @@
   .mice-into{
     margin-bottom: 60px;
     @include sm {
-      margin-bottom: 140px;  
+      margin-bottom: 140px;        
     }
     h2{
       padding: 50px 25px;  
@@ -224,12 +224,13 @@
   left: 0;
   right: 0;
   top: 50px;   
-  bottom: -20px;  
-  background-size: contain;
+  bottom: 0;    
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #004564;
-  background-position: top center;
+  background-position: center center;
   z-index: -1;   
+  transform: translate3d(0,0,0);
 }
 
 .mice-osaka-content-conatiner{
@@ -308,3 +309,32 @@
     }    
   }
 }
+
+
+@keyframes fadein {
+    0% {opacity: 0; }
+    50%{opacity: 0;}
+    65%{opacity: 0.5;}
+    100% {opacity: 1;}
+}
+.mice-animate-box {     
+  //opacity: 0;  
+}
+
+.mice-animate-box1.fade-in-element{
+  animation: fadein 0.5s;
+}
+
+.mice-animate-box2.fade-in-element{
+  animation: fadein 1s;
+}
+
+.mice-animate-box3.fade-in-element{
+  animation: fadein 1.5s;
+}
+
+.mice-animate-step1.fade-in-element{
+  animation: fadein 0.5s;    
+}
+
+

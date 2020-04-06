@@ -143,10 +143,11 @@
   }
 
   h3 {
-    font-family: 'Lato-B';
+    font-family: $go-bold;
     line-height: 1;
     margin-bottom: 30px;
     letter-spacing: 0.8px;
+    font-weight: 700;
   }
 
   p {

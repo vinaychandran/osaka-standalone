@@ -4,7 +4,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
-const runSequence = require('run-sequence');
+var gulpSequence = require('gulp-sequence')
 var replace = require('gulp-replace');
 var rename = require('gulp-rename');
 var merge = require('merge-stream');
@@ -45,7 +45,34 @@ gulp.task('createCSS', () => {
     return merge(streams);
 });
 
-gulp.task('styles', ['createCSS'], () => {
+gulp.task('serve', () => {
+    gulpSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts'], () => {
+        browserSync.init({
+            notify: false,
+            port: 9001,
+            server: {
+                baseDir: ['.tmp', 'app'],
+                routes: {
+                    '/bower_components': 'bower_components'
+                }
+            }
+        });
+
+        gulp.watch([
+            'app/**/*.html',
+            'app/assets/narita/images/**/*',
+            '.tmp/assets/narita/fonts/**/*'
+        ]).on('change', reload);
+
+        gulp.watch('app/**/*.pug', gulp.series('views'));
+        gulp.watch('app/assets/narita/styles/**/*.scss', gulp.series('styles'));
+        gulp.watch('app/assets/narita/scripts/**/*.js', gulp.series('scripts'));
+        gulp.watch('app/assets/narita/fonts/**/*', gulp.series('fonts'));
+        gulp.watch('bower.json', gulp.series('wiredep', 'fonts'));
+    });
+});
+
+gulp.task('styles', gulp.series('createCSS', () => {
 
     var locale = (args.locale) ? args.locale : 'jp';
     var cssFile = gulp.src('app/assets/narita/styles/**/*.scss')
@@ -57,13 +84,12 @@ gulp.task('styles', ['createCSS'], () => {
             precision: 10,
             includePaths: ['.']
         }).on('error', $.sass.logError))
-        .pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
         .pipe($.sourcemaps.write())
         .pipe(gulp.dest('.tmp/assets/narita/styles'))
         .pipe(reload({ stream: true }));
     return cssFile;
 
-});
+}));
 
 gulp.task('scripts', () => {
     return gulp.src('app/assets/narita/scripts/**/*.js')
@@ -92,26 +118,16 @@ gulp.task('lint:test', () => {
         .pipe(gulp.dest('test/spec'));
 });
 
-gulp.task('html', ['views', 'styles', 'scripts'], () => {
+gulp.task('html',  gulp.series('views', 'styles', 'scripts', () => {
     return gulp.src(['app/**/*.html', '.tmp/**/*.html'])
         .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
         .pipe($.if('*.js', $.uglify()))
         .pipe($.if('*.css', $.cssnano({ safe: true, autoprefixer: false })))
         .pipe($.if('*.html', $.htmlmin({ collapseWhitespace: true })))
         .pipe(gulp.dest('dist'));
-});
+}));
 
-gulp.task('html-dev', ['views', 'styles', 'scripts'], () => {
-    return gulp.src(['app/**/*.html', '.tmp/**/*.html'])
-        .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
-        .pipe($.if('*.js', $.uglify({
-            mangle: false,
-            compress: false,
-            output: { beautify: true }
-        })))
-        .pipe($.if('*.css', $.cssnano({ safe: true, autoprefixer: false })))
-        .pipe(gulp.dest('dist'));
-});
+
 
 gulp.task('images', () => {
     return gulp.src('app/assets/narita/images/**/*')
@@ -120,23 +136,6 @@ gulp.task('images', () => {
 });
 
 
-// gulp.task('sprite', function () {
-//     return gulp.src('app/assets/narita/icons/*.svg')
-//         .pipe(svgSprite({
-//             selector: "sprite-%f",
-//             cssFile: "styles/base/_sprite.scss",
-//             padding:10
-//         }))
-//         .pipe(gulp.dest("app/assets/narita/"));
-// });
-
-// gulp.task('sprite-png', function () {
-//   var spriteData = gulp.src('app/assets/narita/icons/*.png').pipe(spritesmith({
-//     imgName: 'sprite.png',
-//     cssName: '_sprite1.scss'
-//   }));
-//   return spriteData.pipe(gulp.dest('app/assets/narita/styles/'));
-// });
 gulp.task('fonts', () => {
     return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function(err) {})
             .concat('app/assets/narita/fonts/**/*'))
@@ -155,61 +154,36 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', () => {
-    runSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts'], () => {
-        browserSync.init({
-            notify: false,
-            port: 9001,
-            server: {
-                baseDir: ['.tmp', 'app'],
-                routes: {
-                    '/bower_components': 'bower_components'
-                }
-            }
-        });
 
-        gulp.watch([
-            'app/**/*.html',
-            'app/assets/narita/images/**/*',
-            '.tmp/assets/narita/fonts/**/*'
-        ]).on('change', reload);
 
-        gulp.watch('app/**/*.pug', ['views']);
-        gulp.watch('app/assets/narita/styles/**/*.scss', ['styles']);
-        gulp.watch('app/assets/narita/scripts/**/*.js', ['scripts']);
-        gulp.watch('app/assets/narita/fonts/**/*', ['fonts']);
-        gulp.watch('bower.json', ['wiredep', 'fonts']);
-    });
-});
+// gulp.task('serve:dist', gulp.series('default', () => {
+//     browserSync.init({
+//         notify: false,
+//         port: 9001,
+//         server: {
+//             baseDir: ['dist']
+//         }
+//     });
+// }));
 
-gulp.task('serve:dist', ['default'], () => {
-    browserSync.init({
-        notify: false,
-        port: 9001,
-        server: {
-            baseDir: ['dist']
-        }
-    });
-});
+// gulp.task('serve:test',gulp.series('scripts', () => {
+//     browserSync.init({
+//         notify: false,
+//         port: 9001,
+//         ui: false,
+//         server: {
+//             baseDir: 'test',
+//             routes: {
+//                 '/scripts': '.tmp/assets/narita/scripts',
+//                 '/bower_components': 'bower_components'
+//             }
+//         }
+//     });
 
-gulp.task('serve:test', ['scripts'], () => {
-    browserSync.init({
-        notify: false,
-        port: 9001,
-        ui: false,
-        server: {
-            baseDir: 'test',
-            routes: {
-                '/scripts': '.tmp/assets/narita/scripts',
-                '/bower_components': 'bower_components'
-            }
-        }
-    });
-
-    gulp.watch('app/assets/narita/scripts/**/*.js', ['scripts']);
-    gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
-    gulp.watch('test/spec/**/*.js', ['lint:test']);
-});
+//     gulp.watch('app/assets/narita/scripts/**/*.js', ['scripts']);
+//     gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
+//     gulp.watch('test/spec/**/*.js', ['lint:test']);
+// }));
 
 // inject bower components
 gulp.task('wiredep', () => {
@@ -228,17 +202,17 @@ gulp.task('wiredep', () => {
         .pipe(gulp.dest('app/layouts'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', /*'extras'*/ ], () => {
-    return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
-});
+// gulp.task('build', ['lint', 'html', 'images', 'fonts', /*'extras'*/ ], () => {
+//     return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
+// });
 
-gulp.task('build-dev', ['lint', 'html-dev', 'images', 'fonts', /*'extras'*/ ], () => {
-    return gulp.src('dist/**/*').pipe($.size({ title: 'build-dev', gzip: false }));
-});
+// gulp.task('build-dev', ['lint',  'images', 'fonts', /*'extras'*/ ], () => {
+//     return gulp.src('dist/**/*').pipe($.size({ title: 'build-dev', gzip: false }));
+// });
 
 gulp.task('default', () => {
     return new Promise(resolve => {
         dev = false;
-        runSequence(['clean', 'wiredep'], 'build', resolve);
+        gulpSequence(['clean', 'wiredep'], 'build', resolve);
     });
 });
