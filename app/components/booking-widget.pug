@@ -54,40 +54,154 @@ section.booking-widget.visible-desktop#booking-widget
                 span.room 1
                 span.roomText room(s)          
           .booking-guestselect-wrap.hide
-            .booking-guestselect-heading
-                span.mbsc-ic-arrow-left5.mbsc-ic
-                span.guests-placeholder Occupancy
-                span.guest-placeholder.hide Occupant
-            .booking-guestselect
-                .left
-                    .guest-row
-                        p.room
-                            span.number(data-count="1") 1
-                            span.room Room
-                        i.minus.disabled
-                        i.plus
-                    .guest-row
-                        p.adult
-                            span.number(data-count="2") 2
-                            span.adult Adult
-                        i.minus
-                        i.plus
-                    .guest-row
-                        p.child
-                            span.number(data-count="0") 0
-                            span.child child
-                        i.minus.disabled
-                        i.plus
-                    .child-age-info.hide
-                        | Please include each child’s age so we can find you best room, bed configuration and deals.
-                    ul.chidren-ages-dropndown
-                .right
-                    h3 小学生の添い寝について
-                    ul
-                        li 大人1名様に対し、添い寝のお子様1名までとします。
-                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,306円頂戴いたします。（6歳以下は無料）
-                .booking-guestselect-close 
-                    span OK
+            .booking-guestselect-container
+                .booking-guestselect-heading
+                    span.icon-close
+                .booking-guestselect
+                    .booking-guest-room-info
+                        .room-detail-name Room1                        
+                        .room-detail-info
+                            span 1 Adult
+                            span , 2 Children
+                        .room-detail-delete
+                            span.icon-Delete
+                    .booking-guest-room-detail
+                        .room-detail-row
+                            .room-detail-title Adults
+                            .room-detail-numbers
+                                button(disabled="disabled")
+                                    span.icon-Minus
+                                .count 1
+                                button
+                                    span.icon-plus2
+                        .room-detail-row
+                            .room-detail-title Children
+                            .room-detail-numbers
+                                button(disabled="disabled")
+                                    span.ico.ico-Minus
+                                .count 0
+                                button
+                                    span.ico.ico-plus
+                        .room-detail-row
+                            .room-detail-title Child1
+                            .child-age-select-wrap
+                                .child-age-dropdown
+                                    .child-age-title Age
+                                    select
+                                        option(valu="0") 0
+                                        option(valu="0") 1
+                                        option(valu="0") 2
+                                        option(valu="0") 3
+                                        option(valu="0") 4
+                                        option(valu="0") 5
+                                        option(valu="0") 6
+                                        option(valu="0") 7
+                                .child-bed-select
+                                    .child-bed-title Bed
+                                    .child-bed-checkbox
+                                        input(type="checkbox" id="child1")
+                                        label(for="child1") Bed
+                                    .child-bed-info
+                                        //- span with Bed
+                                        span without Bed
+                        .room-detail-row
+                            .room-detail-title Child2
+                            .child-age-select-wrap
+                                .child-age-dropdown
+                                    .child-age-title Age
+                                    select
+                                        option(valu="0") 0
+                                        option(valu="0") 1
+                                        option(valu="0") 2
+                                        option(valu="0") 3
+                                        option(valu="0") 4
+                                        option(valu="0") 5
+                                        option(valu="0") 6
+                                        option(valu="0") 7
+                                .child-bed-select
+                                    .child-bed-title Bed
+                                    .child-bed-checkbox
+                                        input(type="checkbox" checked id="child2")
+                                        label(for="child2") Bed
+                                    .child-bed-info
+                                        span with Bed
+                                        //- span without Bed
+                .booking-guestselect
+                    .booking-guest-room-info
+                        .room-detail-name Room2                       
+                        .room-detail-info
+                            span 1 Adult
+                            span , 2 Children
+                        .room-detail-delete
+                            span.ico.ico-Delete
+                    .booking-guest-room-detail
+                        .room-detail-row
+                            .room-detail-title Adults
+                            .room-detail-numbers
+                                button(disabled="disabled")
+                                    span.ico.ico-Minus
+                                .count 1
+                                button
+                                    span.ico.ico-plus
+                        .room-detail-row
+                            .room-detail-title Children
+                            .room-detail-numbers
+                                button(disabled="disabled")
+                                    span.ico.ico-Minus
+                                .count 0
+                                button
+                                    span.ico.ico-plus
+                        .room-detail-row
+                            .room-detail-title Child1
+                            .child-age-select-wrap
+                                .child-age-dropdown
+                                    .child-age-title Age
+                                    select
+                                        option(valu="0") 0
+                                        option(valu="0") 1
+                                        option(valu="0") 2
+                                        option(valu="0") 3
+                                        option(valu="0") 4
+                                        option(valu="0") 5
+                                        option(valu="0") 6
+                                        option(valu="0") 7
+                                .child-bed-select
+                                    .child-bed-title Bed
+                                    .child-bed-checkbox
+                                        input(type="checkbox" id="child1")
+                                        label(for="child1") Bed
+                                    .child-bed-info
+                                        //- span with Bed
+                                        span without Bed
+                        .room-detail-row
+                            .room-detail-title Child1
+                            .child-age-select-wrap
+                                .child-age-dropdown
+                                    .child-age-title Age
+                                    select
+                                        option(valu="0") 0
+                                        option(valu="0") 1
+                                        option(valu="0") 2
+                                        option(valu="0") 3
+                                        option(valu="0") 4
+                                        option(valu="0") 5
+                                        option(valu="0") 6
+                                        option(valu="0") 7
+                                .child-bed-select
+                                    .child-bed-title Bed
+                                    .child-bed-checkbox
+                                        input(type="checkbox" checked id="child2")
+                                        label(for="child2") Bed
+                                    .child-bed-info
+                                        span with Bed
+                                        //- span without Bed
+                .booking-guestselect-footer
+                    .btn-add-room
+                        button(disabled) + Add A Room
+                    .btn-apply
+                        button Apply
+            .booking-guestselect-close 
+              span OK
         .booking-box.promo-code
           section
             .form-group

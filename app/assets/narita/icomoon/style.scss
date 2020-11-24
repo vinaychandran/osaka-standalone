@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?cqjsko') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?cqjsko') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?cqjsko##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?9vgyn3') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?9vgyn3') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?9vgyn3##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -14,7 +14,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: '#{$icomoon-font-family}' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -843,6 +843,23 @@
 .icon-yahoo {
   &:before {
     content: $icon-yahoo; 
+  }
+}
+.icon-Delete {
+  &:before {
+    content: $icon-Delete;     
+    color: #9196a3;
+  }
+}
+.icon-Minus {
+  &:before {
+    content: $icon-Minus; 
+  }
+}
+.icon-plus2 {
+  &:before {
+    content: $icon-plus2;     
+    color: #fff;
   }
 }
 
