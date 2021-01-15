@@ -1465,6 +1465,170 @@
     }
 }
 
+
+
+
+#booking-widget-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #232e48;
+    opacity: 0.8;
+    z-index: 9; 
+    cursor: pointer;
+    &.hide{
+        display: none;    
+    }
+}
+
+.booking-widget-body-overflow{
+    
+    overflow: hidden;
+    // @include device {
+    //     position: fixed;
+    //     width: 100%;
+    //     height: 100%;
+    // }
+    .mys-be-inner-page{
+        @include mobile {
+            background: #39435b;
+        }       
+    }
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;   
+}
+
+.mbsc-fr-popup{
+    @include sm {
+        margin-top: 56px;  
+        width: 654px !important;  
+    }    
+}
+
+@keyframes mbsc-anim-p-in {
+  from {
+    opacity: 0;
+    transform: translateY(8%); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } 
+}
+
+@-webkit-keyframes mbsc-anim-p-in {
+  from {
+    opacity: 0;
+    transform: translateY(8%); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } 
+}
+
+
+
+@keyframes mbsc-anim-p-out {
+  from {
+    opacity: 1;
+    transform: translateY(0); }
+  to {
+    opacity: 0;
+    transform: translateY(5%); } 
+}
+
+@-webkit-keyframes mbsc-anim-p-out {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(5%); } 
+}
+
+
+@keyframes mys-anim-child-in {
+  from {
+    opacity: 0;
+    height: 0px;
+    transform: translateY(-20%); }
+  to {
+    
+    height: 40px;
+    transform: translateY(0);opacity: 1; } 
+}
+
+@-webkit-keyframes mys-anim-child-in {
+  from {
+    opacity: 0;
+    height: 0px;
+    transform: translateY(-20%); }
+  to {
+    
+    height: 40px;
+    transform: translateY(0); opacity: 1;} 
+}
+
+
+@keyframes mys-anim-nights-in {
+  0 {opacity: 0; transform: translateY(100%);}
+  50% {opacity: 0; transform: translateY(90%);}
+  100% {opacity: 1;transform: translateY(0);} 
+}
+
+@-webkit-keyframes mys-anim-nights-in {
+  0 {opacity: 0; transform: translateY(100%);}
+  50% {opacity: 0; transform: translateY(90%);}
+  100% {opacity: 1;transform: translateY(0);} 
+}
+
+@keyframes mbsc-anim-sh-in {
+  from {opacity:0;transform: translateX(100%); }
+  to {opacity: 1;transform: translateX(0); } }
+
+@-webkit-keyframes mbsc-anim-sh-in {
+  from {opacity: 1; -webkit-transform: translateX(100%); }
+  to {opacity: 1;-webkit-transform: translateX(0); } }
+
+@keyframes mbsc-anim-sh-out {
+  from {opacity: 1;transform: translateX(0);  }
+  to {opacity: 0;transform: translateX(100%); } }
+
+@-webkit-keyframes mbsc-anim-sh-out {
+  from {opacity: 1;-webkit-transform: translateX(0);  }
+  to {opacity: 0;-webkit-transform: translateX(100%); } }
+
+
+@keyframes slide_down {
+    0% {top: 100%; }
+    100% { top: 100%;}
+}
+
+
+.booking-guestselect-container::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+.booking-guestselect-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(27,119,210,0.3);
+}
+ 
+.booking-guestselect-container::-webkit-scrollbar-thumb {
+  background-color: rgba(27,119,210,1);
+  outline: 1px solid transparent;
+}
+
+#booking-tab1{
+    .child-bed-checkbox label{
+        display: block;
+        margin: 0;  
+    }
+}
 .booking-guestselect-wrap{
     background: #ffffff;
     @include device {
@@ -1596,6 +1760,20 @@
         margin-bottom: 15px;
     }
 
+    .disable-guestsection-tripla-multirooms{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background:rgba(255,255,255,0.5);
+            cursor: not-allowed; 
+        }
+    }
+
     .room-detail-row{
         display: flex;
         justify-content: space-between;
@@ -1709,6 +1887,7 @@
             }
         }
         input{
+            display: none;
             &:checked + label{
                 &:before{
                     background-color: #1a489c;
@@ -2043,146 +2222,4 @@
             display: none;
         }
     }
-}
-
-
-#booking-widget-overlay{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #232e48;
-    opacity: 0.8;
-    z-index: 9; 
-    cursor: pointer;
-    &.hide{
-        display: none;    
-    }
-}
-
-.booking-widget-body-overflow{
-    
-    overflow: hidden;
-    // @include device {
-    //     position: fixed;
-    //     width: 100%;
-    //     height: 100%;
-    // }
-    .mys-be-inner-page{
-        @include mobile {
-            background: #39435b;
-        }       
-    }
-}
-
-.hide{
-    display: none;
-}
-
-.show{
-    display: block;   
-}
-
-.mbsc-fr-popup{
-    @include sm {
-        margin-top: 56px;  
-        width: 654px !important;  
-    }    
-}
-
-@keyframes mbsc-anim-p-in {
-  from {
-    opacity: 0;
-    transform: translateY(8%); }
-  to {
-    opacity: 1;
-    transform: translateY(0); } 
-}
-
-@-webkit-keyframes mbsc-anim-p-in {
-  from {
-    opacity: 0;
-    transform: translateY(8%); }
-  to {
-    opacity: 1;
-    transform: translateY(0); } 
-}
-
-
-
-@keyframes mbsc-anim-p-out {
-  from {
-    opacity: 1;
-    transform: translateY(0); }
-  to {
-    opacity: 0;
-    transform: translateY(5%); } 
-}
-
-@-webkit-keyframes mbsc-anim-p-out {
-  from {
-    opacity: 1;
-    -webkit-transform: translateY(0); }
-  to {
-    opacity: 0;
-    -webkit-transform: translateY(5%); } 
-}
-
-
-@keyframes mys-anim-child-in {
-  from {
-    opacity: 0;
-    height: 0px;
-    transform: translateY(-20%); }
-  to {
-    
-    height: 40px;
-    transform: translateY(0);opacity: 1; } 
-}
-
-@-webkit-keyframes mys-anim-child-in {
-  from {
-    opacity: 0;
-    height: 0px;
-    transform: translateY(-20%); }
-  to {
-    
-    height: 40px;
-    transform: translateY(0); opacity: 1;} 
-}
-
-
-@keyframes mys-anim-nights-in {
-  0 {opacity: 0; transform: translateY(100%);}
-  50% {opacity: 0; transform: translateY(90%);}
-  100% {opacity: 1;transform: translateY(0);} 
-}
-
-@-webkit-keyframes mys-anim-nights-in {
-  0 {opacity: 0; transform: translateY(100%);}
-  50% {opacity: 0; transform: translateY(90%);}
-  100% {opacity: 1;transform: translateY(0);} 
-}
-
-@keyframes mbsc-anim-sh-in {
-  from {opacity:0;transform: translateX(100%); }
-  to {opacity: 1;transform: translateX(0); } }
-
-@-webkit-keyframes mbsc-anim-sh-in {
-  from {opacity: 1; -webkit-transform: translateX(100%); }
-  to {opacity: 1;-webkit-transform: translateX(0); } }
-
-@keyframes mbsc-anim-sh-out {
-  from {opacity: 1;transform: translateX(0);  }
-  to {opacity: 0;transform: translateX(100%); } }
-
-@-webkit-keyframes mbsc-anim-sh-out {
-  from {opacity: 1;-webkit-transform: translateX(0);  }
-  to {opacity: 0;-webkit-transform: translateX(100%); } }
-
-
-@keyframes slide_down {
-    0% {top: 100%; }
-    100% { top: 100%;}
 }
